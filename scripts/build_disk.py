@@ -106,6 +106,7 @@ def main():
 
     # Load template volume
     vol = machfs.Volume()
+    vol.name='Macintosh HD'
     with open(tpl, "rb") as f:
         vol.read(f.read())
 

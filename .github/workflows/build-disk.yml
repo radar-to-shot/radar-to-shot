@@ -1,0 +1,57 @@
+name: Build Robot Warriors Disk Image
+
+on:
+  push:
+    branches: ["**"]
+    paths:
+      - "robots/**"
+      - "scripts/build_disk.py"
+      - "images/**"
+      - ".github/workflows/build-disk.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install --disable-pip-version-check --no-cache-dir machfs
+
+      - name: Build .dsk
+        run: |
+          mkdir -p build
+          python scripts/build_disk.py \
+            --template "images/Robot Warriors.dsk" \
+            --robots-dir robots \
+            --out build/robot.dsk
+          ls -lh build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-dsk-${{ github.ref_name }}-${{ github.sha }}
+          path: build/robot.dsk
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Summary
+        run: |
+          echo "### Download your disk image" >> $GITHUB_STEP_SUMMARY
+          echo "Artifact: **robot-dsk-${{ github.ref_name }}-${{ github.sha }}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "After downloading, open https://infinitemac.org/run with the following settings:
+          echo "    Machine → Mac IIfx"
+          echo "    Screen Size → Custom (640x480)"
+          echo "    Disk → Custom → *Disk File…* and select the downloaded \`robot.dsk\`." >> $GITHUB_STEP_SUMMARY
+          echo "    Building-in Disks → Uncheck \"Infinite HD\" and \"Saved HD\""
