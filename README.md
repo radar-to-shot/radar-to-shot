@@ -39,7 +39,7 @@ If you've made changes to your robot within the VM and then want to commit those
 
 ## Documentation
 
-The original Robot Warriors manual (as PDF) can be found [here](docs/Robot Warriors Manual.pdf). Also, have a look at the included robots [here](robots/examples) for practical examples.
+The original Robot Warriors manual (as PDF) can be found [here](docs). Also, have a look at the included robots [here](robots/examples) for practical examples.
 
 ## Contributing
 
