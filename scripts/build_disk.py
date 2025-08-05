@@ -22,8 +22,9 @@ import machfs
 from pathlib import Path
 
 MAX_HFS_NAME = 31  # HFS filename limit (bytes)
+DEFAULT_BATTLE_SCRIPT_PATH = ["Desktop Folder", "Robot Warriors"]
 DEFAULT_TARGET_PATH = ["Desktop Folder", "Robot Warriors", "robots"]
-DEFAULT_SIZE = 1024*1024*8
+DEFAULT_SIZE = 1024*1024*12
 
 def sanitize_hfs_name(name: str) -> str:
     """
@@ -76,6 +77,47 @@ def add_file(vol: machfs.Volume, folder, file_path: Path):
     f.type = b"TEXT"
     f.creator = b"RWar"
     folder[hfs_name] = f
+    return hfs_name
+
+def add_battle_script(vol: machfs.Volume, dest_path_components, robots):
+    folder = ensure_folder(vol, dest_path_components)
+    dest_path_components = [vol.name] + [sanitize_hfs_name(component) for component in dest_path_components]
+    f = machfs.File()
+    f.data = (b"""\
+Quit "Robot Warriors 1.0.1" quiet continue
+Quit "GraphicConverter 68k" quiet continue
+Wait 2 seconds
+%(open_cmds)s
+WaitWindow dialog
+Key return
+WaitWindow "%(last_robot_name)s"
+Menu "Battle" "Start Battle..."
+WaitWindow dialog
+Type "1"
+Key return
+WaitText "Exit Battlefield"
+CopyScreen 0 24 380 290
+ClipFile write 'PICT' "%(dest_path)s:Battle Results"
+Key return
+Quit "Robot Warriors 1.0.1"
+Wait 2 seconds
+Open 'GKON' "%(dest_path)s:Battle Results"
+WaitApp "GraphicConverter 68k"
+WaitWindow "Battle Results"
+Menu "File" "Save as" partial
+WaitWindow dialog
+Drag 380 60 to 0 35 relative window slow
+Key return
+Quit "GraphicConverter 68k"
+""" % {
+    b"open_cmds": "".join(f'Open "{":".join([vol.name] + robot_path)}"\n' for robot_path in robots).encode("ascii"),
+    b"last_robot_name": robots[-1][-1].encode("ascii"),
+    b"dest_path": ":".join(dest_path_components).encode("ascii"),
+}).replace(b"\n", b"\r")
+    f.rsrc = b""
+    f.type = b"TEXT"
+    f.creator = b"ttxt"
+    folder["Battle Script"] = f
 
 def main():
     ap = argparse.ArgumentParser()
@@ -89,6 +131,8 @@ def main():
                     help="Target path inside volume (use '/' between components)")
     ap.add_argument("--image-size", default=DEFAULT_SIZE,
                     help="Disk image size")
+    ap.add_argument("--write-battle-script", default=False, action="store_true",
+                    help="Enables output of a battle script to trigger battles between all supplied robots")
     args = ap.parse_args()
 
     tpl = Path(args.template)
@@ -113,7 +157,7 @@ def main():
     base_folder = ensure_folder(vol, target_components)
 
     # Walk robots/ recursively, mirroring subfolders under target
-    count = 0
+    robots = []
     for host_path in robots_dir.rglob("*"):
         if host_path.is_dir():
             # Mirror directory
@@ -125,16 +169,22 @@ def main():
             rel = host_path.relative_to(robots_dir)
             # Ensure the subfolder path exists
             folder = base_folder
+            current_dest_folder = target_components
             if rel.parts[:-1]:
-                folder = ensure_folder(vol, target_components + list(rel.parts[:-1]))
-            add_file(vol, folder, host_path)
-            count += 1
+                current_dest_folder = target_components + list(rel.parts[:-1])
+                folder = ensure_folder(vol, current_dest_folder)
+            hfs_fname = add_file(vol, folder, host_path)
+            robots.append(current_dest_folder + [hfs_fname, ])
+
+    if robots and args.write_battle_script:
+        ensure_folder(vol, DEFAULT_BATTLE_SCRIPT_PATH)
+        add_battle_script(vol, DEFAULT_BATTLE_SCRIPT_PATH, robots)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "wb") as f:
-        f.write(vol.write(size=image_size, align=2048, desktopdb=True, bootable=True))
+        f.write(vol.write(size=image_size, align=2048, desktopdb=False, bootable=True))
 
-    print(f"Injected {count} file(s) into '{'/'.join(target_components)}'")
+    print(f"Injected {len(robots)} robot file(s) into '{'/'.join(target_components)}'")
     print(f"Wrote: {out_path}")
     return 0
 
