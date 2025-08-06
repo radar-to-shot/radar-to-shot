@@ -1,0 +1,130 @@
+name: Run Robot Warriors Battle
+
+on:
+  push:
+    branches: ["battle/**"]
+    paths:
+      - "robots/**"
+      - "scripts/build_disk.py"
+      - "images/Mac_IIci.ROM"
+      - "images/Robot Warriors CI.dsk"
+      - ".github/workflows/run-battle.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: pip install --disable-pip-version-check --no-cache-dir machfs
+
+      - name: Build .dsk (CI template + battle script)
+        run: |
+          mkdir -p build
+          python scripts/build_disk.py \
+            --template "images/Robot Warriors CI.dsk" \
+            --robots-dir robots \
+            --write-battle-script \
+            --out build/robot.dsk
+          ls -lh build
+
+      - name: Install BasiliskII + Xvfb
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb basilisk2
+
+      - name: Run battle using headless Basilisk II
+        working-directory: build
+        timeout-minutes: 20
+        run: |
+          ROM="${GITHUB_WORKSPACE}/images/Mac_IIci.ROM"
+          IMG="${PWD}/robot.dsk"
+
+          if timeout 15m xvfb-run -a BasiliskII \
+              --cpu 3 \
+              --fpu true \
+              --nogui true \
+              --nosound true \
+              --nocdrom true \
+              --disk "${IMG}" \
+              --rom "${ROM}"
+          then
+            echo "BasiliskII exited normally."
+          else
+            status=$?
+            if [ "$status" -eq 124 ]; then
+              echo "BasiliskII timed out"
+              pkill -f BasiliskII || true
+            else
+              echo "BasiliskII exited with status ${status}"
+              exit "${status}"
+            fi
+          fi
+
+      - name: Extract battle results image
+        shell: python
+        run: |
+          import os, sys
+          from machfs import Volume
+
+          img_path = os.path.join("build", "robot.dsk")
+          out_path = os.path.join("build", "Battle Results.png")
+
+          v = Volume()
+          with open(img_path, "rb") as f:
+            v.read(f.read())
+
+          try:
+            f = v["Battle Results.png"]
+          except KeyError:
+            print("Battle Results.png not found in Macintosh HD")
+            try:
+              print("Macintosh HD contents:", list(v.keys()))
+            except Exception:
+              pass
+            sys.exit(1)
+
+          os.makedirs(os.path.dirname(out_path), exist_ok=True)
+          with open(out_path, "wb") as out:
+            out.write(getattr(f, "data", b""))
+
+          print(f"Extracted to {out_path}")
+
+      - name: Upload disk image artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-dsk-${{ github.sha }}
+          path: build/robot.dsk
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload battle results image
+        uses: actions/upload-artifact@v4
+        with:
+          name: battle-results-${{ github.sha }}
+          path: build/Battle Results.png
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Summary
+        shell: bash
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'MARKDOWN'
+          ### Battle run complete
+
+          **Artifacts**
+          - Disk image: **robot-dsk-${{ github.sha }}**
+          - Results image: **battle-results-${{ github.sha }}**
+          MARKDOWN
+

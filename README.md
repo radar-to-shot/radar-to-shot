@@ -37,6 +37,10 @@ You'll probably find it easier to work on your robot from with the built-in text
 
 If you've made changes to your robot within the VM and then want to commit those changes to your repository, drag your robot file on to the `The Outside World` icon on the desktop. Your browser will then download a zip archive containing your robot text file which you can paste into the copy in your repository and commit the changes.
 
+### Using the automatic battle workflow
+
+If you just want to see how your robot performs, put "battle/" at the start of your branch name – when you push to GitHub, it will trigger the "Run Robot Warriors Battle" action. Once it's finished, you should see an artefact called "battle-results-<hash>" which is a zipped PNG showing the battle summary.
+
 ## Documentation
 
 The original Robot Warriors manual (as PDF) can be found [here](docs). Also, have a look at the included robots [here](robots/examples) for practical examples.
