@@ -51,7 +51,7 @@ jobs:
           ROM="${GITHUB_WORKSPACE}/images/Mac_IIci.ROM"
           IMG="${PWD}/robot.dsk"
 
-          if timeout 15m xvfb-run -a BasiliskII \
+          if timeout 2m xvfb-run -a BasiliskII \
               --nogui true \
               --nosound true \
               --nocdrom true \
