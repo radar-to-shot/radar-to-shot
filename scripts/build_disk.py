@@ -109,6 +109,7 @@ WaitWindow dialog
 Drag 380 60 to 0 35 relative window slow
 Key return
 Quit "GraphicConverter 68k"
+Session shutdown
 """ % {
     b"open_cmds": "".join(f'Open "{":".join([vol.name] + robot_path)}"\n' for robot_path in robots).encode("ascii"),
     b"last_robot_name": robots[-1][-1].encode("ascii"),
