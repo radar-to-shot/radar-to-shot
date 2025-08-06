@@ -44,6 +44,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb basilisk2
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Run battle using headless Basilisk II
         working-directory: build
         timeout-minutes: 20
@@ -51,7 +54,7 @@ jobs:
           ROM="${GITHUB_WORKSPACE}/images/Mac_IIci.ROM"
           IMG="${PWD}/robot.dsk"
 
-          if timeout 2m xvfb-run -a BasiliskII \
+          if timeout 15m xvfb-run -a BasiliskII \
               --nogui true \
               --nosound true \
               --nocdrom true \
