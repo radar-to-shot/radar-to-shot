@@ -16,8 +16,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      REF_SAFE: ${{ replace(github.ref_name, '/', '-') }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: robot-dsk-${{ env.REF_SAFE }}-${{ github.sha }}
+          name: robot-dsk-${{ github.sha }}
           path: build/robot.dsk
           if-no-files-found: error
           retention-days: 14
@@ -53,7 +51,7 @@ jobs:
           cat >> "$GITHUB_STEP_SUMMARY" <<'MARKDOWN'
           ### Download your disk image
 
-          Artifact: **robot-dsk-${{ env.REF_SAFE }}-${{ github.sha }}**
+          Artifact: **robot-dsk-${{ github.sha }}**
 
           After downloading, open <https://infinitemac.org/run> with the following settings:
 

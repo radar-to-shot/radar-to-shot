@@ -17,8 +17,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      REF_SAFE: ${{ replace(github.ref_name, '/', '-') }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -104,7 +102,7 @@ jobs:
       - name: Upload disk image artifact
         uses: actions/upload-artifact@v4
         with:
-          name: robot-dsk-${{ env.REF_SAFE }}-${{ github.sha }}
+          name: robot-dsk-${{ github.sha }}
           path: build/robot.dsk
           if-no-files-found: error
           retention-days: 14
@@ -112,7 +110,7 @@ jobs:
       - name: Upload battle results image
         uses: actions/upload-artifact@v4
         with:
-          name: battle-results-${{ env.REF_SAFE }}-${{ github.sha }}
+          name: battle-results-${{ github.sha }}
           path: build/Battle Results.png
           if-no-files-found: error
           retention-days: 14
@@ -124,7 +122,7 @@ jobs:
           ### Battle run complete
 
           **Artifacts**
-          - Disk image: **robot-dsk-${{ env.REF_SAFE }}-${{ github.sha }}**
-          - Results image: **battle-results-${{ env.REF_SAFE }}-${{ github.sha }}**
+          - Disk image: **robot-dsk-${{ github.sha }}**
+          - Results image: **battle-results-${{ github.sha }}**
           MARKDOWN
 
