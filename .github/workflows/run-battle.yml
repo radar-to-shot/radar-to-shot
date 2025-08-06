@@ -49,7 +49,7 @@ jobs:
         timeout-minutes: 20
         run: |
           ROM="${GITHUB_WORKSPACE}/images/Mac_IIci.ROM"
-          IMG="${PWD}/build/robot.dsk"
+          IMG="${PWD}/robot.dsk"
 
           if timeout 15m xvfb-run -a BasiliskII \
               --cpu 3 \
