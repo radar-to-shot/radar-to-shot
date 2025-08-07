@@ -1,0 +1,87 @@
+name: Stream Robot Warriors Battle Live
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CF_STREAM_KEY: ${{ secrets.CF_STREAM_KEY }}
+      CF_PLAYER_URL: ${{ secrets.CF_PLAYER_URL }}
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python deps
+        run: pip install --disable-pip-version-check --no-cache-dir machfs
+
+      - name: Build .dsk (CI template + battle script)
+        run: |
+          mkdir -p build
+          python scripts/build_disk.py \
+            --template "images/Robot Warriors CI.dsk" \
+            --robots-dir robots \
+            --write-battle-script \
+            --out build/robot.dsk
+          ls -lh build
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb x11vnc basilisk2 ffmpeg
+
+      - name: Start Xvfb and x11vnc on :99
+        run: |
+          Xvfb :99 -screen 0 512x384x24 &
+          export DISPLAY=:99
+          x11vnc -display :99 -localhost -nopw -forever -bg
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          detached: true
+          authorized-keys: ${{ secrets.TMATE_AUTHORIZED_KEYS }}
+          limit-access-to-actor: true
+
+      - name: Run battle using headless Basilisk II and push to stream
+        working-directory: build
+        timeout-minutes: 20
+        run: |
+          ROM="${GITHUB_WORKSPACE}/images/Mac_IIci.ROM"
+          IMG="${PWD}/robot.dsk"
+
+          ffmpeg \
+            -f x11grab -video_size 512x384 -i :99 -r 30 \
+            -c:v libx264 -preset veryfast -pix_fmt yuv420p \
+            -f flv "rtmps://live.cloudflare.com:443/live/$CF_STREAM_KEY" \
+            -loglevel error &
+          FF_PID=$!
+
+          if timeout 15m xvfb-run -a BasiliskII \
+              --cpu 3 \
+              --fpu true \
+              --nogui true \
+              --disk "${IMG}" \
+              --rom "${ROM}"
+          then
+            echo "BasiliskII exited normally."
+          else
+            status=$?
+            if [ "$status" -eq 124 ]; then
+              echo "BasiliskII timed out"
+              pkill -f BasiliskII || true
+            fi
+          fi
+
+          kill -INT "$FF_PID" || true
+          wait "$FF_PID" || true
