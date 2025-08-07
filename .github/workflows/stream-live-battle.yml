@@ -42,16 +42,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb x11vnc basilisk2 ffmpeg
 
-      - name: Start Xvfb and x11vnc on :99
-        run: |
-          Xvfb :99 -screen 0 512x384x24 &
-          export DISPLAY=:99
-          x11vnc -display :99 -localhost -nopw -forever -bg
+      # - name: Start Xvfb and x11vnc on :99
+      #   run: |
+      #     Xvfb :99 -screen 0 512x384x24 &
+      #     export DISPLAY=:99
+      #     x11vnc -display :99 -localhost -nopw -forever -bg
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         with:
-          detached: true
+          # detached: true
           authorized-keys: ${{ secrets.TMATE_AUTHORIZED_KEYS }}
           limit-access-to-actor: true
 
