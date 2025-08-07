@@ -2,7 +2,7 @@ name: Stream Robot Warriors Battle Live
 
 on:
   push:
-    branches: ["**"]
+    branches: ["**/**"]
     paths:
       - "robots/**"
       - "scripts/build_disk.py"
