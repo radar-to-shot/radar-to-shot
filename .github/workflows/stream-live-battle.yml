@@ -66,16 +66,20 @@ jobs:
           IMG="${PWD}/robot.dsk"
 
           ffmpeg \
-            -f x11grab -video_size 512x342 -framerate 30 -i :99 \
-            -c:v libx264 -preset veryfast -tune zerolatency \
+            -f x11grab -draw_mouse 0 -video_size 512x342 -framerate 60 \
+            -use_wallclock_as_timestamps 1 -thread_queue_size 1024 \
+            -i :99 -vf "format=gray,fps=30" \
+            -c:v libx264 -preset ultrafast -tune zerolatency \
             -profile:v baseline -level 3.1 -pix_fmt yuv420p \
-            -crf 18 -g 30 -x264-params "scenecut=0:keyint=30" \
+            -b:v 800k -maxrate 800k -bufsize 1200k \
+            -x264-params "keyint=30:min-keyint=30:scenecut=0:nal-hrd=cbr" \
+            -r 30 -g 30 \
             -f flv "rtmps://live.cloudflare.com:443/live/$CF_STREAM_KEY" \
             -loglevel error &
           FF_PID=$!
 
           BasiliskII \
-              --delay 800 \
+              --delay 10000 \
               --cpu 3 \
               --fpu true \
               --nogui true \
