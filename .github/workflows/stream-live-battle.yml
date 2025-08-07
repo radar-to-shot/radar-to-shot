@@ -12,6 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      DISPLAY: :99
       CF_STREAM_KEY: ${{ secrets.CF_STREAM_KEY }}
       CF_PLAYER_URL: ${{ secrets.CF_PLAYER_URL }}
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
@@ -42,16 +43,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb x11vnc basilisk2 ffmpeg
 
-      # - name: Start Xvfb and x11vnc on :99
-      #   run: |
-      #     Xvfb :99 -screen 0 512x384x24 &
-      #     export DISPLAY=:99
-      #     x11vnc -display :99 -localhost -nopw -forever -bg
+      - name: Start Xvfb and x11vnc on :99
+        run: |
+          Xvfb :99 -screen 0 512x384x24 -ac > /tmp/Xvfb.log 2>&1 &
+          x11vnc -display WAIT:99 -localhost -nopw -forever -bg
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         with:
-          # detached: true
+          detached: true
           authorized-keys: ${{ secrets.TMATE_AUTHORIZED_KEYS }}
           limit-access-to-actor: true
 
@@ -69,21 +69,12 @@ jobs:
             -loglevel error &
           FF_PID=$!
 
-          if timeout 15m xvfb-run -a BasiliskII \
+          BasiliskII \
               --cpu 3 \
               --fpu true \
               --nogui true \
               --disk "${IMG}" \
-              --rom "${ROM}"
-          then
-            echo "BasiliskII exited normally."
-          else
-            status=$?
-            if [ "$status" -eq 124 ]; then
-              echo "BasiliskII timed out"
-              pkill -f BasiliskII || true
-            fi
-          fi
+              --rom "${ROM}" || true
 
           kill -INT "$FF_PID" || true
           wait "$FF_PID" || true
