@@ -1,6 +1,13 @@
 name: Stream Robot Warriors Battle Live
 
 on:
+  branches: ["**"]
+  paths:
+    - "robots/**"
+    - "scripts/build_disk.py"
+    - "images/Mac_IIci.ROM"
+    - "images/Robot Warriors CI.dsk"
+    - ".github/workflows/run-battle.yml"
   workflow_dispatch:
 
 permissions:
