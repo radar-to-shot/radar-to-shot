@@ -50,7 +50,7 @@ jobs:
           authorized-keys: ${{ secrets.TMATE_AUTHORIZED_KEYS }}
           limit-access-to-actor: true
 
-      - name: Start Xvfb and x11vnc on :99
+      - name: Start Xvfb on :99
         run: |
           Xvfb :99 -screen 0 512x384x24 -ac > /tmp/Xvfb.log 2>&1 &
           for i in {1..20}; do
@@ -58,7 +58,6 @@ jobs:
             echo "Waiting for Xvfb..."
             sleep 0.3
           done
-          x11vnc -display :99 -localhost -nopw -forever -bg
 
       - name: Run battle using headless Basilisk II and push to stream
         working-directory: build
