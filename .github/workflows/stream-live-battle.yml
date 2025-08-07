@@ -53,7 +53,12 @@ jobs:
       - name: Start Xvfb and x11vnc on :99
         run: |
           Xvfb :99 -screen 0 512x384x24 -ac > /tmp/Xvfb.log 2>&1 &
-          x11vnc -display WAIT:99 -localhost -nopw -forever -bg
+          for i in {1..20}; do
+            [ -S /tmp/.X11-unix/X99 ] && break
+            echo "Waiting for Xvfb..."
+            sleep 0.3
+          done
+          x11vnc -display :99 -localhost -nopw -forever -bg
 
       - name: Run battle using headless Basilisk II and push to stream
         working-directory: build
