@@ -34,11 +34,11 @@ jobs:
       - name: Build .dsk (CI template + battle script)
         run: |
           mkdir -p build
-          python3 scripts/get_battles.py \
+          python scripts/get_battles.py \
             --robots-dir robots \
             --num-battles 10 \
             --out build/battles.json
-          python3 scripts/render_battle_script.py \
+          python scripts/render_battle_script.py \
             --battles-json build/battles.json \
             --template scripts/templates/battles_quick.template \
             --out build/battle_script.txt
@@ -89,7 +89,7 @@ jobs:
           from machfs import Volume
 
           img_path = os.path.join("build", "robot.dsk")
-          out_path = os.path.join("build", "results")
+          out_dir = os.path.join("build", "results")
 
           v = Volume()
           with open(img_path, "rb") as f:

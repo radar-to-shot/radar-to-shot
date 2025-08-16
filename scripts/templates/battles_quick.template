@@ -4,19 +4,19 @@ Wait 2 seconds
 {% for job in battles %}
 {{ job.open_cmds }}
 WaitWindow dialog
-Key return
+Type "\r"
 WaitWindow "{{ job.last_robot_name }}"
 Menu "Battle" "Start Battle..."
 WaitWindow dialog
 Type "{{ job.num_battles }}"
-Key return
+Type "\r"
 Wait 1 seconds
 Menu "Battle" "Reduced Animation"
 Menu "Battle" "Turn Sound Off"
 WaitText "Exit Battlefield"
 CopyScreen 0 24 380 290
 ClipFile write 'PICT' "{{ dest_dir }}:Battle Results - {{ job.label }}"
-Key return
+Type "\r"
 Quit "Robot Warriors 1.0.1"
 Wait 2 seconds
 Open 'GKON' "{{ dest_dir }}:Battle Results - {{ job.label }}"
@@ -25,7 +25,7 @@ WaitWindow "Battle Results - {{ job.label }}"
 Menu "File" "Save as" partial
 WaitWindow dialog
 Drag 380 60 to 0 35 relative window slow
-Key return
+Type "\r"
 Quit "GraphicConverter 68k"
 {% endfor %}
 
