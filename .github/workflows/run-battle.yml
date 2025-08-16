@@ -1,10 +1,12 @@
-name: Run Robot Warriors Battle
+name: Run Robot Warriors Battles
 
 on:
   push:
     branches: ["battle/**"]
     paths:
       - "robots/**"
+      - "scripts/get_battles.py"
+      - "scripts/render_battle_script.py"
       - "scripts/build_disk.py"
       - "images/Mac_IIci.ROM"
       - "images/Robot Warriors CI.dsk"
@@ -32,6 +34,14 @@ jobs:
       - name: Build .dsk (CI template + battle script)
         run: |
           mkdir -p build
+          python3 scripts/get_battles.py \
+            --robots-dir robots \
+            --num-battles 10 \
+            --out build/battles.json
+          python3 scripts/render_battle_script.py \
+            --battles-json build/battles.json \
+            --template scripts/templates/battles_quick.template \
+            --out build/battle_script.txt
           python scripts/build_disk.py \
             --template "images/Robot Warriors CI.dsk" \
             --robots-dir robots \
@@ -72,34 +82,36 @@ jobs:
             fi
           fi
 
-      - name: Extract battle results image
+      - name: Extract battle results images
         shell: python
         run: |
-          import os, sys
+          import os, sys, re
           from machfs import Volume
 
           img_path = os.path.join("build", "robot.dsk")
-          out_path = os.path.join("build", "Battle Results.png")
+          out_path = os.path.join("build", "results")
 
           v = Volume()
           with open(img_path, "rb") as f:
             v.read(f.read())
 
-          try:
-            f = v["Battle Results.png"]
-          except KeyError:
-            print("Battle Results.png not found in Macintosh HD")
+          pattern = re.compile(r"^Battle Results.*\.png$", re.IGNORECASE)
+          os.makedirs(out_dir, exist_ok=True)
+
+          for name in list(v.keys()):
             try:
-              print("Macintosh HD contents:", list(v.keys()))
-            except Exception:
-              pass
-            sys.exit(1)
+              obj = v[name]
+            except KeyError:
+              continue
 
-          os.makedirs(os.path.dirname(out_path), exist_ok=True)
-          with open(out_path, "wb") as out:
-            out.write(getattr(f, "data", b""))
+            if hasattr(obj, "keys"):
+              continue
 
-          print(f"Extracted to {out_path}")
+            if pattern.match(name):
+              out_path = os.path.join(out_dir, name)
+              with open(out_path, "wb") as out:
+                out.write(getattr(obj, "data", b""))
+              print(f"Extracted: {out_path}")
 
       - name: Upload disk image artifact
         uses: actions/upload-artifact@v4
@@ -113,7 +125,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: battle-results-${{ github.sha }}
-          path: build/Battle Results.png
+          path: build/results/**
           if-no-files-found: error
           retention-days: 14
 
@@ -125,6 +137,6 @@ jobs:
 
           **Artifacts**
           - Disk image: **robot-dsk-${{ github.sha }}**
-          - Results image: **battle-results-${{ github.sha }}**
+          - Results images: **battle-results-${{ github.sha }}**
           MARKDOWN
 
