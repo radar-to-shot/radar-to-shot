@@ -45,7 +45,7 @@ jobs:
           python scripts/build_disk.py \
             --template "images/Robot Warriors CI.dsk" \
             --robots-dir robots \
-            --write-battle-script \
+            --battle-script build/battle_script.txt \
             --out build/robot.dsk
           ls -lh build
 
