@@ -54,6 +54,23 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y xvfb basilisk2
 
+      - name: Build deark v1.7.0 from source
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential curl ca-certificates
+
+          mkdir -p "$HOME/src" && cd "$HOME/src"
+          curl -fL -o deark.tar.gz https://github.com/jsummers/deark/archive/refs/tags/v1.7.0.tar.gz
+          tar xzf deark.tar.gz
+          DEARK_DIR="$(tar tzf deark.tar.gz | head -1 | cut -d/ -f1)"
+          cd "$DEARK_DIR"
+
+          make -j"$(nproc)"
+          sudo install -m 0755 deark /usr/local/bin/deark
+
+          # sanity check
+          deark -version
+
       - name: Run battle using headless Basilisk II
         working-directory: build
         timeout-minutes: 20
@@ -85,7 +102,7 @@ jobs:
       - name: Extract battle results images
         shell: python
         run: |
-          import os, sys, re
+          import os, sys
           from machfs import Volume
 
           img_path = os.path.join("build", "robot.dsk")
@@ -95,23 +112,44 @@ jobs:
           with open(img_path, "rb") as f:
             v.read(f.read())
 
-          pattern = re.compile(r"^Battle Results.*\.png$", re.IGNORECASE)
+          rw = v["Desktop Folder"]["Robot Warriors"]
+
           os.makedirs(out_dir, exist_ok=True)
 
-          for name in list(v.keys()):
-            try:
-              obj = v[name]
-            except KeyError:
-              continue
-
+          for name in list(rw.keys()):
+            obj = rw.get(name)
             if hasattr(obj, "keys"):
               continue
 
-            if pattern.match(name):
+            base = name.rsplit(".", 1)[0]
+            if base.lower().startswith("battle results"):
               out_path = os.path.join(out_dir, name)
               with open(out_path, "wb") as out:
                 out.write(getattr(obj, "data", b""))
               print(f"Extracted: {out_path}")
+
+      - name: Convert extracted PICTs to PNG and upload
+        shell: bash
+        run: |
+          set -euo pipefail
+          in_dir="build/results"
+          out_dir="build/results_png"
+          mkdir -p "$out_dir"
+
+          found=0
+          # Pick up anything starting with "Battle Results" (any extension or none)
+          while IFS= read -r -d '' f; do
+            bn="$(basename "$f")"
+            base="${bn%.*}"   # drop extension if present
+            deark -q -m pict "$f" -o "$out_dir/${base}"
+            echo "Converted: $bn -> ${base}"
+            found=$((found+1))
+          done < <(find "$in_dir" -maxdepth 1 -type f -iname 'Battle Results*' -print0)
+
+          if [[ $found -eq 0 ]]; then
+            echo "No matching 'Battle Results*' files to convert in $in_dir"
+            exit 1
+          fi
 
       - name: Upload disk image artifact
         uses: actions/upload-artifact@v4
@@ -125,7 +163,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: battle-results-${{ github.sha }}
-          path: build/results/**
+          path: build/results_png
           if-no-files-found: error
           retention-days: 14
 
