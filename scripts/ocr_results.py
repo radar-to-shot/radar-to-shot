@@ -193,7 +193,7 @@ def read_int(pil_img_or_np: Image.Image | np.ndarray) -> Optional[int]:
     except ValueError:
         return None
 
-def parse_image(path: str, robots: List[str]) -> Dict[str, Any]:
+def parse_image(path: str, robots: List[str], num_battles: Optional[int]) -> Dict[str, Any]:
     gray = load_gray(path)
     if gray.size == 0:
         return {"source_image": os.path.basename(path), "error": "open failed"}
@@ -218,6 +218,7 @@ def parse_image(path: str, robots: List[str]) -> Dict[str, Any]:
     return {
         "source_image": os.path.basename(path),
         "robots": [r.split("/")[-1] for r in robots],
+        "num_battles": num_battles,
         "values": table,
     }
 
@@ -236,8 +237,9 @@ def main() -> None:
         m = re.search(r"Battle Results - ([0-9a-f]{8})", os.path.basename(img_path))
         label = m.group(1) if m else None
         battle = idx.get(label) if label else None
-
-        results.append(parse_image(img_path, battle["robots"]))
+        robots = (battle or {}).get("robots", []) or []
+        num_battles = (battle or {}).get("num_battles", None)
+        results.append(parse_image(img_path, robots, num_battles))
 
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
