@@ -88,10 +88,10 @@ def main(argv=None):
         geo = math.exp(np.mean(np.log(s)))
         rating = (args.center + args.scale * np.log10(s / geo)).tolist()
 
-    players = []
+    robots = []
     for i, name in enumerate(robots):
         g = games[name]; w_ = wins[name]; d_ = draws[name]
-        players.append({
+        robots.append({
             "name": name,
             "rating": round(rating[i], 2),
             "wins": int(w_),
@@ -99,13 +99,13 @@ def main(argv=None):
             "draws": int(d_),
             "games": int(g)
         })
-    players.sort(key=lambda x: (-x["rating"], x["name"].lower()))
+    robots.sort(key=lambda x: (-x["rating"], x["name"].lower()))
 
-    out = {"observations": len(perms), "players": players}
+    out = {"observations": len(perms), "robots": robots}
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {args.out} with {len(players)} robots (obs={len(perms)})")
+    print(f"Wrote {args.out} with {len(robots)} robots (obs={len(perms)})")
 
 if __name__ == "__main__":
     raise SystemExit(main())

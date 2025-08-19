@@ -29,7 +29,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install Python deps
-        run: pip install --disable-pip-version-check --no-cache-dir machfs Jinja2
+        run: pip install --disable-pip-version-check --no-cache-dir machfs Jinja2 numpy pillow choix
 
       - name: Build .dsk (CI template + battle script)
         run: |
@@ -150,6 +150,56 @@ jobs:
             echo "No matching 'Battle Results*' files to convert in $in_dir"
             exit 1
           fi
+
+      - name: OCR results PNGs to JSON
+        run: |
+          python scripts/ocr_results.py \
+            build/results_png \
+            --battles-json build/battles.json \
+            --output build/results.json
+          ls -lh build/results.json
+
+      - name: Compute rankings
+        run: |
+          python generate_results.py \
+            --in build/results.json \
+            --out build/rankings.json
+          ls -lh build/rankings.json
+
+      - name: Upload OCR + rankings JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-and-rankings-${{ github.sha }}
+          path: |
+            build/results.json
+            build/rankings.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Append rankings table to job summary
+        shell: python
+        run: |
+          import json, os, math
+          rk = json.load(open("build/rankings.json","r",encoding="utf-8"))
+          robots = rk.get("robots", [])
+          lines = []
+          lines.append("### Rankings (Elo-style)\n")
+          if not robots:
+            lines.append("> No robots found.\n")
+          else:
+            lines.append("| # | Robot | Rating | W–L–D | Games |")
+            lines.append("|---:|---|---:|:---:|---:|")
+            for i, p in enumerate(robots, start=1):
+              name = p.get("name","?")
+              rating = p.get("rating", float("nan"))
+              wins = int(p.get("wins",0))
+              losses = int(p.get("losses",0))
+              draws = int(p.get("draws",0))
+              games = int(p.get("games", wins+losses+draws))
+              rtxt = f"{rating:.2f}" if isinstance(rating,(int,float)) and math.isfinite(rating) else "—"
+              lines.append(f"| {i} | {name} | {rtxt} | {wins}–{losses}–{draws} | {games} |")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
 
       - name: Upload disk image artifact
         uses: actions/upload-artifact@v4
