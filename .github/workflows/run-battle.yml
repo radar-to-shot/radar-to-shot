@@ -161,7 +161,7 @@ jobs:
 
       - name: Compute rankings
         run: |
-          python generate_results.py \
+          python scripts/generate_results.py \
             --in build/results.json \
             --out build/rankings.json
           ls -lh build/rankings.json
