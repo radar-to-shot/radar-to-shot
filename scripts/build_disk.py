@@ -64,8 +64,8 @@ def add_file(vol: machfs.Volume, folder, file_path: Path):
     """Add a single host file into the given HFS folder, setting Type/Creator."""
     hfs_name = sanitize_hfs_name(file_path.name)
     f = machfs.File()
-    with open(file_path, "rb") as fp:
-        f.data = fp.read()
+    with open(file_path, "r") as fp:
+        f.data = fp.read().replace('\n', '\r').encode('ascii')
     f.rsrc = b""
     f.type = b"TEXT"
     f.creator = b"RWar"
