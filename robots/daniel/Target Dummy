@@ -1,0 +1,64 @@
+; Very tough target dummy which drives in a straight line until close to a
+; wall, and then picks a new random direction to travel in.
+
+ARMOR 4
+FUEL_CAPACITY 2
+
+define min_dist 20
+define left_lim 1
+define top_lim 2
+define right_lim 4
+define bottom_lim 8
+
+allocate cur_lims
+allocate new_lims
+allocate new_direction
+
+0 to new_lims
+0 to cur_lims
+
+359 to random
+random to direction
+20 to speed
+
+main_loop
+    ; Check limits
+    if x < min_dist then new_lims or left_lim to new_lims
+    if 2*min_dist < x then left_lim xor 15 and new_lims to new_lims
+
+    if y < min_dist then new_lims or top_lim to new_lims
+    if 2*min_dist < y then top_lim xor 15 and new_lims to new_lims
+
+    if x + min_dist > XMAX then new_lims or right_lim to new_lims
+    if 2*min_dist + x < XMAX then right_lim xor 15 and new_lims to new_lims
+
+    if y + min_dist > YMAX then new_lims or bottom_lim to new_lims
+    if 2*min_dist + y < YMAX then bottom_lim xor 15 and new_lims to new_lims
+
+    ; Any limits active?
+    if new_lims <> 0 then
+        ; Any change to active limits?
+        if new_lims <> cur_lims then
+            ; Check walls
+            170 to random
+
+            if new_lims and left_lim <> 0 then random + 5 to new_direction
+            if new_lims and right_lim <> 0 then random + 185 to new_direction
+            if new_lims and top_lim <> 0 then random + 95 to new_direction
+            if new_lims and bottom_lim <> 0 then random + 275 to new_direction
+
+            ; Check corners
+            80 to random
+
+            if left_lim + top_lim = new_lims then random + 95 to new_direction
+            if left_lim + bottom_lim = new_lims then random + 5 to new_direction
+            if right_lim + top_lim = new_lims then random + 185 to new_direction
+            if right_lim + bottom_lim = new_lims then random + 275 to new_direction
+
+            new_direction to direction
+        end
+    end
+    
+    20 to speed
+    new_lims to cur_lims
+goto main_loop
