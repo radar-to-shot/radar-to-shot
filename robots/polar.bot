@@ -1,0 +1,290 @@
+CPU_SPEED 1
+ARMOR 0
+FIRE_RATE 0
+ENGINE_SIZE 0
+RADAR_RANGE 2
+CLOAKING 1
+FUEL_CAPACITY 2
+
+allocate tgt_brg_est
+allocate tgt_brg_err
+allocate tgt_brg_rate
+allocate tgt_rng_est
+allocate tgt_rng_rate
+allocate shot_brg
+allocate shot_rng
+allocate radar_brg
+allocate radar_brg_est
+allocate radar_rng
+allocate radar_rng_est
+allocate radar_size
+allocate radar_delta
+allocate scan_rate
+allocate scan_dir
+allocate scan_found
+allocate temp
+allocate cloak_ticks
+allocate tgt_ticks
+allocate ticks
+allocate max_brg_err
+allocate max_brg_rate
+allocate min_rng
+allocate max_rng
+allocate max_rng_rate
+allocate cloak_rng
+
+allocate func_mvt_strat
+
+; 0-360 to signed angle: x - 180 * 182
+; signed angle to 0-360: x / 182 + 180
+
+; Set constants
+11284 to max_brg_err ; 62 * 182, 62 degrees being the angular size of an adjacent robot
+6370 to max_brg_rate ; 80 m/s relative velocity, 6 m/tick, 11m is 62 deg so approx 35 deg per tick
+100 to min_rng       ; 10 m
+4931 to max_rng      ; 493.1 m, one corner of the map to the other
+60 to max_rng_rate   ; 60 m/s, or 6 m/tick
+2000 to cloak_rng    ; 150 m, cloak briefly each shot if our target is closer than this
+
+; Timer init
+0 to ticks           ; incrementing counter, +1 every 0.1 sec
+
+tgt_update to time_int_xfer
+1 to time_int_mask
+
+func_mvt_initial to func_mvt_strat
+
+; tgt_reset is called on startup and each time we lose the target
+tgt_reset
+    32767 to tgt_brg_err
+    0 to tgt_brg_est to tgt_brg_rate to tgt_rng_rate to radar_brg_est
+    -10 to tgt_ticks     ; counter to identify whether a radar return was obtained in the current tick
+    max_rng to tgt_rng_est
+
+; radar_reset returns the scan to the current minimum bearing estimate
+radar_reset
+    if tgt_brg_rate < 0 then
+        tgt_brg_est + tgt_brg_err to radar_brg
+        -1 to scan_dir
+    else
+        tgt_brg_est - tgt_brg_err to radar_brg
+        1 to scan_dir
+    end
+    tgt_brg_err to radar_delta
+    3100 / tgt_rng_est + 1 * 182 to radar_size      ; expected angular size of the target (+/-)
+    0 to scan_found
+
+; radar_scan sweeps from the current minimum bearing estimate to the current maximum bearing estimate
+radar_scan
+    ; use a slower scan rate when we've found a target
+    if ticks - tgt_ticks < 2 then
+        radar_size / 3 + 91 to scan_rate
+    else
+        radar_size + 91 to scan_rate
+    end
+
+    scan_rate * scan_dir + radar_brg to radar_brg
+    0 - scan_rate / 2 + radar_delta to radar_delta
+
+    radar_brg / 182 + 180 to RADAR
+    RADAR * 10 to radar_rng
+
+    if radar_rng > 0 then
+        3100 / radar_rng + 1 * 182 to radar_size
+        radar_size * 6 to tgt_brg_err
+        ticks to tgt_ticks                      ; track the last time we saw the target
+
+        if radar_rng_est > 0 then
+            radar_brg_est / 2 to radar_brg_est
+            radar_brg / 2 + radar_brg_est to radar_brg_est
+        else
+            radar_brg to radar_brg_est
+        end
+        radar_rng to radar_rng_est
+        1 to scan_found
+    else
+        if scan_found > 0 then
+            0 - scan_dir to scan_dir
+            0 to scan_found
+            tgt_brg_err * 2 to radar_delta
+        end
+    end
+
+    ; Reset target status if there's a target range estimate but we haven't had a detection in 5 ticks
+    if radar_delta < 0 then
+        if ticks - tgt_ticks > 5 then
+            goto tgt_reset
+        else
+            goto radar_reset
+        end
+    end
+
+    goto radar_scan
+
+
+; Interrupt function to trigger the current movement strategy at 10 Hz, and manage taget prediction updates and firing
+tgt_update
+    ; Move the estimate forward by one tick
+    tgt_brg_est + tgt_brg_rate to tgt_brg_est
+    tgt_rng_est + tgt_rng_rate to tgt_rng_est
+
+    if tgt_rng_est > max_rng then
+        max_rng to tgt_rng_est
+    end
+    if tgt_rng_est < min_rng then
+        min_rng to tgt_rng_est
+    end
+
+    ; Update the min/max bearing based on the current detection
+    if radar_rng_est > 0 then
+        if tgt_rng_est < max_rng then
+            radar_brg_est - tgt_brg_est to temp
+            temp / 7 to temp
+            tgt_brg_rate - temp to tgt_brg_rate
+
+            radar_rng_est - tgt_rng_est to temp
+            temp / 7 to temp
+            tgt_rng_rate - temp to tgt_rng_rate
+        else
+            0 to tgt_brg_rate to tgt_rng_rate
+        end
+
+        ; Clamp bearing rate to the valid range
+        if 0 - tgt_brg_rate > max_brg_rate then
+            0 - max_brg_rate to tgt_brg_rate
+        else
+            if tgt_brg_rate > max_brg_rate then
+                max_brg_rate to tgt_brg_rate
+            end
+        end
+
+        ; Clamp range rate to the valid range
+        if 0 - tgt_rng_rate > max_rng_rate then
+            0 - max_rng_rate to tgt_rng_rate
+        else
+            if tgt_rng_rate > max_rng_rate then
+                max_rng_rate to tgt_rng_rate
+            end
+        end
+
+        radar_brg_est to tgt_brg_est
+        radar_rng_est to tgt_rng_est ; we know for sure that the target is this far away right now
+
+        0 to radar_rng_est to radar_brg_est
+    end
+    
+    if SHOT = 0 then
+        if tgt_rng_est < max_rng then
+            tgt_rng_est / SHOT_SPEED / 10 to temp
+
+            ; compensate range change for shot time in flight
+            tgt_rng_rate * temp  + tgt_rng_est / 10 to shot_rng
+
+            ; compensate bearing change for shot time in flight
+            shot_rng * 10 / SHOT_SPEED / 10 to temp
+            tgt_brg_rate * temp + tgt_brg_est / 182 + 180 to shot_brg
+            shot_brg to AIM
+
+            if shot_rng < 15 then
+                15 to SHOT
+            else
+                shot_rng to SHOT
+            end
+
+            ; Cloak briefly based on shot range
+            if tgt_rng_est < cloak_rng then
+                shot_rng / SHOT_SPEED * 2 to cloak_ticks
+            end
+        end
+    end
+
+    gosub func_mvt_strat
+
+    if cloak_ticks > 0 then
+        cloak_ticks - 1 to cloak_ticks
+        1 to CLOAK
+        10 to SPEED
+    else
+        0 to CLOAK
+        20 to SPEED
+    end
+
+    if tgt_ticks > 30000 then
+        0 to tgt_ticks
+    else
+        tgt_ticks + 1 to tgt_ticks
+    end
+endint
+
+
+; Function to manage initial movement -- track to the lower-right corner of the map
+func_mvt_initial
+    if X < 351 then                    ; too far left
+        if Y < 283 then                ; too far up
+            135 to DIRECTION           ; move down-right
+        else
+            if Y > 298 then            ; too far down
+                45 to DIRECTION        ; move up-right
+            else
+                90 to DIRECTION        ; vertical OK, move right
+            end
+        end
+    else
+        if X > 366 then                ; too far right
+            if Y < 283 then            ; too far up
+                225 to DIRECTION       ; move down-left
+            else
+                if Y > 298 then        ; too far down
+                    315 to DIRECTION   ; move up-left
+                else
+                    270 to DIRECTION   ; vertical OK, move left
+                end
+            end
+        else                           ; horizontal OK
+            if Y < 283 then            ; too far up
+                180 to DIRECTION       ; move down
+            else
+                if Y > 298 then        ; too far down
+                    0 to DIRECTION     ; move up
+                else
+                    func_mvt_up_right to func_mvt_strat  ; horizontal and vertical OK, change strat
+                end
+            end
+        end
+    end
+return
+
+; Function to manage up-right movement
+func_mvt_up_right
+    if X > 361 then                   ; too far right
+        if Y < 243 then               ; too far up
+            func_mvt_down_left to func_mvt_strat  ; reached our top/right pos, change strat
+        else
+            0 to DIRECTION            ; just move up
+        end
+    else
+        if Y < 243 then               ; too far up
+            90 to DIRECTION           ; just move right
+        else
+            45 to DIRECTION           ; move up/right
+        end
+    end
+return
+
+; Function to manage down-left movement
+func_mvt_down_left
+    if Y > 293 then                   ; too far down
+        if X < 311 then               ; too far left
+            func_mvt_up_right to func_mvt_strat  ; reached our bottom/left pos, change strat
+        else
+            270 to DIRECTION          ; just move left
+        end
+    else
+        if X < 311 then               ; too far left
+            180 to DIRECTION          ; just move down
+        else
+            225 to DIRECTION          ; move down/left
+        end
+    end
+return
+
