@@ -1,0 +1,339 @@
+; Radar tracking testbed.
+
+RADAR_RANGE 2
+;FIRE_RATE 2
+CPU_SPEED 2
+FUEL_CAPACITY 2
+
+; Radar state definitions
+define radar_state_search 0
+define radar_state_track  1
+
+allocate radar_state
+radar_state_search to radar_state
+
+; Radar angle increment. By using the closest prime number to 36, we cover a
+; full revolution approximately each second, but will also eventually visit
+; every possible 1-degree look angle. Given the tracking filter time
+; constant, this gives more-or-less optimal time to detection for both near
+; and far targets.
+define look_bearing_increment 37
+allocate look_bearing
+
+; The built-in shot_speed seems to resolve to 18 rather than 180
+define shot_speed_mps 180
+
+; Trackfile timeout duration.
+define track_timeout 10
+allocate track_stale_ticks
+allocate track_age_ticks
+allocate last_detection_ticks
+allocate last_track_bearing
+allocate bearing_rate_raw
+
+; Track states:
+;   - Range in metres
+;   - Range rate in tenths of a metre / second
+;   - Bearing scaled such that [-32768, 32767] maps to [-180, 180) degrees
+;   - Bearing rate in tenths of a degree / second
+allocate track_range
+allocate track_range_rate
+allocate track_bearing
+allocate track_bearing_rate
+
+; These calculations are used for shot calculations and store the target
+; motion as if we were stationary.
+allocate target_radial_vel
+allocate target_tangential_vel
+
+; Reciprocal of the track bearing update gain.
+define track_bearing_gain_recip 5
+
+; Conversion factor for scaled types.
+define angle_factor 182
+define range_rate_factor 10
+
+allocate est_range
+allocate scan_bearing
+allocate scan_bearing_full
+allocate scan_increment
+allocate scan_dir
+0 to scan_bearing
+1 to scan_dir
+
+; IIR filter states:
+;   - 'x' refers to the input delay line
+;   - 'y' refers to the output delay line
+allocate range_rate_x 2
+allocate range_rate_y 2
+allocate bearing_rate_x 2
+allocate bearing_rate_y 2
+
+; IIR filter coefficients.
+; Derived for a 0.1-second time constant using the MATLAB expression:
+;   >> d = designfilt('lowpassiir', 'FilterOrder', 2, 'HalfPowerFrequency', 1 / (0.5 * 2*pi), 'SampleRate', 5);
+;   >> round(10 * d.Numerator / d.Numerator(1))
+;   >> round(10 * d.Denominator / d.Numerator(1))
+define b0 1
+define b1 2
+define b2 1
+define a0 32
+define a1 -47
+define a2 18
+
+; IIR function parameters and return values.
+allocate x1_ptr
+allocate x2_ptr
+allocate y1_ptr
+allocate y2_ptr
+allocate in
+allocate out
+allocate return_addr
+
+; Registers for shot calculations.
+allocate shot_ready
+allocate track_ready
+allocate flight_time_ticks
+allocate delta_speed
+
+define min_track_stale_ticks 10
+
+; Enable 10 Hz interrupt.
+1 to time_int_mask
+track_update to time_int_xfer
+
+; Movement variables.
+define min_dist 20
+define left_lim 1
+define top_lim 2
+define right_lim 4
+define bottom_lim 8
+
+allocate cur_lims
+allocate new_lims
+allocate new_direction
+
+0 to new_lims
+0 to cur_lims
+
+359 to random
+random to direction
+20 to speed
+
+main_loop
+    ; Check conditions for a shot.
+    ;   - Gun timed out
+    ;   - Radar in tracking mode
+    ;   - Minimum track age reached
+    0 to shot_ready
+    0 to track_ready
+
+    if shot = 0 then 1 to shot_ready
+    if track_age_ticks >= min_track_stale_ticks then 1 to track_ready
+
+    if shot_ready and track_ready <> 0 then
+        ; Calculate target velocity from track state and own speed.
+        speed * range_rate_factor to dist_conv
+        0 - track_bearing / angle_factor + 180 + direction to angle_conv
+
+        track_range_rate + y_conv to target_radial_vel
+        0 - x_conv / range_rate_factor * 57 / track_range * angle_factor / 10 + track_bearing_rate to target_tangential_vel
+
+        ; Calculate flight time in ticks.
+        0 - target_radial_vel / range_rate_factor + shot_speed_mps to delta_speed
+        track_range * 10 / delta_speed to flight_time_ticks
+
+        target_tangential_vel * flight_time_ticks + track_bearing / angle_factor to aim
+        target_radial_vel * flight_time_ticks / range_rate_factor / 10 + track_range to shot
+    end
+
+    ; Movement logic.
+    ; TODO: improve - currently just follows random straight lines.
+
+    ; Check limits
+    if x < min_dist then new_lims or left_lim to new_lims
+    if 2*min_dist < x then left_lim xor 15 and new_lims to new_lims
+
+    if y < min_dist then new_lims or top_lim to new_lims
+    if 2*min_dist < y then top_lim xor 15 and new_lims to new_lims
+
+    if x + min_dist > XMAX then new_lims or right_lim to new_lims
+    if 2*min_dist + x < XMAX then right_lim xor 15 and new_lims to new_lims
+
+    if y + min_dist > YMAX then new_lims or bottom_lim to new_lims
+    if 2*min_dist + y < YMAX then bottom_lim xor 15 and new_lims to new_lims
+
+    ; Any limits active?
+    if new_lims <> 0 then
+        ; Any change to active limits?
+        if new_lims <> cur_lims then
+            ; Check walls
+            170 to random
+
+            if new_lims and left_lim <> 0 then random + 5 to new_direction
+            if new_lims and right_lim <> 0 then random + 185 to new_direction
+            if new_lims and top_lim <> 0 then random + 95 to new_direction
+            if new_lims and bottom_lim <> 0 then random + 275 to new_direction
+
+            ; Check corners
+            80 to random
+
+            if left_lim + top_lim = new_lims then random + 95 to new_direction
+            if left_lim + bottom_lim = new_lims then random + 5 to new_direction
+            if right_lim + top_lim = new_lims then random + 185 to new_direction
+            if right_lim + bottom_lim = new_lims then random + 275 to new_direction
+
+            new_direction to direction
+        end
+    end
+    
+    20 to speed
+    new_lims to cur_lims
+goto main_loop
+
+track_update
+    if radar_state = radar_state_track then
+        last_detection_ticks + 1 to last_detection_ticks
+
+        ; Propagate the expected target range and bearing using the range and
+        ; bearing rates.
+        track_bearing + track_bearing_rate to track_bearing
+        track_range_rate / range_rate_factor / 10 + track_range to est_range
+
+        ; Based on expected track range, alternately offset the scan left or
+        ; right of the expected track bearing by slightly less than the
+        ; half-width of the robot (5 metres).
+        160 / est_range + 1 * scan_dir to scan_increment
+        track_bearing_rate / angle_factor + scan_bearing + scan_increment mod 360 to scan_bearing
+        if scan_bearing >= 180 then scan_bearing - 360 to scan_bearing
+
+        scan_bearing to radar
+
+        if radar > 0 then
+            0 to track_stale_ticks
+
+            trace
+
+            scan_bearing * angle_factor to scan_bearing_full
+
+            ; Apply track bearing proportional feedback term.
+            scan_bearing_full - track_bearing / track_bearing_gain_recip + track_bearing to track_bearing
+
+            ; Calculate bearing rate via differentiation.
+            scan_bearing_full - last_track_bearing / last_detection_ticks to bearing_rate_raw
+            scan_bearing_full to last_track_bearing
+
+            ; Iterate IIR tracking filters.
+            &bearing_rate_x to stack
+            &bearing_rate_y to stack
+            bearing_rate_raw to stack
+            gosub iir_2nd_order_filt
+            stack to track_bearing_rate
+
+            ; Update range and range rate.
+            &range_rate_x to stack
+            &range_rate_y to stack
+            radar - track_range * 10 / last_detection_ticks * range_rate_factor to stack
+            gosub iir_2nd_order_filt
+            stack to track_range_rate
+            radar to track_range
+
+            0 to last_detection_ticks
+        else
+            if track_stale_ticks = 0 then
+                if scan_dir > 0 then
+                    -1 to scan_dir
+                else
+                    1 to scan_dir
+                end
+            end
+
+            est_range to track_range
+
+            track_stale_ticks + 1 to track_stale_ticks
+        end
+
+        track_age_ticks + 1 to track_age_ticks
+
+        if track_stale_ticks > track_timeout then
+            radar_state_search to radar_state
+            0 to look_bearing
+            0 to track_age_ticks
+        end
+
+        endint
+    end
+
+    if radar_state = radar_state_search then
+        ; If in search mode, increment look angle and take a measurement.
+        look_bearing + look_bearing_increment to radar to look_bearing
+        if radar > 0 then
+            ; Initialise track
+            radar_state_track to radar_state
+            0 to track_age_ticks
+            0 to track_stale_ticks
+            0 to last_detection_ticks
+
+            ; Wrap look bearing to +/- 180.
+            look_bearing mod 360 to look_bearing
+            if look_bearing >= 180 then look_bearing - 360 to look_bearing
+
+            look_bearing to scan_bearing
+            look_bearing * angle_factor to track_bearing
+            track_bearing to last_track_bearing
+            0 to track_bearing_rate
+            radar to track_range
+            0 to track_range_rate
+
+            &range_rate_x to x1_ptr
+            0 to x1_ptr^
+            x1_ptr + 1 to x1_ptr
+            0 to x1_ptr^
+
+            &range_rate_y to y1_ptr
+            0 to y1_ptr^
+            x1_ptr + 1 to y1_ptr
+            0 to y1_ptr^
+
+            &bearing_rate_x to x1_ptr
+            0 to x1_ptr^
+            x1_ptr + 1 to x1_ptr
+            0 to x1_ptr^
+
+            &bearing_rate_y to y1_ptr
+            0 to y1_ptr^
+            x1_ptr + 1 to y1_ptr
+            0 to y1_ptr^
+        end
+
+        endint
+    end
+endint
+
+iir_2nd_order_filt
+    stack to return_addr
+    stack to in
+    stack to y1_ptr
+    stack to x1_ptr
+    y1_ptr + 1 to y2_ptr
+    x1_ptr + 1 to x2_ptr
+
+    ; IIR filter difference equation.
+    in * b0 to out
+    x1_ptr^ * b1 + out to out
+    x2_ptr^ * b2 + out to out
+
+    0 - y1_ptr^ * a1 + out to out
+    0 - y2_ptr^ * a2 + out to out
+
+    out / a0 to out
+
+    ; Update filter state.
+    x1_ptr^ to x2_ptr^
+    in to x1_ptr^
+
+    y1_ptr^ to y2_ptr^
+    out to y1_ptr^
+
+    out to stack
+    goto return_addr
