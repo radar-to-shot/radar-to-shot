@@ -1,0 +1,287 @@
+ROBOT WARRIORS 1.0.1 — CODING AGENT BRIEF
+
+Goal
+Create or improve Robot Warriors robot SOURCE TEXT, compile it, and test it in
+reproducible battles. Deliver the source, hardware-point allocation, strategy,
+and actual test results. A Robot Warriors program is not JavaScript, C, Python,
+or ordinary BASIC. Do not invent language features or browser APIs.
+
+The browser provides an editor/upload flow, compilation, and battles between
+2–5 selected robots. Use those visible controls and inspect their results. This
+brief is self-contained for ordinary robot programming; language.md provides the
+full reference and original-manual.pdf is the original documentation. Executable
+behavior takes precedence where the 1991 manual differs from observed behavior.
+
+Language essentials
+- Case-insensitive ASCII names; start with a letter, then letters/digits/_.
+  Only the first 15 characters matter. Avoid reserved words and duplicate names.
+- A label is a bare name on its own line, WITHOUT a colon. Forward labels work.
+- Semicolon starts a comment through end of line. It is not a statement separator.
+- Use one statement per line except IF ... THEN simple-statement. Always finish
+  the file with a newline. Indentation does not define blocks.
+- Original text uses Mac Roman and CR. File runners accept UTF-8 by default,
+  normalize LF/CRLF/CR to CR, and reject text not representable in Mac Roman.
+  Prefer ASCII source. Original input limit: 32,767 normalized bytes.
+- ALLOCATE name [count] reserves zero-initialized words. Use positive counts,
+  at most 200 words total. Declare every variable before taking its address.
+- DEFINE name number names a numeric constant. No expressions or user-defined
+  constant references in DEFINE. Do not repeat declarations.
+- expression TO destination [TO destination ...] assigns the same accumulator
+  to every destination. Device writes do not replace the accumulator.
+- Operators: + - * / MOD AND OR XOR. All have equal precedence, evaluated LEFT
+  TO RIGHT. No parentheses. AND/OR/XOR are bitwise, not Boolean connectors.
+- All arithmetic wraps to signed 16-bit words. Decimal literal magnitude <=32767;
+  even literal -32768 is rejected. Integer division truncates toward zero.
+- A unary sign must touch a decimal literal at expression start. -variable and
+  1 + -2 are invalid. Write 0 - variable and 1 - 2 instead.
+- Comparisons: = <> < > <= >=. IF's left operand may be an expression; its right
+  operand must be one value, not an expression. Use nested IFs for conjunctions.
+
+Control forms
+  IF condition THEN assignment-or-GOTO-or-GOSUB-or-RETURN-or-RESET-or-ENDINT
+
+  IF condition THEN
+      statements
+  ELSE
+      statements
+  END
+
+  WHILE condition DO
+      statements
+  END
+
+  REPEAT
+      statements
+  UNTIL condition
+
+ELSE is optional. Nest blocks at most 15 levels. END closes IF/WHILE; it does not
+end a program. UNTIL exits when its condition is TRUE. Do not put an IF inside a
+single-line IF. GOTO label jumps. GOSUB label pushes a return address; RETURN pops
+it. Computed targets can come from variables/registers/named constants, but direct
+numeric GOTO/GOSUB literals are rejected. Use labels, not guessed addresses.
+
+Every successful compile appends RESET. Falling through therefore restarts and
+clears variables; it also increments the reset diagnostic. End the main execution
+path with a deliberate loop. RESET preserves position, damage, fuel, reload and
+population; it does not heal or refuel a robot. Normal TRACE is removed; never
+use it for logic/timing, especially after a single-line IF.
+
+Memory and stack
+  ALLOCATE cells 4
+  ALLOCATE pointer
+  &cells TO pointer
+  7 TO pointer^
+  pointer + 1 TO pointer
+  9 TO pointer^
+
+&variable is its memory address; pointer^ dereferences a variable holding an
+address. No array[index] syntax. A label used as data is already a program
+instruction address, with no & required. Keep memory addresses separate from
+program addresses. Runtime indirect indices 0–200 are accepted, but ordinary
+allocations should stay within 200 words. Do not exploit negative allocations,
+undeclared addresses, duplicate-declaration bugs, or direct-memory aliases.
+
+STACK reads pop; STACK writes push. It is not a stack-depth register. There are
+29 ordinary stack slots; the thirtieth physical word is reserved for interrupt
+state. Calls, manual pushes, and interrupts share the stack. Underflow, overflow,
+invalid jumps and invalid indirect targets reset the CPU.
+
+Hardware: total cost <=6 points; omitted settings are zero
+  CPU_SPEED     0..2: 1000, 2000, 4000 cycles/second
+  FIRE_RATE     0..4: 28, 20, 15, 11, 7 ticks reload delay
+  ENGINE_SIZE   0..1: commanded speed cap 20 or 40 metres/second
+  RADAR_RANGE   0..2: 200, 310, 500 metres (strict range comparison)
+  FUEL_CAPACITY 0..2: 1850, 2500, 3200 starting fuel units
+  CLOAKING      0..1: cloak unavailable or available
+  ARMOR         0..5: raw damage capacity 100, 115, 130, 145, 165, 200
+
+Write attributes as e.g. CPU_SPEED 1. Attribute names are not expression
+constants. CPU_SPEED 3 is NOT legal. FIRE_RATE 1 is 20 ticks, NOT 21.
+
+All 19 registers (IDs also index raw JSON register snapshots)
+  0 X             read-only integer center X
+  1 Y             read-only integer center Y
+  2 AIM           read/write gun angle
+  3 SHOT          read reload ticks; write firing distance if zero/ready
+  4 DAMAGE        read-only damage percent; 100 means destroyed
+  5 SPEED         read/write COMMANDED speed, clamped to engine cap; needs fuel
+  6 DIRECTION     read/write travel angle, independent of gun aim
+  7 FUEL          read-only remaining fuel
+  8 CLOAK         read/write zero=off, nonzero=on; needs CLOAKING 1 and fuel
+  9 NUM_ROBOTS    read-only count of OTHER live robots, including cloaked ones
+ 10 TIME_INT_MASK read/write zero=interrupts off, nonzero=on
+ 11 TIME_INT_XFER read/write interrupt routine's instruction address
+ 12 X_CONV        read/write conversion X; no trigger
+ 13 Y_CONV        read/write conversion Y; TRIGGERS rectangular-to-polar
+ 14 ANGLE_CONV    read/write conversion angle; no trigger
+ 15 DIST_CONV     read/write conversion distance; TRIGGERS polar-to-rectangular
+ 16 RADAR         write scan angle; read distance or -1 for miss
+ 17 RANDOM        write exclusive range N; read a new number in [0,N), for N>0
+ 18 STACK         write pushes; read pops
+
+Angles are degrees clockwise from up: 0 up, 90 right, 180 down, 270 left. Y grows
+downward. AIM/DIRECTION/RADAR normalize angles, except negative exact multiples
+of 360 become 360; prefer nonnegative 0..359. ANGLE_CONV is not normalized on write.
+Read-only writes compile but are ignored. There are no VX/VY language registers.
+
+To scan and sample correctly:
+  AIM TO RADAR
+  RADAR TO target
+AIM TO RADAR TO target would store AIM's ANGLE in target, not the scan result.
+A scan does not change AIM. RANDOM writes change its RANGE, not the generator seed.
+RANDOM range 0 returns 0 without consuming a sample. Raw JSON registers[16] stores
+last scan angle; [17] stores random range; [18] is not the stack top. Source reads
+have special behavior, so store samples into variables to observe them.
+
+Conversion ordering, different from the manual's polar trigger description:
+  30 TO X_CONV
+  -40 TO Y_CONV      ; computes ANGLE_CONV and DIST_CONV
+  90 TO ANGLE_CONV
+  50 TO DIST_CONV    ; computes X_CONV=50, Y_CONV=0
+
+Built-in constants: XMAX=381, YMAX=313, SHOT_SPEED=18. That last value is the actual
+compiled constant (metres/tick), NOT the manual's 180 metres/second value. Use named
+constants of your own for readable tactical thresholds.
+
+Timing and world behavior
+- A tick is 0.1 simulated seconds. The CPU budget is 100/200/400 cycles per tick.
+  Source lines compile into multiple instructions; arithmetic+TO usually needs
+  LOAD, operation, STORE. Most instructions cost 1 cycle.
+- A successful shot STORE costs 11 cycles, RADAR STORE 41, conversion-trigger STORE 51:
+  each includes 1 ordinary cycle plus 10/40/50 extra. Ignored reloading shots cost 1.
+  Overshoot is deducted next tick. TRACE, if emitted for debugging, costs 0.
+- At each tick, reload/population update, CPUs run in input order, then physics
+  updates. Busy loops waiting for motion still consume their allotted CPU cycles.
+- Interrupts run at the start of a tick when enabled and not already active.
+  Store a label in TIME_INT_XFER, then 1 in TIME_INT_MASK. Interrupt entry costs 1,
+  pushes the return PC and saves accumulator. ENDINT restores them and re-enables
+  interrupt entry; RETURN alone does not. Example:
+    ALLOCATE clock
+    timer TO TIME_INT_XFER
+    1 TO TIME_INT_MASK
+    main
+        GOTO main
+    timer
+        clock + 1 TO clock
+    ENDINT
+- Arena bounds are 0..381 by 0..313; centers normally stay X 5..376 / Y 5..308. Leave a
+  turning margin. SPEED is a target; acceleration/deceleration take time.
+- Component acceleration is 2 or 4 m/s per tick. Collisions stop movement and inflict
+  speed-related damage. A zero-speed command is not an instantaneous brake.
+- Movement burns integer abs(commanded SPEED)/10 fuel each tick; cloak adds 8.
+  Thus commanded speeds 1..9 consume no movement fuel in the executable. Fuel
+  exhaustion clears speed/cloak; actual velocity decelerates. CPU/gun still work.
+- Radar ignores cloaked targets, chooses the nearest target in its cone/range,
+  and returns distance only. The cone is roughly +/-(310/distance+1) degrees,
+  capped below 33 degrees; distant targets need small scan increments.
+- A shell flies to its fixed aimed point, not to the future target position.
+  Flight duration=abs(distance)/18+1 ticks; reload is at least that duration and
+  the FIRE_RATE delay. One shell per robot; unlimited ammunition. Negative
+  distances reverse direction; use positive tactical distances.
+- Explosions can hit the shooter: rounded distance < 6 gives 20 raw damage; 6..15
+  gives 16-distance; 16+ gives 0. Armor scales the damage percent. Avoid close shots.
+
+Complete starter: Compass Scout (6 hardware points, 49 compiled instructions)
+
+; Compass Scout: a small, readable starting point.
+CPU_SPEED 1
+ENGINE_SIZE 1
+FIRE_RATE 2
+RADAR_RANGE 1
+ARMOR 1
+
+ALLOCATE target
+
+90 TO DIRECTION
+40 TO SPEED
+
+patrol
+    IF X < 20 THEN 90 TO DIRECTION
+    IF X > 360 THEN 270 TO DIRECTION
+    IF Y < 20 THEN 180 TO DIRECTION
+    IF Y > 290 THEN 0 TO DIRECTION
+
+    IF SPEED = 0 THEN
+        DIRECTION + 90 TO DIRECTION
+        40 TO SPEED
+    END
+
+    AIM + 2 TO AIM
+    AIM TO RADAR
+    RADAR TO target
+    IF target > 20 THEN
+        IF SHOT = 0 THEN target TO SHOT
+    END
+GOTO patrol
+
+Reproducible tests from a checkout
+  cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+  cmake --build build --parallel
+  ctest --test-dir build --output-on-failure
+  build/robotwar compile 'robots/my-team/Compass Scout'
+  python3 scripts/run_headless_battle.py \
+    'robots/my-team/Compass Scout' robots/examples/Seeker \
+    --seed 1 --ticks 1000 --output battle.json
+
+Compile output error must be empty; do not run partially generated code. The
+source byte cursor is zero-based and may point after the offending token. The
+successful compiler also reports a final-source cursor; that is not an error.
+
+Browser automation API (JavaScript host code, NOT robot source):
+  await window.robotwar.ready();
+  const source = "loop\ngoto loop\n";
+  const compiled = await window.robotwar.compile(source);
+  if (compiled.error) throw new Error(compiled.error);
+  const result = await window.robotwar.battle({
+    robots: [{name: "idle-a", source}, {name: "idle-b", source}],
+    seed: 1, ticks: 10
+  });
+  console.log(result.tick, result.alive, result.rng_seed, result.robots);
+
+compile returns the native compiler result; battle returns complete native state
+without animation. Host failures reject their promises. request(rawRequest) sends
+a native JSON request. cancel() restarts the worker; await ready() afterward.
+The UI's optional Watch battle view animates the same engine; presentation speed
+does not alter outcomes. Robot programs themselves remain plain language text.
+
+Native JSONL accepts one request per line via build/robotwar jsonl, for example:
+{"kind":"compile","source":"loop\rgoto loop\r"}
+{"kind":"battle","robots":[{"name":"idle-a","source":"loop\rgoto loop\r"},{"name":"idle-b","source":"loop\rgoto loop\r"}],"seed":1,"ticks":10,"stop_when_finished":true,"include_rng_seed":true}
+
+The file runner accepts 2–5 files and stops after a whole tick leaves <=1 survivor,
+or at the cap. winner is a zero-based input index or null. termination is
+last_survivor, mutual_destruction, or tick_limit. A tick-limit draw is NOT a win
+for the robot with more health. score is a win counter, not damage inflicted.
+Inspect error_resets, fuel, damage, movement and final variable memory as well as
+winner. Seeds 0, 2147483647, 4294967294 are invalid for multi-robot file battles.
+Use seed 1 initially, then multiple other seeds, and reverse the input order.
+
+Optional tournament over your team directory:
+  python3 scripts/run_tournament.py --robots-dir robots/my-team \
+    --seed 1 --seeds-per-pair 3 --ticks 2000 \
+    --output build/tournament/results.json --summary build/tournament/summary.md
+This tests each pairing in both orders with matching seeds; ties can have joint
+winners. It measures head-to-head performance, not every multiplayer situation.
+
+Acceptance checklist
+1. Supply plain Robot Warriors source text with a final newline and distinct names
+   of at most 15 characters. No JavaScript, guessed syntax, or engine-rule changes.
+2. List all seven hardware settings and prove their total cost is <=6.
+3. Compile with no error, within 200 allocated words, 199 user symbols and
+   15 block levels.
+   Keep generated code comfortably below the 1990 user-instruction line limit.
+4. Show reproducible 2-robot and larger (up to 5) battle results against named examples,
+   several seeds and both input orders. Record sources, order, seed, tick cap,
+   termination and winner; report draws honestly. Do not invent test results.
+5. Inspect unwanted resets, fuel exhaustion, wall collisions and self-damage.
+   Preserve a main loop; balance calls/stack; use ENDINT for interrupts.
+6. Explain the strategy, known weaknesses, and the observed effect of each change.
+   A single favourable battle is not enough to claim an improvement.
+
+Compatibility notes to remember
+The executable, not a literal reading of the manual, defines this project:
+CPU_SPEED tops out at 2; FIRE_RATE 1 reloads in 20 ticks; RANDOM upper bound is exclusive;
+SHOT_SPEED is 18; DIST_CONV triggers polar-to-rectangular conversion; ordinary stack
+capacity is 29; the VM has 201 memory words but the normal allocation budget is 200.
+There is strong original-68k/IIci-ROM differential evidence, not an exhaustive
+proof for every exceptional machine state. Prefer the ordinary valid forms above.

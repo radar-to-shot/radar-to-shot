@@ -1,5 +1,11 @@
 # radar-to-shot
 
+[**Open Robot Warriors Lab**](https://radar-to-shot.github.io/radar-to-shot/) to
+upload or edit robot scripts, choose sample opponents, and run battles locally
+in your browser using WebAssembly. The page includes the complete language
+reference and a copyable agent brief. Enable **Watch battle** for a live view
+inspired by the original game.
+
 The headless C++20 implementation, original-code extraction/decompilation, and
 compatibility tests are documented in [docs/HEADLESS.md](docs/HEADLESS.md).
 The [battle runners](docs/HEADLESS.md#battle-scripts-native-and-original-68k)
@@ -8,6 +14,8 @@ original application under 68k emulation.
 The [tournament workflow](docs/HEADLESS.md#tournaments) ranks all robots in a
 selected subdirectory using balanced head-to-head matches and publishes JSON
 results plus standings.
+See [browser development and publishing](docs/HEADLESS.md#browser-workbench-and-github-pages)
+for the WASM build, browser API, tests, and deployment workflow.
 
 
 This is a repository to help with developing robots for the 1991 Mac game "Robot Warriors", all in a browser window.
