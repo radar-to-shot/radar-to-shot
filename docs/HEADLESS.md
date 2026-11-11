@@ -106,6 +106,131 @@ Native script tests also run through CTest. CI runs them in both optimized and
 sanitizer builds, and separately builds the patched emulator to compare results
 from both engines, including seeded random reads and battles ending in deaths.
 
+## Tournaments
+
+The **Robot tournament** GitHub Actions workflow runs all robot source files in
+a selected subdirectory of `robots/`. In **Actions → Robot tournament → Run
+workflow**, set `robots_subdir` to, for example, `examples` or `my-team`. Paths
+are relative to `robots/`; nested directories are supported. Automatic push and
+pull-request runs use `examples` when robot examples, engine code, scripts,
+tests, or the workflow change.
+
+The workflow builds the native C++ engine in Release mode, runs CTest, and then
+executes the tournament. It publishes standings in the job summary and uploads
+`results.json`, `summary.md`, and diagnostic logs as a
+`tournament-<run-id>-<attempt>` artifact retained for 30 days. The native engine
+is used for tournament throughput; its original-code compatibility tests remain
+in the separate headless workflow.
+
+Run the same tournament locally after building the engine:
+
+```sh
+python3 scripts/run_tournament.py --robots-dir robots/examples \
+  --seed 1 --ticks 2000 --seeds-per-pair 3 --workers 2 \
+  --output build/tournament/results.json \
+  --summary build/tournament/summary.md
+```
+
+Every regular, nonhidden file below the selected directory is treated as a robot
+source, including files without an extension. Relative paths identify entrants,
+so equal basenames in different nested directories remain distinct. Symbolic
+links are rejected. UTF-8 is the default; `--encoding mac-roman` supports original
+Mac text files. Both use the battle runners' line-ending normalization. All
+entrants must compile before any scored battle starts; invalid robots are not
+silently excluded or assigned forfeits. Reports must be outside `robots/`.
+
+### Tournament structure and fairness
+
+This determines the **head-to-head all-round winner** against the field. Robot
+Warriors can have nontransitive matchups, so the format avoids knockout
+elimination and keeps every entrant competing. Multiplayer free-for-all strength
+is a different objective and is not inferred from this ranking.
+
+| Field | Automatic format | Pairings |
+| --- | --- | --- |
+| 2–16 robots | Full round robin | Every unordered pair exactly once |
+| 17–512 robots | Swiss | `min(N − 1, 2 × ceil(log₂ N) + 1)` rounds, `floor(N/2)` pairs per round |
+
+`--format round-robin` can force exhaustive play for a larger field within the
+work budget. `--format swiss --rounds R` chooses an explicit Swiss round count
+from 1 through `N − 1`; zero selects the automatic count. Round robin always
+requires `--rounds 0`. Odd-sized Swiss fields require at least two rounds so
+every entrant actually plays; a one-round bye would otherwise leave one robot
+unassessed. There is no qualifying cutoff or knockout final: the
+standings use every round. Swiss battle count grows as `N log N`, while small
+fields get exhaustive opponent coverage.
+
+Each pairing is a series of **six battles by default**: three seed blocks, each
+played in both robot orders. Reversing order with the same seed swaps starting
+positions and CPU execution priority. All pairings in a round use the same seed
+blocks. The tournament seed deterministically derives both scheduling priority
+and valid QuickDraw seeds; worker count does not affect the schedule or results.
+`--seeds-per-pair` changes the number of blocks, not the two-order balancing.
+
+Wins earn 1 point, losses 0, and draws ½ per battle. A tick-limit result with both
+robots alive and mutual destruction are draws; remaining damage or fuel does
+not invent a winner. The configured tick limit defaults to 2,000, using the
+headless battle termination rules documented above. All game points count,
+rather than reducing a six-game series to one win/loss result.
+
+Swiss pairings prefer nearby scores and unused opponents. An exact general-graph
+maximum matching minimizes repeated opponents for the selected bye assignment;
+any unavoidable repeats are recorded in the schedule. Score proximity is a
+local preference, not a promise of a globally minimal score gap. For odd fields,
+the robot with the fewest prior byes, then the lowest score, receives the bye;
+seeded priority resolves an otherwise equal choice. A Swiss bye awards half a
+series's available points but creates no wins, draws, games, or artificial
+opponent. Round-robin rest rounds award no points; every robot still plays every
+other robot equally.
+
+Standings compare the following in order:
+
+1. Total game points, including neutral Swiss bye credit.
+2. Average final point total of actual opponents, counting each played series.
+3. Average of `opponent final points × fraction of series points earned` over
+   those series.
+
+Byes are excluded from both opponent metrics. All entrants have the same number
+of scheduled rounds, so scaling opponent totals by the round maximum would not
+change their ordering. Metrics use exact rational arithmetic, with fractions
+included in JSON. Equal metrics produce shared ranks and **joint winners**;
+names, random priority, and row ordering never break a competitive tie. Swiss
+samples opponents rather than proving superiority against every robot. More
+rounds or exhaustive round robin can increase coverage.
+
+### Replay, failures, and scale
+
+Results include the entrant paths and raw/normalized source hashes, native binary
+hash, configuration, every pairing and bye, seeds, robot order, win/draw reasons,
+compact final CPU/world state, and hashes of complete battle snapshots. A game
+can be replayed with `scripts/run_headless_battle.py` using its recorded order,
+seed and tick limit; tournament names are paths relative to the chosen directory.
+`state_sha256` hashes the raw native JSONL result with sorted keys, compact JSON
+separators and ASCII escaping; exact hash replay must retain those relative
+robot names, rather than the standalone file runner's basenames and envelope.
+The tournament JSON uses `schema_version: 1`, `champions` for all joint winners,
+and `winner` only when there is exactly one champion. Identical inputs and binary
+produce identical result JSON, including when worker count changes.
+
+At 512 entrants the default 19-round Swiss tournament requires **29,184 battles**,
+compared with 784,896 for a six-game full round robin. The runner prints projected
+work before preflight and limits a run to 512 robots, 100,000 battles, and
+200,000,000 possible simulated ticks. Seed blocks are limited to 1–20, workers
+to 1–32, and per-battle ticks to 1–1,000,000. Each native process has a 30-second
+timeout; the CI job has a 60-minute limit. These bounds fail explicitly instead
+of silently truncating a tournament.
+
+Compilation or runtime failure returns exit status 2 and writes a report marked
+`failed`, with no winner or final standings. Completed series are retained for
+diagnosis; a partially executed series never contributes points. Once output
+paths have been validated, source/configuration failures replace old reports
+with failed reports, preventing stale winners. Argument parsing and invalid
+output paths fail before reports can be written. CI also retains
+logs if validation fails or the job is interrupted. `tests/test_tournament.py`
+checks pairing optimality against exhaustive small cases, 512-robot scheduling,
+scoring, byes, seed/order balance, reproducibility, failure handling and real
+native execution; it also runs through CTest.
+
 ## Lower-level JSON interface
 
 The `battle` command returns a JSON snapshot after the requested number of

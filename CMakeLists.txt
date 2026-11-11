@@ -29,4 +29,7 @@ if(BUILD_TESTING)
   add_test(NAME battle_runners
     COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_battle_runners.py"
             --binary "$<TARGET_FILE:robotwar_cli>")
+  add_test(NAME tournament
+    COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_tournament.py"
+            --binary "$<TARGET_FILE:robotwar_cli>")
 endif()

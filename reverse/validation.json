@@ -5,7 +5,7 @@
   "source_revision": "3cd67f6bdbd61a6c519c5ba4a7382599d7f8b9f6",
   "application_resource_fork_sha256": "d486bc719b82a5ca5bcf3e406f40d6d06fc9d15e3bbf1009dc8d152b4293a0ae",
   "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
-  "implementation_manifest_sha256": "4c3d5ae54ae80eeaa53e47dd3d76b9c6ec6c8144f195e9b33db36584eb196ff5",
+  "implementation_manifest_sha256": "814a5ecbd09d321046d5814fbe4db89e554e451864d0351728fe0cf009b0d00b",
   "native": {
     "language": "C++20",
     "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
@@ -30,8 +30,8 @@
       "passed": 7014,
       "vectors": 7014
     },
-    "release_ctest": "3/3 passed",
-    "address_and_undefined_sanitizer_ctest": "3/3 passed",
+    "release_ctest": "4/4 passed",
+    "address_and_undefined_sanitizer_ctest": "4/4 passed",
     "sanitized_battle": "Seeker + Circle Shooter, seed 1, 1000 ticks: completed without sanitizer errors"
   },
   "oracle": {
@@ -186,7 +186,7 @@
     "files": [
       {
         "file": "CMakeLists.txt",
-        "sha256": "cb2f1d8ebb5c7acf60d47c44bd4421c7c73032c926d76f9fbef6b62bf5bfab35"
+        "sha256": "02564a49e95d96082f44873760966516df02c1ce871eb19f7b927f70f31fa48f"
       },
       {
         "file": "include/robotwar/bytecode.hpp",
@@ -316,7 +316,7 @@
       },
       {
         "file": "tools/battle_runner.py",
-        "sha256": "5bfc7d1fb0a486b502ed99d4fed3747d510269c6053f79174b5168611e06bdd1"
+        "sha256": "c1c0ef0ced83ee40a742ca73bee016bba472d135bceeeabc90fe5c52f53b895a"
       },
       {
         "file": "tools/battle_68k.py",
@@ -329,6 +329,61 @@
       {
         "file": "tests/test_battle_runners.py",
         "sha256": "8b1540db35cbf1ca7e6cdd6d95fa00429e231dd1df3cdaa3a8fda8aefdc0ae0f"
+      }
+    ]
+  },
+  "tournament": {
+    "test_methods_passed": 22,
+    "format": "Full round robin through 16 entrants; otherwise all-field Swiss, 2*ceil(log2(N))+1 rounds capped at N-1",
+    "seat_and_seed_balance": "Three common seed blocks per round, each played in both execution orders",
+    "tie_policy": "Exact points and opponent-strength fractions; remaining ties share rank and championship",
+    "large_schedule": {
+      "robots": 512,
+      "rounds": 19,
+      "battles": 29184,
+      "verified": true
+    },
+    "example_native_tournament": {
+      "robots": 5,
+      "battles": 60,
+      "seed": 1,
+      "ticks": 2000,
+      "winner": "Seeker",
+      "passed": true
+    },
+    "swiss_native_integration": {
+      "robots": 17,
+      "rounds": 11,
+      "battles": 528,
+      "seed": 1,
+      "ticks": 2000,
+      "passed": true,
+      "inputs": "17 named copies cycling through the five supplied examples"
+    },
+    "failure_regressions": [
+      "Odd-sized Swiss fields require at least two rounds so every entrant plays",
+      "Failed reruns replace prior winner artifacts after output-path validation"
+    ],
+    "files": [
+      {
+        "file": ".github/workflows/tournament.yml",
+        "sha256": "e40a88f52ea9051f3f7a9f202e663e8778f76dc51af7af310084bb9d7baf9d2c"
+      },
+      {
+        "file": "scripts/run_tournament.py",
+        "sha256": "2b365389a7f1f5970464cf59ce2363d293d360b775174354d46313347c005867"
+      },
+      {
+        "file": "tools/tournament.py",
+        "sha256": "e5f8ff7fe9fe27808aea1303c7d16c3b51e74543da6383aac790b44682a5864f"
+      },
+      {
+        "file": "tools/tournament_format.py",
+        "sha256": "2d9119f54835a772f556d1ebb709ec0224a22e212507f0170809642f760e6d83"
+      },
+      {
+        "file": "tests/test_tournament.py",
+        "sha256": "16611f8ecd0a3c1970f70bbe7c94020fb7877103de5185e412cd0c612d489cee"
       }
     ]
   }

@@ -54,7 +54,7 @@ def read_robot(path: Path, encoding: str) -> dict:
     return {"name": path.name, "source_hex": encoded.hex()}
 
 
-def run_native(request: dict, binary: Path) -> dict:
+def run_native(request: dict, binary: Path, *, timeout: float | None = None) -> dict:
     if not binary.is_file():
         raise ValueError(f"Native binary not found: {binary}; build it with cmake or use --binary")
     process = subprocess.run(
@@ -63,6 +63,7 @@ def run_native(request: dict, binary: Path) -> dict:
         text=True,
         capture_output=True,
         check=False,
+        timeout=timeout,
     )
     if process.returncode:
         raise RuntimeError(f"Native battle failed ({process.returncode}): {process.stderr.strip()}")
