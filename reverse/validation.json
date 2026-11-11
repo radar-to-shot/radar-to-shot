@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "validation_date": "2026-11-11",
+  "source_repository": "https://github.com/radar-to-shot/radar-to-shot",
+  "source_revision": "3cd67f6bdbd61a6c519c5ba4a7382599d7f8b9f6",
+  "application_resource_fork_sha256": "d486bc719b82a5ca5bcf3e406f40d6d06fc9d15e3bbf1009dc8d152b4293a0ae",
+  "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
+  "implementation_manifest_sha256": "67945f1cdee3290d0d0dc297130ed0424a33b2c19d2bf59be4b02194f4a2221f",
+  "native": {
+    "language": "C++20",
+    "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
+    "golden_comparison": {
+      "by_kind": {
+        "battle": 54,
+        "compile": 1001,
+        "parse": 78,
+        "vm": 1530,
+        "world_angle": 226,
+        "world_damage": 48,
+        "world_distance": 211,
+        "world_io": 1837,
+        "world_motion": 122,
+        "world_movement": 129,
+        "world_placement": 57,
+        "world_random": 12,
+        "world_shells": 250,
+        "world_trig": 1447
+      },
+      "failed": 0,
+      "passed": 7002,
+      "vectors": 7002
+    },
+    "release_ctest": "2/2 passed",
+    "address_and_undefined_sanitizer_ctest": "2/2 passed",
+    "sanitized_battle": "Seeker + Circle Shooter, seed 1, 1000 ticks: completed without sanitizer errors"
+  },
+  "oracle": {
+    "mode": "Original application routine execution plus supplied IIci ROM; no full System 7 boot",
+    "recapture": {
+      "corpora": 13,
+      "vectors": 7002,
+      "inputs_and_expected_outputs_identical": true,
+      "clean_isolated_emulator_build": "passed"
+    },
+    "emulator_source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+    "emulator_patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+    "independent_remainder_isa_checks": 598,
+    "independent_status_isa_checks": 139,
+    "extraction_integrity_checks": 3
+  },
+  "decompilation": {
+    "tool": "Ghidra 11.3.2",
+    "candidate_functions": 244,
+    "emitted_functions": 244,
+    "fatal_failures": 0,
+    "input_and_output_hashes_verified": true
+  },
+  "additional_checks": {
+    "compiler_fuzz_valid_programs": 750,
+    "compiler_fuzz_mixed_programs": 750,
+    "vm_exploratory_sequences": 700,
+    "note": "750 mixed compiler cases are also committed goldens; exploratory counts are not added to the golden total."
+  },
+  "corpora": [
+    {
+      "file": "tests/golden/battle.json",
+      "sha256": "9fff5d0246c724b6c60b3338f115a4334f74f0dcd3221c0c168edf7797ec520d",
+      "vectors": 54,
+      "emulator": "machine68k 0.5.1 / Musashi, 68030",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/compiler.json",
+      "sha256": "02fb557c70b9216d85ce6c2f44c0e2c20f4b089bf2fa1e085311c0887550f70a",
+      "vectors": 251,
+      "emulator": "machine68k 0.5.1 / Musashi, 68000",
+      "rom_executed": false
+    },
+    {
+      "file": "tests/golden/compiler_fuzz.json",
+      "sha256": "e1627e22682d39161f3353629d3970a7d5c59a9513fafc4f3b4bbddbcc28337e",
+      "vectors": 750,
+      "emulator": "machine68k 0.5.1 / Musashi, 68000",
+      "rom_executed": false
+    },
+    {
+      "file": "tests/golden/movement.json",
+      "sha256": "1cc6b81ea0907bf8c31ee53c4e8a67621766bfc2fe51ee498b3f4a1ea8bd56f9",
+      "vectors": 129,
+      "emulator": "machine68k 0.5.1 / Musashi, 68030",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/parser.json",
+      "sha256": "9a46bb50670ef51648e2df565e904df8df1b9ccb2977422807a644c62a3f65e9",
+      "vectors": 78,
+      "emulator": "machine68k 0.5.1 / Musashi, 68000",
+      "rom_executed": false
+    },
+    {
+      "file": "tests/golden/placement.json",
+      "sha256": "8d2ec1e8c020e51206e877f1519fdb20d149758106fe5014c607a5d4987d4c43",
+      "vectors": 57,
+      "emulator": "machine68k 0.5.1 / Musashi, 68030",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/rom_angles.json",
+      "sha256": "e5cf37c20f600e168aa428f14ebc2f6b6e424e89fc72607b25a6bf3f3c6b740d",
+      "vectors": 226,
+      "emulator": "machine68k 0.5.1 / Musashi, 68020",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/rom_random.json",
+      "sha256": "bcbfa0f99aa081363db99a3a79e4f7929dd2f64dd485adc0ed6179b70d41a7e3",
+      "vectors": 12,
+      "emulator": "machine68k 0.5.1 / Musashi, 68020",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/shells.json",
+      "sha256": "4b6bfa53d2c36424edbdc6c5372c20ed07d9fda1fd5f90127793aa0ac48ef5b6",
+      "vectors": 250,
+      "emulator": "machine68k 0.5.1 / Musashi, 68030",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/trig.json",
+      "sha256": "524cb04b72ec7bc9c127d2c4f6036f39bbdb5c806f0d54c6870458627af63316",
+      "vectors": 1447,
+      "emulator": "machine68k 0.5.1 / Musashi, 68030",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/vm.json",
+      "sha256": "4cfadfa7a5481fd0792e6a5d41b1108fbcf7fbc279c1b408e871d9a5d8c089ac",
+      "vectors": 1530,
+      "emulator": "machine68k 0.5.1 / Musashi, 68000",
+      "rom_executed": false
+    },
+    {
+      "file": "tests/golden/world.json",
+      "sha256": "d6fefe5032e45edabd0abff57e478318915cc2f07ea2f721342691cfceea3db4",
+      "vectors": 381,
+      "emulator": "machine68k 0.5.1 / Musashi, 68000",
+      "rom_executed": false
+    },
+    {
+      "file": "tests/golden/world_io.json",
+      "sha256": "00afda5b32d2855d17f4ab110754a382ba2e591df9b59230f40e0476746c056e",
+      "vectors": 1837,
+      "emulator": "machine68k 0.5.1 / Musashi, 68030",
+      "rom_executed": true
+    }
+  ],
+  "limits": [
+    "Differential agreement covers recorded inputs, not a mathematical proof of all programs or states.",
+    "Ghidra output retains inferred types, unresolved control flow and warnings; emitted candidate count is not a completeness guarantee.",
+    "Reference uses IIci ROM packages rather than booted System 7 replacement packages.",
+    "ROM numerical path permits extended precision with disabled FP exception traps; unsupported precision and host-transcendental paths fail closed.",
+    "Signaling-NaN and single/double precision CPU audit limitations are documented; complete 68881 certification is not claimed.",
+    "Accesses outside modeled classic-Mac records and indefinitely rejecting placement sources raise explicit host errors.",
+    "PenSize drawing is ignored; GUI, sound, menus and editor are not implemented."
+  ]
+}

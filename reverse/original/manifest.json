@@ -1,0 +1,951 @@
+{
+  "format_version": 1,
+  "source_repository": "https://github.com/radar-to-shot/radar-to-shot",
+  "source_revision": "3cd67f6bdbd61a6c519c5ba4a7382599d7f8b9f6",
+  "source_image": "Robot Warriors.dsk",
+  "source_image_sha256": "7dd47f5c4cf12f08f03ea28a5acdc17c15e1bcc32297e480b9d06e4ac82c78f1",
+  "hfs_path": [
+    "Desktop Folder",
+    "Robot Warriors",
+    "Robot Warriors 1.0.1"
+  ],
+  "file_type": "APPL",
+  "creator": "RWar",
+  "forks": {
+    "data": {
+      "file": "Robot Warriors 1.0.1.data",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "rsrc": {
+      "file": "Robot Warriors 1.0.1.rsrc",
+      "bytes": 108655,
+      "sha256": "d486bc719b82a5ca5bcf3e406f40d6d06fc9d15e3bbf1009dc8d152b4293a0ae"
+    }
+  },
+  "resources": [
+    {
+      "type": "DATA",
+      "id": 0,
+      "name": null,
+      "attributes": 8,
+      "file": "resources/DATA_0.bin",
+      "bytes": 18,
+      "sha256": "091076940558d404bfc5b37d5ad2e076496db0e35f78919e8e113b084d6ae3f4"
+    },
+    {
+      "type": "DREL",
+      "id": 0,
+      "name": null,
+      "attributes": 8,
+      "file": "resources/DREL_0.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "type": "ZERO",
+      "id": 0,
+      "name": null,
+      "attributes": 8,
+      "file": "resources/ZERO_0.bin",
+      "bytes": 4,
+      "sha256": "eedaed85bdb15ec4de104375f4cf6d10f428bd23fa50fc4c0a108d648091e203"
+    },
+    {
+      "type": "CODE",
+      "id": 1,
+      "name": "Main",
+      "attributes": 40,
+      "file": "resources/CODE_1.bin",
+      "bytes": 2620,
+      "sha256": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "segment_header": {
+        "jump_table_relative_offset": 136,
+        "jump_table_entries": 52,
+        "code_start": 4
+      }
+    },
+    {
+      "type": "CODE",
+      "id": 2,
+      "name": null,
+      "attributes": 40,
+      "file": "resources/CODE_2.bin",
+      "bytes": 1566,
+      "sha256": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "segment_header": {
+        "jump_table_relative_offset": 552,
+        "jump_table_entries": 1,
+        "code_start": 4
+      }
+    },
+    {
+      "type": "CODE",
+      "id": 3,
+      "name": null,
+      "attributes": 40,
+      "file": "resources/CODE_3.bin",
+      "bytes": 20656,
+      "sha256": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "segment_header": {
+        "jump_table_relative_offset": 560,
+        "jump_table_entries": 1,
+        "code_start": 4
+      }
+    },
+    {
+      "type": "CODE",
+      "id": 4,
+      "name": null,
+      "attributes": 60,
+      "file": "resources/CODE_4.bin",
+      "bytes": 21546,
+      "sha256": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "segment_header": {
+        "jump_table_relative_offset": 0,
+        "jump_table_entries": 17,
+        "code_start": 4
+      }
+    },
+    {
+      "type": "CODE",
+      "id": 5,
+      "name": null,
+      "attributes": 40,
+      "file": "resources/CODE_5.bin",
+      "bytes": 16098,
+      "sha256": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73",
+      "segment_header": {
+        "jump_table_relative_offset": 568,
+        "jump_table_entries": 6,
+        "code_start": 4
+      }
+    },
+    {
+      "type": "CODE",
+      "id": 0,
+      "name": null,
+      "attributes": 40,
+      "file": "resources/CODE_0.bin",
+      "bytes": 632,
+      "sha256": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc"
+    },
+    {
+      "type": "LSP ",
+      "id": 2000,
+      "name": null,
+      "attributes": 20,
+      "file": "resources/LSP_2000.bin",
+      "bytes": 18,
+      "sha256": "c0896107b86a0f6390e3c42a1fb50702b1150b60a1ca05c24c555557ec384a41"
+    },
+    {
+      "type": "ics4",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/ics4_129.bin",
+      "bytes": 128,
+      "sha256": "e86bad3544eaebf7f1b1769d1393fe6d206fda0da2c010ff841f71c0f2c0d3de"
+    },
+    {
+      "type": "ics4",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/ics4_128.bin",
+      "bytes": 128,
+      "sha256": "69863079efa0d474b9ced739028e8ec3fd459341e8f8bc9a34ec042029f2d083"
+    },
+    {
+      "type": "ics8",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/ics8_129.bin",
+      "bytes": 256,
+      "sha256": "65475fa9b2d9b1ba4c007736bbd3df7c9b093f5d5e2445eec7f9dfc502d1f1b9"
+    },
+    {
+      "type": "ics8",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/ics8_128.bin",
+      "bytes": 256,
+      "sha256": "bdfd56464e890b557c3d1040c057cbc12fa2b5dcd708f57f1bb5f3f550841a12"
+    },
+    {
+      "type": "ics#",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/icshash_129.bin",
+      "bytes": 64,
+      "sha256": "e94144a58591773d382a729f5caf212d43a77928b836f19d1cc2efb0f7c6bcbb"
+    },
+    {
+      "type": "ics#",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/icshash_128.bin",
+      "bytes": 64,
+      "sha256": "15e4a70ecafe4736188a769ed3ea349b6172583e408b758ae2f54d7e32003f3d"
+    },
+    {
+      "type": "icl4",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/icl4_129.bin",
+      "bytes": 512,
+      "sha256": "2c9fd7a2c34903371da6f10dbcbb13adffa2d53d85569d4ff362e2f905264914"
+    },
+    {
+      "type": "icl4",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/icl4_128.bin",
+      "bytes": 512,
+      "sha256": "b1cb984e6578da530030596b4df1cbdb1643c2f9d7ab519103bec55346a9ab9e"
+    },
+    {
+      "type": "icl8",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/icl8_129.bin",
+      "bytes": 1024,
+      "sha256": "1a06c32d1412491740a41743b1e91416eba788821870a2da3662eaa5cb6bfb83"
+    },
+    {
+      "type": "icl8",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/icl8_128.bin",
+      "bytes": 1024,
+      "sha256": "c1c31df9a29209b819b3e8307d2237087d3caefaf7886d9e95891a15f2125d04"
+    },
+    {
+      "type": "vers",
+      "id": 1,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/vers_1.bin",
+      "bytes": 85,
+      "sha256": "38fca036adf3abfc3405950a627719fd8706d6b3ec2de6710373f31eebd2ec40"
+    },
+    {
+      "type": "snd ",
+      "id": 10002,
+      "name": "Explosion",
+      "attributes": 33,
+      "file": "resources/snd_10002.bin",
+      "bytes": 9846,
+      "sha256": "4e7700aee6c0358ef7b343684c0595c4bcf70c6791828936ac70d543d281ac01"
+    },
+    {
+      "type": "snd ",
+      "id": 10001,
+      "name": "Fire",
+      "attributes": 0,
+      "file": "resources/snd_10001.bin",
+      "bytes": 3103,
+      "sha256": "6c9ab7c55b5726c2902f78b9bc1796af0552532fe71112981a718b8874353551"
+    },
+    {
+      "type": "snd ",
+      "id": 10000,
+      "name": "Death",
+      "attributes": 0,
+      "file": "resources/snd_10000.bin",
+      "bytes": 12807,
+      "sha256": "957e8aa1eeec9654d73480e7316226fbad8b95de9b880def8ab0d9096d0c50aa"
+    },
+    {
+      "type": "snd ",
+      "id": 10003,
+      "name": "Collision",
+      "attributes": 0,
+      "file": "resources/snd_10003.bin",
+      "bytes": 2896,
+      "sha256": "bf7510c736d51077fa0d7aa320dad1e0fe97ef57043ea8b08971c8e479c78dec"
+    },
+    {
+      "type": "RADR",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_128.bin",
+      "bytes": 18,
+      "sha256": "c749578dfbeabe74bba7e88e9c767b2171579063865cc26015fe52b8c0120c73"
+    },
+    {
+      "type": "RADR",
+      "id": 129,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_129.bin",
+      "bytes": 18,
+      "sha256": "05300fe56e0d190e8d21a0c4b4089ff900d7d8ff880d7610b208d1bdc19bb7b5"
+    },
+    {
+      "type": "RADR",
+      "id": 130,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_130.bin",
+      "bytes": 18,
+      "sha256": "c795e82b7e8a279b34c82b5415392dae0cfb29ae5eea1a571e885abe5dba6676"
+    },
+    {
+      "type": "RADR",
+      "id": 131,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_131.bin",
+      "bytes": 18,
+      "sha256": "743d94898870fcc62c69ff07090ee20d324ad8ba3b99eb5ce232fa4e5cf8c896"
+    },
+    {
+      "type": "RADR",
+      "id": 132,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_132.bin",
+      "bytes": 18,
+      "sha256": "e0ba0d570085ea0765904d565ceb59910fe914bb2d31f00a65bfa7261eb20632"
+    },
+    {
+      "type": "RADR",
+      "id": 133,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_133.bin",
+      "bytes": 18,
+      "sha256": "0c781a28c85f42e359a12177d04fce172a286923eb8b31f93eb93bcd6c65f867"
+    },
+    {
+      "type": "RADR",
+      "id": 134,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_134.bin",
+      "bytes": 18,
+      "sha256": "a36d04bc54c0dc68fece76eed89d9872e397eca986aa7cfdd8b5a1f332b608bb"
+    },
+    {
+      "type": "RADR",
+      "id": 135,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_135.bin",
+      "bytes": 18,
+      "sha256": "a21d965919ac446016c70659bdc1b8f22f688788c7d6c12b2808106d3e096044"
+    },
+    {
+      "type": "RADR",
+      "id": 136,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_136.bin",
+      "bytes": 18,
+      "sha256": "3282da8766fa2b48f073c727353fcebcf54037ddd5d7a651e2587f57b5ec4c57"
+    },
+    {
+      "type": "RADR",
+      "id": 137,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_137.bin",
+      "bytes": 18,
+      "sha256": "f716439fee819afdd16a4fc8c0453ca7f9e0e4621e674473326ecac60d6ba236"
+    },
+    {
+      "type": "RADR",
+      "id": 138,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_138.bin",
+      "bytes": 18,
+      "sha256": "978fa8c2e3730ecdce6fe34d93f1c4c6bad4f474fca866219e214f7e14731cc5"
+    },
+    {
+      "type": "RADR",
+      "id": 139,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_139.bin",
+      "bytes": 18,
+      "sha256": "f43526c33faf371b8f213ee33fb53d912401a7e4264cad5ee7fa067538bd3f8d"
+    },
+    {
+      "type": "RADR",
+      "id": 140,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_140.bin",
+      "bytes": 18,
+      "sha256": "ce198c96f8832fc41b9532ab9004a59ac9ced07c124ad24f6c857b9bfbfa02c6"
+    },
+    {
+      "type": "RADR",
+      "id": 141,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_141.bin",
+      "bytes": 18,
+      "sha256": "fbf89ab7d921c1e3b833512fd8f2e3d9cfc0b815210531edebd5a043e7cd2782"
+    },
+    {
+      "type": "RADR",
+      "id": 142,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_142.bin",
+      "bytes": 18,
+      "sha256": "f723fdccef65b4aad4f69ae3fc8c9f109c975f017ac89a6a17301f0598a3ed8c"
+    },
+    {
+      "type": "RADR",
+      "id": 143,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_143.bin",
+      "bytes": 18,
+      "sha256": "f12f4e155a3e069dacc2281048a4f7cb7b213a7b785263f45ed15f44733367db"
+    },
+    {
+      "type": "RADR",
+      "id": 144,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_144.bin",
+      "bytes": 18,
+      "sha256": "4861ea925834f5f1059c36ee94f002eb2e32ff0b78eb68320e6c720698ef46ee"
+    },
+    {
+      "type": "RADR",
+      "id": 145,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_145.bin",
+      "bytes": 18,
+      "sha256": "45a5c88e41ebe3eedd99c8ca1e8eb1b20302c6a91b9bdbbf6f1d2ef8ea0f4cde"
+    },
+    {
+      "type": "RADR",
+      "id": 146,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_146.bin",
+      "bytes": 18,
+      "sha256": "73b3ede251e78c007234924a0209981f9356f4e61eef39ad3fa4eec6e9f9891d"
+    },
+    {
+      "type": "RADR",
+      "id": 147,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_147.bin",
+      "bytes": 18,
+      "sha256": "e2ee161f6ad6462170ab97b1d17d1df286510ce5d744e7d2b0d35c0e26e64a45"
+    },
+    {
+      "type": "RADR",
+      "id": 148,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_148.bin",
+      "bytes": 18,
+      "sha256": "1d20032169416b4322a075e0e7500f689fcbeb6028d8575cf91d6e40728f2712"
+    },
+    {
+      "type": "RADR",
+      "id": 149,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_149.bin",
+      "bytes": 18,
+      "sha256": "88e1e99ce7c0a292b36d54fabc712d1c0e0a76fa5e39a1350b31c62aa545da8e"
+    },
+    {
+      "type": "RADR",
+      "id": 150,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_150.bin",
+      "bytes": 18,
+      "sha256": "899b058510c9247d6c10f6a98b6dfda2865d40f4a5c0eff723f1727c4bfea7e4"
+    },
+    {
+      "type": "RADR",
+      "id": 151,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_151.bin",
+      "bytes": 18,
+      "sha256": "55afe04794b5e083fdd15360829dab5d1508a8d0a55e2455948ca9362ceea784"
+    },
+    {
+      "type": "RADR",
+      "id": 152,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/RADR_152.bin",
+      "bytes": 18,
+      "sha256": "c749578dfbeabe74bba7e88e9c767b2171579063865cc26015fe52b8c0120c73"
+    },
+    {
+      "type": "ROBO",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ROBO_128.bin",
+      "bytes": 22,
+      "sha256": "8f3f707b7dd07a9c2669e605d419c62405e21a3b127cc8926b5270916f8036f3"
+    },
+    {
+      "type": "ROBO",
+      "id": 129,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ROBO_129.bin",
+      "bytes": 22,
+      "sha256": "a4fa0761830c85bd5b3c7cd08444e20b07f35795ae59605d495e1418def4b5df"
+    },
+    {
+      "type": "ROBO",
+      "id": 130,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ROBO_130.bin",
+      "bytes": 22,
+      "sha256": "11b412f6960e410bc9d69e0dae29e93a40b1631619975a91e0a7802629a10bb8"
+    },
+    {
+      "type": "ROBO",
+      "id": 131,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ROBO_131.bin",
+      "bytes": 22,
+      "sha256": "bd80bd9a6e6bda0e9806782b723ff9e56e04760ed672a57e67f390a602aa83aa"
+    },
+    {
+      "type": "ROBO",
+      "id": 132,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ROBO_132.bin",
+      "bytes": 22,
+      "sha256": "0152f7f7a6dce23e07d2e0153b80256e543bc219cff6efdf8ad045e33ec5fa10"
+    },
+    {
+      "type": "WIND",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/WIND_128.bin",
+      "bytes": 27,
+      "sha256": "9e748167d4e545c512eb0bf6089142ca22a32a289f0ec95d6fda62cc82b19461"
+    },
+    {
+      "type": "WIND",
+      "id": 135,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/WIND_135.bin",
+      "bytes": 27,
+      "sha256": "5acaa994426bdbfab2a06a27e09be60eaadb112e6a3e58162d56bc224f22ee2f"
+    },
+    {
+      "type": "SIZE",
+      "id": -1,
+      "name": null,
+      "attributes": 32,
+      "file": "resources/SIZE_-1.bin",
+      "bytes": 10,
+      "sha256": "eb404fbd013cda6418dc3d0a18a1adf3d53519aeb9bc4d520f5d29befe76fe75"
+    },
+    {
+      "type": "PICT",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/PICT_128.bin",
+      "bytes": 349,
+      "sha256": "9d95284ed255a1c46cd9d6b1f5b501fa3cfae608637a168fba57c0f93082b1c1"
+    },
+    {
+      "type": "PICT",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/PICT_129.bin",
+      "bytes": 6422,
+      "sha256": "14452a85fc2992395ef629e37ceeafa28e5352ae4a5921b95af85406756feeb8"
+    },
+    {
+      "type": "MENU",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/MENU_128.bin",
+      "bytes": 51,
+      "sha256": "1c4d68e3cfb7f8cf53093f2fb1232cf1d7ffb5b39807f7cd4ed09687a2421500"
+    },
+    {
+      "type": "MENU",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/MENU_129.bin",
+      "bytes": 152,
+      "sha256": "67f30776b25cb47ee93d113ae0a0c4ec7299c47b7766e0f9ec1b394c59a39226"
+    },
+    {
+      "type": "MENU",
+      "id": 130,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/MENU_130.bin",
+      "bytes": 192,
+      "sha256": "0854799883f6844ff9e19a329c76e0da2d3f0a619a3571da13592176c9f92f65"
+    },
+    {
+      "type": "MENU",
+      "id": 131,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/MENU_131.bin",
+      "bytes": 100,
+      "sha256": "030f18c4a13d91c484bd7d1b6b3f6a30ec0edddf0777109efa76a201060c6c94"
+    },
+    {
+      "type": "MENU",
+      "id": 132,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/MENU_132.bin",
+      "bytes": 20,
+      "sha256": "2fc771d5e41a0c2e0c1cd298cc43967df45f2b737a127eb7c5e799240027bfe7"
+    },
+    {
+      "type": "MENU",
+      "id": 133,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/MENU_133.bin",
+      "bytes": 110,
+      "sha256": "07d726d443a842ec03c0595373baf371d258d80018f3042da2caf4eb46dee484"
+    },
+    {
+      "type": "MENU",
+      "id": 134,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/MENU_134.bin",
+      "bytes": 311,
+      "sha256": "b69923c3cb2abf15e438824f909ecfb613f0f1b264caaa8459f5b2f341c59b9b"
+    },
+    {
+      "type": "MENU",
+      "id": 135,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/MENU_135.bin",
+      "bytes": 160,
+      "sha256": "3fb37ad8018b297f9b26676b8ce5caa53e11720c3e9081c86d7ab87b529d6061"
+    },
+    {
+      "type": "MBAR",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/MBAR_128.bin",
+      "bytes": 18,
+      "sha256": "b4d3d10ca4b335bf47c89121637dba78d2d4d5a9499eb5abfd6a087b4d8839eb"
+    },
+    {
+      "type": "ICN#",
+      "id": 129,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ICNhash_129.bin",
+      "bytes": 256,
+      "sha256": "6990b756129e8fb50c196e2c2b1b99043d90632f1c8fdf4d66c50577e6776828"
+    },
+    {
+      "type": "ICN#",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ICNhash_128.bin",
+      "bytes": 256,
+      "sha256": "bf3597df5289554b163ecf4fde5a3bdf6f547e85b53aa29a7edf4d4e5c35ca10"
+    },
+    {
+      "type": "DLOG",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DLOG_128.bin",
+      "bytes": 29,
+      "sha256": "73b28dd444fda117319eb6dda380a79c9e1fcf6763246b2c7ae24b9c8ff94224"
+    },
+    {
+      "type": "DLOG",
+      "id": 136,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DLOG_136.bin",
+      "bytes": 29,
+      "sha256": "62f9d54481e279ee09c897df09ad1c2e168cc1dbd14fdd005d65fe756ac74d39"
+    },
+    {
+      "type": "DLOG",
+      "id": 140,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DLOG_140.bin",
+      "bytes": 27,
+      "sha256": "00b2da31d9cec340186a920471f3fffc98025637074f6ffa54f29bf26cb9be9c"
+    },
+    {
+      "type": "DLOG",
+      "id": 139,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DLOG_139.bin",
+      "bytes": 25,
+      "sha256": "f51d30fd28f2a3350f1f8023c735b2bd7d92599ba39f811cfbdd0421f7add47d"
+    },
+    {
+      "type": "DLOG",
+      "id": 134,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DLOG_134.bin",
+      "bytes": 29,
+      "sha256": "59b753e9d27f5c565e98bd9ceaea1ad49ac7234977a8492a31303e07185f0cd8"
+    },
+    {
+      "type": "DLOG",
+      "id": 137,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DLOG_137.bin",
+      "bytes": 29,
+      "sha256": "28b25e7ec44a799d33b9f21efe289a7aead723d2fad7988bc7959ff1f68f906f"
+    },
+    {
+      "type": "RWar",
+      "id": 0,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/RWar_0.bin",
+      "bytes": 1,
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    },
+    {
+      "type": "BNDL",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/BNDL_128.bin",
+      "bytes": 36,
+      "sha256": "54841b546ccd7d3ce0d140e41b300aff045f2aa3c63e2cf4dbfe65308ecf3112"
+    },
+    {
+      "type": "FREF",
+      "id": 128,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/FREF_128.bin",
+      "bytes": 7,
+      "sha256": "6ae70fda6b5f837884e8d6de071429e82370e929a86f133fd3c2b8775a9d594b"
+    },
+    {
+      "type": "FREF",
+      "id": 129,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/FREF_129.bin",
+      "bytes": 7,
+      "sha256": "3857418fd19573fc987d956266447739a8fe144312eb32f279e2e646e66f6509"
+    },
+    {
+      "type": "ALRT",
+      "id": 132,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ALRT_132.bin",
+      "bytes": 12,
+      "sha256": "51ce4b720d1e425060d514e8af26c2675a711bdef55bd5c20723d89dc4c8e8ae"
+    },
+    {
+      "type": "ALRT",
+      "id": 131,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ALRT_131.bin",
+      "bytes": 12,
+      "sha256": "abd28a5e32b6f490845a50e32039457ccda75438090b8bc469a34935f0c29142"
+    },
+    {
+      "type": "ALRT",
+      "id": 133,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/ALRT_133.bin",
+      "bytes": 12,
+      "sha256": "a493f666ea5c77183790d6fa803768d24df350114c1095b4ee9ef02dd1ee63a6"
+    },
+    {
+      "type": "ALRT",
+      "id": 138,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ALRT_138.bin",
+      "bytes": 12,
+      "sha256": "980f375a6e3637ee9c6b158a45ccf2e2a93fdc85e443ca8557691bc0cdbce76b"
+    },
+    {
+      "type": "ALRT",
+      "id": 130,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ALRT_130.bin",
+      "bytes": 12,
+      "sha256": "2379c0763b90d6bda60ea4692b0ca95eaf2fef6b851aa77e39c6ca8142bcb4de"
+    },
+    {
+      "type": "ALRT",
+      "id": 129,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/ALRT_129.bin",
+      "bytes": 12,
+      "sha256": "e766b283d98dcf3dde9ee13a0408b431884853bc97121d89ac6d1d4a81e46461"
+    },
+    {
+      "type": "DITL",
+      "id": 132,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_132.bin",
+      "bytes": 120,
+      "sha256": "17af325fc4b43f48afe5a1b6e8e66c744371baa4384b042aca1e38232b25bc21"
+    },
+    {
+      "type": "DITL",
+      "id": 131,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_131.bin",
+      "bytes": 50,
+      "sha256": "ff1b89d3018f40ea8e333a39115b56a8c83622348fa51974072a4fbe452ed2c0"
+    },
+    {
+      "type": "DITL",
+      "id": 133,
+      "name": null,
+      "attributes": 0,
+      "file": "resources/DITL_133.bin",
+      "bytes": 92,
+      "sha256": "72fa117bcf141e8fe98859925be3d4ae15349292ca1b400422983234737b0dc8"
+    },
+    {
+      "type": "DITL",
+      "id": 138,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_138.bin",
+      "bytes": 112,
+      "sha256": "732396b844a70eb9cad09ae488f9fe912d7a1441f5b7ba4e51b654d8084732fd"
+    },
+    {
+      "type": "DITL",
+      "id": 130,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_130.bin",
+      "bytes": 92,
+      "sha256": "ae2da7164902f1178d894ffd8aa1de8360db67b042ece0291415be5226346cd7"
+    },
+    {
+      "type": "DITL",
+      "id": 129,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_129.bin",
+      "bytes": 72,
+      "sha256": "e732fe4464e21180e86ad4b1916dc8045e1df1d108b071a8b9c6bb96140f06c4"
+    },
+    {
+      "type": "DITL",
+      "id": 128,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_128.bin",
+      "bytes": 58,
+      "sha256": "9d60b9208dd791afa54def2da06267747cce78ba3407eaa560a373d3445a78b6"
+    },
+    {
+      "type": "DITL",
+      "id": 140,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_140.bin",
+      "bytes": 228,
+      "sha256": "0a59829211bb2912217a067239d4282bfa0529f40703279abaa66a90843ba3a7"
+    },
+    {
+      "type": "DITL",
+      "id": 139,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_139.bin",
+      "bytes": 114,
+      "sha256": "3689c778f4a1daaad904b3586f3e4bb14922b30ceb72a0c660ce20a77c31e5f5"
+    },
+    {
+      "type": "DITL",
+      "id": 134,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_134.bin",
+      "bytes": 18,
+      "sha256": "d8875309335ff2d7f9090a6d1f2b7b75ca1bc37f15eb6ce0c063b79d57861a5b"
+    },
+    {
+      "type": "DITL",
+      "id": 137,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_137.bin",
+      "bytes": 98,
+      "sha256": "1fadcdda236c4d9e1322ef1e48ebbcab2980118a565b3b9b72b8ca6c4a21d441"
+    },
+    {
+      "type": "DITL",
+      "id": 136,
+      "name": null,
+      "attributes": 4,
+      "file": "resources/DITL_136.bin",
+      "bytes": 312,
+      "sha256": "e3b8191cb8d2a704e8b6515dc1b10ff63a3e1560216dcbba07a4ecab7ff0e738"
+    }
+  ],
+  "derived_globals": {
+    "file": "a5_initial.bin",
+    "bytes": 17324,
+    "sha256": "6e805451d04b692bc2b20cf400b600476c69bf024e99dc92032d60b26583f1bf",
+    "load_at": "A5 - 0x43ac",
+    "method": "CODE 1:0x011c\u20130x012e DATA/ZERO expansion; DREL is empty"
+  }
+}

@@ -1,0 +1,4034 @@
+{
+  "address_convention": "All CODE offsets include the four-byte segment header.",
+  "globals_bytes_below_a5": 17324,
+  "globals_bytes_above_a5": 648,
+  "jump_table_offset": 32,
+  "jump_table": [
+    {
+      "a5_entry_offset": 32,
+      "a5_call_offset": 34,
+      "segment": 4,
+      "resource_offset": 21498
+    },
+    {
+      "a5_entry_offset": 40,
+      "a5_call_offset": 42,
+      "segment": 4,
+      "resource_offset": 4
+    },
+    {
+      "a5_entry_offset": 48,
+      "a5_call_offset": 50,
+      "segment": 4,
+      "resource_offset": 60
+    },
+    {
+      "a5_entry_offset": 56,
+      "a5_call_offset": 58,
+      "segment": 4,
+      "resource_offset": 144
+    },
+    {
+      "a5_entry_offset": 64,
+      "a5_call_offset": 66,
+      "segment": 4,
+      "resource_offset": 228
+    },
+    {
+      "a5_entry_offset": 72,
+      "a5_call_offset": 74,
+      "segment": 4,
+      "resource_offset": 332
+    },
+    {
+      "a5_entry_offset": 80,
+      "a5_call_offset": 82,
+      "segment": 4,
+      "resource_offset": 894
+    },
+    {
+      "a5_entry_offset": 88,
+      "a5_call_offset": 90,
+      "segment": 4,
+      "resource_offset": 2790
+    },
+    {
+      "a5_entry_offset": 96,
+      "a5_call_offset": 98,
+      "segment": 4,
+      "resource_offset": 2890
+    },
+    {
+      "a5_entry_offset": 104,
+      "a5_call_offset": 106,
+      "segment": 4,
+      "resource_offset": 3016
+    },
+    {
+      "a5_entry_offset": 112,
+      "a5_call_offset": 114,
+      "segment": 4,
+      "resource_offset": 3040
+    },
+    {
+      "a5_entry_offset": 120,
+      "a5_call_offset": 122,
+      "segment": 4,
+      "resource_offset": 4348
+    },
+    {
+      "a5_entry_offset": 128,
+      "a5_call_offset": 130,
+      "segment": 4,
+      "resource_offset": 5854
+    },
+    {
+      "a5_entry_offset": 136,
+      "a5_call_offset": 138,
+      "segment": 4,
+      "resource_offset": 5982
+    },
+    {
+      "a5_entry_offset": 144,
+      "a5_call_offset": 146,
+      "segment": 4,
+      "resource_offset": 6852
+    },
+    {
+      "a5_entry_offset": 152,
+      "a5_call_offset": 154,
+      "segment": 4,
+      "resource_offset": 14962
+    },
+    {
+      "a5_entry_offset": 160,
+      "a5_call_offset": 162,
+      "segment": 4,
+      "resource_offset": 21498
+    },
+    {
+      "a5_entry_offset": 168,
+      "a5_call_offset": 170,
+      "segment": 1,
+      "resource_offset": 4
+    },
+    {
+      "a5_entry_offset": 176,
+      "a5_call_offset": 178,
+      "segment": 1,
+      "resource_offset": 76
+    },
+    {
+      "a5_entry_offset": 184,
+      "a5_call_offset": 186,
+      "segment": 1,
+      "resource_offset": 124
+    },
+    {
+      "a5_entry_offset": 192,
+      "a5_call_offset": 194,
+      "segment": 1,
+      "resource_offset": 146
+    },
+    {
+      "a5_entry_offset": 200,
+      "a5_call_offset": 202,
+      "segment": 1,
+      "resource_offset": 346
+    },
+    {
+      "a5_entry_offset": 208,
+      "a5_call_offset": 210,
+      "segment": 1,
+      "resource_offset": 368
+    },
+    {
+      "a5_entry_offset": 216,
+      "a5_call_offset": 218,
+      "segment": 1,
+      "resource_offset": 408
+    },
+    {
+      "a5_entry_offset": 224,
+      "a5_call_offset": 226,
+      "segment": 1,
+      "resource_offset": 416
+    },
+    {
+      "a5_entry_offset": 232,
+      "a5_call_offset": 234,
+      "segment": 1,
+      "resource_offset": 412
+    },
+    {
+      "a5_entry_offset": 240,
+      "a5_call_offset": 242,
+      "segment": 1,
+      "resource_offset": 448
+    },
+    {
+      "a5_entry_offset": 248,
+      "a5_call_offset": 250,
+      "segment": 1,
+      "resource_offset": 472
+    },
+    {
+      "a5_entry_offset": 256,
+      "a5_call_offset": 258,
+      "segment": 1,
+      "resource_offset": 522
+    },
+    {
+      "a5_entry_offset": 264,
+      "a5_call_offset": 266,
+      "segment": 1,
+      "resource_offset": 652
+    },
+    {
+      "a5_entry_offset": 272,
+      "a5_call_offset": 274,
+      "segment": 1,
+      "resource_offset": 706
+    },
+    {
+      "a5_entry_offset": 280,
+      "a5_call_offset": 282,
+      "segment": 1,
+      "resource_offset": 748
+    },
+    {
+      "a5_entry_offset": 288,
+      "a5_call_offset": 290,
+      "segment": 1,
+      "resource_offset": 790
+    },
+    {
+      "a5_entry_offset": 296,
+      "a5_call_offset": 298,
+      "segment": 1,
+      "resource_offset": 854
+    },
+    {
+      "a5_entry_offset": 304,
+      "a5_call_offset": 306,
+      "segment": 1,
+      "resource_offset": 930
+    },
+    {
+      "a5_entry_offset": 312,
+      "a5_call_offset": 314,
+      "segment": 1,
+      "resource_offset": 994
+    },
+    {
+      "a5_entry_offset": 320,
+      "a5_call_offset": 322,
+      "segment": 1,
+      "resource_offset": 1078
+    },
+    {
+      "a5_entry_offset": 328,
+      "a5_call_offset": 330,
+      "segment": 1,
+      "resource_offset": 1326
+    },
+    {
+      "a5_entry_offset": 336,
+      "a5_call_offset": 338,
+      "segment": 1,
+      "resource_offset": 1328
+    },
+    {
+      "a5_entry_offset": 344,
+      "a5_call_offset": 346,
+      "segment": 1,
+      "resource_offset": 1338
+    },
+    {
+      "a5_entry_offset": 352,
+      "a5_call_offset": 354,
+      "segment": 1,
+      "resource_offset": 1348
+    },
+    {
+      "a5_entry_offset": 360,
+      "a5_call_offset": 362,
+      "segment": 1,
+      "resource_offset": 1362
+    },
+    {
+      "a5_entry_offset": 368,
+      "a5_call_offset": 370,
+      "segment": 1,
+      "resource_offset": 1372
+    },
+    {
+      "a5_entry_offset": 376,
+      "a5_call_offset": 378,
+      "segment": 1,
+      "resource_offset": 1408
+    },
+    {
+      "a5_entry_offset": 384,
+      "a5_call_offset": 386,
+      "segment": 1,
+      "resource_offset": 1472
+    },
+    {
+      "a5_entry_offset": 392,
+      "a5_call_offset": 394,
+      "segment": 1,
+      "resource_offset": 1498
+    },
+    {
+      "a5_entry_offset": 400,
+      "a5_call_offset": 402,
+      "segment": 1,
+      "resource_offset": 1502
+    },
+    {
+      "a5_entry_offset": 408,
+      "a5_call_offset": 410,
+      "segment": 1,
+      "resource_offset": 1570
+    },
+    {
+      "a5_entry_offset": 416,
+      "a5_call_offset": 418,
+      "segment": 1,
+      "resource_offset": 1602
+    },
+    {
+      "a5_entry_offset": 424,
+      "a5_call_offset": 426,
+      "segment": 1,
+      "resource_offset": 1664
+    },
+    {
+      "a5_entry_offset": 432,
+      "a5_call_offset": 434,
+      "segment": 1,
+      "resource_offset": 1698
+    },
+    {
+      "a5_entry_offset": 440,
+      "a5_call_offset": 442,
+      "segment": 1,
+      "resource_offset": 2004
+    },
+    {
+      "a5_entry_offset": 448,
+      "a5_call_offset": 450,
+      "segment": 1,
+      "resource_offset": 1730
+    },
+    {
+      "a5_entry_offset": 456,
+      "a5_call_offset": 458,
+      "segment": 1,
+      "resource_offset": 2174
+    },
+    {
+      "a5_entry_offset": 464,
+      "a5_call_offset": 466,
+      "segment": 1,
+      "resource_offset": 2210
+    },
+    {
+      "a5_entry_offset": 472,
+      "a5_call_offset": 474,
+      "segment": 1,
+      "resource_offset": 2280
+    },
+    {
+      "a5_entry_offset": 480,
+      "a5_call_offset": 482,
+      "segment": 1,
+      "resource_offset": 2340
+    },
+    {
+      "a5_entry_offset": 488,
+      "a5_call_offset": 490,
+      "segment": 1,
+      "resource_offset": 2350
+    },
+    {
+      "a5_entry_offset": 496,
+      "a5_call_offset": 498,
+      "segment": 1,
+      "resource_offset": 2356
+    },
+    {
+      "a5_entry_offset": 504,
+      "a5_call_offset": 506,
+      "segment": 1,
+      "resource_offset": 2362
+    },
+    {
+      "a5_entry_offset": 512,
+      "a5_call_offset": 514,
+      "segment": 1,
+      "resource_offset": 2382
+    },
+    {
+      "a5_entry_offset": 520,
+      "a5_call_offset": 522,
+      "segment": 1,
+      "resource_offset": 2400
+    },
+    {
+      "a5_entry_offset": 528,
+      "a5_call_offset": 530,
+      "segment": 1,
+      "resource_offset": 2420
+    },
+    {
+      "a5_entry_offset": 536,
+      "a5_call_offset": 538,
+      "segment": 1,
+      "resource_offset": 2414
+    },
+    {
+      "a5_entry_offset": 544,
+      "a5_call_offset": 546,
+      "segment": 1,
+      "resource_offset": 2408
+    },
+    {
+      "a5_entry_offset": 552,
+      "a5_call_offset": 554,
+      "segment": 1,
+      "resource_offset": 2450
+    },
+    {
+      "a5_entry_offset": 560,
+      "a5_call_offset": 562,
+      "segment": 1,
+      "resource_offset": 2462
+    },
+    {
+      "a5_entry_offset": 568,
+      "a5_call_offset": 570,
+      "segment": 1,
+      "resource_offset": 2548
+    },
+    {
+      "a5_entry_offset": 576,
+      "a5_call_offset": 578,
+      "segment": 1,
+      "resource_offset": 2586
+    },
+    {
+      "a5_entry_offset": 584,
+      "a5_call_offset": 586,
+      "segment": 2,
+      "resource_offset": 112
+    },
+    {
+      "a5_entry_offset": 592,
+      "a5_call_offset": 594,
+      "segment": 3,
+      "resource_offset": 15926
+    },
+    {
+      "a5_entry_offset": 600,
+      "a5_call_offset": 602,
+      "segment": 5,
+      "resource_offset": 886
+    },
+    {
+      "a5_entry_offset": 608,
+      "a5_call_offset": 610,
+      "segment": 5,
+      "resource_offset": 2392
+    },
+    {
+      "a5_entry_offset": 616,
+      "a5_call_offset": 618,
+      "segment": 5,
+      "resource_offset": 3248
+    },
+    {
+      "a5_entry_offset": 624,
+      "a5_call_offset": 626,
+      "segment": 5,
+      "resource_offset": 3404
+    },
+    {
+      "a5_entry_offset": 632,
+      "a5_call_offset": 634,
+      "segment": 5,
+      "resource_offset": 3630
+    },
+    {
+      "a5_entry_offset": 640,
+      "a5_call_offset": 642,
+      "segment": 5,
+      "resource_offset": 15684
+    }
+  ],
+  "segments": [
+    {
+      "id": 1,
+      "bytes": 2620,
+      "link_candidates": [
+        76,
+        368,
+        524,
+        1408,
+        1472,
+        1504,
+        1570,
+        1602,
+        1664,
+        1698,
+        2004
+      ],
+      "ascii_runs": [
+        {
+          "offset": 68,
+          "ascii": ".IRA WN"
+        },
+        {
+          "offset": 108,
+          "ascii": "N^ _P"
+        },
+        {
+          "offset": 149,
+          "ascii": "N,MSm"
+        },
+        {
+          "offset": 228,
+          "ascii": "/<ZEROBg"
+        },
+        {
+          "offset": 258,
+          "ascii": "Nu$WY"
+        },
+        {
+          "offset": 264,
+          "ascii": "/<DATABg"
+        },
+        {
+          "offset": 274,
+          "ascii": " W P\"x"
+        },
+        {
+          "offset": 310,
+          "ascii": "/<DRELBg"
+        },
+        {
+          "offset": 400,
+          "ascii": "N^ _P"
+        },
+        {
+          "offset": 428,
+          "ascii": " _\"W/"
+        },
+        {
+          "offset": 450,
+          "ascii": " _\"W/"
+        },
+        {
+          "offset": 491,
+          "ascii": "{ O\"m"
+        },
+        {
+          "offset": 605,
+          "ascii": ",HP?<"
+        },
+        {
+          "offset": 628,
+          "ascii": "N^ _XON"
+        },
+        {
+          "offset": 636,
+          "ascii": "HPHQ?<("
+        },
+        {
+          "offset": 704,
+          "ascii": "NuXO$_0"
+        },
+        {
+          "offset": 831,
+          "ascii": "DHBBB"
+        },
+        {
+          "offset": 990,
+          "ascii": "\\ONu/"
+        },
+        {
+          "offset": 1030,
+          "ascii": "$_ _O"
+        },
+        {
+          "offset": 1117,
+          "ascii": "RUNTIME ERRORY"
+        },
+        {
+          "offset": 1132,
+          "ascii": "/<LSP ?"
+        },
+        {
+          "offset": 1246,
+          "ascii": "B@H@Nu"
+        },
+        {
+          "offset": 1264,
+          "ascii": "H@HG>"
+        },
+        {
+          "offset": 1320,
+          "ascii": "NuS@`"
+        },
+        {
+          "offset": 1326,
+          "ascii": "Nu\"_ "
+        },
+        {
+          "offset": 1362,
+          "ascii": "\"_ _ "
+        },
+        {
+          "offset": 1462,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 1490,
+          "ascii": "N^ _T"
+        },
+        {
+          "offset": 1559,
+          "ascii": "(N^\"_O"
+        },
+        {
+          "offset": 1594,
+          "ascii": "N^\"_\\"
+        },
+        {
+          "offset": 1654,
+          "ascii": "N^\"_O"
+        },
+        {
+          "offset": 1690,
+          "ascii": "N^\"_\\"
+        },
+        {
+          "offset": 1722,
+          "ascii": "N^\"_\\"
+        },
+        {
+          "offset": 1767,
+          "ascii": "<\"PJi"
+        },
+        {
+          "offset": 1899,
+          "ascii": ".`B0)"
+        },
+        {
+          "offset": 2026,
+          "ascii": "N^Nua"
+        },
+        {
+          "offset": 2061,
+          "ascii": "8`h0("
+        },
+        {
+          "offset": 2096,
+          "ascii": "`F\"HA"
+        },
+        {
+          "offset": 2204,
+          "ascii": " _PON"
+        },
+        {
+          "offset": 2230,
+          "ascii": "o&$PTJ2/"
+        },
+        {
+          "offset": 2274,
+          "ascii": " _\\ON"
+        },
+        {
+          "offset": 2288,
+          "ascii": "o( PTH2/"
+        },
+        {
+          "offset": 2330,
+          "ascii": " _TON"
+        },
+        {
+          "offset": 2394,
+          "ascii": " _PON"
+        },
+        {
+          "offset": 2468,
+          "ascii": "/<TEXTHo"
+        },
+        {
+          "offset": 2508,
+          "ascii": "/<TEXTHo"
+        },
+        {
+          "offset": 2553,
+          "ascii": ")YO?8"
+        },
+        {
+          "offset": 2560,
+          "ascii": "Bg/<TEXT/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "bytes": 1566,
+      "link_candidates": [
+        4,
+        112
+      ],
+      "ascii_runs": [
+        {
+          "offset": 136,
+          "ascii": "BGYOHn"
+        },
+        {
+          "offset": 313,
+          "ascii": "rYO?<"
+        },
+        {
+          "offset": 366,
+          "ascii": "/<DRVR"
+        },
+        {
+          "offset": 378,
+          "ascii": "/<FONT"
+        },
+        {
+          "offset": 823,
+          "ascii": "2YO?<"
+        },
+        {
+          "offset": 843,
+          "ascii": "6YO/<"
+        },
+        {
+          "offset": 891,
+          "ascii": "*(PB,"
+        },
+        {
+          "offset": 1076,
+          "ascii": "BgBg?<"
+        },
+        {
+          "offset": 1158,
+          "ascii": "YO/<ROBO0"
+        },
+        {
+          "offset": 1225,
+          "ascii": "|BGYO/<RADR0"
+        },
+        {
+          "offset": 1539,
+          "ascii": "Monaco"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "bytes": 20656,
+      "link_candidates": [
+        4,
+        48,
+        154,
+        186,
+        480,
+        574,
+        804,
+        1308,
+        1456,
+        1698,
+        1738,
+        2176,
+        3440,
+        3592,
+        4050,
+        4128,
+        4150,
+        4492,
+        4574,
+        4600,
+        4684,
+        4956,
+        6752,
+        6812,
+        6896,
+        8064,
+        8172,
+        8468,
+        8708,
+        9250,
+        10266,
+        10354,
+        10400,
+        10560,
+        10916,
+        11290,
+        11448,
+        12386,
+        13574,
+        14452,
+        15448,
+        15882,
+        15926
+      ],
+      "ascii_runs": [
+        {
+          "offset": 40,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 67,
+          "ascii": "hHGJGj"
+        },
+        {
+          "offset": 146,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 178,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 206,
+          "ascii": "DEJDj"
+        },
+        {
+          "offset": 500,
+          "ascii": " T0(\""
+        },
+        {
+          "offset": 510,
+          "ascii": " T1@\""
+        },
+        {
+          "offset": 516,
+          "ascii": " T0(\""
+        },
+        {
+          "offset": 532,
+          "ascii": "\"~ T1@ z T0."
+        },
+        {
+          "offset": 558,
+          "ascii": " T1@\""
+        },
+        {
+          "offset": 564,
+          "ascii": "(_N^ _\\ON"
+        },
+        {
+          "offset": 616,
+          "ascii": " T0( r"
+        },
+        {
+          "offset": 634,
+          "ascii": " T6( t"
+        },
+        {
+          "offset": 661,
+          "ascii": "pYOHn"
+        },
+        {
+          "offset": 794,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 866,
+          "ascii": " PB(\""
+        },
+        {
+          "offset": 920,
+          "ascii": " P=h\"v"
+        },
+        {
+          "offset": 932,
+          "ascii": " P=h\"x"
+        },
+        {
+          "offset": 944,
+          "ascii": " P:(\"r l"
+        },
+        {
+          "offset": 954,
+          "ascii": " P<(\"t6."
+        },
+        {
+          "offset": 1080,
+          "ascii": " P1E\"r l"
+        },
+        {
+          "offset": 1090,
+          "ascii": " P1F\"t l"
+        },
+        {
+          "offset": 1100,
+          "ascii": " P=h "
+        },
+        {
+          "offset": 1112,
+          "ascii": " P0( |j"
+        },
+        {
+          "offset": 1142,
+          "ascii": " PJh "
+        },
+        {
+          "offset": 1200,
+          "ascii": " PBh "
+        },
+        {
+          "offset": 1210,
+          "ascii": " P (\""
+        },
+        {
+          "offset": 1222,
+          "ascii": " P!@\""
+        },
+        {
+          "offset": 1232,
+          "ascii": " PBh | l"
+        },
+        {
+          "offset": 1242,
+          "ascii": " PBh\"v l"
+        },
+        {
+          "offset": 1252,
+          "ascii": " PBh\"x0,"
+        },
+        {
+          "offset": 1346,
+          "ascii": "\"Q<( r"
+        },
+        {
+          "offset": 1353,
+          "ascii": "i r l"
+        },
+        {
+          "offset": 1366,
+          "ascii": "\"Q>( t"
+        },
+        {
+          "offset": 1480,
+          "ascii": " PJ(\""
+        },
+        {
+          "offset": 1488,
+          "ascii": "BDBE0,"
+        },
+        {
+          "offset": 1522,
+          "ascii": "\"Q0( r"
+        },
+        {
+          "offset": 1529,
+          "ascii": "i r=@"
+        },
+        {
+          "offset": 1546,
+          "ascii": "\"Q6( t"
+        },
+        {
+          "offset": 1553,
+          "ascii": "i t0."
+        },
+        {
+          "offset": 1711,
+          "ascii": "`Bl!VBl!XBl!ZBl!\\(_N^ _PON"
+        },
+        {
+          "offset": 2168,
+          "ascii": "(_N^."
+        },
+        {
+          "offset": 2262,
+          "ascii": "\"Q0(\"z"
+        },
+        {
+          "offset": 2292,
+          "ascii": "\"Q0(\"z"
+        },
+        {
+          "offset": 2299,
+          "ascii": "i\"r2."
+        },
+        {
+          "offset": 2316,
+          "ascii": " P1@\"z n"
+        },
+        {
+          "offset": 2332,
+          "ascii": "\"Q0(\"|"
+        },
+        {
+          "offset": 2362,
+          "ascii": "\"Q0(\"|"
+        },
+        {
+          "offset": 2369,
+          "ascii": "i\"t2."
+        },
+        {
+          "offset": 2386,
+          "ascii": " P1@\"| n"
+        },
+        {
+          "offset": 2502,
+          "ascii": "\"Q0(\"z"
+        },
+        {
+          "offset": 2532,
+          "ascii": "\"Q0(\"|"
+        },
+        {
+          "offset": 2568,
+          "ascii": " PHh\""
+        },
+        {
+          "offset": 2612,
+          "ascii": "g UO0."
+        },
+        {
+          "offset": 2678,
+          "ascii": "gBUO/"
+        },
+        {
+          "offset": 2860,
+          "ascii": " PHh\""
+        },
+        {
+          "offset": 2876,
+          "ascii": " P0( r"
+        },
+        {
+          "offset": 2888,
+          "ascii": " P1@ r n"
+        },
+        {
+          "offset": 2898,
+          "ascii": " P0( t"
+        },
+        {
+          "offset": 2910,
+          "ascii": " P1@ t n"
+        },
+        {
+          "offset": 2934,
+          "ascii": " P>(\"rH"
+        },
+        {
+          "offset": 2952,
+          "ascii": " P0(\"tH"
+        },
+        {
+          "offset": 3062,
+          "ascii": " PHh\""
+        },
+        {
+          "offset": 3078,
+          "ascii": " P0( r"
+        },
+        {
+          "offset": 3090,
+          "ascii": " P1@ r n"
+        },
+        {
+          "offset": 3100,
+          "ascii": " P0( t"
+        },
+        {
+          "offset": 3112,
+          "ascii": " P1@ t n"
+        },
+        {
+          "offset": 3136,
+          "ascii": " P0(\"rH"
+        },
+        {
+          "offset": 3154,
+          "ascii": " P0(\"tH"
+        },
+        {
+          "offset": 3210,
+          "ascii": " P!@\""
+        },
+        {
+          "offset": 3260,
+          "ascii": " P!@\""
+        },
+        {
+          "offset": 3366,
+          "ascii": " P0(\""
+        },
+        {
+          "offset": 3378,
+          "ascii": " P1@ r n"
+        },
+        {
+          "offset": 3388,
+          "ascii": " P0(\""
+        },
+        {
+          "offset": 3400,
+          "ascii": " P1@ tRn"
+        },
+        {
+          "offset": 3432,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 3452,
+          "ascii": "BGJGV"
+        },
+        {
+          "offset": 3574,
+          "ascii": "Bl!ZBl!\\L"
+        },
+        {
+          "offset": 3768,
+          "ascii": "[@9@!"
+        },
+        {
+          "offset": 3776,
+          "ascii": "Z@R@9@!"
+        },
+        {
+          "offset": 3786,
+          "ascii": "[@9@!"
+        },
+        {
+          "offset": 3794,
+          "ascii": "Z@R@9@!"
+        },
+        {
+          "offset": 3814,
+          "ascii": "B,!nB,!oBl!hBl!jBl!"
+        },
+        {
+          "offset": 3834,
+          "ascii": "Bl!^Bl!`Bl!VBl!XJl"
+        },
+        {
+          "offset": 3895,
+          "ascii": "d!b`89|"
+        },
+        {
+          "offset": 3903,
+          "ascii": "s!b`09|"
+        },
+        {
+          "offset": 3912,
+          "ascii": "!b`(9|"
+        },
+        {
+          "offset": 3920,
+          "ascii": "!b` 9|"
+        },
+        {
+          "offset": 3988,
+          "ascii": "!d9l!d"
+        },
+        {
+          "offset": 4042,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 4118,
+          "ascii": "(_N^ _\\ON"
+        },
+        {
+          "offset": 4200,
+          "ascii": " SJh "
+        },
+        {
+          "offset": 4210,
+          "ascii": " S0(\""
+        },
+        {
+          "offset": 4222,
+          "ascii": " S0(\""
+        },
+        {
+          "offset": 4277,
+          "ascii": "!lL0,!"
+        },
+        {
+          "offset": 4378,
+          "ascii": "`b R0(\""
+        },
+        {
+          "offset": 4410,
+          "ascii": " R0(\""
+        },
+        {
+          "offset": 4482,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 4519,
+          "ascii": "z`* l"
+        },
+        {
+          "offset": 4564,
+          "ascii": "(_N^ _\\ON"
+        },
+        {
+          "offset": 4676,
+          "ascii": "(_N^."
+        },
+        {
+          "offset": 4783,
+          "ascii": "xH@=@"
+        },
+        {
+          "offset": 5035,
+          "ascii": "hHGJGj"
+        },
+        {
+          "offset": 5065,
+          "ascii": "hHG l"
+        },
+        {
+          "offset": 5106,
+          "ascii": "B(!oUO l"
+        },
+        {
+          "offset": 5156,
+          "ascii": "TO1_!zUO l"
+        },
+        {
+          "offset": 5212,
+          "ascii": "1@!| l"
+        },
+        {
+          "offset": 5236,
+          "ascii": "1@!t l"
+        },
+        {
+          "offset": 5260,
+          "ascii": "1@!r0,"
+        },
+        {
+          "offset": 5284,
+          "ascii": "1@!v l"
+        },
+        {
+          "offset": 5292,
+          "ascii": "Bh!x l"
+        },
+        {
+          "offset": 5321,
+          "ascii": "X!~0,"
+        },
+        {
+          "offset": 5344,
+          "ascii": "#h!~!"
+        },
+        {
+          "offset": 5412,
+          "ascii": ">(!v l"
+        },
+        {
+          "offset": 5511,
+          "ascii": "hHGJGj"
+        },
+        {
+          "offset": 5541,
+          "ascii": "hHG l"
+        },
+        {
+          "offset": 5660,
+          "ascii": "g:JFW"
+        },
+        {
+          "offset": 5726,
+          "ascii": "JFoRYOHn"
+        },
+        {
+          "offset": 5908,
+          "ascii": "JFoZYOHn"
+        },
+        {
+          "offset": 6000,
+          "ascii": "`RYOHn"
+        },
+        {
+          "offset": 6091,
+          "ascii": "rYOHn"
+        },
+        {
+          "offset": 6223,
+          "ascii": "tYOHn"
+        },
+        {
+          "offset": 6301,
+          "ascii": "nYOHn"
+        },
+        {
+          "offset": 6419,
+          "ascii": "hHGJGj"
+        },
+        {
+          "offset": 6449,
+          "ascii": "hHG l"
+        },
+        {
+          "offset": 6459,
+          "ascii": "vUO l"
+        },
+        {
+          "offset": 6480,
+          "ascii": "1_!l0,"
+        },
+        {
+          "offset": 6749,
+          "ascii": ">WSNV"
+        },
+        {
+          "offset": 6804,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 6888,
+          "ascii": "(_N^."
+        },
+        {
+          "offset": 6983,
+          "ascii": "\\oH n"
+        },
+        {
+          "offset": 6993,
+          "ascii": "\\S@ n"
+        },
+        {
+          "offset": 7011,
+          "ascii": "\\n, n"
+        },
+        {
+          "offset": 7779,
+          "ascii": ".`N?."
+        },
+        {
+          "offset": 7996,
+          "ascii": "1@!Z n"
+        },
+        {
+          "offset": 8056,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 8162,
+          "ascii": "(_N^ _PON"
+        },
+        {
+          "offset": 8384,
+          "ascii": " F P0"
+        },
+        {
+          "offset": 8393,
+          "ascii": "@ r00"
+        },
+        {
+          "offset": 8418,
+          "ascii": " F P0"
+        },
+        {
+          "offset": 8460,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 8520,
+          "ascii": " R<(\""
+        },
+        {
+          "offset": 8534,
+          "ascii": " R<(\"0z"
+        },
+        {
+          "offset": 8562,
+          "ascii": " r<0`"
+        },
+        {
+          "offset": 8700,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 8734,
+          "ascii": " S>(\"*"
+        },
+        {
+          "offset": 8761,
+          "ascii": "2o*6,"
+        },
+        {
+          "offset": 8777,
+          "ascii": "D[CHl"
+        },
+        {
+          "offset": 8911,
+          "ascii": "^S@=@"
+        },
+        {
+          "offset": 8943,
+          "ascii": "4 S h"
+        },
+        {
+          "offset": 8980,
+          "ascii": "S@ S h"
+        },
+        {
+          "offset": 8993,
+          "ascii": "^m\" S h"
+        },
+        {
+          "offset": 9002,
+          "ascii": " P\"S\"i"
+        },
+        {
+          "offset": 9028,
+          "ascii": "`& S h"
+        },
+        {
+          "offset": 9043,
+          "ascii": "@\"S\"i"
+        },
+        {
+          "offset": 9120,
+          "ascii": "$@BE`"
+        },
+        {
+          "offset": 9195,
+          "ascii": "D[CHl"
+        },
+        {
+          "offset": 9242,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 9317,
+          "ascii": "TUO/-"
+        },
+        {
+          "offset": 9697,
+          "ascii": "FUOHn"
+        },
+        {
+          "offset": 10051,
+          "ascii": "*`RU@"
+        },
+        {
+          "offset": 10151,
+          "ascii": "Continue"
+        },
+        {
+          "offset": 10161,
+          "ascii": "Enable Trace Instructions"
+        },
+        {
+          "offset": 10187,
+          "ascii": "Disable Trace Instructions"
+        },
+        {
+          "offset": 10215,
+          "ascii": "Enable Debugging"
+        },
+        {
+          "offset": 10233,
+          "ascii": "Disable Debugging"
+        },
+        {
+          "offset": 10251,
+          "ascii": "Pause"
+        },
+        {
+          "offset": 10257,
+          "ascii": "Continue"
+        },
+        {
+          "offset": 10327,
+          "ascii": "Continue"
+        },
+        {
+          "offset": 10337,
+          "ascii": "Disable DebuggingNV"
+        },
+        {
+          "offset": 10530,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 10541,
+          "ascii": "    total: "
+        },
+        {
+          "offset": 10553,
+          "ascii": "score: NV"
+        },
+        {
+          "offset": 10644,
+          "ascii": " S?(\""
+        },
+        {
+          "offset": 10650,
+          "ascii": " S?(\""
+        },
+        {
+          "offset": 10674,
+          "ascii": " S<( z0"
+        },
+        {
+          "offset": 10772,
+          "ascii": " S<( "
+        },
+        {
+          "offset": 10830,
+          "ascii": " S2(\""
+        },
+        {
+          "offset": 11270,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 11279,
+          "ascii": "<destroyed>NV"
+        },
+        {
+          "offset": 11440,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 11547,
+          "ascii": "d z?."
+        },
+        {
+          "offset": 11568,
+          "ascii": " PJ(\""
+        },
+        {
+          "offset": 11582,
+          "ascii": " P>(\""
+        },
+        {
+          "offset": 11592,
+          "ascii": " P<(\""
+        },
+        {
+          "offset": 11602,
+          "ascii": " P=h\""
+        },
+        {
+          "offset": 11614,
+          "ascii": " P=h\""
+        },
+        {
+          "offset": 11690,
+          "ascii": " P-h\""
+        },
+        {
+          "offset": 11713,
+          "ascii": "FfN n"
+        },
+        {
+          "offset": 11720,
+          "ascii": " P-h\""
+        },
+        {
+          "offset": 11890,
+          "ascii": "JEgJJn"
+        },
+        {
+          "offset": 11968,
+          "ascii": "JDgJJn"
+        },
+        {
+          "offset": 12134,
+          "ascii": " PBh\""
+        },
+        {
+          "offset": 12162,
+          "ascii": " PHh\""
+        },
+        {
+          "offset": 12184,
+          "ascii": " P!@\""
+        },
+        {
+          "offset": 12216,
+          "ascii": " PB(\""
+        },
+        {
+          "offset": 12288,
+          "ascii": " PB(\""
+        },
+        {
+          "offset": 12344,
+          "ascii": " P1G\""
+        },
+        {
+          "offset": 12378,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 12492,
+          "ascii": " SJh\""
+        },
+        {
+          "offset": 12498,
+          "ascii": "oj S0( "
+        },
+        {
+          "offset": 12530,
+          "ascii": " S0(\""
+        },
+        {
+          "offset": 12536,
+          "ascii": "S@ S1@\""
+        },
+        {
+          "offset": 12656,
+          "ascii": " SJh "
+        },
+        {
+          "offset": 12678,
+          "ascii": " SJh\""
+        },
+        {
+          "offset": 12687,
+          "ascii": "* SHh\""
+        },
+        {
+          "offset": 12702,
+          "ascii": " S0(\""
+        },
+        {
+          "offset": 12708,
+          "ascii": "S@ S1@\""
+        },
+        {
+          "offset": 13566,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 14033,
+          "ascii": "@\\A=A"
+        },
+        {
+          "offset": 14277,
+          "ascii": "CPU Error Resets:"
+        },
+        {
+          "offset": 14295,
+          "ascii": "Times Out of Fuel:"
+        },
+        {
+          "offset": 14315,
+          "ascii": "Collision Damage:"
+        },
+        {
+          "offset": 14333,
+          "ascii": "Shot Damage to Self:"
+        },
+        {
+          "offset": 14355,
+          "ascii": "Avg. Dam. Sustained:"
+        },
+        {
+          "offset": 14377,
+          "ascii": "Shot damage to others:"
+        },
+        {
+          "offset": 14401,
+          "ascii": "Games Won:"
+        },
+        {
+          "offset": 14413,
+          "ascii": "Robot Name:"
+        },
+        {
+          "offset": 14425,
+          "ascii": "Battle Statistics"
+        },
+        {
+          "offset": 14443,
+          "ascii": "Game OverNV"
+        },
+        {
+          "offset": 14475,
+          "ascii": "sBEJm"
+        },
+        {
+          "offset": 14768,
+          "ascii": "HFRFJ6`"
+        },
+        {
+          "offset": 15387,
+          "ascii": "0%       Fuel      100%"
+        },
+        {
+          "offset": 15411,
+          "ascii": "0%    Damage    100%"
+        },
+        {
+          "offset": 15433,
+          "ascii": " out of "
+        },
+        {
+          "offset": 15443,
+          "ascii": "Game NV"
+        },
+        {
+          "offset": 15512,
+          "ascii": "BgBg?<"
+        },
+        {
+          "offset": 15520,
+          "ascii": "Bgpc/"
+        },
+        {
+          "offset": 15667,
+          "ascii": "qUO/."
+        },
+        {
+          "offset": 15803,
+          "ascii": "s`\")m"
+        },
+        {
+          "offset": 15865,
+          "ascii": "Exit Battlefield"
+        },
+        {
+          "offset": 15918,
+          "ascii": "(_N^."
+        },
+        {
+          "offset": 15953,
+          "ascii": "BUO?<"
+        },
+        {
+          "offset": 16040,
+          "ascii": "&HYO/"
+        },
+        {
+          "offset": 16091,
+          "ascii": "0 P2(\""
+        },
+        {
+          "offset": 16160,
+          "ascii": "UOB'B'N"
+        },
+        {
+          "offset": 16226,
+          "ascii": "&HYO/"
+        },
+        {
+          "offset": 16337,
+          "ascii": "Ppd+@"
+        },
+        {
+          "offset": 16352,
+          "ascii": "YO/<snd Hz"
+        },
+        {
+          "offset": 16431,
+          "ascii": "$(HBTYO/*"
+        },
+        {
+          "offset": 16452,
+          "ascii": "TO?<V"
+        },
+        {
+          "offset": 16546,
+          "ascii": "YO/<snd Hz"
+        },
+        {
+          "offset": 16608,
+          "ascii": " C PA"
+        },
+        {
+          "offset": 16615,
+          "ascii": "$(HBTYO/*"
+        },
+        {
+          "offset": 16636,
+          "ascii": "TO?<V"
+        },
+        {
+          "offset": 16716,
+          "ascii": "YO/<snd Hz"
+        },
+        {
+          "offset": 16778,
+          "ascii": " D PA"
+        },
+        {
+          "offset": 16785,
+          "ascii": "$(HBTYO/*"
+        },
+        {
+          "offset": 16806,
+          "ascii": "TO?<V"
+        },
+        {
+          "offset": 16886,
+          "ascii": "YO/<snd Hz"
+        },
+        {
+          "offset": 16965,
+          "ascii": "$(HBTYO/*"
+        },
+        {
+          "offset": 16986,
+          "ascii": "TO?<V"
+        },
+        {
+          "offset": 17627,
+          "ascii": "=P@2."
+        },
+        {
+          "offset": 17784,
+          "ascii": "`ZYO/"
+        },
+        {
+          "offset": 18271,
+          "ascii": "7YO?<"
+        },
+        {
+          "offset": 18335,
+          "ascii": "&YO0*"
+        },
+        {
+          "offset": 18503,
+          "ascii": "vYO?<"
+        },
+        {
+          "offset": 18555,
+          "ascii": "8UOHz"
+        },
+        {
+          "offset": 18919,
+          "ascii": "h\",=@"
+        },
+        {
+          "offset": 18971,
+          "ascii": "-UO n"
+        },
+        {
+          "offset": 19082,
+          "ascii": "g:UO n"
+        },
+        {
+          "offset": 19165,
+          "ascii": "<`ZUO n"
+        },
+        {
+          "offset": 19209,
+          "ascii": "h\", n"
+        },
+        {
+          "offset": 19216,
+          "ascii": " P1@\",0."
+        },
+        {
+          "offset": 19338,
+          "ascii": "HAJAW"
+        },
+        {
+          "offset": 19408,
+          "ascii": " P0(\""
+        },
+        {
+          "offset": 19426,
+          "ascii": " P1@\""
+        },
+        {
+          "offset": 19436,
+          "ascii": " P0(\""
+        },
+        {
+          "offset": 19454,
+          "ascii": " P1@\""
+        },
+        {
+          "offset": 19482,
+          "ascii": "H@J@W"
+        },
+        {
+          "offset": 19504,
+          "ascii": "HBJBW"
+        },
+        {
+          "offset": 19614,
+          "ascii": " P (\""
+        },
+        {
+          "offset": 19626,
+          "ascii": " P!@\""
+        },
+        {
+          "offset": 19730,
+          "ascii": "\"Q0) zH"
+        },
+        {
+          "offset": 19746,
+          "ascii": " P!@\""
+        },
+        {
+          "offset": 19866,
+          "ascii": " P!_\""
+        },
+        {
+          "offset": 20309,
+          "ascii": "Disable Trace Instructions"
+        },
+        {
+          "offset": 20337,
+          "ascii": "Enable Debugging"
+        },
+        {
+          "offset": 20355,
+          "ascii": "Pause"
+        },
+        {
+          "offset": 20367,
+          "ascii": "Enable Debugging"
+        },
+        {
+          "offset": 20385,
+          "ascii": "Continue"
+        },
+        {
+          "offset": 20395,
+          "ascii": "Disable Trace Instructions"
+        },
+        {
+          "offset": 20423,
+          "ascii": "Disable Debugging"
+        },
+        {
+          "offset": 20441,
+          "ascii": "Accumulator:"
+        },
+        {
+          "offset": 20455,
+          "ascii": "random:"
+        },
+        {
+          "offset": 20463,
+          "ascii": "radar:"
+        },
+        {
+          "offset": 20471,
+          "ascii": "Dconv:"
+        },
+        {
+          "offset": 20479,
+          "ascii": "Aconv:"
+        },
+        {
+          "offset": 20487,
+          "ascii": "Yconv:"
+        },
+        {
+          "offset": 20495,
+          "ascii": "Xconv:"
+        },
+        {
+          "offset": 20503,
+          "ascii": "time_int_xfer:"
+        },
+        {
+          "offset": 20519,
+          "ascii": "time_int_mask:"
+        },
+        {
+          "offset": 20535,
+          "ascii": "num_robots:"
+        },
+        {
+          "offset": 20547,
+          "ascii": "cloak:"
+        },
+        {
+          "offset": 20555,
+          "ascii": "fuel:"
+        },
+        {
+          "offset": 20561,
+          "ascii": "direct:"
+        },
+        {
+          "offset": 20569,
+          "ascii": "speed:"
+        },
+        {
+          "offset": 20577,
+          "ascii": "damage:"
+        },
+        {
+          "offset": 20585,
+          "ascii": "shot:"
+        },
+        {
+          "offset": 20603,
+          "ascii": "Collision"
+        },
+        {
+          "offset": 20613,
+          "ascii": "Death"
+        },
+        {
+          "offset": 20619,
+          "ascii": "Explosion"
+        },
+        {
+          "offset": 20629,
+          "ascii": "Compiling..."
+        },
+        {
+          "offset": 20643,
+          "ascii": "Compiling..."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "bytes": 21546,
+      "link_candidates": [
+        4,
+        228,
+        332,
+        372,
+        660,
+        894,
+        970,
+        1048,
+        1088,
+        1358,
+        1570,
+        1812,
+        2068,
+        2204,
+        2384,
+        2544,
+        2620,
+        2736,
+        2764,
+        2790,
+        2890,
+        3040,
+        3172,
+        3242,
+        4348,
+        4468,
+        5748,
+        5854,
+        5982,
+        6102,
+        6172,
+        6226,
+        6678,
+        6774,
+        6852,
+        6952,
+        7722,
+        7766,
+        7832,
+        8136,
+        8338,
+        8404,
+        8466,
+        8516,
+        8566,
+        9166,
+        9232,
+        9646,
+        11124,
+        11170,
+        11342,
+        11448,
+        11800,
+        11924,
+        12044,
+        12284,
+        12446,
+        12662,
+        12980,
+        13116,
+        13226,
+        13682,
+        13948,
+        14138,
+        14588,
+        14856,
+        14962,
+        15000,
+        15028,
+        15240,
+        15388,
+        15458,
+        15536,
+        15636,
+        16336,
+        16452,
+        16622,
+        16830,
+        17514,
+        18148,
+        18190,
+        18346,
+        18386,
+        18554,
+        18706,
+        18834,
+        18990,
+        19170,
+        19556,
+        19926,
+        19978,
+        20702,
+        21308,
+        21514
+      ],
+      "ascii_runs": [
+        {
+          "offset": 51,
+          "ascii": "EN^ _TON"
+        },
+        {
+          "offset": 115,
+          "ascii": "Turn Sound On"
+        },
+        {
+          "offset": 129,
+          "ascii": "Turn Sound Off"
+        },
+        {
+          "offset": 195,
+          "ascii": "Reduced Animation"
+        },
+        {
+          "offset": 213,
+          "ascii": "Full Animation"
+        },
+        {
+          "offset": 328,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 363,
+          "ascii": ":N^ _PON"
+        },
+        {
+          "offset": 395,
+          "ascii": "*(P/,"
+        },
+        {
+          "offset": 609,
+          "ascii": "]` /,"
+        },
+        {
+          "offset": 651,
+          "ascii": "*(_N^."
+        },
+        {
+          "offset": 735,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 749,
+          "ascii": "0 P h"
+        },
+        {
+          "offset": 777,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 890,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 911,
+          "ascii": ")(R>,"
+        },
+        {
+          "offset": 994,
+          "ascii": "SGJGl"
+        },
+        {
+          "offset": 1006,
+          "ascii": " E P\"E\"Q0"
+        },
+        {
+          "offset": 1118,
+          "ascii": "BGBRBSUO/"
+        },
+        {
+          "offset": 1140,
+          "ascii": "RG T0"
+        },
+        {
+          "offset": 1147,
+          "ascii": "@\"T00"
+        },
+        {
+          "offset": 1162,
+          "ascii": " T\"T0("
+        },
+        {
+          "offset": 1203,
+          "ascii": "@\"T3p"
+        },
+        {
+          "offset": 1216,
+          "ascii": " T\"T0("
+        },
+        {
+          "offset": 1235,
+          "ascii": "@\"T3p"
+        },
+        {
+          "offset": 1256,
+          "ascii": "RG T0"
+        },
+        {
+          "offset": 1263,
+          "ascii": "@\"T00"
+        },
+        {
+          "offset": 1293,
+          "ascii": "A\"T20"
+        },
+        {
+          "offset": 1312,
+          "ascii": " T\"T3h"
+        },
+        {
+          "offset": 1335,
+          "ascii": "@\"T3p"
+        },
+        {
+          "offset": 1348,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 1413,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 1425,
+          "ascii": "0 P h"
+        },
+        {
+          "offset": 1508,
+          "ascii": "g4UO/."
+        },
+        {
+          "offset": 1566,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 1607,
+          "ascii": "> T6("
+        },
+        {
+          "offset": 1634,
+          "ascii": "`< S\"T0"
+        },
+        {
+          "offset": 1658,
+          "ascii": "f  T:"
+        },
+        {
+          "offset": 1665,
+          "ascii": "E00P`H"
+        },
+        {
+          "offset": 1690,
+          "ascii": "RFRGi"
+        },
+        {
+          "offset": 1737,
+          "ascii": "0 PB("
+        },
+        {
+          "offset": 1755,
+          "ascii": "0 PJ("
+        },
+        {
+          "offset": 1783,
+          "ascii": "0 PJ("
+        },
+        {
+          "offset": 1804,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 1898,
+          "ascii": "`& T<"
+        },
+        {
+          "offset": 1905,
+          "ascii": "F00``H"
+        },
+        {
+          "offset": 1981,
+          "ascii": "0 PB("
+        },
+        {
+          "offset": 1999,
+          "ascii": "0 PJ("
+        },
+        {
+          "offset": 2027,
+          "ascii": "0 PJ("
+        },
+        {
+          "offset": 2060,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 2255,
+          "ascii": "@JFf@ T0("
+        },
+        {
+          "offset": 2265,
+          "ascii": " S@ T1@"
+        },
+        {
+          "offset": 2295,
+          "ascii": "@ T0("
+        },
+        {
+          "offset": 2301,
+          "ascii": " R@ T1@"
+        },
+        {
+          "offset": 2318,
+          "ascii": "HGRG`"
+        },
+        {
+          "offset": 2332,
+          "ascii": "HGJGf"
+        },
+        {
+          "offset": 2421,
+          "ascii": "G>0p`BF`"
+        },
+        {
+          "offset": 2430,
+          "ascii": "RGRF T h"
+        },
+        {
+          "offset": 2470,
+          "ascii": "JFo<YO0"
+        },
+        {
+          "offset": 2612,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 2727,
+          "ascii": "sN^ _PON"
+        },
+        {
+          "offset": 2755,
+          "ascii": "zN^ _\\ON"
+        },
+        {
+          "offset": 2781,
+          "ascii": "`N^ _\\ON"
+        },
+        {
+          "offset": 2925,
+          "ascii": "xUO?<"
+        },
+        {
+          "offset": 3162,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 3233,
+          "ascii": "](_N^."
+        },
+        {
+          "offset": 3263,
+          "ascii": "&UO?<"
+        },
+        {
+          "offset": 3285,
+          "ascii": "tYO?<"
+        },
+        {
+          "offset": 3508,
+          "ascii": "^ERF`"
+        },
+        {
+          "offset": 4319,
+          "ascii": "Maximum # of Battles is 1000"
+        },
+        {
+          "offset": 4464,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 4481,
+          "ascii": "* PB("
+        },
+        {
+          "offset": 4533,
+          "ascii": "s E(P0-"
+        },
+        {
+          "offset": 4669,
+          "ascii": "* P/("
+        },
+        {
+          "offset": 4683,
+          "ascii": "* P/("
+        },
+        {
+          "offset": 5527,
+          "ascii": "*&P/+"
+        },
+        {
+          "offset": 5577,
+          "ascii": "t`4/+"
+        },
+        {
+          "offset": 5744,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 5773,
+          "ascii": "SUO/,"
+        },
+        {
+          "offset": 5974,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 6025,
+          "ascii": "0(P l"
+        },
+        {
+          "offset": 6098,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 6161,
+          "ascii": "dN^ _O"
+        },
+        {
+          "offset": 6184,
+          "ascii": "(PUO/,"
+        },
+        {
+          "offset": 6287,
+          "ascii": "0&P k"
+        },
+        {
+          "offset": 6554,
+          "ascii": "f<UO/+"
+        },
+        {
+          "offset": 6670,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 6708,
+          "ascii": "g4YO."
+        },
+        {
+          "offset": 6716,
+          "ascii": " _ PA"
+        },
+        {
+          "offset": 6792,
+          "ascii": "&PBG`"
+        },
+        {
+          "offset": 6882,
+          "ascii": "(PUO/+"
+        },
+        {
+          "offset": 7026,
+          "ascii": "g\"YO/"
+        },
+        {
+          "offset": 7074,
+          "ascii": "B'Bgp"
+        },
+        {
+          "offset": 7268,
+          "ascii": "BgBgBg?<"
+        },
+        {
+          "offset": 7344,
+          "ascii": "BgBg?<"
+        },
+        {
+          "offset": 7524,
+          "ascii": " PTO1_"
+        },
+        {
+          "offset": 7621,
+          "ascii": ">YO/-"
+        },
+        {
+          "offset": 7636,
+          "ascii": " PTO1_"
+        },
+        {
+          "offset": 7708,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 7743,
+          "ascii": "- T/("
+        },
+        {
+          "offset": 7757,
+          "ascii": "#(_N^."
+        },
+        {
+          "offset": 7811,
+          "ascii": ":BgBg"
+        },
+        {
+          "offset": 7824,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 7853,
+          "ascii": ") R/("
+        },
+        {
+          "offset": 7873,
+          "ascii": "s&R k"
+        },
+        {
+          "offset": 8105,
+          "ascii": "s R/("
+        },
+        {
+          "offset": 8126,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 8147,
+          "ascii": "$(_Jl"
+        },
+        {
+          "offset": 8170,
+          "ascii": "&_ SJ"
+        },
+        {
+          "offset": 8334,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 8660,
+          "ascii": "fLUO?<"
+        },
+        {
+          "offset": 8942,
+          "ascii": "lFUO?"
+        },
+        {
+          "offset": 9012,
+          "ascii": "`rUO0"
+        },
+        {
+          "offset": 9090,
+          "ascii": "`$U@g"
+        },
+        {
+          "offset": 9146,
+          "ascii": "NuB'N"
+        },
+        {
+          "offset": 9163,
+          "ascii": "FNuNV"
+        },
+        {
+          "offset": 9272,
+          "ascii": "BFBEYO"
+        },
+        {
+          "offset": 9285,
+          "ascii": "\\YOYO"
+        },
+        {
+          "offset": 9296,
+          "ascii": "(_`HYO/"
+        },
+        {
+          "offset": 9320,
+          "ascii": "RFRE0"
+        },
+        {
+          "offset": 9459,
+          "ascii": "*YO/-"
+        },
+        {
+          "offset": 9638,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 10256,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 10264,
+          "ascii": "+Read/write permission doesn't allow writing"
+        },
+        {
+          "offset": 10309,
+          "ascii": "Problem during rename"
+        },
+        {
+          "offset": 10331,
+          "ascii": "Not a Macintosh disk"
+        },
+        {
+          "offset": 10353,
+          "ascii": "No such drive/Specified volume is already mounted and on-line'Attempt to open locked file for writing"
+        },
+        {
+          "offset": 10455,
+          "ascii": "Volume not on-line"
+        },
+        {
+          "offset": 10475,
+          "ascii": "Error during GetFPos"
+        },
+        {
+          "offset": 10496,
+          "ascii": "8Path reference number specifies nonexistent access path "
+        },
+        {
+          "offset": 10555,
+          "ascii": "Error in parameter listMThe read/write permission of only one access path to a file can allow writing:File with specified name and version number already exists"
+        },
+        {
+          "offset": 10716,
+          "ascii": "(File is busy; one or more files are open"
+        },
+        {
+          "offset": 10758,
+          "ascii": "#Volume is locked by a software flag"
+        },
+        {
+          "offset": 10795,
+          "ascii": "File is locked"
+        },
+        {
+          "offset": 10810,
+          "ascii": "&Volume is locked by a hardware setting"
+        },
+        {
+          "offset": 10851,
+          "ascii": "File no found"
+        },
+        {
+          "offset": 10865,
+          "ascii": "Too many files open(Attempt to position before start of file"
+        },
+        {
+          "offset": 10926,
+          "ascii": "1Logical end-of-file reached during read operation"
+        },
+        {
+          "offset": 10977,
+          "ascii": "File no open"
+        },
+        {
+          "offset": 10991,
+          "ascii": "Bad filename or volume name"
+        },
+        {
+          "offset": 11019,
+          "ascii": "I/O error"
+        },
+        {
+          "offset": 11029,
+          "ascii": "Specified volume doesn't exit,All allocation blocks on the volume are full"
+        },
+        {
+          "offset": 11105,
+          "ascii": "File directory fullNV"
+        },
+        {
+          "offset": 11161,
+          "ascii": ":N^ _TON"
+        },
+        {
+          "offset": 11312,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 11323,
+          "ascii": "Save document as:"
+        },
+        {
+          "offset": 11370,
+          "ascii": "`0RG0"
+        },
+        {
+          "offset": 11741,
+          "ascii": "Untitled 5"
+        },
+        {
+          "offset": 11753,
+          "ascii": "Untitled 4"
+        },
+        {
+          "offset": 11765,
+          "ascii": "Untitled 3"
+        },
+        {
+          "offset": 11777,
+          "ascii": "Untitled 2"
+        },
+        {
+          "offset": 11789,
+          "ascii": "Untitled 1"
+        },
+        {
+          "offset": 11882,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 11897,
+          "ascii": "Error while reading from \""
+        },
+        {
+          "offset": 12019,
+          "ascii": "&N^ _\\ON"
+        },
+        {
+          "offset": 12033,
+          "ascii": "I/O error #NV"
+        },
+        {
+          "offset": 12252,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 12261,
+          "ascii": "File is too big to editNV"
+        },
+        {
+          "offset": 12325,
+          "ascii": "PXOHn"
+        },
+        {
+          "offset": 12347,
+          "ascii": "tXOHn"
+        },
+        {
+          "offset": 12392,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 12405,
+          "ascii": "\" - I/O error #"
+        },
+        {
+          "offset": 12421,
+          "ascii": "Error while writing to \""
+        },
+        {
+          "offset": 12484,
+          "ascii": "/<RWar/<TEXTN"
+        },
+        {
+          "offset": 12652,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 12912,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 12921,
+          "ascii": "Untitled 5"
+        },
+        {
+          "offset": 12933,
+          "ascii": "Untitled 4"
+        },
+        {
+          "offset": 12945,
+          "ascii": "Untitled 3"
+        },
+        {
+          "offset": 12957,
+          "ascii": "Untitled 2"
+        },
+        {
+          "offset": 12969,
+          "ascii": "Untitled 1"
+        },
+        {
+          "offset": 12996,
+          "ascii": "`VRG0"
+        },
+        {
+          "offset": 13020,
+          "ascii": "f>YO/"
+        },
+        {
+          "offset": 13109,
+          "ascii": "Unused"
+        },
+        {
+          "offset": 13156,
+          "ascii": "`*RG0"
+        },
+        {
+          "offset": 13218,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 13282,
+          "ascii": "/<TEXTHn"
+        },
+        {
+          "offset": 13321,
+          "ascii": "xUOHn"
+        },
+        {
+          "offset": 13390,
+          "ascii": "g0UOHn"
+        },
+        {
+          "offset": 13423,
+          "ascii": "vUO?<"
+        },
+        {
+          "offset": 13528,
+          "ascii": " S1G\""
+        },
+        {
+          "offset": 13672,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 13753,
+          "ascii": ",UO?<"
+        },
+        {
+          "offset": 13782,
+          "ascii": "/<TEXTHn"
+        },
+        {
+          "offset": 13832,
+          "ascii": "(PUOHn"
+        },
+        {
+          "offset": 13936,
+          "ascii": "(_N^ _O"
+        },
+        {
+          "offset": 14001,
+          "ascii": "4UO?<"
+        },
+        {
+          "offset": 14074,
+          "ascii": "`\"UO/"
+        },
+        {
+          "offset": 14122,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 14157,
+          "ascii": "*g YO"
+        },
+        {
+          "offset": 14163,
+          "ascii": "$(_Jl"
+        },
+        {
+          "offset": 14495,
+          "ascii": "7`RYO"
+        },
+        {
+          "offset": 14511,
+          "ascii": "llB/-"
+        },
+        {
+          "offset": 14584,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 14629,
+          "ascii": ")(SHn"
+        },
+        {
+          "offset": 14741,
+          "ascii": ">YO/-"
+        },
+        {
+          "offset": 14756,
+          "ascii": " PTO1_"
+        },
+        {
+          "offset": 14842,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 14884,
+          "ascii": "g0YO0"
+        },
+        {
+          "offset": 14904,
+          "ascii": "(_UO<"
+        },
+        {
+          "offset": 14954,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 14988,
+          "ascii": "NuUON"
+        },
+        {
+          "offset": 14995,
+          "ascii": "2J_NuNV"
+        },
+        {
+          "offset": 15024,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 15236,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 15295,
+          "ascii": "ngNHn"
+        },
+        {
+          "offset": 15309,
+          "ascii": "sYO/-"
+        },
+        {
+          "offset": 15325,
+          "ascii": ")(SYON"
+        },
+        {
+          "offset": 15338,
+          "ascii": " PTO1_"
+        },
+        {
+          "offset": 15380,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 15454,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 15496,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 15570,
+          "ascii": "` UOp"
+        },
+        {
+          "offset": 15673,
+          "ascii": ")(S l"
+        },
+        {
+          "offset": 15699,
+          "ascii": "* PHh"
+        },
+        {
+          "offset": 15709,
+          "ascii": "TXO?<"
+        },
+        {
+          "offset": 15771,
+          "ascii": "* PJ("
+        },
+        {
+          "offset": 15818,
+          "ascii": "H@J@f"
+        },
+        {
+          "offset": 16112,
+          "ascii": "g: S/("
+        },
+        {
+          "offset": 16136,
+          "ascii": "R@ S h"
+        },
+        {
+          "offset": 16154,
+          "ascii": "g> S/("
+        },
+        {
+          "offset": 16189,
+          "ascii": "* PHh"
+        },
+        {
+          "offset": 16234,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 16243,
+          "ascii": "\" not found past selection"
+        },
+        {
+          "offset": 16398,
+          "ascii": " E P/("
+        },
+        {
+          "offset": 16418,
+          "ascii": " E P/("
+        },
+        {
+          "offset": 16485,
+          "ascii": "FUOHn"
+        },
+        {
+          "offset": 16613,
+          "ascii": "7N^ _TON"
+        },
+        {
+          "offset": 16701,
+          "ascii": "vUO/-"
+        },
+        {
+          "offset": 16722,
+          "ascii": "g^`\\/-"
+        },
+        {
+          "offset": 16743,
+          "ascii": "j`HHm"
+        },
+        {
+          "offset": 16763,
+          "ascii": "b`4?<"
+        },
+        {
+          "offset": 16818,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 17313,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 17335,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 17357,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 17371,
+          "ascii": ":`\\ m"
+        },
+        {
+          "offset": 17377,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 17419,
+          "ascii": "E`,W@"
+        },
+        {
+          "offset": 17506,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 17765,
+          "ascii": "* PJ("
+        },
+        {
+          "offset": 17787,
+          "ascii": "^UOYON"
+        },
+        {
+          "offset": 18053,
+          "ascii": "* PJ("
+        },
+        {
+          "offset": 18091,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 18140,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 18180,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 18266,
+          "ascii": "g*YO0"
+        },
+        {
+          "offset": 18338,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 18376,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 18474,
+          "ascii": "g*YO0"
+        },
+        {
+          "offset": 18546,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 18564,
+          "ascii": "`^UOHm"
+        },
+        {
+          "offset": 18628,
+          "ascii": "gB`@N"
+        },
+        {
+          "offset": 18657,
+          "ascii": "$`$S@g"
+        },
+        {
+          "offset": 18698,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 18752,
+          "ascii": "`DS@g"
+        },
+        {
+          "offset": 18826,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 18876,
+          "ascii": "H@`@?"
+        },
+        {
+          "offset": 18986,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 19003,
+          "ascii": "qUO/-"
+        },
+        {
+          "offset": 19166,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 19209,
+          "ascii": "$&_Hm"
+        },
+        {
+          "offset": 19416,
+          "ascii": " _ PA"
+        },
+        {
+          "offset": 19489,
+          "ascii": "2`8/-"
+        },
+        {
+          "offset": 19503,
+          "ascii": "(`*/-"
+        },
+        {
+          "offset": 19552,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 19619,
+          "ascii": "0(P>-"
+        },
+        {
+          "offset": 19922,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 19974,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 19991,
+          "ascii": "$$_YON"
+        },
+        {
+          "offset": 20113,
+          "ascii": "* PJ("
+        },
+        {
+          "offset": 20244,
+          "ascii": "`JUO/"
+        },
+        {
+          "offset": 20514,
+          "ascii": "`.S@g"
+        },
+        {
+          "offset": 20633,
+          "ascii": "* PJ("
+        },
+        {
+          "offset": 20663,
+          "ascii": "* PJ("
+        },
+        {
+          "offset": 20698,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 20740,
+          "ascii": "o2YOpx/"
+        },
+        {
+          "offset": 20751,
+          "ascii": "Z(_/<"
+        },
+        {
+          "offset": 20816,
+          "ascii": "flB'Hn"
+        },
+        {
+          "offset": 21052,
+          "ascii": "f.B'Hn"
+        },
+        {
+          "offset": 21210,
+          "ascii": "N^Nu-A maximum of 5 files can be opened at a time."
+        },
+        {
+          "offset": 21261,
+          "ascii": " is not a \"TEXT\" file."
+        },
+        {
+          "offset": 21285,
+          "ascii": " is not a \"TEXT\" file."
+        },
+        {
+          "offset": 21489,
+          "ascii": "ClipboardN"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "bytes": 16098,
+      "link_candidates": [
+        4,
+        162,
+        330,
+        886,
+        1474,
+        1600,
+        1888,
+        2152,
+        2392,
+        3248,
+        3646,
+        3698,
+        4328,
+        4758,
+        4838,
+        4986,
+        5050,
+        5158,
+        5254,
+        5546,
+        5912,
+        8758,
+        8840,
+        8988,
+        9050,
+        9180,
+        9436,
+        15684
+      ],
+      "ascii_runs": [
+        {
+          "offset": 154,
+          "ascii": "N^ _TON"
+        },
+        {
+          "offset": 250,
+          "ascii": "BTBS0."
+        },
+        {
+          "offset": 320,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 392,
+          "ascii": "H@R@=@"
+        },
+        {
+          "offset": 412,
+          "ascii": "BgUO?."
+        },
+        {
+          "offset": 434,
+          "ascii": "BgUO?."
+        },
+        {
+          "offset": 878,
+          "ascii": "N^ _PON"
+        },
+        {
+          "offset": 903,
+          "ascii": "BUO?<"
+        },
+        {
+          "offset": 925,
+          "ascii": "tYO?<"
+        },
+        {
+          "offset": 947,
+          "ascii": "sYO?<"
+        },
+        {
+          "offset": 1044,
+          "ascii": "BgBg?<"
+        },
+        {
+          "offset": 1275,
+          "ascii": ":UO?<"
+        },
+        {
+          "offset": 1394,
+          "ascii": "N^Nu`"
+        },
+        {
+          "offset": 1403,
+          "ascii": "BUO?<"
+        },
+        {
+          "offset": 1425,
+          "ascii": "tYO?<"
+        },
+        {
+          "offset": 1471,
+          "ascii": "sNuNV"
+        },
+        {
+          "offset": 1531,
+          "ascii": "G>4p`<-"
+        },
+        {
+          "offset": 1543,
+          "ascii": "F04``"
+        },
+        {
+          "offset": 1596,
+          "ascii": "N^NuNV"
+        },
+        {
+          "offset": 1811,
+          "ascii": ":UOHn"
+        },
+        {
+          "offset": 1875,
+          "ascii": "Page # "
+        },
+        {
+          "offset": 2003,
+          "ascii": "sUO/<"
+        },
+        {
+          "offset": 2133,
+          "ascii": "Error in Printing #NV"
+        },
+        {
+          "offset": 2355,
+          "ascii": " Cannot Open Page "
+        },
+        {
+          "offset": 2375,
+          "ascii": "Cannot Open Page NV"
+        },
+        {
+          "offset": 2569,
+          "ascii": "P F P?<"
+        },
+        {
+          "offset": 2589,
+          "ascii": ": F P+h"
+        },
+        {
+          "offset": 2655,
+          "ascii": "*UO/-"
+        },
+        {
+          "offset": 2723,
+          "ascii": "* P;h"
+        },
+        {
+          "offset": 2735,
+          "ascii": "* P0("
+        },
+        {
+          "offset": 2741,
+          "ascii": ">S@;@"
+        },
+        {
+          "offset": 2751,
+          "ascii": "* P0("
+        },
+        {
+          "offset": 2757,
+          "ascii": "@S@;@"
+        },
+        {
+          "offset": 2767,
+          "ascii": "* P1|"
+        },
+        {
+          "offset": 2779,
+          "ascii": "* P1|'"
+        },
+        {
+          "offset": 2835,
+          "ascii": ",UOHz"
+        },
+        {
+          "offset": 2937,
+          "ascii": "* P;h"
+        },
+        {
+          "offset": 2949,
+          "ascii": "* P0("
+        },
+        {
+          "offset": 3067,
+          "ascii": "sUOHz"
+        },
+        {
+          "offset": 3133,
+          "ascii": "xBg/<"
+        },
+        {
+          "offset": 3156,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 3165,
+          "ascii": "Error Closing Print Document"
+        },
+        {
+          "offset": 3195,
+          "ascii": "Cannot Complete PrOpenDoc"
+        },
+        {
+          "offset": 3221,
+          "ascii": "Cannot Open Printer Driver"
+        },
+        {
+          "offset": 3272,
+          "ascii": "J_f`+m"
+        },
+        {
+          "offset": 3321,
+          "ascii": "PUOHz"
+        },
+        {
+          "offset": 3377,
+          "ascii": "Cannot Open Printer Driver"
+        },
+        {
+          "offset": 3451,
+          "ascii": "Z`8YOpx/"
+        },
+        {
+          "offset": 3510,
+          "ascii": "Nu-Not enough memory to open the printer driver.FUnable to open the printer driver.  Will not be able to print robots. "
+        },
+        {
+          "offset": 3643,
+          "ascii": "#NuNV"
+        },
+        {
+          "offset": 3690,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 4175,
+          "ascii": "Undefined Symbol: "
+        },
+        {
+          "offset": 4194,
+          "ascii": "* is used as a register or memory location."
+        },
+        {
+          "offset": 4239,
+          "ascii": " the symbol "
+        },
+        {
+          "offset": 4255,
+          "ascii": " out of "
+        },
+        {
+          "offset": 4265,
+          "ascii": "At machine instruction 'A program label cannot be dereferenced NV"
+        },
+        {
+          "offset": 4485,
+          "ascii": ":`J l"
+        },
+        {
+          "offset": 4555,
+          "ascii": "dR@9@"
+        },
+        {
+          "offset": 4663,
+          "ascii": "dR@9@"
+        },
+        {
+          "offset": 4702,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 4711,
+          "ascii": "Symbol table overflow"
+        },
+        {
+          "offset": 4733,
+          "ascii": "Symbol already defined: "
+        },
+        {
+          "offset": 4828,
+          "ascii": "(_N^ _PON"
+        },
+        {
+          "offset": 4946,
+          "ascii": "Nu%This label hasn't been allocated yet.NV"
+        },
+        {
+          "offset": 5042,
+          "ascii": "(_N^."
+        },
+        {
+          "offset": 5071,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 5081,
+          "ascii": "\" P0,"
+        },
+        {
+          "offset": 5103,
+          "ascii": "\" P2,"
+        },
+        {
+          "offset": 5345,
+          "ascii": "\" P0,"
+        },
+        {
+          "offset": 5373,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 5457,
+          "ascii": "bS@9@"
+        },
+        {
+          "offset": 5484,
+          "ascii": "Nu:Constant too large.  32767 is the largest constant allowed"
+        },
+        {
+          "offset": 5583,
+          "ascii": "\" P>,"
+        },
+        {
+          "offset": 5669,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 5679,
+          "ascii": "\" P>,"
+        },
+        {
+          "offset": 5724,
+          "ascii": "mf`00,"
+        },
+        {
+          "offset": 5731,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 5753,
+          "ascii": "\" P>,"
+        },
+        {
+          "offset": 5904,
+          "ascii": "N^ _\\ON"
+        },
+        {
+          "offset": 5929,
+          "ascii": "\" P0,"
+        },
+        {
+          "offset": 5957,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 5963,
+          "ascii": "bUO l"
+        },
+        {
+          "offset": 5969,
+          "ascii": "\" P>,"
+        },
+        {
+          "offset": 6027,
+          "ascii": " XO?<"
+        },
+        {
+          "offset": 7599,
+          "ascii": " lLUO l"
+        },
+        {
+          "offset": 7607,
+          "ascii": "\" P0,"
+        },
+        {
+          "offset": 7635,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 7697,
+          "ascii": "bS@9@"
+        },
+        {
+          "offset": 7749,
+          "ascii": " lVUO l"
+        },
+        {
+          "offset": 7757,
+          "ascii": "\" P0,"
+        },
+        {
+          "offset": 7785,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 7807,
+          "ascii": "pD@9@"
+        },
+        {
+          "offset": 7857,
+          "ascii": "bS@9@"
+        },
+        {
+          "offset": 7965,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 7991,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 8065,
+          "ascii": "bR@9@"
+        },
+        {
+          "offset": 8208,
+          "ascii": "Nu1Unrecognized symbol or character in file:  char #EEnd of line was not expected here.  Something is missing on this line+Constant expected.  Expecting:  -<constant>EEnd of line was not expected here.  Something is missing on this line+Constant expected.  Expecting:  +<constant>"
+        },
+        {
+          "offset": 8489,
+          "ascii": "TIME_INT_XFER"
+        },
+        {
+          "offset": 8503,
+          "ascii": "TIME_INT_MASK"
+        },
+        {
+          "offset": 8529,
+          "ascii": "RANDOM"
+        },
+        {
+          "offset": 8537,
+          "ascii": "UNTIL"
+        },
+        {
+          "offset": 8543,
+          "ascii": "WHILE"
+        },
+        {
+          "offset": 8549,
+          "ascii": "X_CONV"
+        },
+        {
+          "offset": 8557,
+          "ascii": "Y_CONV"
+        },
+        {
+          "offset": 8565,
+          "ascii": "TRACE"
+        },
+        {
+          "offset": 8581,
+          "ascii": "RESET"
+        },
+        {
+          "offset": 8591,
+          "ascii": "RADAR_RANGE"
+        },
+        {
+          "offset": 8603,
+          "ascii": "STACK"
+        },
+        {
+          "offset": 8609,
+          "ascii": "SHOT_SPEED"
+        },
+        {
+          "offset": 8621,
+          "ascii": "RANDOM"
+        },
+        {
+          "offset": 8629,
+          "ascii": "SPEED"
+        },
+        {
+          "offset": 8635,
+          "ascii": "RADAR"
+        },
+        {
+          "offset": 8647,
+          "ascii": "REPEAT"
+        },
+        {
+          "offset": 8655,
+          "ascii": "RETURN"
+        },
+        {
+          "offset": 8663,
+          "ascii": "NUM_ROBOTS"
+        },
+        {
+          "offset": 8675,
+          "ascii": "GOSUB"
+        },
+        {
+          "offset": 8691,
+          "ascii": "FUEL_CAPACITY"
+        },
+        {
+          "offset": 8705,
+          "ascii": "ENGINE_SIZE"
+        },
+        {
+          "offset": 8717,
+          "ascii": "FIRE_RATE"
+        },
+        {
+          "offset": 8733,
+          "ascii": "DIRECTION"
+        },
+        {
+          "offset": 8743,
+          "ascii": "DAMAGE"
+        },
+        {
+          "offset": 8751,
+          "ascii": "DIST_CONV"
+        },
+        {
+          "offset": 8761,
+          "ascii": "DEFINE"
+        },
+        {
+          "offset": 8773,
+          "ascii": "ENDINT"
+        },
+        {
+          "offset": 8787,
+          "ascii": "ARMOR"
+        },
+        {
+          "offset": 8793,
+          "ascii": "CLOAKING"
+        },
+        {
+          "offset": 8803,
+          "ascii": "CPU_SPEED"
+        },
+        {
+          "offset": 8813,
+          "ascii": "CLOAK"
+        },
+        {
+          "offset": 8819,
+          "ascii": "ALLOCATE"
+        },
+        {
+          "offset": 8829,
+          "ascii": "ANGLE_CONV"
+        },
+        {
+          "offset": 8873,
+          "ascii": ":`80,"
+        },
+        {
+          "offset": 8932,
+          "ascii": "(_N^ _\\ON"
+        },
+        {
+          "offset": 8942,
+          "ascii": ",Error.  Nesting of conditionals is too deep."
+        },
+        {
+          "offset": 9040,
+          "ascii": "(_N^ _\\ON"
+        },
+        {
+          "offset": 9122,
+          "ascii": "(_N^."
+        },
+        {
+          "offset": 9128,
+          "ascii": "Nu1Error:  END or ELSE statement without matching IFNV"
+        },
+        {
+          "offset": 9245,
+          "ascii": "\\R@9@"
+        },
+        {
+          "offset": 9271,
+          "ascii": "kg\" l"
+        },
+        {
+          "offset": 9362,
+          "ascii": "NuFSorry,  your code is too long.   Remember,  bigger isn't always better"
+        },
+        {
+          "offset": 10001,
+          "ascii": "bS@=@"
+        },
+        {
+          "offset": 11763,
+          "ascii": "bR@=@"
+        },
+        {
+          "offset": 11773,
+          "ascii": "\" P0."
+        },
+        {
+          "offset": 12442,
+          "ascii": "UOB'/"
+        },
+        {
+          "offset": 12580,
+          "ascii": "gnUOB'/"
+        },
+        {
+          "offset": 12607,
+          "ascii": "<`$ n"
+        },
+        {
+          "offset": 12698,
+          "ascii": "f\\UOB'/"
+        },
+        {
+          "offset": 12798,
+          "ascii": "fJUOB'/"
+        },
+        {
+          "offset": 12912,
+          "ascii": "UOB'/"
+        },
+        {
+          "offset": 12942,
+          "ascii": "f&UOB'/"
+        },
+        {
+          "offset": 13688,
+          "ascii": "`@UOB'/"
+        },
+        {
+          "offset": 13882,
+          "ascii": "J@frBn"
+        },
+        {
+          "offset": 13931,
+          "ascii": "poB0."
+        },
+        {
+          "offset": 14008,
+          "ascii": "J@fF n"
+        },
+        {
+          "offset": 14115,
+          "ascii": " S@ n"
+        },
+        {
+          "offset": 14128,
+          "ascii": "N^ _O"
+        },
+        {
+          "offset": 14138,
+          "ascii": "- points worth of attributes.  The limit is 6."
+        },
+        {
+          "offset": 14185,
+          "ascii": "You have allocated "
+        },
+        {
+          "offset": 14205,
+          "ascii": "END expected but never found"
+        },
+        {
+          "offset": 14234,
+          "ascii": "&Error.  Actually a bug in Robot War!!!"
+        },
+        {
+          "offset": 14274,
+          "ascii": "$pointer de-reference no allowed here"
+        },
+        {
+          "offset": 14312,
+          "ascii": "%pointer de-reference not allowed here*A variable allocation cannot be used here."
+        },
+        {
+          "offset": 14394,
+          "ascii": "IAn attribute value cannot be used here, it can only be set to a constant.0This looks like a label which isn't allowed here"
+        },
+        {
+          "offset": 14518,
+          "ascii": "*A constant declaration is not allowed here"
+        },
+        {
+          "offset": 14562,
+          "ascii": "*A constant (ie number) is not allowed here"
+        },
+        {
+          "offset": 14606,
+          "ascii": "#Too many memory locations allocated"
+        },
+        {
+          "offset": 14643,
+          "ascii": ".HThe limits of this attribute have been exceeded, the limit is from 0 to "
+        },
+        {
+          "offset": 14718,
+          "ascii": "LThe TO statement is not allowed here.  Only allowed in assignment statements"
+        },
+        {
+          "offset": 14796,
+          "ascii": "(The ENDINT statement is not allowed here"
+        },
+        {
+          "offset": 14838,
+          "ascii": "(The ENDSUB statement is not allowed here"
+        },
+        {
+          "offset": 14880,
+          "ascii": "'The GOSUB statement is not allowed here&The GOTO statement is not allowed here"
+        },
+        {
+          "offset": 14961,
+          "ascii": "END statement not allowed here"
+        },
+        {
+          "offset": 14992,
+          "ascii": "AEND statement not allowed here.  Missing IF, WHILE, or ELSE above&An UNTIL statement is not allowed here"
+        },
+        {
+          "offset": 15098,
+          "ascii": "-ERROR: A REPEAT statment is not allowed here.*Error: A DO statement is not allowed here."
+        },
+        {
+          "offset": 15188,
+          "ascii": "%A WHILE statement is not allowed here"
+        },
+        {
+          "offset": 15227,
+          "ascii": "ELSE statement not allowed here2ELSE statement not allowed here.  Missing IF above"
+        },
+        {
+          "offset": 15311,
+          "ascii": "THEN is not allowed here"
+        },
+        {
+          "offset": 15336,
+          "ascii": "#An IF statement is not allowed hereJA compare is not allowed here.  A compare is only allowed in if statements"
+        },
+        {
+          "offset": 15448,
+          "ascii": " An operator can not be used here"
+        },
+        {
+          "offset": 15483,
+          "ascii": "A register is not allowed here"
+        },
+        {
+          "offset": 15514,
+          "ascii": "EEnd of line was not expected here.  Something is missing on this line(Illegal use of the \"address of\" operator"
+        },
+        {
+          "offset": 15626,
+          "ascii": "6Program too short.  C'mon, you can do better then that"
+        },
+        {
+          "offset": 15773,
+          "ascii": "0(P l"
+        },
+        {
+          "offset": 15793,
+          "ascii": "*YO/,"
+        },
+        {
+          "offset": 15828,
+          "ascii": "Hl pHn"
+        },
+        {
+          "offset": 15845,
+          "ascii": "0 P h"
+        },
+        {
+          "offset": 15893,
+          "ascii": "0 P>(\""
+        },
+        {
+          "offset": 15919,
+          "ascii": "0 PB("
+        },
+        {
+          "offset": 15975,
+          "ascii": "0 P/("
+        },
+        {
+          "offset": 16067,
+          "ascii": "Compile Error:  "
+        },
+        {
+          "offset": 16085,
+          "ascii": "Compiling..."
+        }
+      ]
+    }
+  ]
+}

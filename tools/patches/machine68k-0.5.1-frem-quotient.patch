@@ -1,0 +1,155 @@
+--- a/src/musashi/m68kfpu.c
++++ b/src/musashi/m68kfpu.c
+@@ -39,6 +39,82 @@
+ 	0xf0000000, 0xff000000, 0xfff00000, 0xffff0000,
+ 	0xfffff000, 0xffffff00, 0xfffffff0, 0xffffffff,
+ };
++
++/* Motorola FREM/FMOD record the quotient sign and low seven magnitude bits in
++ * FPSR[23:16]. SoftFloat returns the IEEE remainder but not that quotient.
++ * Compute it from the exact extended significands, without narrowing either
++ * operand to binary64 or overflowing an integer quotient. */
++static unsigned int rw_remainder_quotient(floatx80 a, floatx80 b, int nearest)
++{
++    uint64 numerator = a.low, denominator = b.low, remainder = 0;
++    int ae = a.high & 0x7fff, be = b.high & 0x7fff;
++    int shift, bit;
++    unsigned int q = 0;
++    unsigned int sign = ((a.high ^ b.high) & 0x8000) ? 0x80 : 0;
++    if (ae == 0x7fff || be == 0x7fff || !denominator || !numerator)
++        return sign;
++    if (!ae) ae = 1;
++    if (!be) be = 1;
++    while (!(numerator >> 63)) { numerator <<= 1; --ae; }
++    while (!(denominator >> 63)) { denominator <<= 1; --be; }
++    shift = ae - be;
++    if (shift < 0) {
++        /* Both significands are normalized: the truncated quotient is zero.
++         * Only a one-bit exponent gap can round above one half. */
++        if (nearest && shift == -1 && numerator > denominator) q = 1;
++        return sign | q;
++    }
++    for (bit = shift + 63; bit >= 0; --bit) {
++        unsigned int carry = (unsigned int)(remainder >> 63);
++        unsigned int digit = bit >= shift ? (unsigned int)((numerator >> (bit-shift)) & 1) : 0;
++        remainder = (remainder << 1) | digit;
++        digit = carry || remainder >= denominator;
++        if (digit) remainder -= denominator;
++        q = ((q << 1) | digit) & 0x7f;
++    }
++    if (nearest && (remainder > denominator/2 ||
++            (!(denominator & 1) && remainder == denominator/2 && (q & 1))))
++        q = (q + 1) & 0x7f;
++    return sign | q;
++}
++
++static floatx80 rw_remainder(floatx80 a, floatx80 b, int nearest)
++{
++    floatx80 result = floatx80_rem(a, b);
++    REG_FPSR = (REG_FPSR & ~0x00ff0000u) |
++               (rw_remainder_quotient(a, b, nearest) << 16);
++    /* FMOD truncates the quotient; IEEE remainder uses nearest-even. If its
++     * nonzero remainder has the opposite sign, undo that final rounding. */
++    if (!nearest && result.low && (result.high & 0x7fff) != 0x7fff &&
++            ((result.high ^ a.high) & 0x8000)) {
++        b.high = (b.high & 0x7fff) | (a.high & 0x8000);
++        result = floatx80_add(result, b);
++    }
++    return result;
++}
++
++/* Bridge SoftFloat's per-operation exception reports to the 68881 FPSR.
++ * Control-register moves must not synthesize exceptions from stale SoftFloat
++ * flags. Arithmetic/conversion instructions clear current status, while
++ * accrued exception bits remain sticky until software writes FPSR. */
++static void rw_fp_begin(void)
++{
++    float_exception_flags = 0;
++    REG_FPSR &= ~0x0000ff00u;
++}
++
++static void rw_fp_end(void)
++{
++    unsigned int flags = (unsigned char)float_exception_flags;
++    if (flags & float_flag_invalid)   REG_FPSR |= 0x00002080u;
++    if (flags & float_flag_divbyzero) REG_FPSR |= 0x00000410u;
++    if (flags & float_flag_overflow)  REG_FPSR |= 0x00001048u;
++    if (flags & float_flag_underflow) {
++        REG_FPSR |= 0x00000800u;
++        if (flags & float_flag_inexact) REG_FPSR |= 0x00000020u;
++    }
++    if (flags & float_flag_inexact)   REG_FPSR |= 0x00000208u;
++}
+ 
+ static inline double fx80_to_double(floatx80 fx)
+ {
+@@ -1385,17 +1461,17 @@
+ 		}
+ 		case 0x01:		// Fsint
+ 		{
+-			sint32 temp;
+-			temp = floatx80_to_int32(source);
+-			REG_FP[dst] = int32_to_floatx80(temp);
++			/* FINT returns an extended integer, not a signed 32-bit integer. */
++			REG_FP[dst] = floatx80_round_to_int(source);
+ 	  		SET_CONDITION_CODES(REG_FP[dst]);  // JFF needs update condition codes
+ 			break;
+ 		}
+ 		case 0x03:		// FsintRZ
+ 		{
+-			sint32 temp;
+-			temp = floatx80_to_int32_round_to_zero(source);
+-			REG_FP[dst] = int32_to_floatx80(temp);
++			int8 saved_rounding = float_rounding_mode;
++			float_rounding_mode = float_round_to_zero;
++			REG_FP[dst] = floatx80_round_to_int(source);
++			float_rounding_mode = saved_rounding;
+ 			SET_CONDITION_CODES(REG_FP[dst]);  // JFF needs update condition codes
+ 			break;
+ 		}
+@@ -1467,7 +1543,7 @@
+ 		}
+ 		case 0x21:		// FMOD
+ 		{
+-			REG_FP[dst] = floatx80_rem(REG_FP[dst], source);
++			REG_FP[dst] = rw_remainder(REG_FP[dst], source, 0);
+ 		    	SET_CONDITION_CODES(REG_FP[dst]);
+ 			USE_CYCLES(43);
+ 			break;
+@@ -1502,7 +1578,7 @@
+ 		}
+ 		case 0x25:		// FREM
+ 		{
+-			REG_FP[dst] = floatx80_rem(REG_FP[dst], source);
++			REG_FP[dst] = rw_remainder(REG_FP[dst], source, 1);
+ 			SET_CONDITION_CODES(REG_FP[dst]);
+ 			USE_CYCLES(43);	// guess
+ 			break;
+@@ -1539,6 +1615,9 @@
+ 
+ 			} else {
+ 			res = floatx80_sub(REG_FP[dst], source);
++			/* The subtraction supplies comparison condition codes only: FCMP
++			 * cannot raise arithmetic overflow/underflow/inexact exceptions. */
++			float_exception_flags &= float_flag_invalid;
+ 			SET_CONDITION_CODES(res);
+ 			}
+ 			USE_CYCLES(7);
+@@ -1833,13 +1912,17 @@
+ 				case 0x0:	// FPU ALU FP, FP
+ 				case 0x2:	// FPU ALU ea, FP
+ 				{
++					rw_fp_begin();
+ 					fpgen_rm_reg(w2);
++					rw_fp_end();
+ 					break;
+ 				}
+ 
+ 				case 0x3:	// FMOVE FP, ea
+ 				{
++					rw_fp_begin();
+ 					fmove_reg_mem(w2);
++					rw_fp_end();
+ 					break;
+ 				}
+ 

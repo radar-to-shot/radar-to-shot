@@ -1,0 +1,1034 @@
+{
+  "format_version": 1,
+  "provenance": {
+    "engine": "machine68k 0.5.1 / Musashi, 68020",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {
+      "Mac_IIci.ROM": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2"
+    },
+    "extra_code_instructions": {
+      "Mac_IIci.ROM": 4992
+    },
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 5184,
+    "segment_instructions": {},
+    "macintosh_traps": [],
+    "toolbox_shims": {},
+    "host_service_calls": {}
+  },
+  "vectors": [
+    {
+      "id": "rom-random-seed-0",
+      "kind": "world_random",
+      "input": {
+        "seed": 0,
+        "count": 16
+      },
+      "expected": {
+        "seed": 0,
+        "samples": [
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-1",
+      "kind": "world_random",
+      "input": {
+        "seed": 1,
+        "count": 16
+      },
+      "expected": {
+        "seed": 1137522503,
+        "samples": [
+          {
+            "seed": 16807,
+            "word": 16807
+          },
+          {
+            "seed": 282475249,
+            "word": 15089
+          },
+          {
+            "seed": 1622650073,
+            "word": -21287
+          },
+          {
+            "seed": 984943658,
+            "word": 3114
+          },
+          {
+            "seed": 1144108930,
+            "word": -18558
+          },
+          {
+            "seed": 470211272,
+            "word": -9528
+          },
+          {
+            "seed": 101027544,
+            "word": -28968
+          },
+          {
+            "seed": 1457850878,
+            "word": 2558
+          },
+          {
+            "seed": 1458777923,
+            "word": 12099
+          },
+          {
+            "seed": 2007237709,
+            "word": 1101
+          },
+          {
+            "seed": 823564440,
+            "word": -26472
+          },
+          {
+            "seed": 1115438165,
+            "word": 15445
+          },
+          {
+            "seed": 1784484492,
+            "word": 4748
+          },
+          {
+            "seed": 74243042,
+            "word": -9246
+          },
+          {
+            "seed": 114807987,
+            "word": -11085
+          },
+          {
+            "seed": 1137522503,
+            "word": 14151
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-2",
+      "kind": "world_random",
+      "input": {
+        "seed": 2,
+        "count": 16
+      },
+      "expected": {
+        "seed": 127561359,
+        "samples": [
+          {
+            "seed": 33614,
+            "word": -31922
+          },
+          {
+            "seed": 564950498,
+            "word": 30178
+          },
+          {
+            "seed": 1097816499,
+            "word": 22963
+          },
+          {
+            "seed": 1969887316,
+            "word": 6228
+          },
+          {
+            "seed": 140734213,
+            "word": 28421
+          },
+          {
+            "seed": 940422544,
+            "word": -19056
+          },
+          {
+            "seed": 202055088,
+            "word": 7600
+          },
+          {
+            "seed": 768218109,
+            "word": 5117
+          },
+          {
+            "seed": 770072199,
+            "word": 24199
+          },
+          {
+            "seed": 1866991771,
+            "word": 2203
+          },
+          {
+            "seed": 1647128880,
+            "word": 12592
+          },
+          {
+            "seed": 83392683,
+            "word": 30891
+          },
+          {
+            "seed": 1421485337,
+            "word": 9497
+          },
+          {
+            "seed": 148486084,
+            "word": -18492
+          },
+          {
+            "seed": 229615974,
+            "word": -22170
+          },
+          {
+            "seed": 127561359,
+            "word": 28303
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-12345",
+      "kind": "world_random",
+      "input": {
+        "seed": 12345,
+        "count": 16
+      },
+      "expected": {
+        "seed": 319731802,
+        "samples": [
+          {
+            "seed": 207482415,
+            "word": -4561
+          },
+          {
+            "seed": 1790989824,
+            "word": 22016
+          },
+          {
+            "seed": 2035175616,
+            "word": 20672
+          },
+          {
+            "seed": 77048696,
+            "word": -21640
+          },
+          {
+            "seed": 24794531,
+            "word": 21923
+          },
+          {
+            "seed": 109854999,
+            "word": 16663
+          },
+          {
+            "seed": 1644515420,
+            "word": 20572
+          },
+          {
+            "seed": 1256127050,
+            "word": -1462
+          },
+          {
+            "seed": 1963079340,
+            "word": 13996
+          },
+          {
+            "seed": 1683198519,
+            "word": -28105
+          },
+          {
+            "seed": 715426902,
+            "word": -29610
+          },
+          {
+            "seed": 419002361,
+            "word": 30713
+          },
+          {
+            "seed": 573802814,
+            "word": -30402
+          },
+          {
+            "seed": 1702319868,
+            "word": 22268
+          },
+          {
+            "seed": 2112876142,
+            "word": -4498
+          },
+          {
+            "seed": 319731802,
+            "word": -18342
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-65535",
+      "kind": "world_random",
+      "input": {
+        "seed": 65535,
+        "count": 16
+      },
+      "expected": {
+        "seed": 1937395794,
+        "samples": [
+          {
+            "seed": 1101446745,
+            "word": -16807
+          },
+          {
+            "seed": 706406075,
+            "word": -6469
+          },
+          {
+            "seed": 1277301909,
+            "word": 5269
+          },
+          {
+            "seed": 1366649151,
+            "word": 26943
+          },
+          {
+            "seed": 1934676192,
+            "word": -12064
+          },
+          {
+            "seed": 1052859717,
+            "word": 23877
+          },
+          {
+            "seed": 148012339,
+            "word": 32051
+          },
+          {
+            "seed": 857318347,
+            "word": -23605
+          },
+          {
+            "seed": 1481670306,
+            "word": 32418
+          },
+          {
+            "seed": 212462330,
+            "word": -5382
+          },
+          {
+            "seed": 1736558996,
+            "word": -13932
+          },
+          {
+            "seed": 2044283042,
+            "word": 18594
+          },
+          {
+            "seed": 674218541,
+            "word": -15827
+          },
+          {
+            "seed": 1467297015,
+            "word": 11511
+          },
+          {
+            "seed": 1306212604,
+            "word": 14588
+          },
+          {
+            "seed": 1937395794,
+            "word": 20562
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-65536",
+      "kind": "world_random",
+      "input": {
+        "seed": 65536,
+        "count": 16
+      },
+      "expected": {
+        "seed": 927434650,
+        "samples": [
+          {
+            "seed": 1101463552,
+            "word": 0
+          },
+          {
+            "seed": 988881324,
+            "word": 8620
+          },
+          {
+            "seed": 752468335,
+            "word": -16017
+          },
+          {
+            "seed": 204109162,
+            "word": 30058
+          },
+          {
+            "seed": 931301475,
+            "word": -30621
+          },
+          {
+            "seed": 1523070989,
+            "word": 14349
+          },
+          {
+            "seed": 249039883,
+            "word": 3083
+          },
+          {
+            "seed": 167685578,
+            "word": -21046
+          },
+          {
+            "seed": 792964582,
+            "word": -21018
+          },
+          {
+            "seed": 72216392,
+            "word": -4280
+          },
+          {
+            "seed": 412639789,
+            "word": 25133
+          },
+          {
+            "seed": 1012237560,
+            "word": -31496
+          },
+          {
+            "seed": 311219386,
+            "word": -11078
+          },
+          {
+            "seed": 1541540057,
+            "word": 2265
+          },
+          {
+            "seed": 1421020591,
+            "word": 3503
+          },
+          {
+            "seed": 927434650,
+            "word": -30822
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-2147483646",
+      "kind": "world_random",
+      "input": {
+        "seed": 2147483646,
+        "count": 16
+      },
+      "expected": {
+        "seed": 1009961144,
+        "samples": [
+          {
+            "seed": 2147466840,
+            "word": -16808
+          },
+          {
+            "seed": 1865008398,
+            "word": -15090
+          },
+          {
+            "seed": 524833574,
+            "word": 21286
+          },
+          {
+            "seed": 1162539989,
+            "word": -3115
+          },
+          {
+            "seed": 1003374717,
+            "word": 18557
+          },
+          {
+            "seed": 1677272375,
+            "word": 9527
+          },
+          {
+            "seed": 2046456103,
+            "word": 28967
+          },
+          {
+            "seed": 689632769,
+            "word": -2559
+          },
+          {
+            "seed": 688705724,
+            "word": -12100
+          },
+          {
+            "seed": 140245938,
+            "word": -1102
+          },
+          {
+            "seed": 1323919207,
+            "word": 26471
+          },
+          {
+            "seed": 1032045482,
+            "word": -15446
+          },
+          {
+            "seed": 362999155,
+            "word": -4749
+          },
+          {
+            "seed": 2073240605,
+            "word": 9245
+          },
+          {
+            "seed": 2032675660,
+            "word": 11084
+          },
+          {
+            "seed": 1009961144,
+            "word": -14152
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-2147483647",
+      "kind": "world_random",
+      "input": {
+        "seed": 2147483647,
+        "count": 16
+      },
+      "expected": {
+        "seed": 0,
+        "samples": [
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          },
+          {
+            "seed": 0,
+            "word": 0
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-2147483648",
+      "kind": "world_random",
+      "input": {
+        "seed": 2147483648,
+        "count": 16
+      },
+      "expected": {
+        "seed": 1137522503,
+        "samples": [
+          {
+            "seed": 16807,
+            "word": 16807
+          },
+          {
+            "seed": 282475249,
+            "word": 15089
+          },
+          {
+            "seed": 1622650073,
+            "word": -21287
+          },
+          {
+            "seed": 984943658,
+            "word": 3114
+          },
+          {
+            "seed": 1144108930,
+            "word": -18558
+          },
+          {
+            "seed": 470211272,
+            "word": -9528
+          },
+          {
+            "seed": 101027544,
+            "word": -28968
+          },
+          {
+            "seed": 1457850878,
+            "word": 2558
+          },
+          {
+            "seed": 1458777923,
+            "word": 12099
+          },
+          {
+            "seed": 2007237709,
+            "word": 1101
+          },
+          {
+            "seed": 823564440,
+            "word": -26472
+          },
+          {
+            "seed": 1115438165,
+            "word": 15445
+          },
+          {
+            "seed": 1784484492,
+            "word": 4748
+          },
+          {
+            "seed": 74243042,
+            "word": -9246
+          },
+          {
+            "seed": 114807987,
+            "word": -11085
+          },
+          {
+            "seed": 1137522503,
+            "word": 14151
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-4294901760",
+      "kind": "world_random",
+      "input": {
+        "seed": 4294901760,
+        "count": 16
+      },
+      "expected": {
+        "seed": 1347610356,
+        "samples": [
+          {
+            "seed": 1046053709,
+            "word": -31923
+          },
+          {
+            "seed": 1723552821,
+            "word": 21557
+          },
+          {
+            "seed": 345348164,
+            "word": -26556
+          },
+          {
+            "seed": 1765778154,
+            "word": -23830
+          },
+          {
+            "seed": 1356916385,
+            "word": -6495
+          },
+          {
+            "seed": 1564835202,
+            "word": 32130
+          },
+          {
+            "seed": 2100498852,
+            "word": 4516
+          },
+          {
+            "seed": 600532531,
+            "word": 26163
+          },
+          {
+            "seed": 2124591264,
+            "word": -20320
+          },
+          {
+            "seed": 1794775379,
+            "word": 6483
+          },
+          {
+            "seed": 1234489091,
+            "word": -12541
+          },
+          {
+            "seed": 1218638770,
+            "word": -3150
+          },
+          {
+            "seed": 1110265951,
+            "word": 20575
+          },
+          {
+            "seed": 754429674,
+            "word": -20758
+          },
+          {
+            "seed": 956079030,
+            "word": -25674
+          },
+          {
+            "seed": 1347610356,
+            "word": -6412
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-4294967295",
+      "kind": "world_random",
+      "input": {
+        "seed": 4294967295,
+        "count": 16
+      },
+      "expected": {
+        "seed": 1137522503,
+        "samples": [
+          {
+            "seed": 16807,
+            "word": 16807
+          },
+          {
+            "seed": 282475249,
+            "word": 15089
+          },
+          {
+            "seed": 1622650073,
+            "word": -21287
+          },
+          {
+            "seed": 984943658,
+            "word": 3114
+          },
+          {
+            "seed": 1144108930,
+            "word": -18558
+          },
+          {
+            "seed": 470211272,
+            "word": -9528
+          },
+          {
+            "seed": 101027544,
+            "word": -28968
+          },
+          {
+            "seed": 1457850878,
+            "word": 2558
+          },
+          {
+            "seed": 1458777923,
+            "word": 12099
+          },
+          {
+            "seed": 2007237709,
+            "word": 1101
+          },
+          {
+            "seed": 823564440,
+            "word": -26472
+          },
+          {
+            "seed": 1115438165,
+            "word": 15445
+          },
+          {
+            "seed": 1784484492,
+            "word": 4748
+          },
+          {
+            "seed": 74243042,
+            "word": -9246
+          },
+          {
+            "seed": 114807987,
+            "word": -11085
+          },
+          {
+            "seed": 1137522503,
+            "word": 14151
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    },
+    {
+      "id": "rom-random-seed-958682087",
+      "kind": "world_random",
+      "input": {
+        "seed": 958682087,
+        "count": 16
+      },
+      "expected": {
+        "seed": 1784252119,
+        "samples": [
+          {
+            "seed": 32768,
+            "word": 0
+          },
+          {
+            "seed": 550731776,
+            "word": 0
+          },
+          {
+            "seed": 494440662,
+            "word": -28458
+          },
+          {
+            "seed": 1449975991,
+            "word": -8009
+          },
+          {
+            "seed": 102054581,
+            "word": 15029
+          },
+          {
+            "seed": 1539392561,
+            "word": 17457
+          },
+          {
+            "seed": 1835277318,
+            "word": 7174
+          },
+          {
+            "seed": 1198261765,
+            "word": 1541
+          },
+          {
+            "seed": 83842789,
+            "word": 22245
+          },
+          {
+            "seed": 396482291,
+            "word": -10509
+          },
+          {
+            "seed": 36108196,
+            "word": -2140
+          },
+          {
+            "seed": 1280061718,
+            "word": 12566
+          },
+          {
+            "seed": 506118780,
+            "word": -15748
+          },
+          {
+            "seed": 155609693,
+            "word": 27229
+          },
+          {
+            "seed": 1844511852,
+            "word": 1132
+          },
+          {
+            "seed": 1784252119,
+            "word": -31017
+          }
+        ]
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x2eb20",
+        "trap": "0xa861",
+        "seed_location": "long at (*A5)-0x7e"
+      }
+    }
+  ]
+}

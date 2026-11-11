@@ -1,0 +1,20 @@
+name: Headless compatibility
+on:
+  push:
+    paths: ['include/**', 'src/**', 'tests/**', 'tools/**', 'CMakeLists.txt', '.github/workflows/headless.yml']
+  pull_request:
+    paths: ['include/**', 'src/**', 'tests/**', 'tools/**', 'CMakeLists.txt', '.github/workflows/headless.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        sanitizers: ['OFF', 'ON']
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -DROBOTWAR_SANITIZERS=${{ matrix.sanitizers }}
+      - run: cmake --build build --parallel 2
+      - run: ctest --test-dir build --output-on-failure

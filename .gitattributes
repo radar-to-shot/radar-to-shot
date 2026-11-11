@@ -1,0 +1,6 @@
+# Preserve verbatim, hash-attested tool output and upstream patch/license text.
+reverse/decompiled/CODE_*.c -whitespace
+reverse/decompiled/analysis.log -whitespace
+reverse/disassembly/*.asm -whitespace
+third_party/nlohmann/LICENSE.MIT -whitespace
+tools/patches/*.patch -whitespace

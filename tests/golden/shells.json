@@ -1,0 +1,8369 @@
+{
+  "provenance": {
+    "engine": "machine68k 0.5.1 / Musashi, 68030",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {
+      "Mac_IIci.ROM": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2"
+    },
+    "extra_code_instructions": {
+      "Mac_IIci.ROM": 213164
+    },
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 537465,
+    "segment_instructions": {
+      "1": 37596,
+      "2": 3630,
+      "3": 278747
+    },
+    "macintosh_traps": [
+      "a89b@CODE3:2ccc",
+      "a89b@CODE3:3054",
+      "a8ad@CODE3:2e60",
+      "a9eb@CODE1:01d4",
+      "a9eb@CODE1:0218",
+      "a9eb@CODE1:0224",
+      "a9eb@CODE1:0248",
+      "a9eb@CODE1:0264",
+      "a9eb@CODE1:0272",
+      "a9eb@CODE1:0284",
+      "a9eb@CODE2:00ac",
+      "a9eb@CODE2:00c4",
+      "a9eb@CODE3:02b8",
+      "a9eb@Mac_IIci.ROM:071c3a",
+      "a9eb@Mac_IIci.ROM:071c64",
+      "a9eb@Mac_IIci.ROM:071d0c",
+      "a9eb@Mac_IIci.ROM:071d16",
+      "a9eb@Mac_IIci.ROM:071d38",
+      "a9eb@Mac_IIci.ROM:071fa2",
+      "a9eb@Mac_IIci.ROM:0725ac",
+      "a9eb@Mac_IIci.ROM:0725d8",
+      "a9eb@Mac_IIci.ROM:0725ec",
+      "a9eb@Mac_IIci.ROM:0725f6",
+      "a9eb@Mac_IIci.ROM:072600",
+      "a9eb@Mac_IIci.ROM:07260e",
+      "a9eb@Mac_IIci.ROM:072624",
+      "a9eb@Mac_IIci.ROM:072640",
+      "a9eb@Mac_IIci.ROM:072652",
+      "a9eb@Mac_IIci.ROM:07265e",
+      "a9eb@Mac_IIci.ROM:07266c",
+      "a9eb@Mac_IIci.ROM:072676",
+      "a9eb@Mac_IIci.ROM:072686",
+      "a9eb@Mac_IIci.ROM:072698",
+      "a9eb@Mac_IIci.ROM:0726ae",
+      "a9eb@Mac_IIci.ROM:0726b8",
+      "a9eb@Mac_IIci.ROM:0726c0",
+      "a9eb@Mac_IIci.ROM:0726c8",
+      "a9eb@Mac_IIci.ROM:0726d6",
+      "a9eb@Mac_IIci.ROM:0727f8",
+      "a9eb@Mac_IIci.ROM:07282e",
+      "a9eb@Mac_IIci.ROM:07285c",
+      "a9eb@Mac_IIci.ROM:072872",
+      "a9eb@Mac_IIci.ROM:07287c",
+      "a9eb@Mac_IIci.ROM:072888",
+      "a9eb@Mac_IIci.ROM:072894",
+      "a9eb@Mac_IIci.ROM:0728aa",
+      "a9eb@Mac_IIci.ROM:0728b6",
+      "a9eb@Mac_IIci.ROM:0728c8",
+      "a9eb@Mac_IIci.ROM:0728d2",
+      "a9eb@Mac_IIci.ROM:0728dc",
+      "a9eb@Mac_IIci.ROM:0728f0",
+      "a9ec@CODE1:01bc"
+    ],
+    "toolbox_shims": {},
+    "host_service_calls": {},
+    "platform": {
+      "toolbox": "original supplied Mac IIci ROM numerical and integer QuickDraw routines",
+      "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
+      "rom_base": "0x700000",
+      "original_rom_packages": {
+        "4": {
+          "offset": "0x70ac0",
+          "size": 4352,
+          "sha256": "b3aae2599ad5e8fd8dbab83eff1f6488aa7c057c625055978e0b5a8e84c1b333"
+        },
+        "5": {
+          "offset": "0x71be0",
+          "size": 4304,
+          "sha256": "77cb1a412dc970385654f5fcf7e516a078fafc9825062533d36f9643e1c090fb"
+        },
+        "7": {
+          "offset": "0x79de0",
+          "size": 1392,
+          "sha256": "ce9093aff2754a732922fc58b84bf16e226995d783871f350c9e22a8124cf2b3"
+        }
+      },
+      "original_rom_traps": {
+        "PtToAngle": "0x3cf90",
+        "OffsetRect": "0x2c670",
+        "SectRect": "0x2c6b0",
+        "EqualRect": "0x2c630",
+        "PtInRect": "0x2c7d0"
+      },
+      "host_integer_geometry": [],
+      "host_binary64_math": [],
+      "rendering_noop": [
+        "PenSize"
+      ],
+      "fpu": "Musashi extended80 SoftFloat; requires documented quotient and exception corrections",
+      "emulator_source_archive_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "emulator_patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "emulator_binary_sha256": "74335ecaae776932e95d8516d3ddf6488689bf83434d1c6bfa4b31b8303fe166",
+      "executed_fpu_operations": {
+        "FPU_class_5": 9610,
+        "FPU_class_4": 8657,
+        "ALU_00": 2099,
+        "FPU_class_7": 1200,
+        "ALU_25": 92,
+        "ALU_23": 1086,
+        "ALU_22": 723,
+        "FPU_class_3": 477,
+        "ALU_20": 96,
+        "ALU_38": 49,
+        "ALU_28": 112,
+        "ALU_04": 104
+      },
+      "observed_fpcr_writes": [
+        "0x0",
+        "0x10"
+      ],
+      "fpcr_guard": "rejects nonextended precision and enabled exception traps",
+      "host_transcendental_fpu_instructions": "rejected by instruction hook; original ROM polynomial algorithms execute",
+      "scope": "IIci ROM baseline; System 7 replacement packages and boot path are not used",
+      "calls": {
+        "a9eb": 2979,
+        "a9ec": 91,
+        "a89b": 4860,
+        "a8ad": 674
+      }
+    }
+  },
+  "vectors": [
+    {
+      "id": "world_shells_0000",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 116
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0001",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 133
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0002",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 183
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0003",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 183
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0004",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0005",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0006",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0007",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0008",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0009",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0010",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0011",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0012",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0013",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0014",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0015",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0016",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0017",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0018",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 17
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0019",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 17
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0020",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 83
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0021",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 65
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0022",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0023",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0024",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 92,
+            "shell_y": 114
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0025",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 84,
+            "shell_y": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0026",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 59,
+            "shell_y": 171
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0027",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 59,
+            "shell_y": 171
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0028",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0029",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0030",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0031",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0032",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0033",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0034",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0035",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0036",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 104,
+            "shell_y": 93
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0037",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 104,
+            "shell_y": 93
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0038",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 104,
+            "shell_y": 93
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0039",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 104,
+            "shell_y": 93
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0040",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 108,
+            "shell_y": 86
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0041",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 116,
+            "shell_y": 72
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0042",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 141,
+            "shell_y": 29
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0043",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 141,
+            "shell_y": 29
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0044",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 108,
+            "shell_y": 85
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0045",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 117,
+            "shell_y": 70
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0046",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 6,
+            "shell_x": 153,
+            "shell_y": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0047",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            30
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 6,
+            "shell_x": 153,
+            "shell_y": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0048",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 89,
+            "shell_y": 111
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0049",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 77,
+            "shell_y": 123
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0050",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0051",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0052",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0053",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0054",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0055",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0056",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0057",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0058",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0059",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0060",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0061",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0062",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0063",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0064",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 111,
+            "shell_y": 89
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0065",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 123,
+            "shell_y": 77
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0066",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0067",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0068",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 112,
+            "shell_y": 88
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0069",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 125,
+            "shell_y": 75
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0070",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 7,
+            "shell_x": 188,
+            "shell_y": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0071",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            45
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 8,
+            "shell_x": 200,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0072",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 84,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0073",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 67,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0074",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 17,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0075",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 17,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0076",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0077",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0078",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0079",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0080",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0081",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0082",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0083",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0084",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 109,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0085",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 109,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0086",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 109,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0087",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 109,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0088",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 116,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0089",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 133,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0090",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 183,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0091",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 183,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0092",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 117,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0093",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 135,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0094",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 7,
+            "shell_x": 225,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0095",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            90
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 15,
+            "shell_x": 367,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0096",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 89,
+            "shell_y": 89
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0097",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 77,
+            "shell_y": 77
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0098",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0099",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0100",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0101",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0102",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0103",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0104",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0105",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0106",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0107",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0108",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0109",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0110",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0111",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 106,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0112",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 111,
+            "shell_y": 111
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0113",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 123,
+            "shell_y": 123
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0114",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0115",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0116",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 112,
+            "shell_y": 112
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0117",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 125,
+            "shell_y": 125
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0118",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 7,
+            "shell_x": 188,
+            "shell_y": 188
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0119",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            135
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 16,
+            "shell_x": 301,
+            "shell_y": 301
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0120",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0121",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0122",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 17
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0123",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 17
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0124",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0125",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0126",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0127",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0128",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0129",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0130",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0131",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0132",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 109
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0133",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 109
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0134",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 109
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0135",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 109
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0136",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 116
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0137",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 133
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0138",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 183
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0139",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 183
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0140",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 117
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0141",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 135
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0142",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 7,
+            "shell_x": 100,
+            "shell_y": 225
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0143",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            180
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 11,
+            "shell_x": 100,
+            "shell_y": 296
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0144",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 111,
+            "shell_y": 89
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0145",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 123,
+            "shell_y": 77
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0146",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0147",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0148",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0149",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0150",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0151",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0152",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0153",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0154",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0155",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0156",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0157",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0158",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0159",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 106
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0160",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 89,
+            "shell_y": 111
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0161",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 77,
+            "shell_y": 123
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0162",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0163",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0164",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 88,
+            "shell_y": 112
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0165",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 75,
+            "shell_y": 125
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0166",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 7,
+            "shell_x": 12,
+            "shell_y": 188
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0167",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            225
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 8,
+            "shell_x": 0,
+            "shell_y": 200
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0168",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 116,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0169",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 133,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0170",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 183,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0171",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 183,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0172",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0173",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0174",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0175",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0176",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0177",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0178",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0179",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0180",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 91,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0181",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 91,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0182",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 91,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0183",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 91,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0184",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 84,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0185",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 67,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0186",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 17,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0187",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 17,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0188",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 83,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0189",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 65,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0190",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 11,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0191",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            270
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 11,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0192",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 111,
+            "shell_y": 111
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0193",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 123,
+            "shell_y": 123
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0194",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0195",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 158,
+            "shell_y": 158
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0196",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0197",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0198",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0199",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0200",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0201",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0202",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0203",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0204",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0205",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0206",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0207",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 94,
+            "shell_y": 94
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0208",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 89,
+            "shell_y": 89
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0209",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 77,
+            "shell_y": 77
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0210",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0211",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 42,
+            "shell_y": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0212",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 88,
+            "shell_y": 88
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0213",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 75,
+            "shell_y": 75
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0214",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 7,
+            "shell_x": 12,
+            "shell_y": 12
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0215",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            315
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 8,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0216",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 116
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0217",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 133
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0218",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 183
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0219",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            -100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 183
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0220",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0221",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0222",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0223",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0224",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0225",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0226",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0227",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 20,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 100,
+            "shell_y": 100
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0228",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0229",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0230",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0231",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            18
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 91
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0232",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 84
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0233",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0234",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 17
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0235",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            100
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 100,
+            "shell_y": 17
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0236",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 1,
+            "shell_x": 100,
+            "shell_y": 83
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0237",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": true,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 65
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0238",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 99,
+            "shell_y": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0239",
+      "kind": "world_shells",
+      "input": {
+        "writes": [
+          [
+            2,
+            359
+          ],
+          [
+            3,
+            500
+          ]
+        ],
+        "ticks": 30
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 5,
+            "shell_x": 99,
+            "shell_y": 11
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0240",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 100,
+            "y": 50
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 20,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0241",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 101,
+            "y": 50
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 20,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0242",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 105,
+            "y": 50
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 20,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 20,
+            "damage_percent": 20,
+            "damage_flash": 10,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0243",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 106,
+            "y": 50
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 10,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 10,
+            "damage_percent": 10,
+            "damage_flash": 5,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0244",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 110,
+            "y": 50
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 6,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0245",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 115,
+            "y": 50
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 1,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 1,
+            "damage_percent": 1,
+            "damage_flash": 1,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0246",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 116,
+            "y": 50
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0247",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 105,
+            "y": 55
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 9,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 9,
+            "damage_percent": 9,
+            "damage_flash": 5,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0248",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 110,
+            "y": 60
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 2,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 2,
+            "damage_percent": 2,
+            "damage_flash": 1,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "world_shells_0249",
+      "kind": "world_shells",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100
+          },
+          {
+            "x": 115,
+            "y": 65
+          }
+        ],
+        "writes": [
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            50
+          ]
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 2,
+            "shell_x": 100,
+            "shell_y": 67
+          },
+          {
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "damage_to_self": 0,
+            "damage_to_others": 0,
+            "shell_active": false,
+            "shell_elapsed": 0,
+            "shell_x": 0,
+            "shell_y": 0
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/workspace/work/ghidra-project/user
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/workspace/work/ghidra-project/user
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/workspace/work/ghidra-project/user
+openjdk version "21.0.13" 2026-10-20 LTS
+OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode)
+INFO  Using log config file: jar:file:/workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /workspace/work/ghidra-project/user/.config/ghidra/ghidra_11.3.2_PUBLIC/application.log (LoggingInitialization)  
+WARN  149 NOP constructors found (SleighCompile)  
+WARN  Use -n switch to list each individually (SleighCompile)  
+WARN  41 unnecessary extensions/truncations were converted to copies (SleighCompile)  
+WARN  Use -u switch to list each individually (SleighCompile)  
+WARN  2 operations wrote to temporaries that were not read (SleighCompile)  
+WARN  Use -t switch to list each individually (SleighCompile)  
+Recognized 168 Pascal epilogues; 42 explicit stack results
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/workspace/work/ghidra-project/user
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/workspace/work/ghidra-project/user
+Picked up JAVA_TOOL_OPTIONS:  -Duser.home=/workspace/work/ghidra-project/user
+openjdk version "21.0.13" 2026-10-20 LTS
+OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode)
+INFO  Using log config file: jar:file:/workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /workspace/work/ghidra-project/user/.config/ghidra/ghidra_11.3.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /workspace/work/ghidra-project/user/.config/ghidra/ghidra_11.3.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (751 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  Headless startup complete (2088 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 85 extension points (39 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /workspace/work/radar-to-shot/tools/ghidra
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /workspace/work/ghidra_11.3.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: /workspace/work/ghidra-project/RobotWarriors (HeadlessAnalyzer)  
+INFO  Opening project: /workspace/work/ghidra-project/RobotWarriors (HeadlessProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /workspace/work/ghidra-project/RobotWarriors (HeadlessAnalyzer)  
+INFO  IMPORTING: file:///workspace/work/radar-to-shot/reverse/original/resources/CODE_1.bin (HeadlessAnalyzer)  
+INFO  Successfully applied "-loader-baseAddr" to "Base Address" (old: "null", new: "0x10000") (AutoImporter)  
+INFO  Using Loader: Raw Binary (AutoImporter)  
+INFO  Using Language/Compiler: 68000:BE:32:RobotWarriors:default (AutoImporter)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (AutoImporter)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  /CODE_1.bin: file deleted (agent) (LocalFileSystem)  
+INFO  Deleted local file CODE_1.bin (GhidraFileData)  
+WARN  REPORT: Removed conflicting program file from project: /CODE_1.bin (HeadlessAnalyzer)  
+INFO  SCRIPT: /workspace/work/radar-to-shot/tools/ghidra/PrepareRobotWarriors.java (HeadlessAnalyzer)  
+INFO  PrepareRobotWarriors.java> Excluded positive-frame LINK data candidate CODE5+2236 (GhidraScript)  
+INFO  PrepareRobotWarriors.java> Prepared Robot Warriors CODE resources and A5 jump table. (GhidraScript)  
+INFO  ANALYZING all memory and code: file:///workspace/work/radar-to-shot/reverse/original/resources/CODE_1.bin (HeadlessAnalyzer)  
+INFO  Packed database cache: /tmp/agent-ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: generic_clib (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    68000 Constant Reference Analyzer          0.735 secs
+    ASCII Strings                              0.273 secs
+    Apply Data Archives                        0.632 secs
+    Call Convention ID                         0.004 secs
+    Call-Fixup Installer                       0.008 secs
+    Create Address Tables                      0.021 secs
+    Create Function                            0.031 secs
+    Data Reference                             0.000 secs
+    Decompiler Switch Analysis                 2.900 secs
+    Demangler GNU                              0.027 secs
+    Disassemble Entry Points                   0.006 secs
+    Embedded Media                             0.014 secs
+    External Entry References                  0.000 secs
+    Function Start Search                      0.017 secs
+    Non-Returning Functions - Discovered       0.030 secs
+    Reference                                  0.097 secs
+    Shared Return Calls                        0.034 secs
+    Stack                                      1.297 secs
+    Subroutine References                      0.017 secs
+    Subroutine References - One Time           0.008 secs
+-----------------------------------------------------
+     Total Time   6 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file:///workspace/work/radar-to-shot/reverse/original/resources/CODE_1.bin (HeadlessAnalyzer)  
+INFO  SCRIPT: /workspace/work/radar-to-shot/tools/ghidra/RecoverPascal.java (HeadlessAnalyzer)  
+INFO  RecoverPascal.java> Applied 168 Pascal epilogue annotations; original CODE bytes unchanged. (GhidraScript)  
+INFO  SCRIPT: /workspace/work/radar-to-shot/tools/ghidra/ExportRobotWarriors.java (HeadlessAnalyzer)  
+INFO  ExportRobotWarriors.java> Exported 244 functions; 0 failed. (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: file:///workspace/work/radar-to-shot/reverse/original/resources/CODE_1.bin (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file:///workspace/work/radar-to-shot/reverse/original/resources/CODE_1.bin (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for: /CODE_1.bin (RobotWarriors:/CODE_1.bin) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  
+{"candidate_functions": 244, "emitted_functions": 244, "fatal_decompile_failures": 0, "abi_annotations": 168}

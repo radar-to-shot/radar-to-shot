@@ -1,0 +1,8 @@
+# Classic Mac A-line traps remain opaque operations. No Toolbox behavior is invented.
+@define MC68020 ""
+@include "68000.sinc"
+define pcodeop __mac_toolbox;
+:aline op015 is op=10 & op015 { __mac_toolbox(op015:2); }
+
+# ExitToShell does not fall through into the following embedded error text.
+:ExitToShell is op015=0xa9f4 { __mac_toolbox(0xa9f4:2); return [0:4]; }

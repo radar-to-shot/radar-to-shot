@@ -1,0 +1,6078 @@
+{
+  "provenance": {
+    "engine": "machine68k 0.5.1 / Musashi, 68000",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {},
+    "extra_code_instructions": {},
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 28414,
+    "segment_instructions": {
+      "3": 28033
+    },
+    "macintosh_traps": [],
+    "toolbox_shims": {},
+    "host_service_calls": {}
+  },
+  "vectors": [
+    {
+      "id": "world_distance_0000",
+      "kind": "world_distance",
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "expected": {
+        "distance": 0
+      }
+    },
+    {
+      "id": "world_distance_0001",
+      "kind": "world_distance",
+      "input": {
+        "x": 3,
+        "y": 4
+      },
+      "expected": {
+        "distance": 5
+      }
+    },
+    {
+      "id": "world_distance_0002",
+      "kind": "world_distance",
+      "input": {
+        "x": 4,
+        "y": 3
+      },
+      "expected": {
+        "distance": 5
+      }
+    },
+    {
+      "id": "world_distance_0003",
+      "kind": "world_distance",
+      "input": {
+        "x": 0,
+        "y": 20
+      },
+      "expected": {
+        "distance": 20
+      }
+    },
+    {
+      "id": "world_distance_0004",
+      "kind": "world_distance",
+      "input": {
+        "x": 10,
+        "y": 10
+      },
+      "expected": {
+        "distance": 14
+      }
+    },
+    {
+      "id": "world_distance_0005",
+      "kind": "world_distance",
+      "input": {
+        "x": -10,
+        "y": 10
+      },
+      "expected": {
+        "distance": 14
+      }
+    },
+    {
+      "id": "world_distance_0006",
+      "kind": "world_distance",
+      "input": {
+        "x": 381,
+        "y": 313
+      },
+      "expected": {
+        "distance": 500
+      }
+    },
+    {
+      "id": "world_distance_0007",
+      "kind": "world_distance",
+      "input": {
+        "x": 32767,
+        "y": 0
+      },
+      "expected": {
+        "distance": 545
+      }
+    },
+    {
+      "id": "world_distance_0008",
+      "kind": "world_distance",
+      "input": {
+        "x": 500,
+        "y": 500
+      },
+      "expected": {
+        "distance": 700
+      }
+    },
+    {
+      "id": "world_distance_0009",
+      "kind": "world_distance",
+      "input": {
+        "x": 1000,
+        "y": 0
+      },
+      "expected": {
+        "distance": -108
+      }
+    },
+    {
+      "id": "world_distance_0010",
+      "kind": "world_distance",
+      "input": {
+        "x": 300,
+        "y": 310
+      },
+      "expected": {
+        "distance": 439
+      }
+    },
+    {
+      "id": "world_distance_0011",
+      "kind": "world_distance",
+      "input": {
+        "x": 203,
+        "y": 123
+      },
+      "expected": {
+        "distance": 235
+      }
+    },
+    {
+      "id": "world_distance_0012",
+      "kind": "world_distance",
+      "input": {
+        "x": -10,
+        "y": -120
+      },
+      "expected": {
+        "distance": 122
+      }
+    },
+    {
+      "id": "world_distance_0013",
+      "kind": "world_distance",
+      "input": {
+        "x": 134,
+        "y": 194
+      },
+      "expected": {
+        "distance": 236
+      }
+    },
+    {
+      "id": "world_distance_0014",
+      "kind": "world_distance",
+      "input": {
+        "x": -372,
+        "y": -286
+      },
+      "expected": {
+        "distance": 474
+      }
+    },
+    {
+      "id": "world_distance_0015",
+      "kind": "world_distance",
+      "input": {
+        "x": 117,
+        "y": 53
+      },
+      "expected": {
+        "distance": 130
+      }
+    },
+    {
+      "id": "world_distance_0016",
+      "kind": "world_distance",
+      "input": {
+        "x": 44,
+        "y": 109
+      },
+      "expected": {
+        "distance": 117
+      }
+    },
+    {
+      "id": "world_distance_0017",
+      "kind": "world_distance",
+      "input": {
+        "x": -268,
+        "y": -149
+      },
+      "expected": {
+        "distance": 307
+      }
+    },
+    {
+      "id": "world_distance_0018",
+      "kind": "world_distance",
+      "input": {
+        "x": 25,
+        "y": -276
+      },
+      "expected": {
+        "distance": 282
+      }
+    },
+    {
+      "id": "world_distance_0019",
+      "kind": "world_distance",
+      "input": {
+        "x": 212,
+        "y": -275
+      },
+      "expected": {
+        "distance": 351
+      }
+    },
+    {
+      "id": "world_distance_0020",
+      "kind": "world_distance",
+      "input": {
+        "x": 30,
+        "y": 300
+      },
+      "expected": {
+        "distance": 295
+      }
+    },
+    {
+      "id": "world_distance_0021",
+      "kind": "world_distance",
+      "input": {
+        "x": 90,
+        "y": 17
+      },
+      "expected": {
+        "distance": 91
+      }
+    },
+    {
+      "id": "world_distance_0022",
+      "kind": "world_distance",
+      "input": {
+        "x": -111,
+        "y": -93
+      },
+      "expected": {
+        "distance": 147
+      }
+    },
+    {
+      "id": "world_distance_0023",
+      "kind": "world_distance",
+      "input": {
+        "x": 208,
+        "y": 298
+      },
+      "expected": {
+        "distance": 364
+      }
+    },
+    {
+      "id": "world_distance_0024",
+      "kind": "world_distance",
+      "input": {
+        "x": 61,
+        "y": 211
+      },
+      "expected": {
+        "distance": 218
+      }
+    },
+    {
+      "id": "world_distance_0025",
+      "kind": "world_distance",
+      "input": {
+        "x": -199,
+        "y": 59
+      },
+      "expected": {
+        "distance": 206
+      }
+    },
+    {
+      "id": "world_distance_0026",
+      "kind": "world_distance",
+      "input": {
+        "x": -106,
+        "y": -179
+      },
+      "expected": {
+        "distance": 210
+      }
+    },
+    {
+      "id": "world_distance_0027",
+      "kind": "world_distance",
+      "input": {
+        "x": -92,
+        "y": -232
+      },
+      "expected": {
+        "distance": 247
+      }
+    },
+    {
+      "id": "world_distance_0028",
+      "kind": "world_distance",
+      "input": {
+        "x": 194,
+        "y": 20
+      },
+      "expected": {
+        "distance": 191
+      }
+    },
+    {
+      "id": "world_distance_0029",
+      "kind": "world_distance",
+      "input": {
+        "x": -61,
+        "y": 296
+      },
+      "expected": {
+        "distance": 303
+      }
+    },
+    {
+      "id": "world_distance_0030",
+      "kind": "world_distance",
+      "input": {
+        "x": -302,
+        "y": 26
+      },
+      "expected": {
+        "distance": 308
+      }
+    },
+    {
+      "id": "world_distance_0031",
+      "kind": "world_distance",
+      "input": {
+        "x": 179,
+        "y": 89
+      },
+      "expected": {
+        "distance": 204
+      }
+    },
+    {
+      "id": "world_distance_0032",
+      "kind": "world_distance",
+      "input": {
+        "x": 61,
+        "y": -90
+      },
+      "expected": {
+        "distance": 109
+      }
+    },
+    {
+      "id": "world_distance_0033",
+      "kind": "world_distance",
+      "input": {
+        "x": 362,
+        "y": -8
+      },
+      "expected": {
+        "distance": 364
+      }
+    },
+    {
+      "id": "world_distance_0034",
+      "kind": "world_distance",
+      "input": {
+        "x": -233,
+        "y": 45
+      },
+      "expected": {
+        "distance": 236
+      }
+    },
+    {
+      "id": "world_distance_0035",
+      "kind": "world_distance",
+      "input": {
+        "x": 148,
+        "y": -294
+      },
+      "expected": {
+        "distance": 325
+      }
+    },
+    {
+      "id": "world_distance_0036",
+      "kind": "world_distance",
+      "input": {
+        "x": -168,
+        "y": 56
+      },
+      "expected": {
+        "distance": 171
+      }
+    },
+    {
+      "id": "world_distance_0037",
+      "kind": "world_distance",
+      "input": {
+        "x": 46,
+        "y": 142
+      },
+      "expected": {
+        "distance": 150
+      }
+    },
+    {
+      "id": "world_distance_0038",
+      "kind": "world_distance",
+      "input": {
+        "x": -144,
+        "y": -309
+      },
+      "expected": {
+        "distance": 345
+      }
+    },
+    {
+      "id": "world_distance_0039",
+      "kind": "world_distance",
+      "input": {
+        "x": -347,
+        "y": 186
+      },
+      "expected": {
+        "distance": 392
+      }
+    },
+    {
+      "id": "world_distance_0040",
+      "kind": "world_distance",
+      "input": {
+        "x": -60,
+        "y": -193
+      },
+      "expected": {
+        "distance": 202
+      }
+    },
+    {
+      "id": "world_distance_0041",
+      "kind": "world_distance",
+      "input": {
+        "x": 379,
+        "y": 175
+      },
+      "expected": {
+        "distance": 422
+      }
+    },
+    {
+      "id": "world_distance_0042",
+      "kind": "world_distance",
+      "input": {
+        "x": 368,
+        "y": -270
+      },
+      "expected": {
+        "distance": 459
+      }
+    },
+    {
+      "id": "world_distance_0043",
+      "kind": "world_distance",
+      "input": {
+        "x": -372,
+        "y": -171
+      },
+      "expected": {
+        "distance": 414
+      }
+    },
+    {
+      "id": "world_distance_0044",
+      "kind": "world_distance",
+      "input": {
+        "x": -230,
+        "y": 279
+      },
+      "expected": {
+        "distance": 366
+      }
+    },
+    {
+      "id": "world_distance_0045",
+      "kind": "world_distance",
+      "input": {
+        "x": 257,
+        "y": 249
+      },
+      "expected": {
+        "distance": 364
+      }
+    },
+    {
+      "id": "world_distance_0046",
+      "kind": "world_distance",
+      "input": {
+        "x": 329,
+        "y": -269
+      },
+      "expected": {
+        "distance": 431
+      }
+    },
+    {
+      "id": "world_distance_0047",
+      "kind": "world_distance",
+      "input": {
+        "x": 44,
+        "y": 22
+      },
+      "expected": {
+        "distance": 49
+      }
+    },
+    {
+      "id": "world_distance_0048",
+      "kind": "world_distance",
+      "input": {
+        "x": 52,
+        "y": 171
+      },
+      "expected": {
+        "distance": 178
+      }
+    },
+    {
+      "id": "world_distance_0049",
+      "kind": "world_distance",
+      "input": {
+        "x": 234,
+        "y": -112
+      },
+      "expected": {
+        "distance": 264
+      }
+    },
+    {
+      "id": "world_distance_0050",
+      "kind": "world_distance",
+      "input": {
+        "x": -219,
+        "y": -53
+      },
+      "expected": {
+        "distance": 223
+      }
+    },
+    {
+      "id": "world_distance_0051",
+      "kind": "world_distance",
+      "input": {
+        "x": 221,
+        "y": -191
+      },
+      "expected": {
+        "distance": 297
+      }
+    },
+    {
+      "id": "world_distance_0052",
+      "kind": "world_distance",
+      "input": {
+        "x": -122,
+        "y": -251
+      },
+      "expected": {
+        "distance": 284
+      }
+    },
+    {
+      "id": "world_distance_0053",
+      "kind": "world_distance",
+      "input": {
+        "x": 205,
+        "y": 147
+      },
+      "expected": {
+        "distance": 253
+      }
+    },
+    {
+      "id": "world_distance_0054",
+      "kind": "world_distance",
+      "input": {
+        "x": -287,
+        "y": 177
+      },
+      "expected": {
+        "distance": 334
+      }
+    },
+    {
+      "id": "world_distance_0055",
+      "kind": "world_distance",
+      "input": {
+        "x": 338,
+        "y": 113
+      },
+      "expected": {
+        "distance": 344
+      }
+    },
+    {
+      "id": "world_distance_0056",
+      "kind": "world_distance",
+      "input": {
+        "x": -187,
+        "y": 256
+      },
+      "expected": {
+        "distance": 319
+      }
+    },
+    {
+      "id": "world_distance_0057",
+      "kind": "world_distance",
+      "input": {
+        "x": -251,
+        "y": 5
+      },
+      "expected": {
+        "distance": 252
+      }
+    },
+    {
+      "id": "world_distance_0058",
+      "kind": "world_distance",
+      "input": {
+        "x": 209,
+        "y": 188
+      },
+      "expected": {
+        "distance": 286
+      }
+    },
+    {
+      "id": "world_distance_0059",
+      "kind": "world_distance",
+      "input": {
+        "x": -297,
+        "y": -73
+      },
+      "expected": {
+        "distance": 303
+      }
+    },
+    {
+      "id": "world_distance_0060",
+      "kind": "world_distance",
+      "input": {
+        "x": -196,
+        "y": 173
+      },
+      "expected": {
+        "distance": 266
+      }
+    },
+    {
+      "id": "world_distance_0061",
+      "kind": "world_distance",
+      "input": {
+        "x": -345,
+        "y": 42
+      },
+      "expected": {
+        "distance": 346
+      }
+    },
+    {
+      "id": "world_distance_0062",
+      "kind": "world_distance",
+      "input": {
+        "x": 60,
+        "y": -100
+      },
+      "expected": {
+        "distance": 115
+      }
+    },
+    {
+      "id": "world_distance_0063",
+      "kind": "world_distance",
+      "input": {
+        "x": -190,
+        "y": -186
+      },
+      "expected": {
+        "distance": 271
+      }
+    },
+    {
+      "id": "world_distance_0064",
+      "kind": "world_distance",
+      "input": {
+        "x": 297,
+        "y": 279
+      },
+      "expected": {
+        "distance": 415
+      }
+    },
+    {
+      "id": "world_distance_0065",
+      "kind": "world_distance",
+      "input": {
+        "x": -177,
+        "y": -286
+      },
+      "expected": {
+        "distance": 333
+      }
+    },
+    {
+      "id": "world_distance_0066",
+      "kind": "world_distance",
+      "input": {
+        "x": 39,
+        "y": -189
+      },
+      "expected": {
+        "distance": 194
+      }
+    },
+    {
+      "id": "world_distance_0067",
+      "kind": "world_distance",
+      "input": {
+        "x": 114,
+        "y": 184
+      },
+      "expected": {
+        "distance": 215
+      }
+    },
+    {
+      "id": "world_distance_0068",
+      "kind": "world_distance",
+      "input": {
+        "x": 136,
+        "y": -191
+      },
+      "expected": {
+        "distance": 235
+      }
+    },
+    {
+      "id": "world_distance_0069",
+      "kind": "world_distance",
+      "input": {
+        "x": -64,
+        "y": -94
+      },
+      "expected": {
+        "distance": 114
+      }
+    },
+    {
+      "id": "world_distance_0070",
+      "kind": "world_distance",
+      "input": {
+        "x": 162,
+        "y": 157
+      },
+      "expected": {
+        "distance": 230
+      }
+    },
+    {
+      "id": "world_distance_0071",
+      "kind": "world_distance",
+      "input": {
+        "x": -80,
+        "y": -224
+      },
+      "expected": {
+        "distance": 232
+      }
+    },
+    {
+      "id": "world_distance_0072",
+      "kind": "world_distance",
+      "input": {
+        "x": 171,
+        "y": 215
+      },
+      "expected": {
+        "distance": 278
+      }
+    },
+    {
+      "id": "world_distance_0073",
+      "kind": "world_distance",
+      "input": {
+        "x": -181,
+        "y": -21
+      },
+      "expected": {
+        "distance": 181
+      }
+    },
+    {
+      "id": "world_distance_0074",
+      "kind": "world_distance",
+      "input": {
+        "x": -97,
+        "y": -285
+      },
+      "expected": {
+        "distance": 291
+      }
+    },
+    {
+      "id": "world_distance_0075",
+      "kind": "world_distance",
+      "input": {
+        "x": 193,
+        "y": -312
+      },
+      "expected": {
+        "distance": 364
+      }
+    },
+    {
+      "id": "world_distance_0076",
+      "kind": "world_distance",
+      "input": {
+        "x": 104,
+        "y": -300
+      },
+      "expected": {
+        "distance": 308
+      }
+    },
+    {
+      "id": "world_distance_0077",
+      "kind": "world_distance",
+      "input": {
+        "x": -343,
+        "y": -181
+      },
+      "expected": {
+        "distance": 385
+      }
+    },
+    {
+      "id": "world_distance_0078",
+      "kind": "world_distance",
+      "input": {
+        "x": 362,
+        "y": -259
+      },
+      "expected": {
+        "distance": 447
+      }
+    },
+    {
+      "id": "world_distance_0079",
+      "kind": "world_distance",
+      "input": {
+        "x": 74,
+        "y": -254
+      },
+      "expected": {
+        "distance": 262
+      }
+    },
+    {
+      "id": "world_distance_0080",
+      "kind": "world_distance",
+      "input": {
+        "x": -278,
+        "y": 163
+      },
+      "expected": {
+        "distance": 324
+      }
+    },
+    {
+      "id": "world_distance_0081",
+      "kind": "world_distance",
+      "input": {
+        "x": 217,
+        "y": 54
+      },
+      "expected": {
+        "distance": 222
+      }
+    },
+    {
+      "id": "world_distance_0082",
+      "kind": "world_distance",
+      "input": {
+        "x": 125,
+        "y": 185
+      },
+      "expected": {
+        "distance": 223
+      }
+    },
+    {
+      "id": "world_distance_0083",
+      "kind": "world_distance",
+      "input": {
+        "x": -138,
+        "y": -206
+      },
+      "expected": {
+        "distance": 248
+      }
+    },
+    {
+      "id": "world_distance_0084",
+      "kind": "world_distance",
+      "input": {
+        "x": 213,
+        "y": 198
+      },
+      "expected": {
+        "distance": 296
+      }
+    },
+    {
+      "id": "world_distance_0085",
+      "kind": "world_distance",
+      "input": {
+        "x": -232,
+        "y": 188
+      },
+      "expected": {
+        "distance": 302
+      }
+    },
+    {
+      "id": "world_distance_0086",
+      "kind": "world_distance",
+      "input": {
+        "x": 243,
+        "y": 81
+      },
+      "expected": {
+        "distance": 247
+      }
+    },
+    {
+      "id": "world_distance_0087",
+      "kind": "world_distance",
+      "input": {
+        "x": 202,
+        "y": 280
+      },
+      "expected": {
+        "distance": 347
+      }
+    },
+    {
+      "id": "world_distance_0088",
+      "kind": "world_distance",
+      "input": {
+        "x": -333,
+        "y": 312
+      },
+      "expected": {
+        "distance": 464
+      }
+    },
+    {
+      "id": "world_distance_0089",
+      "kind": "world_distance",
+      "input": {
+        "x": -3,
+        "y": 166
+      },
+      "expected": {
+        "distance": 166
+      }
+    },
+    {
+      "id": "world_distance_0090",
+      "kind": "world_distance",
+      "input": {
+        "x": -173,
+        "y": 279
+      },
+      "expected": {
+        "distance": 325
+      }
+    },
+    {
+      "id": "world_distance_0091",
+      "kind": "world_distance",
+      "input": {
+        "x": -296,
+        "y": 223
+      },
+      "expected": {
+        "distance": 374
+      }
+    },
+    {
+      "id": "world_distance_0092",
+      "kind": "world_distance",
+      "input": {
+        "x": -318,
+        "y": -252
+      },
+      "expected": {
+        "distance": 410
+      }
+    },
+    {
+      "id": "world_distance_0093",
+      "kind": "world_distance",
+      "input": {
+        "x": -371,
+        "y": -250
+      },
+      "expected": {
+        "distance": 447
+      }
+    },
+    {
+      "id": "world_distance_0094",
+      "kind": "world_distance",
+      "input": {
+        "x": -8,
+        "y": -95
+      },
+      "expected": {
+        "distance": 97
+      }
+    },
+    {
+      "id": "world_distance_0095",
+      "kind": "world_distance",
+      "input": {
+        "x": -177,
+        "y": 8
+      },
+      "expected": {
+        "distance": 182
+      }
+    },
+    {
+      "id": "world_distance_0096",
+      "kind": "world_distance",
+      "input": {
+        "x": -93,
+        "y": -45
+      },
+      "expected": {
+        "distance": 105
+      }
+    },
+    {
+      "id": "world_distance_0097",
+      "kind": "world_distance",
+      "input": {
+        "x": 315,
+        "y": -313
+      },
+      "expected": {
+        "distance": 452
+      }
+    },
+    {
+      "id": "world_distance_0098",
+      "kind": "world_distance",
+      "input": {
+        "x": -121,
+        "y": 197
+      },
+      "expected": {
+        "distance": 229
+      }
+    },
+    {
+      "id": "world_distance_0099",
+      "kind": "world_distance",
+      "input": {
+        "x": 127,
+        "y": 56
+      },
+      "expected": {
+        "distance": 139
+      }
+    },
+    {
+      "id": "world_distance_0100",
+      "kind": "world_distance",
+      "input": {
+        "x": 33,
+        "y": 180
+      },
+      "expected": {
+        "distance": 181
+      }
+    },
+    {
+      "id": "world_distance_0101",
+      "kind": "world_distance",
+      "input": {
+        "x": 188,
+        "y": -296
+      },
+      "expected": {
+        "distance": 348
+      }
+    },
+    {
+      "id": "world_distance_0102",
+      "kind": "world_distance",
+      "input": {
+        "x": 163,
+        "y": 16
+      },
+      "expected": {
+        "distance": 160
+      }
+    },
+    {
+      "id": "world_distance_0103",
+      "kind": "world_distance",
+      "input": {
+        "x": -368,
+        "y": -240
+      },
+      "expected": {
+        "distance": 438
+      }
+    },
+    {
+      "id": "world_distance_0104",
+      "kind": "world_distance",
+      "input": {
+        "x": -253,
+        "y": 124
+      },
+      "expected": {
+        "distance": 287
+      }
+    },
+    {
+      "id": "world_distance_0105",
+      "kind": "world_distance",
+      "input": {
+        "x": -174,
+        "y": 283
+      },
+      "expected": {
+        "distance": 329
+      }
+    },
+    {
+      "id": "world_distance_0106",
+      "kind": "world_distance",
+      "input": {
+        "x": 27,
+        "y": 224
+      },
+      "expected": {
+        "distance": 225
+      }
+    },
+    {
+      "id": "world_distance_0107",
+      "kind": "world_distance",
+      "input": {
+        "x": -275,
+        "y": -174
+      },
+      "expected": {
+        "distance": 323
+      }
+    },
+    {
+      "id": "world_distance_0108",
+      "kind": "world_distance",
+      "input": {
+        "x": 219,
+        "y": 31
+      },
+      "expected": {
+        "distance": 224
+      }
+    },
+    {
+      "id": "world_distance_0109",
+      "kind": "world_distance",
+      "input": {
+        "x": -255,
+        "y": -278
+      },
+      "expected": {
+        "distance": 384
+      }
+    },
+    {
+      "id": "world_distance_0110",
+      "kind": "world_distance",
+      "input": {
+        "x": -286,
+        "y": 45
+      },
+      "expected": {
+        "distance": 296
+      }
+    },
+    {
+      "id": "world_distance_0111",
+      "kind": "world_distance",
+      "input": {
+        "x": 84,
+        "y": -43
+      },
+      "expected": {
+        "distance": 93
+      }
+    },
+    {
+      "id": "world_distance_0112",
+      "kind": "world_distance",
+      "input": {
+        "x": 145,
+        "y": -20
+      },
+      "expected": {
+        "distance": 148
+      }
+    },
+    {
+      "id": "world_distance_0113",
+      "kind": "world_distance",
+      "input": {
+        "x": 59,
+        "y": 233
+      },
+      "expected": {
+        "distance": 239
+      }
+    },
+    {
+      "id": "world_distance_0114",
+      "kind": "world_distance",
+      "input": {
+        "x": -339,
+        "y": 36
+      },
+      "expected": {
+        "distance": 336
+      }
+    },
+    {
+      "id": "world_distance_0115",
+      "kind": "world_distance",
+      "input": {
+        "x": -356,
+        "y": -283
+      },
+      "expected": {
+        "distance": 460
+      }
+    },
+    {
+      "id": "world_distance_0116",
+      "kind": "world_distance",
+      "input": {
+        "x": 3,
+        "y": 47
+      },
+      "expected": {
+        "distance": 47
+      }
+    },
+    {
+      "id": "world_distance_0117",
+      "kind": "world_distance",
+      "input": {
+        "x": -179,
+        "y": 11
+      },
+      "expected": {
+        "distance": 178
+      }
+    },
+    {
+      "id": "world_distance_0118",
+      "kind": "world_distance",
+      "input": {
+        "x": 22,
+        "y": -237
+      },
+      "expected": {
+        "distance": 232
+      }
+    },
+    {
+      "id": "world_distance_0119",
+      "kind": "world_distance",
+      "input": {
+        "x": 342,
+        "y": -226
+      },
+      "expected": {
+        "distance": 409
+      }
+    },
+    {
+      "id": "world_distance_0120",
+      "kind": "world_distance",
+      "input": {
+        "x": 291,
+        "y": 193
+      },
+      "expected": {
+        "distance": 348
+      }
+    },
+    {
+      "id": "world_distance_0121",
+      "kind": "world_distance",
+      "input": {
+        "x": -30,
+        "y": 67
+      },
+      "expected": {
+        "distance": 74
+      }
+    },
+    {
+      "id": "world_distance_0122",
+      "kind": "world_distance",
+      "input": {
+        "x": 3,
+        "y": -163
+      },
+      "expected": {
+        "distance": 163
+      }
+    },
+    {
+      "id": "world_distance_0123",
+      "kind": "world_distance",
+      "input": {
+        "x": -262,
+        "y": -193
+      },
+      "expected": {
+        "distance": 328
+      }
+    },
+    {
+      "id": "world_distance_0124",
+      "kind": "world_distance",
+      "input": {
+        "x": -138,
+        "y": -74
+      },
+      "expected": {
+        "distance": 156
+      }
+    },
+    {
+      "id": "world_distance_0125",
+      "kind": "world_distance",
+      "input": {
+        "x": -105,
+        "y": -203
+      },
+      "expected": {
+        "distance": 226
+      }
+    },
+    {
+      "id": "world_distance_0126",
+      "kind": "world_distance",
+      "input": {
+        "x": -177,
+        "y": 46
+      },
+      "expected": {
+        "distance": 183
+      }
+    },
+    {
+      "id": "world_distance_0127",
+      "kind": "world_distance",
+      "input": {
+        "x": -247,
+        "y": 282
+      },
+      "expected": {
+        "distance": 381
+      }
+    },
+    {
+      "id": "world_distance_0128",
+      "kind": "world_distance",
+      "input": {
+        "x": -11,
+        "y": 92
+      },
+      "expected": {
+        "distance": 92
+      }
+    },
+    {
+      "id": "world_distance_0129",
+      "kind": "world_distance",
+      "input": {
+        "x": -245,
+        "y": -311
+      },
+      "expected": {
+        "distance": 400
+      }
+    },
+    {
+      "id": "world_distance_0130",
+      "kind": "world_distance",
+      "input": {
+        "x": -191,
+        "y": -52
+      },
+      "expected": {
+        "distance": 199
+      }
+    },
+    {
+      "id": "world_distance_0131",
+      "kind": "world_distance",
+      "input": {
+        "x": 152,
+        "y": 32
+      },
+      "expected": {
+        "distance": 156
+      }
+    },
+    {
+      "id": "world_distance_0132",
+      "kind": "world_distance",
+      "input": {
+        "x": 25,
+        "y": -276
+      },
+      "expected": {
+        "distance": 282
+      }
+    },
+    {
+      "id": "world_distance_0133",
+      "kind": "world_distance",
+      "input": {
+        "x": -42,
+        "y": -138
+      },
+      "expected": {
+        "distance": 144
+      }
+    },
+    {
+      "id": "world_distance_0134",
+      "kind": "world_distance",
+      "input": {
+        "x": 232,
+        "y": -171
+      },
+      "expected": {
+        "distance": 290
+      }
+    },
+    {
+      "id": "world_distance_0135",
+      "kind": "world_distance",
+      "input": {
+        "x": 188,
+        "y": 35
+      },
+      "expected": {
+        "distance": 190
+      }
+    },
+    {
+      "id": "world_distance_0136",
+      "kind": "world_distance",
+      "input": {
+        "x": 76,
+        "y": -223
+      },
+      "expected": {
+        "distance": 228
+      }
+    },
+    {
+      "id": "world_distance_0137",
+      "kind": "world_distance",
+      "input": {
+        "x": 178,
+        "y": -1
+      },
+      "expected": {
+        "distance": 176
+      }
+    },
+    {
+      "id": "world_distance_0138",
+      "kind": "world_distance",
+      "input": {
+        "x": -101,
+        "y": -52
+      },
+      "expected": {
+        "distance": 113
+      }
+    },
+    {
+      "id": "world_distance_0139",
+      "kind": "world_distance",
+      "input": {
+        "x": -84,
+        "y": -76
+      },
+      "expected": {
+        "distance": 115
+      }
+    },
+    {
+      "id": "world_distance_0140",
+      "kind": "world_distance",
+      "input": {
+        "x": -244,
+        "y": -239
+      },
+      "expected": {
+        "distance": 348
+      }
+    },
+    {
+      "id": "world_distance_0141",
+      "kind": "world_distance",
+      "input": {
+        "x": -317,
+        "y": 129
+      },
+      "expected": {
+        "distance": 340
+      }
+    },
+    {
+      "id": "world_distance_0142",
+      "kind": "world_distance",
+      "input": {
+        "x": -275,
+        "y": -149
+      },
+      "expected": {
+        "distance": 312
+      }
+    },
+    {
+      "id": "world_distance_0143",
+      "kind": "world_distance",
+      "input": {
+        "x": -49,
+        "y": 84
+      },
+      "expected": {
+        "distance": 98
+      }
+    },
+    {
+      "id": "world_distance_0144",
+      "kind": "world_distance",
+      "input": {
+        "x": -351,
+        "y": -59
+      },
+      "expected": {
+        "distance": 349
+      }
+    },
+    {
+      "id": "world_distance_0145",
+      "kind": "world_distance",
+      "input": {
+        "x": 199,
+        "y": -278
+      },
+      "expected": {
+        "distance": 343
+      }
+    },
+    {
+      "id": "world_distance_0146",
+      "kind": "world_distance",
+      "input": {
+        "x": 138,
+        "y": -209
+      },
+      "expected": {
+        "distance": 250
+      }
+    },
+    {
+      "id": "world_distance_0147",
+      "kind": "world_distance",
+      "input": {
+        "x": 333,
+        "y": 308
+      },
+      "expected": {
+        "distance": 462
+      }
+    },
+    {
+      "id": "world_distance_0148",
+      "kind": "world_distance",
+      "input": {
+        "x": 184,
+        "y": -59
+      },
+      "expected": {
+        "distance": 194
+      }
+    },
+    {
+      "id": "world_distance_0149",
+      "kind": "world_distance",
+      "input": {
+        "x": 57,
+        "y": 1
+      },
+      "expected": {
+        "distance": 57
+      }
+    },
+    {
+      "id": "world_distance_0150",
+      "kind": "world_distance",
+      "input": {
+        "x": -19,
+        "y": 220
+      },
+      "expected": {
+        "distance": 224
+      }
+    },
+    {
+      "id": "world_distance_0151",
+      "kind": "world_distance",
+      "input": {
+        "x": 324,
+        "y": -10
+      },
+      "expected": {
+        "distance": 328
+      }
+    },
+    {
+      "id": "world_distance_0152",
+      "kind": "world_distance",
+      "input": {
+        "x": -226,
+        "y": 74
+      },
+      "expected": {
+        "distance": 240
+      }
+    },
+    {
+      "id": "world_distance_0153",
+      "kind": "world_distance",
+      "input": {
+        "x": 119,
+        "y": -282
+      },
+      "expected": {
+        "distance": 306
+      }
+    },
+    {
+      "id": "world_distance_0154",
+      "kind": "world_distance",
+      "input": {
+        "x": 67,
+        "y": 40
+      },
+      "expected": {
+        "distance": 79
+      }
+    },
+    {
+      "id": "world_distance_0155",
+      "kind": "world_distance",
+      "input": {
+        "x": 28,
+        "y": 265
+      },
+      "expected": {
+        "distance": 262
+      }
+    },
+    {
+      "id": "world_distance_0156",
+      "kind": "world_distance",
+      "input": {
+        "x": -325,
+        "y": -49
+      },
+      "expected": {
+        "distance": 335
+      }
+    },
+    {
+      "id": "world_distance_0157",
+      "kind": "world_distance",
+      "input": {
+        "x": -60,
+        "y": -61
+      },
+      "expected": {
+        "distance": 87
+      }
+    },
+    {
+      "id": "world_distance_0158",
+      "kind": "world_distance",
+      "input": {
+        "x": 63,
+        "y": -256
+      },
+      "expected": {
+        "distance": 261
+      }
+    },
+    {
+      "id": "world_distance_0159",
+      "kind": "world_distance",
+      "input": {
+        "x": 350,
+        "y": 12
+      },
+      "expected": {
+        "distance": 356
+      }
+    },
+    {
+      "id": "world_distance_0160",
+      "kind": "world_distance",
+      "input": {
+        "x": 119,
+        "y": 168
+      },
+      "expected": {
+        "distance": 207
+      }
+    },
+    {
+      "id": "world_distance_0161",
+      "kind": "world_distance",
+      "input": {
+        "x": -161,
+        "y": 105
+      },
+      "expected": {
+        "distance": 192
+      }
+    },
+    {
+      "id": "world_distance_0162",
+      "kind": "world_distance",
+      "input": {
+        "x": 293,
+        "y": -180
+      },
+      "expected": {
+        "distance": 341
+      }
+    },
+    {
+      "id": "world_distance_0163",
+      "kind": "world_distance",
+      "input": {
+        "x": 91,
+        "y": -38
+      },
+      "expected": {
+        "distance": 98
+      }
+    },
+    {
+      "id": "world_distance_0164",
+      "kind": "world_distance",
+      "input": {
+        "x": -282,
+        "y": 187
+      },
+      "expected": {
+        "distance": 338
+      }
+    },
+    {
+      "id": "world_distance_0165",
+      "kind": "world_distance",
+      "input": {
+        "x": -373,
+        "y": 232
+      },
+      "expected": {
+        "distance": 436
+      }
+    },
+    {
+      "id": "world_distance_0166",
+      "kind": "world_distance",
+      "input": {
+        "x": -247,
+        "y": -176
+      },
+      "expected": {
+        "distance": 305
+      }
+    },
+    {
+      "id": "world_distance_0167",
+      "kind": "world_distance",
+      "input": {
+        "x": -243,
+        "y": 276
+      },
+      "expected": {
+        "distance": 374
+      }
+    },
+    {
+      "id": "world_distance_0168",
+      "kind": "world_distance",
+      "input": {
+        "x": -249,
+        "y": 189
+      },
+      "expected": {
+        "distance": 315
+      }
+    },
+    {
+      "id": "world_distance_0169",
+      "kind": "world_distance",
+      "input": {
+        "x": 136,
+        "y": 186
+      },
+      "expected": {
+        "distance": 232
+      }
+    },
+    {
+      "id": "world_distance_0170",
+      "kind": "world_distance",
+      "input": {
+        "x": -127,
+        "y": -304
+      },
+      "expected": {
+        "distance": 328
+      }
+    },
+    {
+      "id": "world_distance_0171",
+      "kind": "world_distance",
+      "input": {
+        "x": 331,
+        "y": -13
+      },
+      "expected": {
+        "distance": 338
+      }
+    },
+    {
+      "id": "world_distance_0172",
+      "kind": "world_distance",
+      "input": {
+        "x": 60,
+        "y": 172
+      },
+      "expected": {
+        "distance": 177
+      }
+    },
+    {
+      "id": "world_distance_0173",
+      "kind": "world_distance",
+      "input": {
+        "x": 52,
+        "y": 289
+      },
+      "expected": {
+        "distance": 290
+      }
+    },
+    {
+      "id": "world_distance_0174",
+      "kind": "world_distance",
+      "input": {
+        "x": -311,
+        "y": 44
+      },
+      "expected": {
+        "distance": 318
+      }
+    },
+    {
+      "id": "world_distance_0175",
+      "kind": "world_distance",
+      "input": {
+        "x": -62,
+        "y": -16
+      },
+      "expected": {
+        "distance": 64
+      }
+    },
+    {
+      "id": "world_distance_0176",
+      "kind": "world_distance",
+      "input": {
+        "x": -135,
+        "y": -115
+      },
+      "expected": {
+        "distance": 180
+      }
+    },
+    {
+      "id": "world_distance_0177",
+      "kind": "world_distance",
+      "input": {
+        "x": -270,
+        "y": 94
+      },
+      "expected": {
+        "distance": 277
+      }
+    },
+    {
+      "id": "world_distance_0178",
+      "kind": "world_distance",
+      "input": {
+        "x": -234,
+        "y": 289
+      },
+      "expected": {
+        "distance": 377
+      }
+    },
+    {
+      "id": "world_distance_0179",
+      "kind": "world_distance",
+      "input": {
+        "x": 370,
+        "y": -103
+      },
+      "expected": {
+        "distance": 387
+      }
+    },
+    {
+      "id": "world_distance_0180",
+      "kind": "world_distance",
+      "input": {
+        "x": -305,
+        "y": -41
+      },
+      "expected": {
+        "distance": 310
+      }
+    },
+    {
+      "id": "world_distance_0181",
+      "kind": "world_distance",
+      "input": {
+        "x": 35,
+        "y": -265
+      },
+      "expected": {
+        "distance": 268
+      }
+    },
+    {
+      "id": "world_distance_0182",
+      "kind": "world_distance",
+      "input": {
+        "x": 90,
+        "y": 63
+      },
+      "expected": {
+        "distance": 110
+      }
+    },
+    {
+      "id": "world_distance_0183",
+      "kind": "world_distance",
+      "input": {
+        "x": 336,
+        "y": -82
+      },
+      "expected": {
+        "distance": 342
+      }
+    },
+    {
+      "id": "world_distance_0184",
+      "kind": "world_distance",
+      "input": {
+        "x": -326,
+        "y": 142
+      },
+      "expected": {
+        "distance": 357
+      }
+    },
+    {
+      "id": "world_distance_0185",
+      "kind": "world_distance",
+      "input": {
+        "x": 44,
+        "y": 206
+      },
+      "expected": {
+        "distance": 213
+      }
+    },
+    {
+      "id": "world_distance_0186",
+      "kind": "world_distance",
+      "input": {
+        "x": -43,
+        "y": 298
+      },
+      "expected": {
+        "distance": 305
+      }
+    },
+    {
+      "id": "world_distance_0187",
+      "kind": "world_distance",
+      "input": {
+        "x": -25,
+        "y": -249
+      },
+      "expected": {
+        "distance": 245
+      }
+    },
+    {
+      "id": "world_distance_0188",
+      "kind": "world_distance",
+      "input": {
+        "x": -294,
+        "y": 154
+      },
+      "expected": {
+        "distance": 329
+      }
+    },
+    {
+      "id": "world_distance_0189",
+      "kind": "world_distance",
+      "input": {
+        "x": -330,
+        "y": 203
+      },
+      "expected": {
+        "distance": 384
+      }
+    },
+    {
+      "id": "world_distance_0190",
+      "kind": "world_distance",
+      "input": {
+        "x": -235,
+        "y": 303
+      },
+      "expected": {
+        "distance": 387
+      }
+    },
+    {
+      "id": "world_distance_0191",
+      "kind": "world_distance",
+      "input": {
+        "x": -168,
+        "y": -103
+      },
+      "expected": {
+        "distance": 195
+      }
+    },
+    {
+      "id": "world_distance_0192",
+      "kind": "world_distance",
+      "input": {
+        "x": -335,
+        "y": -65
+      },
+      "expected": {
+        "distance": 340
+      }
+    },
+    {
+      "id": "world_distance_0193",
+      "kind": "world_distance",
+      "input": {
+        "x": -228,
+        "y": 168
+      },
+      "expected": {
+        "distance": 285
+      }
+    },
+    {
+      "id": "world_distance_0194",
+      "kind": "world_distance",
+      "input": {
+        "x": 74,
+        "y": 40
+      },
+      "expected": {
+        "distance": 84
+      }
+    },
+    {
+      "id": "world_distance_0195",
+      "kind": "world_distance",
+      "input": {
+        "x": -88,
+        "y": 205
+      },
+      "expected": {
+        "distance": 223
+      }
+    },
+    {
+      "id": "world_distance_0196",
+      "kind": "world_distance",
+      "input": {
+        "x": -150,
+        "y": -241
+      },
+      "expected": {
+        "distance": 282
+      }
+    },
+    {
+      "id": "world_distance_0197",
+      "kind": "world_distance",
+      "input": {
+        "x": 351,
+        "y": 134
+      },
+      "expected": {
+        "distance": 370
+      }
+    },
+    {
+      "id": "world_distance_0198",
+      "kind": "world_distance",
+      "input": {
+        "x": -310,
+        "y": -175
+      },
+      "expected": {
+        "distance": 357
+      }
+    },
+    {
+      "id": "world_distance_0199",
+      "kind": "world_distance",
+      "input": {
+        "x": 137,
+        "y": 42
+      },
+      "expected": {
+        "distance": 143
+      }
+    },
+    {
+      "id": "world_distance_0200",
+      "kind": "world_distance",
+      "input": {
+        "x": 45,
+        "y": -157
+      },
+      "expected": {
+        "distance": 162
+      }
+    },
+    {
+      "id": "world_distance_0201",
+      "kind": "world_distance",
+      "input": {
+        "x": 285,
+        "y": 12
+      },
+      "expected": {
+        "distance": 292
+      }
+    },
+    {
+      "id": "world_distance_0202",
+      "kind": "world_distance",
+      "input": {
+        "x": 133,
+        "y": 225
+      },
+      "expected": {
+        "distance": 263
+      }
+    },
+    {
+      "id": "world_distance_0203",
+      "kind": "world_distance",
+      "input": {
+        "x": -174,
+        "y": -41
+      },
+      "expected": {
+        "distance": 176
+      }
+    },
+    {
+      "id": "world_distance_0204",
+      "kind": "world_distance",
+      "input": {
+        "x": -223,
+        "y": 154
+      },
+      "expected": {
+        "distance": 271
+      }
+    },
+    {
+      "id": "world_distance_0205",
+      "kind": "world_distance",
+      "input": {
+        "x": 42,
+        "y": 27
+      },
+      "expected": {
+        "distance": 50
+      }
+    },
+    {
+      "id": "world_distance_0206",
+      "kind": "world_distance",
+      "input": {
+        "x": -250,
+        "y": 157
+      },
+      "expected": {
+        "distance": 293
+      }
+    },
+    {
+      "id": "world_distance_0207",
+      "kind": "world_distance",
+      "input": {
+        "x": 168,
+        "y": -180
+      },
+      "expected": {
+        "distance": 251
+      }
+    },
+    {
+      "id": "world_distance_0208",
+      "kind": "world_distance",
+      "input": {
+        "x": 337,
+        "y": 116
+      },
+      "expected": {
+        "distance": 345
+      }
+    },
+    {
+      "id": "world_distance_0209",
+      "kind": "world_distance",
+      "input": {
+        "x": 110,
+        "y": -37
+      },
+      "expected": {
+        "distance": 112
+      }
+    },
+    {
+      "id": "world_distance_0210",
+      "kind": "world_distance",
+      "input": {
+        "x": -305,
+        "y": -90
+      },
+      "expected": {
+        "distance": 316
+      }
+    },
+    {
+      "id": "world_damage_0211",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 0,
+        "damage": 0
+      },
+      "expected": {
+        "raw_damage": 0,
+        "damage_percent": 0,
+        "damage_flash": 0
+      }
+    },
+    {
+      "id": "world_damage_0212",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 0,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 1,
+        "damage_percent": 1,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0213",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 0,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 20,
+        "damage_percent": 20,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0214",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 5,
+        "damage": 7
+      },
+      "expected": {
+        "raw_damage": 12,
+        "damage_percent": 12,
+        "damage_flash": 4
+      }
+    },
+    {
+      "id": "world_damage_0215",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 80,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 100,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0216",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 99,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 100,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0217",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 100,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 120,
+        "damage_percent": 120,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0218",
+      "kind": "world_damage",
+      "input": {
+        "armor": 100,
+        "raw_damage": 150,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 170,
+        "damage_percent": 170,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0219",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 0,
+        "damage": 0
+      },
+      "expected": {
+        "raw_damage": 0,
+        "damage_percent": 0,
+        "damage_flash": 0
+      }
+    },
+    {
+      "id": "world_damage_0220",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 0,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 1,
+        "damage_percent": 0,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0221",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 0,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 20,
+        "damage_percent": 17,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0222",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 5,
+        "damage": 7
+      },
+      "expected": {
+        "raw_damage": 12,
+        "damage_percent": 10,
+        "damage_flash": 4
+      }
+    },
+    {
+      "id": "world_damage_0223",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 80,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 86,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0224",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 99,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 86,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0225",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 100,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 120,
+        "damage_percent": 104,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0226",
+      "kind": "world_damage",
+      "input": {
+        "armor": 115,
+        "raw_damage": 150,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 170,
+        "damage_percent": 147,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0227",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 0,
+        "damage": 0
+      },
+      "expected": {
+        "raw_damage": 0,
+        "damage_percent": 0,
+        "damage_flash": 0
+      }
+    },
+    {
+      "id": "world_damage_0228",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 0,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 1,
+        "damage_percent": 0,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0229",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 0,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 20,
+        "damage_percent": 15,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0230",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 5,
+        "damage": 7
+      },
+      "expected": {
+        "raw_damage": 12,
+        "damage_percent": 9,
+        "damage_flash": 4
+      }
+    },
+    {
+      "id": "world_damage_0231",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 80,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 76,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0232",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 99,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 76,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0233",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 100,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 120,
+        "damage_percent": 92,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0234",
+      "kind": "world_damage",
+      "input": {
+        "armor": 130,
+        "raw_damage": 150,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 170,
+        "damage_percent": 130,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0235",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 0,
+        "damage": 0
+      },
+      "expected": {
+        "raw_damage": 0,
+        "damage_percent": 0,
+        "damage_flash": 0
+      }
+    },
+    {
+      "id": "world_damage_0236",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 0,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 1,
+        "damage_percent": 0,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0237",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 0,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 20,
+        "damage_percent": 13,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0238",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 5,
+        "damage": 7
+      },
+      "expected": {
+        "raw_damage": 12,
+        "damage_percent": 8,
+        "damage_flash": 4
+      }
+    },
+    {
+      "id": "world_damage_0239",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 80,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 68,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0240",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 99,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 68,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0241",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 100,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 120,
+        "damage_percent": 82,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0242",
+      "kind": "world_damage",
+      "input": {
+        "armor": 145,
+        "raw_damage": 150,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 170,
+        "damage_percent": 117,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0243",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 0,
+        "damage": 0
+      },
+      "expected": {
+        "raw_damage": 0,
+        "damage_percent": 0,
+        "damage_flash": 0
+      }
+    },
+    {
+      "id": "world_damage_0244",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 0,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 1,
+        "damage_percent": 0,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0245",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 0,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 20,
+        "damage_percent": 12,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0246",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 5,
+        "damage": 7
+      },
+      "expected": {
+        "raw_damage": 12,
+        "damage_percent": 7,
+        "damage_flash": 4
+      }
+    },
+    {
+      "id": "world_damage_0247",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 80,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 60,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0248",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 99,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 60,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0249",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 100,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 120,
+        "damage_percent": 72,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0250",
+      "kind": "world_damage",
+      "input": {
+        "armor": 165,
+        "raw_damage": 150,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 170,
+        "damage_percent": 103,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0251",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 0,
+        "damage": 0
+      },
+      "expected": {
+        "raw_damage": 0,
+        "damage_percent": 0,
+        "damage_flash": 0
+      }
+    },
+    {
+      "id": "world_damage_0252",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 0,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 1,
+        "damage_percent": 0,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0253",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 0,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 20,
+        "damage_percent": 10,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0254",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 5,
+        "damage": 7
+      },
+      "expected": {
+        "raw_damage": 12,
+        "damage_percent": 6,
+        "damage_flash": 4
+      }
+    },
+    {
+      "id": "world_damage_0255",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 80,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 50,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0256",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 99,
+        "damage": 1
+      },
+      "expected": {
+        "raw_damage": 100,
+        "damage_percent": 50,
+        "damage_flash": 1
+      }
+    },
+    {
+      "id": "world_damage_0257",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 100,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 120,
+        "damage_percent": 60,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_damage_0258",
+      "kind": "world_damage",
+      "input": {
+        "armor": 200,
+        "raw_damage": 150,
+        "damage": 20
+      },
+      "expected": {
+        "raw_damage": 170,
+        "damage_percent": 85,
+        "damage_flash": 10
+      }
+    },
+    {
+      "id": "world_motion_0259",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 0,
+        "vy": 0,
+        "target_x": 1000,
+        "target_y": -1000,
+        "fuel": 1850,
+        "speed": 20,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 200,
+        "vy": -200,
+        "target_x": 1000,
+        "target_y": -1000,
+        "fuel": 1848,
+        "speed": 20,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0260",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 0,
+        "vy": 0,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 0,
+        "vy": 0,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0261",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 100,
+        "vy": 100,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 300,
+        "vy": 300,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0262",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 200,
+        "vy": 200,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 0,
+        "vy": 0,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0263",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2000,
+        "vy": -2000,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1800,
+        "vy": -1800,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0264",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 3900,
+        "vy": -3900,
+        "target_x": 5000,
+        "target_y": -5000,
+        "fuel": 1850,
+        "speed": 40,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 3900,
+        "vy": -3900,
+        "target_x": 5000,
+        "target_y": -5000,
+        "fuel": 1846,
+        "speed": 40,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0265",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 0,
+        "vy": 0,
+        "target_x": 2000,
+        "target_y": 0,
+        "fuel": 9,
+        "speed": 20,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 200,
+        "vy": 0,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0266",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 100,
+        "vy": 300,
+        "target_x": 500,
+        "target_y": 500,
+        "fuel": 1,
+        "speed": 9,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 300,
+        "vy": 500,
+        "target_x": 500,
+        "target_y": 500,
+        "fuel": 1,
+        "speed": 9,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0267",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 100,
+        "vy": 300,
+        "target_x": 500,
+        "target_y": 500,
+        "fuel": 1,
+        "speed": 10,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 300,
+        "vy": 500,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0268",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 500,
+        "vy": -500,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 300,
+        "vy": -300,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0269",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 100,
+        "vy": 100,
+        "target_x": 100,
+        "target_y": 100,
+        "fuel": 5,
+        "speed": 0,
+        "cloak": 2
+      },
+      "expected": {
+        "vx": 100,
+        "vy": 100,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0270",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 0,
+        "vy": 0,
+        "target_x": 1000,
+        "target_y": -1000,
+        "fuel": 1850,
+        "speed": 20,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 400,
+        "vy": -400,
+        "target_x": 1000,
+        "target_y": -1000,
+        "fuel": 1848,
+        "speed": 20,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0271",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 0,
+        "vy": 0,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 0,
+        "vy": 0,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0272",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 100,
+        "vy": 100,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 500,
+        "vy": 500,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0273",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 200,
+        "vy": 200,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -200,
+        "vy": -200,
+        "target_x": 150,
+        "target_y": 150,
+        "fuel": 1850,
+        "speed": 5,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0274",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2000,
+        "vy": -2000,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1600,
+        "vy": -1600,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 1850,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0275",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 3900,
+        "vy": -3900,
+        "target_x": 5000,
+        "target_y": -5000,
+        "fuel": 1850,
+        "speed": 40,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 4000,
+        "vy": -4000,
+        "target_x": 5000,
+        "target_y": -5000,
+        "fuel": 1846,
+        "speed": 40,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0276",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 0,
+        "vy": 0,
+        "target_x": 2000,
+        "target_y": 0,
+        "fuel": 9,
+        "speed": 20,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 400,
+        "vy": 0,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0277",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 100,
+        "vy": 300,
+        "target_x": 500,
+        "target_y": 500,
+        "fuel": 1,
+        "speed": 9,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 500,
+        "vy": 700,
+        "target_x": 500,
+        "target_y": 500,
+        "fuel": 1,
+        "speed": 9,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0278",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 100,
+        "vy": 300,
+        "target_x": 500,
+        "target_y": 500,
+        "fuel": 1,
+        "speed": 10,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 500,
+        "vy": 700,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0279",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 500,
+        "vy": -500,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 100,
+        "vy": -100,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0280",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 100,
+        "vy": 100,
+        "target_x": 100,
+        "target_y": 100,
+        "fuel": 5,
+        "speed": 0,
+        "cloak": 2
+      },
+      "expected": {
+        "vx": 100,
+        "vy": 100,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0281",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -2140,
+        "vy": -2475,
+        "target_x": -1416,
+        "target_y": -1202,
+        "fuel": 4,
+        "speed": 30,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -1740,
+        "vy": -2075,
+        "target_x": -1416,
+        "target_y": -1202,
+        "fuel": 1,
+        "speed": 30,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0282",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 1536,
+        "vy": 411,
+        "target_x": 1210,
+        "target_y": -2937,
+        "fuel": 0,
+        "speed": 13,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1136,
+        "vy": 11,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0283",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -820,
+        "vy": -184,
+        "target_x": 1950,
+        "target_y": -1131,
+        "fuel": 3,
+        "speed": 9,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -620,
+        "vy": -384,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0284",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 639,
+        "vy": -2644,
+        "target_x": 3335,
+        "target_y": -1632,
+        "fuel": 2,
+        "speed": 24,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1039,
+        "vy": -2244,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0285",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2363,
+        "vy": 53,
+        "target_x": 3962,
+        "target_y": -1543,
+        "fuel": 6,
+        "speed": 22,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2763,
+        "vy": -347,
+        "target_x": 3962,
+        "target_y": -1543,
+        "fuel": 4,
+        "speed": 22,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0286",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -1357,
+        "vy": -2453,
+        "target_x": -393,
+        "target_y": 1654,
+        "fuel": 11,
+        "speed": 7,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -957,
+        "vy": -2053,
+        "target_x": -393,
+        "target_y": 1654,
+        "fuel": 11,
+        "speed": 7,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0287",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 842,
+        "vy": 2931,
+        "target_x": 2239,
+        "target_y": -1652,
+        "fuel": 13,
+        "speed": 9,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1242,
+        "vy": 2531,
+        "target_x": 2239,
+        "target_y": -1652,
+        "fuel": 5,
+        "speed": 9,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0288",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -2805,
+        "vy": -255,
+        "target_x": 557,
+        "target_y": -2977,
+        "fuel": 3,
+        "speed": 38,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -2405,
+        "vy": -655,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0289",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -461,
+        "vy": 3984,
+        "target_x": 1700,
+        "target_y": 143,
+        "fuel": 2,
+        "speed": 31,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -261,
+        "vy": 3784,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0290",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -3289,
+        "vy": 3751,
+        "target_x": 369,
+        "target_y": 3571,
+        "fuel": 4,
+        "speed": 7,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -2889,
+        "vy": 3351,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0291",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1729,
+        "vy": 2436,
+        "target_x": -3954,
+        "target_y": 1571,
+        "fuel": 11,
+        "speed": 31,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1529,
+        "vy": 2236,
+        "target_x": -3954,
+        "target_y": 1571,
+        "fuel": 8,
+        "speed": 31,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0292",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 116,
+        "vy": -3808,
+        "target_x": 2207,
+        "target_y": 3948,
+        "fuel": 7,
+        "speed": 24,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 316,
+        "vy": -3608,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0293",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1401,
+        "vy": 945,
+        "target_x": 1653,
+        "target_y": 3871,
+        "fuel": 14,
+        "speed": 13,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1201,
+        "vy": 1145,
+        "target_x": 1653,
+        "target_y": 3871,
+        "fuel": 5,
+        "speed": 13,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0294",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2261,
+        "vy": 484,
+        "target_x": 745,
+        "target_y": -2822,
+        "fuel": 4,
+        "speed": 40,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 2061,
+        "vy": 284,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0295",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1665,
+        "vy": 1596,
+        "target_x": -238,
+        "target_y": -1514,
+        "fuel": 2,
+        "speed": 34,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1465,
+        "vy": 1396,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0296",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1510,
+        "vy": -2079,
+        "target_x": 1922,
+        "target_y": -2837,
+        "fuel": 11,
+        "speed": 14,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1710,
+        "vy": -2079,
+        "target_x": 1922,
+        "target_y": -2837,
+        "fuel": 2,
+        "speed": 14,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0297",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1579,
+        "vy": 87,
+        "target_x": 2872,
+        "target_y": 115,
+        "fuel": 2,
+        "speed": 16,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1379,
+        "vy": 287,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0298",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 3634,
+        "vy": 2696,
+        "target_x": -3976,
+        "target_y": -1955,
+        "fuel": 14,
+        "speed": 2,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 3434,
+        "vy": 2496,
+        "target_x": -3976,
+        "target_y": -1955,
+        "fuel": 14,
+        "speed": 2,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0299",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2019,
+        "vy": -1279,
+        "target_x": -2835,
+        "target_y": 1409,
+        "fuel": 8,
+        "speed": 24,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1619,
+        "vy": -879,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0300",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 322,
+        "vy": -1621,
+        "target_x": 3115,
+        "target_y": -3829,
+        "fuel": 6,
+        "speed": 10,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 722,
+        "vy": -2021,
+        "target_x": 3115,
+        "target_y": -3829,
+        "fuel": 5,
+        "speed": 10,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0301",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -972,
+        "vy": -946,
+        "target_x": 1790,
+        "target_y": -1159,
+        "fuel": 2,
+        "speed": 35,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -772,
+        "vy": -1146,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0302",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -577,
+        "vy": 762,
+        "target_x": 287,
+        "target_y": -3849,
+        "fuel": 12,
+        "speed": 19,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -377,
+        "vy": 562,
+        "target_x": 287,
+        "target_y": -3849,
+        "fuel": 11,
+        "speed": 19,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0303",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -1001,
+        "vy": -3501,
+        "target_x": -3264,
+        "target_y": -1054,
+        "fuel": 8,
+        "speed": 26,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1401,
+        "vy": -3101,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0304",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1665,
+        "vy": -2252,
+        "target_x": -1832,
+        "target_y": 3397,
+        "fuel": 11,
+        "speed": 26,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1465,
+        "vy": -2052,
+        "target_x": -1832,
+        "target_y": 3397,
+        "fuel": 9,
+        "speed": 26,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0305",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 517,
+        "vy": -2400,
+        "target_x": 3741,
+        "target_y": -3908,
+        "fuel": 14,
+        "speed": 40,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 917,
+        "vy": -2800,
+        "target_x": 3741,
+        "target_y": -3908,
+        "fuel": 10,
+        "speed": 40,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0306",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1678,
+        "vy": -976,
+        "target_x": 2116,
+        "target_y": 2640,
+        "fuel": 13,
+        "speed": 25,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1878,
+        "vy": -776,
+        "target_x": 2116,
+        "target_y": 2640,
+        "fuel": 3,
+        "speed": 25,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0307",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 777,
+        "vy": 2446,
+        "target_x": 1230,
+        "target_y": 1684,
+        "fuel": 10,
+        "speed": 30,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 977,
+        "vy": 2246,
+        "target_x": 1230,
+        "target_y": 1684,
+        "fuel": 7,
+        "speed": 30,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0308",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 939,
+        "vy": 2227,
+        "target_x": 3913,
+        "target_y": 2901,
+        "fuel": 8,
+        "speed": 24,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1139,
+        "vy": 2227,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0309",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -3612,
+        "vy": 781,
+        "target_x": -298,
+        "target_y": 635,
+        "fuel": 2,
+        "speed": 2,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -3412,
+        "vy": 581,
+        "target_x": -298,
+        "target_y": 635,
+        "fuel": 2,
+        "speed": 2,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0310",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2684,
+        "vy": -3754,
+        "target_x": -2920,
+        "target_y": -3690,
+        "fuel": 11,
+        "speed": 11,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 2284,
+        "vy": -3354,
+        "target_x": -2920,
+        "target_y": -3690,
+        "fuel": 2,
+        "speed": 11,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0311",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1905,
+        "vy": 24,
+        "target_x": -2974,
+        "target_y": 508,
+        "fuel": 9,
+        "speed": 9,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1705,
+        "vy": 224,
+        "target_x": -2974,
+        "target_y": 508,
+        "fuel": 9,
+        "speed": 9,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0312",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 1725,
+        "vy": 2370,
+        "target_x": 1955,
+        "target_y": 3354,
+        "fuel": 3,
+        "speed": 40,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2125,
+        "vy": 2770,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0313",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -2866,
+        "vy": 2892,
+        "target_x": -3759,
+        "target_y": 2931,
+        "fuel": 12,
+        "speed": 37,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -3266,
+        "vy": 3292,
+        "target_x": -3759,
+        "target_y": 2931,
+        "fuel": 1,
+        "speed": 37,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0314",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -271,
+        "vy": -1955,
+        "target_x": -501,
+        "target_y": 3412,
+        "fuel": 13,
+        "speed": 6,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -471,
+        "vy": -1755,
+        "target_x": -501,
+        "target_y": 3412,
+        "fuel": 5,
+        "speed": 6,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0315",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -1919,
+        "vy": 1099,
+        "target_x": 676,
+        "target_y": 2118,
+        "fuel": 5,
+        "speed": 16,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -1519,
+        "vy": 1499,
+        "target_x": 676,
+        "target_y": 2118,
+        "fuel": 4,
+        "speed": 16,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0316",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1872,
+        "vy": 1028,
+        "target_x": 857,
+        "target_y": 894,
+        "fuel": 8,
+        "speed": 15,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1672,
+        "vy": 828,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0317",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2177,
+        "vy": 1657,
+        "target_x": -1500,
+        "target_y": 2347,
+        "fuel": 2,
+        "speed": 15,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1977,
+        "vy": 1857,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0318",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -3787,
+        "vy": 2650,
+        "target_x": 1030,
+        "target_y": 1812,
+        "fuel": 10,
+        "speed": 16,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -3587,
+        "vy": 2450,
+        "target_x": 1030,
+        "target_y": 1812,
+        "fuel": 9,
+        "speed": 16,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0319",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2450,
+        "vy": 1779,
+        "target_x": 3520,
+        "target_y": 2371,
+        "fuel": 1,
+        "speed": 36,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2850,
+        "vy": 2179,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0320",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -518,
+        "vy": 3976,
+        "target_x": -489,
+        "target_y": 1441,
+        "fuel": 4,
+        "speed": 33,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -118,
+        "vy": 3576,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0321",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -3928,
+        "vy": 1149,
+        "target_x": -961,
+        "target_y": 2144,
+        "fuel": 3,
+        "speed": 24,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -3728,
+        "vy": 1349,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0322",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1540,
+        "vy": -83,
+        "target_x": -3704,
+        "target_y": -1202,
+        "fuel": 1,
+        "speed": 32,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1340,
+        "vy": -283,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0323",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1218,
+        "vy": -2416,
+        "target_x": 185,
+        "target_y": -639,
+        "fuel": 0,
+        "speed": 3,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1018,
+        "vy": -2216,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0324",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 494,
+        "vy": 2727,
+        "target_x": -3256,
+        "target_y": 3170,
+        "fuel": 12,
+        "speed": 21,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 94,
+        "vy": 3127,
+        "target_x": -3256,
+        "target_y": 3170,
+        "fuel": 10,
+        "speed": 21,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0325",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 210,
+        "vy": -2201,
+        "target_x": -1744,
+        "target_y": -1852,
+        "fuel": 4,
+        "speed": 6,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 10,
+        "vy": -2001,
+        "target_x": -1744,
+        "target_y": -1852,
+        "fuel": 4,
+        "speed": 6,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0326",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 736,
+        "vy": -976,
+        "target_x": 3998,
+        "target_y": -231,
+        "fuel": 5,
+        "speed": 23,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 936,
+        "vy": -776,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0327",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -323,
+        "vy": -345,
+        "target_x": 1709,
+        "target_y": 2440,
+        "fuel": 11,
+        "speed": 3,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 77,
+        "vy": 55,
+        "target_x": 1709,
+        "target_y": 2440,
+        "fuel": 11,
+        "speed": 3,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0328",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1080,
+        "vy": 3305,
+        "target_x": 2021,
+        "target_y": 3843,
+        "fuel": 5,
+        "speed": 17,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -880,
+        "vy": 3305,
+        "target_x": 2021,
+        "target_y": 3843,
+        "fuel": 4,
+        "speed": 17,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0329",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -368,
+        "vy": -3325,
+        "target_x": -3696,
+        "target_y": 236,
+        "fuel": 3,
+        "speed": 31,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -568,
+        "vy": -3125,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0330",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 753,
+        "vy": 2009,
+        "target_x": -179,
+        "target_y": -2993,
+        "fuel": 2,
+        "speed": 15,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 553,
+        "vy": 1809,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0331",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 119,
+        "vy": 983,
+        "target_x": -3142,
+        "target_y": 642,
+        "fuel": 5,
+        "speed": 27,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -281,
+        "vy": 583,
+        "target_x": -3142,
+        "target_y": 642,
+        "fuel": 3,
+        "speed": 27,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0332",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -2729,
+        "vy": -1004,
+        "target_x": -246,
+        "target_y": 222,
+        "fuel": 11,
+        "speed": 16,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -2329,
+        "vy": -604,
+        "target_x": -246,
+        "target_y": 222,
+        "fuel": 10,
+        "speed": 16,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0333",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 259,
+        "vy": 738,
+        "target_x": 2005,
+        "target_y": 2106,
+        "fuel": 3,
+        "speed": 19,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 659,
+        "vy": 1138,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0334",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -2559,
+        "vy": 3389,
+        "target_x": 735,
+        "target_y": 3763,
+        "fuel": 3,
+        "speed": 6,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -2359,
+        "vy": 3389,
+        "target_x": 735,
+        "target_y": 3763,
+        "fuel": 3,
+        "speed": 6,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0335",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2425,
+        "vy": 2397,
+        "target_x": 3522,
+        "target_y": 374,
+        "fuel": 0,
+        "speed": 37,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2825,
+        "vy": 1997,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0336",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -2382,
+        "vy": -3165,
+        "target_x": 1240,
+        "target_y": -2143,
+        "fuel": 9,
+        "speed": 30,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -2182,
+        "vy": -2965,
+        "target_x": 1240,
+        "target_y": -2143,
+        "fuel": 6,
+        "speed": 30,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0337",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 3921,
+        "vy": 470,
+        "target_x": 2000,
+        "target_y": -870,
+        "fuel": 2,
+        "speed": 3,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 3721,
+        "vy": 270,
+        "target_x": 2000,
+        "target_y": -870,
+        "fuel": 2,
+        "speed": 3,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0338",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -886,
+        "vy": -3155,
+        "target_x": -2052,
+        "target_y": 2765,
+        "fuel": 10,
+        "speed": 32,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1086,
+        "vy": -2955,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0339",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 378,
+        "vy": -659,
+        "target_x": 2138,
+        "target_y": 2006,
+        "fuel": 12,
+        "speed": 6,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 778,
+        "vy": -259,
+        "target_x": 2138,
+        "target_y": 2006,
+        "fuel": 4,
+        "speed": 6,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0340",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 3387,
+        "vy": 1878,
+        "target_x": 2632,
+        "target_y": 1208,
+        "fuel": 7,
+        "speed": 34,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2987,
+        "vy": 1478,
+        "target_x": 2632,
+        "target_y": 1208,
+        "fuel": 4,
+        "speed": 34,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0341",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 401,
+        "vy": 3569,
+        "target_x": -790,
+        "target_y": 2648,
+        "fuel": 4,
+        "speed": 10,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 201,
+        "vy": 3369,
+        "target_x": -790,
+        "target_y": 2648,
+        "fuel": 3,
+        "speed": 10,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0342",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -2928,
+        "vy": 2412,
+        "target_x": 118,
+        "target_y": -3885,
+        "fuel": 1,
+        "speed": 40,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -2528,
+        "vy": 2012,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0343",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2095,
+        "vy": -3782,
+        "target_x": 2564,
+        "target_y": -3712,
+        "fuel": 0,
+        "speed": 19,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 2095,
+        "vy": -3582,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0344",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1084,
+        "vy": -1283,
+        "target_x": 547,
+        "target_y": 3438,
+        "fuel": 1,
+        "speed": 0,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -884,
+        "vy": -1083,
+        "target_x": 547,
+        "target_y": 3438,
+        "fuel": 1,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0345",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 1076,
+        "vy": 2634,
+        "target_x": -3811,
+        "target_y": -962,
+        "fuel": 5,
+        "speed": 8,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 676,
+        "vy": 2234,
+        "target_x": -3811,
+        "target_y": -962,
+        "fuel": 5,
+        "speed": 8,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0346",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 1322,
+        "vy": -1638,
+        "target_x": -1233,
+        "target_y": -3933,
+        "fuel": 10,
+        "speed": 2,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1122,
+        "vy": -1838,
+        "target_x": -1233,
+        "target_y": -3933,
+        "fuel": 10,
+        "speed": 2,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0347",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1233,
+        "vy": -2697,
+        "target_x": 327,
+        "target_y": 64,
+        "fuel": 4,
+        "speed": 32,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1033,
+        "vy": -2497,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0348",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -1824,
+        "vy": 2221,
+        "target_x": 1435,
+        "target_y": -2354,
+        "fuel": 9,
+        "speed": 36,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1424,
+        "vy": 1821,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0349",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -3015,
+        "vy": 528,
+        "target_x": 2190,
+        "target_y": -3805,
+        "fuel": 8,
+        "speed": 17,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -2815,
+        "vy": 328,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0350",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 337,
+        "vy": -2453,
+        "target_x": -3658,
+        "target_y": -349,
+        "fuel": 4,
+        "speed": 13,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 137,
+        "vy": -2253,
+        "target_x": -3658,
+        "target_y": -349,
+        "fuel": 3,
+        "speed": 13,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0351",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 1406,
+        "vy": 1279,
+        "target_x": -575,
+        "target_y": 1629,
+        "fuel": 14,
+        "speed": 3,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 1006,
+        "vy": 1679,
+        "target_x": -575,
+        "target_y": 1629,
+        "fuel": 14,
+        "speed": 3,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0352",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -91,
+        "vy": 1567,
+        "target_x": 835,
+        "target_y": 1845,
+        "fuel": 4,
+        "speed": 34,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 109,
+        "vy": 1767,
+        "target_x": 835,
+        "target_y": 1845,
+        "fuel": 1,
+        "speed": 34,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0353",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2549,
+        "vy": -3584,
+        "target_x": 532,
+        "target_y": 2259,
+        "fuel": 9,
+        "speed": 5,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2349,
+        "vy": -3384,
+        "target_x": 532,
+        "target_y": 2259,
+        "fuel": 9,
+        "speed": 5,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0354",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 140,
+        "vy": -2411,
+        "target_x": 3188,
+        "target_y": -1551,
+        "fuel": 12,
+        "speed": 23,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 540,
+        "vy": -2011,
+        "target_x": 3188,
+        "target_y": -1551,
+        "fuel": 2,
+        "speed": 23,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0355",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 1821,
+        "vy": 2684,
+        "target_x": -3842,
+        "target_y": 1455,
+        "fuel": 0,
+        "speed": 18,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1421,
+        "vy": 2284,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0356",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2155,
+        "vy": 1458,
+        "target_x": 3359,
+        "target_y": -1222,
+        "fuel": 5,
+        "speed": 7,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2155,
+        "vy": 1258,
+        "target_x": 3359,
+        "target_y": -1222,
+        "fuel": 5,
+        "speed": 7,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0357",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -925,
+        "vy": 732,
+        "target_x": 2291,
+        "target_y": -1978,
+        "fuel": 13,
+        "speed": 35,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -525,
+        "vy": 332,
+        "target_x": 2291,
+        "target_y": -1978,
+        "fuel": 10,
+        "speed": 35,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0358",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2639,
+        "vy": 3537,
+        "target_x": -3335,
+        "target_y": -1298,
+        "fuel": 8,
+        "speed": 0,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 2239,
+        "vy": 3137,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0359",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -3337,
+        "vy": -465,
+        "target_x": 1639,
+        "target_y": -3738,
+        "fuel": 7,
+        "speed": 8,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -3137,
+        "vy": -665,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0360",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -1791,
+        "vy": 2362,
+        "target_x": -1163,
+        "target_y": -2587,
+        "fuel": 11,
+        "speed": 24,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1391,
+        "vy": 1962,
+        "target_x": -1163,
+        "target_y": -2587,
+        "fuel": 1,
+        "speed": 24,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0361",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 3727,
+        "vy": 2459,
+        "target_x": 1556,
+        "target_y": -94,
+        "fuel": 3,
+        "speed": 6,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 3527,
+        "vy": 2259,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0362",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 1409,
+        "vy": -1459,
+        "target_x": 3480,
+        "target_y": -1599,
+        "fuel": 1,
+        "speed": 8,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1809,
+        "vy": -1859,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0363",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2360,
+        "vy": -1593,
+        "target_x": -3292,
+        "target_y": -2951,
+        "fuel": 13,
+        "speed": 28,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 2160,
+        "vy": -1793,
+        "target_x": -3292,
+        "target_y": -2951,
+        "fuel": 3,
+        "speed": 28,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0364",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -442,
+        "vy": -1040,
+        "target_x": 3372,
+        "target_y": -3565,
+        "fuel": 12,
+        "speed": 20,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -242,
+        "vy": -1240,
+        "target_x": 3372,
+        "target_y": -3565,
+        "fuel": 10,
+        "speed": 20,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0365",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2457,
+        "vy": -701,
+        "target_x": -1617,
+        "target_y": -3835,
+        "fuel": 4,
+        "speed": 36,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2057,
+        "vy": -1101,
+        "target_x": -1617,
+        "target_y": -3835,
+        "fuel": 1,
+        "speed": 36,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0366",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2112,
+        "vy": 2789,
+        "target_x": -1315,
+        "target_y": -1606,
+        "fuel": 14,
+        "speed": 2,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1912,
+        "vy": 2589,
+        "target_x": -1315,
+        "target_y": -1606,
+        "fuel": 6,
+        "speed": 2,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0367",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1591,
+        "vy": -1363,
+        "target_x": -3379,
+        "target_y": -3340,
+        "fuel": 6,
+        "speed": 26,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1791,
+        "vy": -1563,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0368",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2937,
+        "vy": -2139,
+        "target_x": -2713,
+        "target_y": 881,
+        "fuel": 2,
+        "speed": 11,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2537,
+        "vy": -1739,
+        "target_x": -2713,
+        "target_y": 881,
+        "fuel": 1,
+        "speed": 11,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0369",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 585,
+        "vy": -3673,
+        "target_x": -1854,
+        "target_y": 465,
+        "fuel": 3,
+        "speed": 8,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 185,
+        "vy": -3273,
+        "target_x": -1854,
+        "target_y": 465,
+        "fuel": 3,
+        "speed": 8,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0370",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2688,
+        "vy": 1847,
+        "target_x": -1914,
+        "target_y": -859,
+        "fuel": 13,
+        "speed": 23,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": 2288,
+        "vy": 1447,
+        "target_x": -1914,
+        "target_y": -859,
+        "fuel": 11,
+        "speed": 23,
+        "cloak": 0,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0371",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -541,
+        "vy": 3459,
+        "target_x": -3254,
+        "target_y": -3182,
+        "fuel": 13,
+        "speed": 16,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -941,
+        "vy": 3059,
+        "target_x": -3254,
+        "target_y": -3182,
+        "fuel": 4,
+        "speed": 16,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0372",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": 2140,
+        "vy": 3367,
+        "target_x": 953,
+        "target_y": 446,
+        "fuel": 11,
+        "speed": 17,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 1740,
+        "vy": 2967,
+        "target_x": 953,
+        "target_y": 446,
+        "fuel": 2,
+        "speed": 17,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0373",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1954,
+        "vy": 3495,
+        "target_x": -1645,
+        "target_y": 3119,
+        "fuel": 13,
+        "speed": 31,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -1754,
+        "vy": 3295,
+        "target_x": -1645,
+        "target_y": 3119,
+        "fuel": 2,
+        "speed": 31,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0374",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": 2768,
+        "vy": 2322,
+        "target_x": -717,
+        "target_y": 1345,
+        "fuel": 12,
+        "speed": 14,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": 2568,
+        "vy": 2122,
+        "target_x": -717,
+        "target_y": 1345,
+        "fuel": 3,
+        "speed": 14,
+        "cloak": 1,
+        "exhausted": false,
+        "out_of_fuel": 0
+      }
+    },
+    {
+      "id": "world_motion_0375",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -555,
+        "vy": -2340,
+        "target_x": -1833,
+        "target_y": -876,
+        "fuel": 8,
+        "speed": 15,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -755,
+        "vy": -2140,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0376",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -1384,
+        "vy": 3489,
+        "target_x": -2374,
+        "target_y": -2260,
+        "fuel": 1,
+        "speed": 28,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -1784,
+        "vy": 3089,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0377",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -1561,
+        "vy": -1659,
+        "target_x": -147,
+        "target_y": -133,
+        "fuel": 3,
+        "speed": 36,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -1361,
+        "vy": -1459,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0378",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -3371,
+        "vy": 207,
+        "target_x": 1623,
+        "target_y": 2051,
+        "fuel": 5,
+        "speed": 34,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -2971,
+        "vy": 607,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0379",
+      "kind": "world_motion",
+      "input": {
+        "engine": 1,
+        "vx": -1583,
+        "vy": -2352,
+        "target_x": 2384,
+        "target_y": -2196,
+        "fuel": 0,
+        "speed": 16,
+        "cloak": 0
+      },
+      "expected": {
+        "vx": -1183,
+        "vy": -1952,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    },
+    {
+      "id": "world_motion_0380",
+      "kind": "world_motion",
+      "input": {
+        "engine": 0,
+        "vx": -360,
+        "vy": -3522,
+        "target_x": 3852,
+        "target_y": -2309,
+        "fuel": 10,
+        "speed": 39,
+        "cloak": 1
+      },
+      "expected": {
+        "vx": -160,
+        "vy": -3322,
+        "target_x": 0,
+        "target_y": 0,
+        "fuel": 0,
+        "speed": 0,
+        "cloak": 0,
+        "exhausted": true,
+        "out_of_fuel": 1
+      }
+    }
+  ]
+}

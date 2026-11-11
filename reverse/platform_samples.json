@@ -1,0 +1,271 @@
+{
+  "status": "original ROM execution completed; compiler outputs match committed oracle corpus",
+  "compiler_vectors_checked": 251,
+  "sane_samples": [
+    {
+      "operation": "sin",
+      "input_integer": -32768,
+      "expected_extended80_hex": "bffeed87fe1f66370fb8"
+    },
+    {
+      "operation": "sin",
+      "input_integer": -2,
+      "expected_extended80_hex": "bffee8c7b7568da22efe"
+    },
+    {
+      "operation": "sin",
+      "input_integer": -1,
+      "expected_extended80_hex": "bffed76aa47848677020"
+    },
+    {
+      "operation": "sin",
+      "input_integer": 0,
+      "expected_extended80_hex": "00000000000000000000"
+    },
+    {
+      "operation": "sin",
+      "input_integer": 1,
+      "expected_extended80_hex": "3ffed76aa47848677020"
+    },
+    {
+      "operation": "sin",
+      "input_integer": 2,
+      "expected_extended80_hex": "3ffee8c7b7568da22efe"
+    },
+    {
+      "operation": "sin",
+      "input_integer": 32767,
+      "expected_extended80_hex": "3ffcc001b7d3db0f39cd"
+    },
+    {
+      "operation": "cos",
+      "input_integer": -32768,
+      "expected_extended80_hex": "3ffdbef1b508ceba9cb1"
+    },
+    {
+      "operation": "cos",
+      "input_integer": -2,
+      "expected_extended80_hex": "bffdd51132ba9b902521"
+    },
+    {
+      "operation": "cos",
+      "input_integer": -1,
+      "expected_extended80_hex": "3ffe8a51407da8345c92"
+    },
+    {
+      "operation": "cos",
+      "input_integer": 0,
+      "expected_extended80_hex": "3fff8000000000000000"
+    },
+    {
+      "operation": "cos",
+      "input_integer": 1,
+      "expected_extended80_hex": "3ffe8a51407da8345c92"
+    },
+    {
+      "operation": "cos",
+      "input_integer": 2,
+      "expected_extended80_hex": "bffdd51132ba9b902521"
+    },
+    {
+      "operation": "cos",
+      "input_integer": 32767,
+      "expected_extended80_hex": "3ffefb759c6be88daa25"
+    },
+    {
+      "operation": "atan",
+      "input_integer": -32768,
+      "expected_extended80_hex": "bfffc90edaa2216a178a"
+    },
+    {
+      "operation": "atan",
+      "input_integer": -2,
+      "expected_extended80_hex": "bfff8db70c975df22364"
+    },
+    {
+      "operation": "atan",
+      "input_integer": -1,
+      "expected_extended80_hex": "bffec90fdaa22168c235"
+    },
+    {
+      "operation": "atan",
+      "input_integer": 0,
+      "expected_extended80_hex": "00000000000000000000"
+    },
+    {
+      "operation": "atan",
+      "input_integer": 1,
+      "expected_extended80_hex": "3ffec90fdaa22168c235"
+    },
+    {
+      "operation": "atan",
+      "input_integer": 2,
+      "expected_extended80_hex": "3fff8db70c975df22364"
+    },
+    {
+      "operation": "atan",
+      "input_integer": 32767,
+      "expected_extended80_hex": "3fffc90edaa02166178a"
+    }
+  ],
+  "original_startup_sine_table": {
+    "code_segment": 2,
+    "entry": "0x008a",
+    "stop": "0x0108",
+    "bytes": 362,
+    "sha256": "745fd597df2164525c4b560a66eb7980fa41db42c7e7573e646ca78ada51c6ac",
+    "hex": "0000001c003800540070008b00a700c300df00fa01160131014d01680183019e01b901d401ee02090223023d02570271028b02a402bd02d602ef03080320033803500367037f039603ac03c303d903ef0404041a042f04430457046b047f049204a504b804ca04db04ed04fe050e051f052e053e054d055b056a057705850592059e05aa05b605c105cb05d605e005e905f205fa0602060906100617061d06230628062c063006340637063a063c063e063f064006400640063f063e063c063a063706340630062c06280623061d061706100609060205fa05f205e905e005d605cb05c105b605aa059e059205850577056a055b054d053e052e051f050e04fe04ed04db04ca04b804a50492047f046b04570443042f041a040403ef03d903c303ac0396037f0367035003380320030802ef02d602bd02a4028b02710257023d0223020901ee01d401b9019e01830168014d0131011600fa00df00c300a7008b007000540038001c0000"
+  },
+  "platform": {
+    "toolbox": "original supplied Mac IIci ROM numerical and integer QuickDraw routines",
+    "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
+    "rom_base": "0x700000",
+    "original_rom_packages": {
+      "4": {
+        "offset": "0x70ac0",
+        "size": 4352,
+        "sha256": "b3aae2599ad5e8fd8dbab83eff1f6488aa7c057c625055978e0b5a8e84c1b333"
+      },
+      "5": {
+        "offset": "0x71be0",
+        "size": 4304,
+        "sha256": "77cb1a412dc970385654f5fcf7e516a078fafc9825062533d36f9643e1c090fb"
+      },
+      "7": {
+        "offset": "0x79de0",
+        "size": 1392,
+        "sha256": "ce9093aff2754a732922fc58b84bf16e226995d783871f350c9e22a8124cf2b3"
+      }
+    },
+    "original_rom_traps": {
+      "PtToAngle": "0x3cf90",
+      "OffsetRect": "0x2c670",
+      "SectRect": "0x2c6b0",
+      "EqualRect": "0x2c630",
+      "PtInRect": "0x2c7d0"
+    },
+    "host_integer_geometry": [],
+    "host_binary64_math": [],
+    "rendering_noop": [
+      "PenSize"
+    ],
+    "fpu": "Musashi extended80 SoftFloat; requires documented quotient and exception corrections",
+    "emulator_source_archive_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+    "emulator_patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+    "emulator_binary_sha256": "3536827b6b19c67e1d3b124ced8eea8bbdc01310891dcd6c1b33ae7591d33cff",
+    "executed_fpu_operations": {
+      "FPU_class_5": 8376,
+      "FPU_class_4": 7500,
+      "ALU_00": 2091,
+      "FPU_class_7": 1169,
+      "ALU_25": 104,
+      "ALU_23": 1266,
+      "ALU_22": 869,
+      "FPU_class_3": 407,
+      "ALU_20": 130,
+      "ALU_38": 67,
+      "ALU_28": 136
+    },
+    "observed_fpcr_writes": [
+      "0x0",
+      "0x10"
+    ],
+    "fpcr_guard": "rejects nonextended precision and enabled exception traps",
+    "host_transcendental_fpu_instructions": "rejected by instruction hook; original ROM polynomial algorithms execute",
+    "scope": "IIci ROM baseline; System 7 replacement packages and boot path are not used",
+    "calls": {
+      "a9eb": 2558,
+      "a9ee": 26,
+      "a9ec": 91
+    }
+  },
+  "execution": {
+    "engine": "machine68k 0.5.1 / Musashi, 68030",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {
+      "Mac_IIci.ROM": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2"
+    },
+    "extra_code_instructions": {
+      "Mac_IIci.ROM": 194891
+    },
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 20909595,
+    "segment_instructions": {
+      "1": 8986503,
+      "5": 11382192,
+      "2": 3630
+    },
+    "macintosh_traps": [
+      "a9eb@CODE1:0218",
+      "a9eb@CODE1:0224",
+      "a9eb@CODE1:0248",
+      "a9eb@CODE1:0264",
+      "a9eb@CODE1:0272",
+      "a9eb@CODE1:0284",
+      "a9eb@CODE2:00ac",
+      "a9eb@CODE2:00c4",
+      "a9eb@Mac_IIci.ROM:071c3a",
+      "a9eb@Mac_IIci.ROM:071c64",
+      "a9eb@Mac_IIci.ROM:071d0c",
+      "a9eb@Mac_IIci.ROM:071d16",
+      "a9eb@Mac_IIci.ROM:071d38",
+      "a9eb@Mac_IIci.ROM:071fa2",
+      "a9eb@Mac_IIci.ROM:0725ac",
+      "a9eb@Mac_IIci.ROM:0725d8",
+      "a9eb@Mac_IIci.ROM:0725ec",
+      "a9eb@Mac_IIci.ROM:0725f6",
+      "a9eb@Mac_IIci.ROM:072600",
+      "a9eb@Mac_IIci.ROM:07260e",
+      "a9eb@Mac_IIci.ROM:072624",
+      "a9eb@Mac_IIci.ROM:072640",
+      "a9eb@Mac_IIci.ROM:072652",
+      "a9eb@Mac_IIci.ROM:07265e",
+      "a9eb@Mac_IIci.ROM:07266c",
+      "a9eb@Mac_IIci.ROM:072676",
+      "a9eb@Mac_IIci.ROM:072686",
+      "a9eb@Mac_IIci.ROM:072698",
+      "a9eb@Mac_IIci.ROM:0726ae",
+      "a9eb@Mac_IIci.ROM:0726b8",
+      "a9eb@Mac_IIci.ROM:0726c0",
+      "a9eb@Mac_IIci.ROM:0726c8",
+      "a9eb@Mac_IIci.ROM:0726d6",
+      "a9eb@Mac_IIci.ROM:0727f8",
+      "a9eb@Mac_IIci.ROM:07281a",
+      "a9eb@Mac_IIci.ROM:07282e",
+      "a9eb@Mac_IIci.ROM:072842",
+      "a9eb@Mac_IIci.ROM:07285c",
+      "a9eb@Mac_IIci.ROM:072872",
+      "a9eb@Mac_IIci.ROM:07287c",
+      "a9eb@Mac_IIci.ROM:072888",
+      "a9eb@Mac_IIci.ROM:072894",
+      "a9eb@Mac_IIci.ROM:0728aa",
+      "a9eb@Mac_IIci.ROM:0728b6",
+      "a9eb@Mac_IIci.ROM:0728c8",
+      "a9eb@Mac_IIci.ROM:0728d2",
+      "a9eb@Mac_IIci.ROM:0728dc",
+      "a9eb@Mac_IIci.ROM:0728f0",
+      "a9eb@Mac_IIci.ROM:072904",
+      "a9ec@CODE1:01bc",
+      "a9ee@CODE1:0958"
+    ],
+    "toolbox_shims": {},
+    "host_service_calls": {}
+  }
+}

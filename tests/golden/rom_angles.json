@@ -1,0 +1,5010 @@
+{
+  "format_version": 1,
+  "provenance": {
+    "engine": "machine68k 0.5.1 / Musashi, 68020",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {
+      "Mac_IIci.ROM": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2"
+    },
+    "extra_code_instructions": {
+      "Mac_IIci.ROM": 196108
+    },
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 196334,
+    "segment_instructions": {},
+    "macintosh_traps": [],
+    "toolbox_shims": {},
+    "host_service_calls": {}
+  },
+  "vectors": [
+    {
+      "id": "rom-angle--32768--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": -32768,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 315
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32768--1",
+      "kind": "world_angle",
+      "input": {
+        "x": -32768,
+        "y": -1
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32768-0",
+      "kind": "world_angle",
+      "input": {
+        "x": -32768,
+        "y": 0
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32768-1",
+      "kind": "world_angle",
+      "input": {
+        "x": -32768,
+        "y": 1
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32768-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": -32768,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 225
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32767--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": -32767,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 315
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32767--1",
+      "kind": "world_angle",
+      "input": {
+        "x": -32767,
+        "y": -1
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32767-0",
+      "kind": "world_angle",
+      "input": {
+        "x": -32767,
+        "y": 0
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32767-1",
+      "kind": "world_angle",
+      "input": {
+        "x": -32767,
+        "y": 1
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--32767-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": -32767,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 225
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--381--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": -381,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 359
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--381--1",
+      "kind": "world_angle",
+      "input": {
+        "x": -381,
+        "y": -1
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--381-0",
+      "kind": "world_angle",
+      "input": {
+        "x": -381,
+        "y": 0
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--381-1",
+      "kind": "world_angle",
+      "input": {
+        "x": -381,
+        "y": 1
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--381-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": -381,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 181
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--291--75",
+      "kind": "world_angle",
+      "input": {
+        "x": -291,
+        "y": -75
+      },
+      "expected": {
+        "angle": 284
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--291-75",
+      "kind": "world_angle",
+      "input": {
+        "x": -291,
+        "y": 75
+      },
+      "expected": {
+        "angle": 256
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--290--75",
+      "kind": "world_angle",
+      "input": {
+        "x": -290,
+        "y": -75
+      },
+      "expected": {
+        "angle": 284
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--290-75",
+      "kind": "world_angle",
+      "input": {
+        "x": -290,
+        "y": 75
+      },
+      "expected": {
+        "angle": 256
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--289--80",
+      "kind": "world_angle",
+      "input": {
+        "x": -289,
+        "y": -80
+      },
+      "expected": {
+        "angle": 285
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--289-80",
+      "kind": "world_angle",
+      "input": {
+        "x": -289,
+        "y": 80
+      },
+      "expected": {
+        "angle": 255
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--261--148",
+      "kind": "world_angle",
+      "input": {
+        "x": -261,
+        "y": -148
+      },
+      "expected": {
+        "angle": 299
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--261--147",
+      "kind": "world_angle",
+      "input": {
+        "x": -261,
+        "y": -147
+      },
+      "expected": {
+        "angle": 299
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--261-147",
+      "kind": "world_angle",
+      "input": {
+        "x": -261,
+        "y": 147
+      },
+      "expected": {
+        "angle": 241
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--261-148",
+      "kind": "world_angle",
+      "input": {
+        "x": -261,
+        "y": 148
+      },
+      "expected": {
+        "angle": 241
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--259--152",
+      "kind": "world_angle",
+      "input": {
+        "x": -259,
+        "y": -152
+      },
+      "expected": {
+        "angle": 300
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--259-152",
+      "kind": "world_angle",
+      "input": {
+        "x": -259,
+        "y": 152
+      },
+      "expected": {
+        "angle": 240
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--258--152",
+      "kind": "world_angle",
+      "input": {
+        "x": -258,
+        "y": -152
+      },
+      "expected": {
+        "angle": 300
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--258-152",
+      "kind": "world_angle",
+      "input": {
+        "x": -258,
+        "y": 152
+      },
+      "expected": {
+        "angle": 240
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--214--210",
+      "kind": "world_angle",
+      "input": {
+        "x": -214,
+        "y": -210
+      },
+      "expected": {
+        "angle": 314
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--214-210",
+      "kind": "world_angle",
+      "input": {
+        "x": -214,
+        "y": 210
+      },
+      "expected": {
+        "angle": 226
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--210--214",
+      "kind": "world_angle",
+      "input": {
+        "x": -210,
+        "y": -214
+      },
+      "expected": {
+        "angle": 315
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--210-214",
+      "kind": "world_angle",
+      "input": {
+        "x": -210,
+        "y": 214
+      },
+      "expected": {
+        "angle": 225
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--152--259",
+      "kind": "world_angle",
+      "input": {
+        "x": -152,
+        "y": -259
+      },
+      "expected": {
+        "angle": 329
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--152--258",
+      "kind": "world_angle",
+      "input": {
+        "x": -152,
+        "y": -258
+      },
+      "expected": {
+        "angle": 329
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--152-258",
+      "kind": "world_angle",
+      "input": {
+        "x": -152,
+        "y": 258
+      },
+      "expected": {
+        "angle": 211
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--152-259",
+      "kind": "world_angle",
+      "input": {
+        "x": -152,
+        "y": 259
+      },
+      "expected": {
+        "angle": 211
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--148--261",
+      "kind": "world_angle",
+      "input": {
+        "x": -148,
+        "y": -261
+      },
+      "expected": {
+        "angle": 330
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--148-261",
+      "kind": "world_angle",
+      "input": {
+        "x": -148,
+        "y": 261
+      },
+      "expected": {
+        "angle": 210
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--147--261",
+      "kind": "world_angle",
+      "input": {
+        "x": -147,
+        "y": -261
+      },
+      "expected": {
+        "angle": 330
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--147-261",
+      "kind": "world_angle",
+      "input": {
+        "x": -147,
+        "y": 261
+      },
+      "expected": {
+        "angle": 210
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--80--289",
+      "kind": "world_angle",
+      "input": {
+        "x": -80,
+        "y": -289
+      },
+      "expected": {
+        "angle": 344
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--80-289",
+      "kind": "world_angle",
+      "input": {
+        "x": -80,
+        "y": 289
+      },
+      "expected": {
+        "angle": 196
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--75--291",
+      "kind": "world_angle",
+      "input": {
+        "x": -75,
+        "y": -291
+      },
+      "expected": {
+        "angle": 345
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--75--290",
+      "kind": "world_angle",
+      "input": {
+        "x": -75,
+        "y": -290
+      },
+      "expected": {
+        "angle": 345
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--75-290",
+      "kind": "world_angle",
+      "input": {
+        "x": -75,
+        "y": 290
+      },
+      "expected": {
+        "angle": 195
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--75-291",
+      "kind": "world_angle",
+      "input": {
+        "x": -75,
+        "y": 291
+      },
+      "expected": {
+        "angle": 195
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--3--300",
+      "kind": "world_angle",
+      "input": {
+        "x": -3,
+        "y": -300
+      },
+      "expected": {
+        "angle": 359
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--3-300",
+      "kind": "world_angle",
+      "input": {
+        "x": -3,
+        "y": 300
+      },
+      "expected": {
+        "angle": 181
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--2--300",
+      "kind": "world_angle",
+      "input": {
+        "x": -2,
+        "y": -300
+      },
+      "expected": {
+        "angle": 0
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--2-300",
+      "kind": "world_angle",
+      "input": {
+        "x": -2,
+        "y": 300
+      },
+      "expected": {
+        "angle": 180
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--1--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": -1,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 0
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--1--1",
+      "kind": "world_angle",
+      "input": {
+        "x": -1,
+        "y": -1
+      },
+      "expected": {
+        "angle": 315
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--1-0",
+      "kind": "world_angle",
+      "input": {
+        "x": -1,
+        "y": 0
+      },
+      "expected": {
+        "angle": 270
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--1-1",
+      "kind": "world_angle",
+      "input": {
+        "x": -1,
+        "y": 1
+      },
+      "expected": {
+        "angle": 225
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle--1-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": -1,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 180
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-0--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": 0,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 0
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-0--1",
+      "kind": "world_angle",
+      "input": {
+        "x": 0,
+        "y": -1
+      },
+      "expected": {
+        "angle": 0
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-0-0",
+      "kind": "world_angle",
+      "input": {
+        "x": 0,
+        "y": 0
+      },
+      "expected": {
+        "angle": 0
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-0-1",
+      "kind": "world_angle",
+      "input": {
+        "x": 0,
+        "y": 1
+      },
+      "expected": {
+        "angle": 180
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-0-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": 0,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 180
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-1--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": 1,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 0
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-1--1",
+      "kind": "world_angle",
+      "input": {
+        "x": 1,
+        "y": -1
+      },
+      "expected": {
+        "angle": 45
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-1-0",
+      "kind": "world_angle",
+      "input": {
+        "x": 1,
+        "y": 0
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-1-1",
+      "kind": "world_angle",
+      "input": {
+        "x": 1,
+        "y": 1
+      },
+      "expected": {
+        "angle": 135
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-1-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": 1,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 180
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-2--300",
+      "kind": "world_angle",
+      "input": {
+        "x": 2,
+        "y": -300
+      },
+      "expected": {
+        "angle": 0
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-2-300",
+      "kind": "world_angle",
+      "input": {
+        "x": 2,
+        "y": 300
+      },
+      "expected": {
+        "angle": 180
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-3--300",
+      "kind": "world_angle",
+      "input": {
+        "x": 3,
+        "y": -300
+      },
+      "expected": {
+        "angle": 1
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-3-300",
+      "kind": "world_angle",
+      "input": {
+        "x": 3,
+        "y": 300
+      },
+      "expected": {
+        "angle": 179
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-8--300",
+      "kind": "world_angle",
+      "input": {
+        "x": 8,
+        "y": -300
+      },
+      "expected": {
+        "angle": 2
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-13--300",
+      "kind": "world_angle",
+      "input": {
+        "x": 13,
+        "y": -300
+      },
+      "expected": {
+        "angle": 3
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-18--299",
+      "kind": "world_angle",
+      "input": {
+        "x": 18,
+        "y": -299
+      },
+      "expected": {
+        "angle": 4
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-19--299",
+      "kind": "world_angle",
+      "input": {
+        "x": 19,
+        "y": -299
+      },
+      "expected": {
+        "angle": 4
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-23--299",
+      "kind": "world_angle",
+      "input": {
+        "x": 23,
+        "y": -299
+      },
+      "expected": {
+        "angle": 4
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-24--299",
+      "kind": "world_angle",
+      "input": {
+        "x": 24,
+        "y": -299
+      },
+      "expected": {
+        "angle": 5
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-28--299",
+      "kind": "world_angle",
+      "input": {
+        "x": 28,
+        "y": -299
+      },
+      "expected": {
+        "angle": 5
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-29--299",
+      "kind": "world_angle",
+      "input": {
+        "x": 29,
+        "y": -299
+      },
+      "expected": {
+        "angle": 6
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-34--298",
+      "kind": "world_angle",
+      "input": {
+        "x": 34,
+        "y": -298
+      },
+      "expected": {
+        "angle": 7
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-39--297",
+      "kind": "world_angle",
+      "input": {
+        "x": 39,
+        "y": -297
+      },
+      "expected": {
+        "angle": 8
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-44--297",
+      "kind": "world_angle",
+      "input": {
+        "x": 44,
+        "y": -297
+      },
+      "expected": {
+        "angle": 8
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-45--297",
+      "kind": "world_angle",
+      "input": {
+        "x": 45,
+        "y": -297
+      },
+      "expected": {
+        "angle": 9
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-49--296",
+      "kind": "world_angle",
+      "input": {
+        "x": 49,
+        "y": -296
+      },
+      "expected": {
+        "angle": 9
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-50--296",
+      "kind": "world_angle",
+      "input": {
+        "x": 50,
+        "y": -296
+      },
+      "expected": {
+        "angle": 10
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-54--295",
+      "kind": "world_angle",
+      "input": {
+        "x": 54,
+        "y": -295
+      },
+      "expected": {
+        "angle": 10
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-55--295",
+      "kind": "world_angle",
+      "input": {
+        "x": 55,
+        "y": -295
+      },
+      "expected": {
+        "angle": 11
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-60--294",
+      "kind": "world_angle",
+      "input": {
+        "x": 60,
+        "y": -294
+      },
+      "expected": {
+        "angle": 12
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-65--293",
+      "kind": "world_angle",
+      "input": {
+        "x": 65,
+        "y": -293
+      },
+      "expected": {
+        "angle": 13
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-70--292",
+      "kind": "world_angle",
+      "input": {
+        "x": 70,
+        "y": -292
+      },
+      "expected": {
+        "angle": 14
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-75--291",
+      "kind": "world_angle",
+      "input": {
+        "x": 75,
+        "y": -291
+      },
+      "expected": {
+        "angle": 15
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-75--290",
+      "kind": "world_angle",
+      "input": {
+        "x": 75,
+        "y": -290
+      },
+      "expected": {
+        "angle": 15
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-75-290",
+      "kind": "world_angle",
+      "input": {
+        "x": 75,
+        "y": 290
+      },
+      "expected": {
+        "angle": 165
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-75-291",
+      "kind": "world_angle",
+      "input": {
+        "x": 75,
+        "y": 291
+      },
+      "expected": {
+        "angle": 165
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-80--289",
+      "kind": "world_angle",
+      "input": {
+        "x": 80,
+        "y": -289
+      },
+      "expected": {
+        "angle": 16
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-80-289",
+      "kind": "world_angle",
+      "input": {
+        "x": 80,
+        "y": 289
+      },
+      "expected": {
+        "angle": 164
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-85--288",
+      "kind": "world_angle",
+      "input": {
+        "x": 85,
+        "y": -288
+      },
+      "expected": {
+        "angle": 17
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-90--286",
+      "kind": "world_angle",
+      "input": {
+        "x": 90,
+        "y": -286
+      },
+      "expected": {
+        "angle": 18
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-95--285",
+      "kind": "world_angle",
+      "input": {
+        "x": 95,
+        "y": -285
+      },
+      "expected": {
+        "angle": 19
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-95--284",
+      "kind": "world_angle",
+      "input": {
+        "x": 95,
+        "y": -284
+      },
+      "expected": {
+        "angle": 19
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-100--283",
+      "kind": "world_angle",
+      "input": {
+        "x": 100,
+        "y": -283
+      },
+      "expected": {
+        "angle": 20
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-105--281",
+      "kind": "world_angle",
+      "input": {
+        "x": 105,
+        "y": -281
+      },
+      "expected": {
+        "angle": 21
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-110--279",
+      "kind": "world_angle",
+      "input": {
+        "x": 110,
+        "y": -279
+      },
+      "expected": {
+        "angle": 22
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-115--277",
+      "kind": "world_angle",
+      "input": {
+        "x": 115,
+        "y": -277
+      },
+      "expected": {
+        "angle": 23
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-119--275",
+      "kind": "world_angle",
+      "input": {
+        "x": 119,
+        "y": -275
+      },
+      "expected": {
+        "angle": 24
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-120--275",
+      "kind": "world_angle",
+      "input": {
+        "x": 120,
+        "y": -275
+      },
+      "expected": {
+        "angle": 24
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-124--273",
+      "kind": "world_angle",
+      "input": {
+        "x": 124,
+        "y": -273
+      },
+      "expected": {
+        "angle": 25
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-125--273",
+      "kind": "world_angle",
+      "input": {
+        "x": 125,
+        "y": -273
+      },
+      "expected": {
+        "angle": 25
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-129--271",
+      "kind": "world_angle",
+      "input": {
+        "x": 129,
+        "y": -271
+      },
+      "expected": {
+        "angle": 26
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-134--269",
+      "kind": "world_angle",
+      "input": {
+        "x": 134,
+        "y": -269
+      },
+      "expected": {
+        "angle": 27
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-134--268",
+      "kind": "world_angle",
+      "input": {
+        "x": 134,
+        "y": -268
+      },
+      "expected": {
+        "angle": 27
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-138--266",
+      "kind": "world_angle",
+      "input": {
+        "x": 138,
+        "y": -266
+      },
+      "expected": {
+        "angle": 28
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-139--266",
+      "kind": "world_angle",
+      "input": {
+        "x": 139,
+        "y": -266
+      },
+      "expected": {
+        "angle": 28
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-143--264",
+      "kind": "world_angle",
+      "input": {
+        "x": 143,
+        "y": -264
+      },
+      "expected": {
+        "angle": 29
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-147--261",
+      "kind": "world_angle",
+      "input": {
+        "x": 147,
+        "y": -261
+      },
+      "expected": {
+        "angle": 30
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-147-261",
+      "kind": "world_angle",
+      "input": {
+        "x": 147,
+        "y": 261
+      },
+      "expected": {
+        "angle": 150
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-148--261",
+      "kind": "world_angle",
+      "input": {
+        "x": 148,
+        "y": -261
+      },
+      "expected": {
+        "angle": 30
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-148-261",
+      "kind": "world_angle",
+      "input": {
+        "x": 148,
+        "y": 261
+      },
+      "expected": {
+        "angle": 150
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-152--259",
+      "kind": "world_angle",
+      "input": {
+        "x": 152,
+        "y": -259
+      },
+      "expected": {
+        "angle": 31
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-152--258",
+      "kind": "world_angle",
+      "input": {
+        "x": 152,
+        "y": -258
+      },
+      "expected": {
+        "angle": 31
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-152-258",
+      "kind": "world_angle",
+      "input": {
+        "x": 152,
+        "y": 258
+      },
+      "expected": {
+        "angle": 149
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-152-259",
+      "kind": "world_angle",
+      "input": {
+        "x": 152,
+        "y": 259
+      },
+      "expected": {
+        "angle": 149
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-157--256",
+      "kind": "world_angle",
+      "input": {
+        "x": 157,
+        "y": -256
+      },
+      "expected": {
+        "angle": 32
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-161--253",
+      "kind": "world_angle",
+      "input": {
+        "x": 161,
+        "y": -253
+      },
+      "expected": {
+        "angle": 33
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-165--250",
+      "kind": "world_angle",
+      "input": {
+        "x": 165,
+        "y": -250
+      },
+      "expected": {
+        "angle": 34
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-166--250",
+      "kind": "world_angle",
+      "input": {
+        "x": 166,
+        "y": -250
+      },
+      "expected": {
+        "angle": 34
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-170--247",
+      "kind": "world_angle",
+      "input": {
+        "x": 170,
+        "y": -247
+      },
+      "expected": {
+        "angle": 35
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-174--244",
+      "kind": "world_angle",
+      "input": {
+        "x": 174,
+        "y": -244
+      },
+      "expected": {
+        "angle": 36
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-178--241",
+      "kind": "world_angle",
+      "input": {
+        "x": 178,
+        "y": -241
+      },
+      "expected": {
+        "angle": 37
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-179--241",
+      "kind": "world_angle",
+      "input": {
+        "x": 179,
+        "y": -241
+      },
+      "expected": {
+        "angle": 37
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-182--238",
+      "kind": "world_angle",
+      "input": {
+        "x": 182,
+        "y": -238
+      },
+      "expected": {
+        "angle": 38
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-183--238",
+      "kind": "world_angle",
+      "input": {
+        "x": 183,
+        "y": -238
+      },
+      "expected": {
+        "angle": 38
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-187--235",
+      "kind": "world_angle",
+      "input": {
+        "x": 187,
+        "y": -235
+      },
+      "expected": {
+        "angle": 39
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-191--232",
+      "kind": "world_angle",
+      "input": {
+        "x": 191,
+        "y": -232
+      },
+      "expected": {
+        "angle": 40
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-191--231",
+      "kind": "world_angle",
+      "input": {
+        "x": 191,
+        "y": -231
+      },
+      "expected": {
+        "angle": 40
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-195--228",
+      "kind": "world_angle",
+      "input": {
+        "x": 195,
+        "y": -228
+      },
+      "expected": {
+        "angle": 41
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-199--225",
+      "kind": "world_angle",
+      "input": {
+        "x": 199,
+        "y": -225
+      },
+      "expected": {
+        "angle": 42
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-202--221",
+      "kind": "world_angle",
+      "input": {
+        "x": 202,
+        "y": -221
+      },
+      "expected": {
+        "angle": 43
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-203--221",
+      "kind": "world_angle",
+      "input": {
+        "x": 203,
+        "y": -221
+      },
+      "expected": {
+        "angle": 43
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-206--218",
+      "kind": "world_angle",
+      "input": {
+        "x": 206,
+        "y": -218
+      },
+      "expected": {
+        "angle": 44
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-207--217",
+      "kind": "world_angle",
+      "input": {
+        "x": 207,
+        "y": -217
+      },
+      "expected": {
+        "angle": 44
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-210--214",
+      "kind": "world_angle",
+      "input": {
+        "x": 210,
+        "y": -214
+      },
+      "expected": {
+        "angle": 45
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-210-214",
+      "kind": "world_angle",
+      "input": {
+        "x": 210,
+        "y": 214
+      },
+      "expected": {
+        "angle": 135
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-214--210",
+      "kind": "world_angle",
+      "input": {
+        "x": 214,
+        "y": -210
+      },
+      "expected": {
+        "angle": 46
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-214-210",
+      "kind": "world_angle",
+      "input": {
+        "x": 214,
+        "y": 210
+      },
+      "expected": {
+        "angle": 134
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-217--207",
+      "kind": "world_angle",
+      "input": {
+        "x": 217,
+        "y": -207
+      },
+      "expected": {
+        "angle": 47
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-218--206",
+      "kind": "world_angle",
+      "input": {
+        "x": 218,
+        "y": -206
+      },
+      "expected": {
+        "angle": 47
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-221--203",
+      "kind": "world_angle",
+      "input": {
+        "x": 221,
+        "y": -203
+      },
+      "expected": {
+        "angle": 48
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-221--202",
+      "kind": "world_angle",
+      "input": {
+        "x": 221,
+        "y": -202
+      },
+      "expected": {
+        "angle": 48
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-225--199",
+      "kind": "world_angle",
+      "input": {
+        "x": 225,
+        "y": -199
+      },
+      "expected": {
+        "angle": 49
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-228--195",
+      "kind": "world_angle",
+      "input": {
+        "x": 228,
+        "y": -195
+      },
+      "expected": {
+        "angle": 50
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-231--191",
+      "kind": "world_angle",
+      "input": {
+        "x": 231,
+        "y": -191
+      },
+      "expected": {
+        "angle": 51
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-232--191",
+      "kind": "world_angle",
+      "input": {
+        "x": 232,
+        "y": -191
+      },
+      "expected": {
+        "angle": 51
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-235--187",
+      "kind": "world_angle",
+      "input": {
+        "x": 235,
+        "y": -187
+      },
+      "expected": {
+        "angle": 52
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-238--183",
+      "kind": "world_angle",
+      "input": {
+        "x": 238,
+        "y": -183
+      },
+      "expected": {
+        "angle": 53
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-238--182",
+      "kind": "world_angle",
+      "input": {
+        "x": 238,
+        "y": -182
+      },
+      "expected": {
+        "angle": 53
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-241--179",
+      "kind": "world_angle",
+      "input": {
+        "x": 241,
+        "y": -179
+      },
+      "expected": {
+        "angle": 54
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-241--178",
+      "kind": "world_angle",
+      "input": {
+        "x": 241,
+        "y": -178
+      },
+      "expected": {
+        "angle": 54
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-244--174",
+      "kind": "world_angle",
+      "input": {
+        "x": 244,
+        "y": -174
+      },
+      "expected": {
+        "angle": 55
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-247--170",
+      "kind": "world_angle",
+      "input": {
+        "x": 247,
+        "y": -170
+      },
+      "expected": {
+        "angle": 56
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-250--166",
+      "kind": "world_angle",
+      "input": {
+        "x": 250,
+        "y": -166
+      },
+      "expected": {
+        "angle": 57
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-250--165",
+      "kind": "world_angle",
+      "input": {
+        "x": 250,
+        "y": -165
+      },
+      "expected": {
+        "angle": 57
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-253--161",
+      "kind": "world_angle",
+      "input": {
+        "x": 253,
+        "y": -161
+      },
+      "expected": {
+        "angle": 58
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-256--157",
+      "kind": "world_angle",
+      "input": {
+        "x": 256,
+        "y": -157
+      },
+      "expected": {
+        "angle": 59
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-258--152",
+      "kind": "world_angle",
+      "input": {
+        "x": 258,
+        "y": -152
+      },
+      "expected": {
+        "angle": 60
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-258-152",
+      "kind": "world_angle",
+      "input": {
+        "x": 258,
+        "y": 152
+      },
+      "expected": {
+        "angle": 120
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-259--152",
+      "kind": "world_angle",
+      "input": {
+        "x": 259,
+        "y": -152
+      },
+      "expected": {
+        "angle": 60
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-259-152",
+      "kind": "world_angle",
+      "input": {
+        "x": 259,
+        "y": 152
+      },
+      "expected": {
+        "angle": 120
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-261--148",
+      "kind": "world_angle",
+      "input": {
+        "x": 261,
+        "y": -148
+      },
+      "expected": {
+        "angle": 61
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-261--147",
+      "kind": "world_angle",
+      "input": {
+        "x": 261,
+        "y": -147
+      },
+      "expected": {
+        "angle": 61
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-261-147",
+      "kind": "world_angle",
+      "input": {
+        "x": 261,
+        "y": 147
+      },
+      "expected": {
+        "angle": 119
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-261-148",
+      "kind": "world_angle",
+      "input": {
+        "x": 261,
+        "y": 148
+      },
+      "expected": {
+        "angle": 119
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-264--143",
+      "kind": "world_angle",
+      "input": {
+        "x": 264,
+        "y": -143
+      },
+      "expected": {
+        "angle": 62
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-266--139",
+      "kind": "world_angle",
+      "input": {
+        "x": 266,
+        "y": -139
+      },
+      "expected": {
+        "angle": 63
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-266--138",
+      "kind": "world_angle",
+      "input": {
+        "x": 266,
+        "y": -138
+      },
+      "expected": {
+        "angle": 63
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-268--134",
+      "kind": "world_angle",
+      "input": {
+        "x": 268,
+        "y": -134
+      },
+      "expected": {
+        "angle": 64
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-269--134",
+      "kind": "world_angle",
+      "input": {
+        "x": 269,
+        "y": -134
+      },
+      "expected": {
+        "angle": 64
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-271--129",
+      "kind": "world_angle",
+      "input": {
+        "x": 271,
+        "y": -129
+      },
+      "expected": {
+        "angle": 65
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-273--125",
+      "kind": "world_angle",
+      "input": {
+        "x": 273,
+        "y": -125
+      },
+      "expected": {
+        "angle": 66
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-273--124",
+      "kind": "world_angle",
+      "input": {
+        "x": 273,
+        "y": -124
+      },
+      "expected": {
+        "angle": 66
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-275--120",
+      "kind": "world_angle",
+      "input": {
+        "x": 275,
+        "y": -120
+      },
+      "expected": {
+        "angle": 67
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-275--119",
+      "kind": "world_angle",
+      "input": {
+        "x": 275,
+        "y": -119
+      },
+      "expected": {
+        "angle": 67
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-277--115",
+      "kind": "world_angle",
+      "input": {
+        "x": 277,
+        "y": -115
+      },
+      "expected": {
+        "angle": 68
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-279--110",
+      "kind": "world_angle",
+      "input": {
+        "x": 279,
+        "y": -110
+      },
+      "expected": {
+        "angle": 69
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-281--105",
+      "kind": "world_angle",
+      "input": {
+        "x": 281,
+        "y": -105
+      },
+      "expected": {
+        "angle": 70
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-283--100",
+      "kind": "world_angle",
+      "input": {
+        "x": 283,
+        "y": -100
+      },
+      "expected": {
+        "angle": 71
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-284--95",
+      "kind": "world_angle",
+      "input": {
+        "x": 284,
+        "y": -95
+      },
+      "expected": {
+        "angle": 72
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-285--95",
+      "kind": "world_angle",
+      "input": {
+        "x": 285,
+        "y": -95
+      },
+      "expected": {
+        "angle": 72
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-286--90",
+      "kind": "world_angle",
+      "input": {
+        "x": 286,
+        "y": -90
+      },
+      "expected": {
+        "angle": 73
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-288--85",
+      "kind": "world_angle",
+      "input": {
+        "x": 288,
+        "y": -85
+      },
+      "expected": {
+        "angle": 74
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-289--80",
+      "kind": "world_angle",
+      "input": {
+        "x": 289,
+        "y": -80
+      },
+      "expected": {
+        "angle": 75
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-289-80",
+      "kind": "world_angle",
+      "input": {
+        "x": 289,
+        "y": 80
+      },
+      "expected": {
+        "angle": 105
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-290--75",
+      "kind": "world_angle",
+      "input": {
+        "x": 290,
+        "y": -75
+      },
+      "expected": {
+        "angle": 76
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-290-75",
+      "kind": "world_angle",
+      "input": {
+        "x": 290,
+        "y": 75
+      },
+      "expected": {
+        "angle": 104
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-291--75",
+      "kind": "world_angle",
+      "input": {
+        "x": 291,
+        "y": -75
+      },
+      "expected": {
+        "angle": 76
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-291-75",
+      "kind": "world_angle",
+      "input": {
+        "x": 291,
+        "y": 75
+      },
+      "expected": {
+        "angle": 104
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-292--70",
+      "kind": "world_angle",
+      "input": {
+        "x": 292,
+        "y": -70
+      },
+      "expected": {
+        "angle": 77
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-293--65",
+      "kind": "world_angle",
+      "input": {
+        "x": 293,
+        "y": -65
+      },
+      "expected": {
+        "angle": 78
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-294--60",
+      "kind": "world_angle",
+      "input": {
+        "x": 294,
+        "y": -60
+      },
+      "expected": {
+        "angle": 79
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-295--55",
+      "kind": "world_angle",
+      "input": {
+        "x": 295,
+        "y": -55
+      },
+      "expected": {
+        "angle": 80
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-295--54",
+      "kind": "world_angle",
+      "input": {
+        "x": 295,
+        "y": -54
+      },
+      "expected": {
+        "angle": 80
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-296--50",
+      "kind": "world_angle",
+      "input": {
+        "x": 296,
+        "y": -50
+      },
+      "expected": {
+        "angle": 81
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-296--49",
+      "kind": "world_angle",
+      "input": {
+        "x": 296,
+        "y": -49
+      },
+      "expected": {
+        "angle": 81
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-297--45",
+      "kind": "world_angle",
+      "input": {
+        "x": 297,
+        "y": -45
+      },
+      "expected": {
+        "angle": 82
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-297--44",
+      "kind": "world_angle",
+      "input": {
+        "x": 297,
+        "y": -44
+      },
+      "expected": {
+        "angle": 82
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-297--39",
+      "kind": "world_angle",
+      "input": {
+        "x": 297,
+        "y": -39
+      },
+      "expected": {
+        "angle": 83
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-298--34",
+      "kind": "world_angle",
+      "input": {
+        "x": 298,
+        "y": -34
+      },
+      "expected": {
+        "angle": 84
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-299--29",
+      "kind": "world_angle",
+      "input": {
+        "x": 299,
+        "y": -29
+      },
+      "expected": {
+        "angle": 85
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-299--28",
+      "kind": "world_angle",
+      "input": {
+        "x": 299,
+        "y": -28
+      },
+      "expected": {
+        "angle": 85
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-299--24",
+      "kind": "world_angle",
+      "input": {
+        "x": 299,
+        "y": -24
+      },
+      "expected": {
+        "angle": 86
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-299--23",
+      "kind": "world_angle",
+      "input": {
+        "x": 299,
+        "y": -23
+      },
+      "expected": {
+        "angle": 86
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-299--19",
+      "kind": "world_angle",
+      "input": {
+        "x": 299,
+        "y": -19
+      },
+      "expected": {
+        "angle": 87
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-299--18",
+      "kind": "world_angle",
+      "input": {
+        "x": 299,
+        "y": -18
+      },
+      "expected": {
+        "angle": 87
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-300--13",
+      "kind": "world_angle",
+      "input": {
+        "x": 300,
+        "y": -13
+      },
+      "expected": {
+        "angle": 88
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-300--8",
+      "kind": "world_angle",
+      "input": {
+        "x": 300,
+        "y": -8
+      },
+      "expected": {
+        "angle": 89
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-300--3",
+      "kind": "world_angle",
+      "input": {
+        "x": 300,
+        "y": -3
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-300--2",
+      "kind": "world_angle",
+      "input": {
+        "x": 300,
+        "y": -2
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-381--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": 381,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 1
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-381--1",
+      "kind": "world_angle",
+      "input": {
+        "x": 381,
+        "y": -1
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-381-0",
+      "kind": "world_angle",
+      "input": {
+        "x": 381,
+        "y": 0
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-381-1",
+      "kind": "world_angle",
+      "input": {
+        "x": 381,
+        "y": 1
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-381-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": 381,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 179
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-32767--32768",
+      "kind": "world_angle",
+      "input": {
+        "x": 32767,
+        "y": -32768
+      },
+      "expected": {
+        "angle": 45
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-32767--1",
+      "kind": "world_angle",
+      "input": {
+        "x": 32767,
+        "y": -1
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-32767-0",
+      "kind": "world_angle",
+      "input": {
+        "x": 32767,
+        "y": 0
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-32767-1",
+      "kind": "world_angle",
+      "input": {
+        "x": 32767,
+        "y": 1
+      },
+      "expected": {
+        "angle": 90
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    },
+    {
+      "id": "rom-angle-32767-32767",
+      "kind": "world_angle",
+      "input": {
+        "x": 32767,
+        "y": 32767
+      },
+      "expected": {
+        "angle": 135
+      },
+      "oracle": {
+        "region": "Mac_IIci.ROM",
+        "offset": "0x3cf90",
+        "trap": "0xa8c3",
+        "rect": [
+          -5,
+          -5,
+          6,
+          6
+        ]
+      }
+    }
+  ]
+}
