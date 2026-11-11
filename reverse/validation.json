@@ -446,8 +446,12 @@
         "sha256": "d5a6d156dde8f46419c2596b71b4d09c508297ea13bf464f7eaf039df8574eb5"
       },
       {
+        "file": "web/.prettierrc.json",
+        "sha256": "4927fe80046372da124fd1400d74eaf7e2d8fa4a19e5c81abeed3827d3ac11ed"
+      },
+      {
         "file": "web/app.js",
-        "sha256": "9d8aff837564640abfd016b806c3b3066986a3f6a63fec6f3f1fbf58cf2acbd0"
+        "sha256": "f22b6041c366f2fa16d0b5f04b2edd102e500e4e4ddebc1c0cb35d0bc287435a"
       },
       {
         "file": "web/docs/agent-brief.txt",
@@ -459,19 +463,19 @@
       },
       {
         "file": "web/index.html",
-        "sha256": "36b85240ddd1669c0131321f8aa465a38af2bb00a7c5677401e615161965e9c8"
+        "sha256": "b969bd1c692c08e26052a9eabc96682e91eef1889dc612b2dbdd7e804f533def"
       },
       {
         "file": "web/mark.svg",
-        "sha256": "639ffc607eef49b35f34ef19a786bf2ae60973b6ba4328a22703b599009fbcdd"
+        "sha256": "8c247e779c727941610f8c663cd0d965fe24ae4a9fff10b3366ed916aad7a904"
       },
       {
         "file": "web/styles.css",
-        "sha256": "39e05927b37ccb14f76fd6160e4477c80e0aadf5bb541eb8b149fa95e885fc38"
+        "sha256": "c407015296e97908e7ac34960426a768419c8fbc744598a83a802d62c57dd32d"
       },
       {
         "file": "web/worker.js",
-        "sha256": "07abb7903b7a48f4dba43286143a9839afb75341b58827b526f842b92fd01efe"
+        "sha256": "296bc6c012b0e40b1cadc21c826732116789a1852932f79147bbd06bd739eea4"
       }
     ]
   }

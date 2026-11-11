@@ -1,89 +1,405 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f2e9">
-  <meta name="description" content="Write, compile, and battle Robot Warriors programs in your browser. A local workbench for the classic 1991 robot programming game.">
-  <title>Robot Warriors Lab — write a robot, run a battle</title>
-  <link rel="icon" href="./mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="module" src="./app.js"></script>
-</head>
-<body>
-  <a class="skip-link" href="#workbench">Skip to workbench</a>
-  <header class="site-header shell">
-    <a class="brand" href="#" aria-label="Robot Warriors Lab home">
-      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><rect x="2" y="2" width="40" height="40" rx="11" fill="currentColor"/><path d="M12 28V17h20v11M17 17v-5m10 5v-5M16 28v4m12-4v4M18 23h.01M26 23h.01" fill="none" stroke="#fffdf5" stroke-width="3" stroke-linecap="round"/><path d="M19 29h6" stroke="#fffdf5" stroke-width="2"/></svg>
-      <span>Robot Warriors <span class="brand-lab">Lab</span><small>A PROGRAMMING BATTLEFIELD</small></span>
-    </a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="#workbench">Workbench</a><a href="#language">Language</a><a href="#agent-kit">Agent kit</a><a href="./docs/original-manual.pdf" target="_blank" rel="noopener">Original manual <span aria-hidden="true">↗</span></a>
-    </nav>
-    <div class="engine-wrap">
-      <span id="engine-status" class="engine-status" role="status"><span class="status-dot loading"></span>Loading engine</span>
-      <button id="retry-engine" class="text-button" hidden>Retry</button>
-    </div>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f2e9" />
+    <meta
+      name="description"
+      content="Write, compile, and battle Robot Warriors programs in your browser. A local workbench for the classic 1991 robot programming game."
+    />
+    <title>Robot Warriors Lab — write a robot, run a battle</title>
+    <link rel="icon" href="./mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workbench">Skip to workbench</a>
+    <header class="site-header shell">
+      <a class="brand" href="#" aria-label="Robot Warriors Lab home">
+        <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+          <rect x="2" y="2" width="40" height="40" rx="11" fill="currentColor" />
+          <path
+            d="M12 28V17h20v11M17 17v-5m10 5v-5M16 28v4m12-4v4M18 23h.01M26 23h.01"
+            fill="none"
+            stroke="#fffdf5"
+            stroke-width="3"
+            stroke-linecap="round"
+          />
+          <path d="M19 29h6" stroke="#fffdf5" stroke-width="2" />
+        </svg>
+        <span
+          >Robot Warriors <span class="brand-lab">Lab</span
+          ><small>A PROGRAMMING BATTLEFIELD</small></span
+        >
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#workbench">Workbench</a><a href="#language">Language</a
+        ><a href="#agent-kit">Agent kit</a
+        ><a href="./docs/original-manual.pdf" target="_blank" rel="noopener"
+          >Original manual <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+      <div class="engine-wrap">
+        <span id="engine-status" class="engine-status" role="status"
+          ><span class="status-dot loading"></span>Loading engine</span
+        >
+        <button id="retry-engine" class="text-button" hidden>Retry</button>
+      </div>
+    </header>
 
-  <main class="shell">
-    <section class="intro" aria-labelledby="page-title">
-      <div><p class="eyebrow"><span class="tiny-cross" aria-hidden="true">+</span> FIELD NOTES / EST. 1991</p><h1 id="page-title">Write a robot.<br>Put it to the test.</h1><p class="intro-copy">A workbench for the original Robot Warriors language.<br class="wide-only"> Edit a program, choose its opponents, and let the code compete.</p></div>
-      <div class="intro-note"><span class="note-label">THE EXPERIMENT</span><p>Strategy is the source code.</p><ol><li><span>01</span> Pick or upload a robot</li><li><span>02</span> Edit, then compile</li><li><span>03</span> Run a seeded battle</li></ol><div class="local-note"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 7V5a4 4 0 0 1 8 0v2M3 7h10v7H3zM8 10v2"/></svg>Source and simulation stay in your browser.</div></div>
-    </section>
-
-    <noscript><div class="notice error">The workbench needs JavaScript. You can still read the language reference, agent brief, and original manual below.</div></noscript>
-    <details id="engine-error" class="notice error" hidden><summary>The engine could not load. Use Retry above to try again.</summary><pre id="engine-error-detail"></pre></details>
-
-    <p id="app-error" class="notice error" role="alert" hidden></p>
-
-    <section id="workbench" class="workbench" aria-labelledby="workbench-title">
-      <div class="section-heading"><h2 id="workbench-title">The workbench</h2><span class="section-meta">HEADLESS ENGINE · ORIGINAL LANGUAGE</span></div>
-      <div class="workbench-grid">
-        <aside class="panel roster" aria-labelledby="roster-title">
-          <div class="panel-heading"><h3 id="roster-title"><span class="step-number">01</span> Robots</h3><span id="participant-count" class="count-badge">0 / 5 active</span></div>
-          <p class="panel-hint">Check 2–5 robots to enter the battle. Select a name to edit its source.</p>
-          <div id="robot-list" class="robot-list" aria-label="Robot programs"></div>
-          <div id="empty-roster" class="empty-roster" hidden><span aria-hidden="true">＋</span><p>Your workbench is empty.<br>Add a sample, upload a file, or start a new robot.</p></div>
-          <div class="roster-tools">
-            <label class="field-label" for="sample-select">Start with a classic</label>
-            <div class="sample-row"><select id="sample-select" aria-label="Standard sample robot"><option value="">Loading examples…</option></select><button id="add-sample-button" class="icon-button" aria-label="Add selected sample" title="Add selected sample">＋</button></div>
-            <div class="button-pair"><button id="new-robot-button" class="button secondary small">New robot</button><button id="upload-button" class="button secondary small">Upload files <span aria-hidden="true">↑</span></button></div>
-            <input id="upload-input" type="file" multiple hidden aria-label="Upload robot source files">
-            <details class="upload-options"><summary>File encoding</summary><label for="upload-encoding">Uploaded text is encoded as</label><select id="upload-encoding"><option value="utf-8">UTF-8 (modern text files)</option><option value="macintosh">Mac Roman (original Mac files)</option></select></details>
-            <p class="roster-footnote">Your edits are saved in this browser.</p>
+    <main class="shell">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">
+            <span class="tiny-cross" aria-hidden="true">+</span> FIELD NOTES / EST. 1991
+          </p>
+          <h1 id="page-title">Write a robot.<br />Put it to the test.</h1>
+          <p class="intro-copy">
+            A workbench for the original Robot Warriors language.<br class="wide-only" />
+            Edit a program, choose its opponents, and let the code compete.
+          </p>
+        </div>
+        <div class="intro-note">
+          <span class="note-label">THE EXPERIMENT</span>
+          <p>Strategy is the source code.</p>
+          <ol>
+            <li><span>01</span> Pick or upload a robot</li>
+            <li><span>02</span> Edit, then compile</li>
+            <li><span>03</span> Run a seeded battle</li>
+          </ol>
+          <div class="local-note">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 7V5a4 4 0 0 1 8 0v2M3 7h10v7H3zM8 10v2" /></svg
+            >Source and simulation stay in your browser.
           </div>
-        </aside>
-
-        <section class="panel editor-panel" aria-labelledby="editor-title">
-          <div class="panel-heading editor-heading"><h3 id="editor-title"><span class="step-number">02</span> Source</h3><div class="editor-actions"><button id="reset-sample-button" class="text-button" hidden>Restore sample</button><button id="download-source-button" class="text-button" disabled>Download source <span aria-hidden="true">↓</span></button></div></div>
-          <div class="editor-filebar"><label class="sr-only" for="robot-name">Robot name</label><input id="robot-name" class="robot-name" value="" placeholder="Choose a robot" maxlength="64" disabled autocomplete="off" spellcheck="false"><span id="source-state" class="source-state">No program selected</span></div>
-          <div class="code-area"><div id="line-numbers" class="line-numbers" aria-hidden="true">1</div><label class="sr-only" for="source-editor">Robot source code</label><textarea id="source-editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" disabled placeholder="Add a robot to start writing…" aria-describedby="source-summary compile-feedback"></textarea></div>
-          <div class="editor-bottom"><span id="source-summary" class="source-summary">0 lines</span><button id="compile-button" class="button secondary small" title="Compile (Ctrl/Cmd+Enter)" disabled>Compile robot <span aria-hidden="true">⌘</span></button></div>
-          <div id="compile-feedback" class="compile-feedback" role="status" aria-live="polite"><span class="feedback-icon" aria-hidden="true">○</span><span id="compile-status">Compilation checks the current robot before it enters the arena.</span></div>
-        </section>
-      </div>
-
-      <section class="battle-controls panel" aria-labelledby="battle-title">
-        <div class="battle-controls-heading"><h3 id="battle-title"><span class="step-number">03</span> Battle</h3><p id="battle-status" role="status" aria-live="polite">Select 2–5 participants to begin.</p></div>
-        <div class="battle-fields"><label for="seed-input"><span class="field-label">Random seed</span><input id="seed-input" type="number" min="0" max="4294967295" step="1" value="1" inputmode="numeric"></label><label for="ticks-input"><span class="field-label">Maximum ticks</span><input id="ticks-input" type="number" min="1" max="1000000" step="1" value="2000" inputmode="numeric"></label><div class="watch-controls"><label class="watch-label" for="watch-battle"><input id="watch-battle" type="checkbox" checked> Watch battle</label><label class="sr-only" for="battle-speed">Live playback speed</label><select id="battle-speed" aria-label="Live playback speed"><option value="1">1× speed</option><option value="4">4× speed</option><option value="16" selected>16× speed</option></select></div><div class="run-actions"><button id="run-button" class="button primary" disabled><span class="run-icon" aria-hidden="true">▶</span> Run battle</button><button id="cancel-button" class="button danger" hidden>Cancel</button></div></div>
-        <p class="battle-footnote">10 ticks = 1 simulated second. Battles stop when one robot remains or the tick limit is reached.</p>
+        </div>
       </section>
-    </section>
 
-    <section id="results" class="results-section" aria-labelledby="results-title">
-      <div class="section-heading"><h2 id="results-title">Battle report</h2><button id="download-result-button" class="text-button" disabled>Download result JSON <span aria-hidden="true">↓</span></button></div>
-      <div class="results-grid">
-        <div class="panel arena-panel"><div class="arena-heading"><h3 id="arena-title">Battlefield</h3><span id="arena-caption" class="section-meta">AWAITING A BATTLE</span></div><svg id="arena" viewBox="0 0 381 313" role="img" aria-label="Empty battlefield. Run a battle to see the final robot positions."><rect x="0.5" y="0.5" width="380" height="312" fill="#ffffff" stroke="#202820"/><g id="arena-robots"></g><g id="arena-empty" fill="#737b73" text-anchor="middle"><path d="M170 140h41v32h-41zM180 132v8m21-8v8m-21 17h.1m21 0h.1" stroke="#a2aaa2" stroke-width="2" fill="none"/><text x="190.5" y="198" font-family="system-ui,sans-serif" font-size="11">Your programs take it from here.</text></g></svg><div id="arena-legend" class="arena-legend" hidden></div><p id="arena-note" class="arena-note">Watch the simulation live, or switch Watch battle off for a fast result. Numbered robots match the report.</p></div>
-        <div class="panel report-panel"><div id="result-empty" class="result-empty"><span class="report-glyph" aria-hidden="true">↗</span><h3 id="empty-result-title">The first result is a starting point.</h3><p id="empty-result-copy">Run the same seed after an edit to compare strategies. Check the final damage, fuel, and positions to see what changed.</p></div><div id="result-content" hidden><div class="result-heading"><p class="eyebrow">EXPERIMENT COMPLETE</p><h3 id="outcome-title"></h3><p id="result-summary"></p></div><div class="table-scroll"><table id="results-table"><caption class="sr-only">Robot outcomes at the end of the battle</caption><thead><tr><th scope="col">Robot</th><th scope="col">State</th><th scope="col">Damage</th><th scope="col">Fuel</th><th scope="col">Position</th><th scope="col">Resets</th></tr></thead><tbody id="results-body"></tbody></table></div><p id="result-note" class="report-note"></p></div></div>
-      </div>
-    </section>
+      <noscript
+        ><div class="notice error">
+          The workbench needs JavaScript. You can still read the language reference, agent brief,
+          and original manual below.
+        </div></noscript
+      >
+      <details id="engine-error" class="notice error" hidden>
+        <summary>The engine could not load. Use Retry above to try again.</summary>
+        <pre id="engine-error-detail"></pre>
+      </details>
 
-    <section id="language" class="reference-section" aria-labelledby="language-title"><div class="section-heading"><h2 id="language-title">Keep the language close</h2><a class="text-link" href="./docs/original-manual.pdf" target="_blank" rel="noopener">Read the 1991 manual <span aria-hidden="true">↗</span></a></div><div class="reference-layout"><aside class="reference-aside"><p class="eyebrow">REFERENCE / 01</p><h3>Small language.<br>Plenty of possibilities.</h3><p>Use the quick reference while you write. The original manual explains the hardware, sensors, and tactics in more detail.</p><a href="#workbench" class="text-link">Back to the editor ↑</a></aside><article id="language-reference" class="prose panel"><!-- LANGUAGE_REFERENCE --></article></div></section>
+      <p id="app-error" class="notice error" role="alert" hidden></p>
 
-    <section id="agent-kit" class="agent-section" aria-labelledby="agent-title"><div class="section-heading"><h2 id="agent-title">Bring a coding partner</h2><span class="section-meta">HUMANS &amp; AGENTS WELCOME</span></div><div class="agent-grid"><div><p class="eyebrow">REFERENCE / 02</p><h3>Give your agent<br>the field notes.</h3><p>The brief describes the language and the browser API. Copy it into your coding assistant, then bring the robot source back here to test it.</p><div class="agent-buttons"><button id="copy-brief-button" class="button secondary">Copy agent brief</button><a id="download-brief-link" class="text-link" href="./docs/agent-brief.txt" download>Download .txt ↓</a></div><p id="brief-status" class="small-status" role="status" aria-live="polite"></p></div><div class="agent-document panel"><div class="agent-document-heading"><span class="file-dot" aria-hidden="true"></span> agent-brief.txt <span>PLAIN TEXT</span></div><pre id="agent-brief" tabindex="0"><!-- AGENT_BRIEF --></pre></div></div></section>
-  </main>
-  <footer class="site-footer shell"><span class="footer-brand">RW / LAB</span><p>Built for curious programmers. Robot Warriors was created by Steven Miller and Dean Ouchida in 1991.</p><a href="#workbench">Back to the workbench ↑</a></footer>
-  <div id="toast" class="toast" role="status" aria-live="polite" hidden><span id="toast-message"></span><button id="toast-action" hidden>Undo</button><button id="toast-dismiss" aria-label="Dismiss notification">×</button></div>
-</body>
+      <section id="workbench" class="workbench" aria-labelledby="workbench-title">
+        <div class="section-heading">
+          <h2 id="workbench-title">The workbench</h2>
+          <span class="section-meta">HEADLESS ENGINE · ORIGINAL LANGUAGE</span>
+        </div>
+        <div class="workbench-grid">
+          <aside class="panel roster" aria-labelledby="roster-title">
+            <div class="panel-heading">
+              <h3 id="roster-title"><span class="step-number">01</span> Robots</h3>
+              <span id="participant-count" class="count-badge">0 / 5 active</span>
+            </div>
+            <p class="panel-hint">
+              Check 2–5 robots to enter the battle. Select a name to edit its source.
+            </p>
+            <div id="robot-list" class="robot-list" aria-label="Robot programs"></div>
+            <div id="empty-roster" class="empty-roster" hidden>
+              <span aria-hidden="true">＋</span>
+              <p>
+                Your workbench is empty.<br />Add a sample, upload a file, or start a new robot.
+              </p>
+            </div>
+            <div class="roster-tools">
+              <label class="field-label" for="sample-select">Start with a classic</label>
+              <div class="sample-row">
+                <select id="sample-select" aria-label="Standard sample robot">
+                  <option value="">Loading examples…</option></select
+                ><button
+                  id="add-sample-button"
+                  class="icon-button"
+                  aria-label="Add selected sample"
+                  title="Add selected sample"
+                >
+                  ＋
+                </button>
+              </div>
+              <div class="button-pair">
+                <button id="new-robot-button" class="button secondary small">New robot</button
+                ><button id="upload-button" class="button secondary small">
+                  Upload files <span aria-hidden="true">↑</span>
+                </button>
+              </div>
+              <input
+                id="upload-input"
+                type="file"
+                multiple
+                hidden
+                aria-label="Upload robot source files"
+              />
+              <details class="upload-options">
+                <summary>File encoding</summary>
+                <label for="upload-encoding">Uploaded text is encoded as</label
+                ><select id="upload-encoding">
+                  <option value="utf-8">UTF-8 (modern text files)</option>
+                  <option value="macintosh">Mac Roman (original Mac files)</option>
+                </select>
+              </details>
+              <p class="roster-footnote">Your edits are saved in this browser.</p>
+            </div>
+          </aside>
+
+          <section class="panel editor-panel" aria-labelledby="editor-title">
+            <div class="panel-heading editor-heading">
+              <h3 id="editor-title"><span class="step-number">02</span> Source</h3>
+              <div class="editor-actions">
+                <button id="reset-sample-button" class="text-button" hidden>Restore sample</button
+                ><button id="download-source-button" class="text-button" disabled>
+                  Download source <span aria-hidden="true">↓</span>
+                </button>
+              </div>
+            </div>
+            <div class="editor-filebar">
+              <label class="sr-only" for="robot-name">Robot name</label
+              ><input
+                id="robot-name"
+                class="robot-name"
+                value=""
+                placeholder="Choose a robot"
+                maxlength="64"
+                disabled
+                autocomplete="off"
+                spellcheck="false"
+              /><span id="source-state" class="source-state">No program selected</span>
+            </div>
+            <div class="code-area">
+              <div id="line-numbers" class="line-numbers" aria-hidden="true">1</div>
+              <label class="sr-only" for="source-editor">Robot source code</label
+              ><textarea
+                id="source-editor"
+                spellcheck="false"
+                autocapitalize="off"
+                autocomplete="off"
+                autocorrect="off"
+                wrap="off"
+                disabled
+                placeholder="Add a robot to start writing…"
+                aria-describedby="source-summary compile-feedback"
+              ></textarea>
+            </div>
+            <div class="editor-bottom">
+              <span id="source-summary" class="source-summary">0 lines</span
+              ><button
+                id="compile-button"
+                class="button secondary small"
+                title="Compile (Ctrl/Cmd+Enter)"
+                disabled
+              >
+                Compile robot <span aria-hidden="true">⌘</span>
+              </button>
+            </div>
+            <div id="compile-feedback" class="compile-feedback" role="status" aria-live="polite">
+              <span class="feedback-icon" aria-hidden="true">○</span
+              ><span id="compile-status"
+                >Compilation checks the current robot before it enters the arena.</span
+              >
+            </div>
+          </section>
+        </div>
+
+        <section class="battle-controls panel" aria-labelledby="battle-title">
+          <div class="battle-controls-heading">
+            <h3 id="battle-title"><span class="step-number">03</span> Battle</h3>
+            <p id="battle-status" role="status" aria-live="polite">
+              Select 2–5 participants to begin.
+            </p>
+          </div>
+          <div class="battle-fields">
+            <label for="seed-input"
+              ><span class="field-label">Random seed</span
+              ><input
+                id="seed-input"
+                type="number"
+                min="0"
+                max="4294967295"
+                step="1"
+                value="1"
+                inputmode="numeric" /></label
+            ><label for="ticks-input"
+              ><span class="field-label">Maximum ticks</span
+              ><input
+                id="ticks-input"
+                type="number"
+                min="1"
+                max="1000000"
+                step="1"
+                value="2000"
+                inputmode="numeric"
+            /></label>
+            <div class="watch-controls">
+              <label class="watch-label" for="watch-battle"
+                ><input id="watch-battle" type="checkbox" checked /> Watch battle</label
+              ><label class="sr-only" for="battle-speed">Live playback speed</label
+              ><select id="battle-speed" aria-label="Live playback speed">
+                <option value="1">1× speed</option>
+                <option value="4">4× speed</option>
+                <option value="16" selected>16× speed</option>
+              </select>
+            </div>
+            <div class="run-actions">
+              <button id="run-button" class="button primary" disabled>
+                <span class="run-icon" aria-hidden="true">▶</span> Run battle</button
+              ><button id="cancel-button" class="button danger" hidden>Cancel</button>
+            </div>
+          </div>
+          <p class="battle-footnote">
+            10 ticks = 1 simulated second. Battles stop when one robot remains or the tick limit is
+            reached.
+          </p>
+        </section>
+      </section>
+
+      <section id="results" class="results-section" aria-labelledby="results-title">
+        <div class="section-heading">
+          <h2 id="results-title">Battle report</h2>
+          <button id="download-result-button" class="text-button" disabled>
+            Download result JSON <span aria-hidden="true">↓</span>
+          </button>
+        </div>
+        <div class="results-grid">
+          <div class="panel arena-panel">
+            <div class="arena-heading">
+              <h3 id="arena-title">Battlefield</h3>
+              <span id="arena-caption" class="section-meta">AWAITING A BATTLE</span>
+            </div>
+            <svg
+              id="arena"
+              viewBox="0 0 381 313"
+              role="img"
+              aria-label="Empty battlefield. Run a battle to see the final robot positions."
+            >
+              <rect x="0.5" y="0.5" width="380" height="312" fill="#ffffff" stroke="#202820" />
+              <g id="arena-robots"></g>
+              <g id="arena-empty" fill="#737b73" text-anchor="middle">
+                <path
+                  d="M170 140h41v32h-41zM180 132v8m21-8v8m-21 17h.1m21 0h.1"
+                  stroke="#a2aaa2"
+                  stroke-width="2"
+                  fill="none"
+                />
+                <text x="190.5" y="198" font-family="system-ui,sans-serif" font-size="11">
+                  Your programs take it from here.
+                </text>
+              </g>
+            </svg>
+            <div id="arena-legend" class="arena-legend" hidden></div>
+            <p id="arena-note" class="arena-note">
+              Watch the simulation live, or switch Watch battle off for a fast result. Numbered
+              robots match the report.
+            </p>
+          </div>
+          <div class="panel report-panel">
+            <div id="result-empty" class="result-empty">
+              <span class="report-glyph" aria-hidden="true">↗</span>
+              <h3 id="empty-result-title">The first result is a starting point.</h3>
+              <p id="empty-result-copy">
+                Run the same seed after an edit to compare strategies. Check the final damage, fuel,
+                and positions to see what changed.
+              </p>
+            </div>
+            <div id="result-content" hidden>
+              <div class="result-heading">
+                <p class="eyebrow">EXPERIMENT COMPLETE</p>
+                <h3 id="outcome-title"></h3>
+                <p id="result-summary"></p>
+              </div>
+              <div class="table-scroll">
+                <table id="results-table">
+                  <caption class="sr-only">
+                    Robot outcomes at the end of the battle
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Robot</th>
+                      <th scope="col">State</th>
+                      <th scope="col">Damage</th>
+                      <th scope="col">Fuel</th>
+                      <th scope="col">Position</th>
+                      <th scope="col">Resets</th>
+                    </tr>
+                  </thead>
+                  <tbody id="results-body"></tbody>
+                </table>
+              </div>
+              <p id="result-note" class="report-note"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="language" class="reference-section" aria-labelledby="language-title">
+        <div class="section-heading">
+          <h2 id="language-title">Keep the language close</h2>
+          <a class="text-link" href="./docs/original-manual.pdf" target="_blank" rel="noopener"
+            >Read the 1991 manual <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="reference-layout">
+          <aside class="reference-aside">
+            <p class="eyebrow">REFERENCE / 01</p>
+            <h3>Small language.<br />Plenty of possibilities.</h3>
+            <p>
+              Use the quick reference while you write. The original manual explains the hardware,
+              sensors, and tactics in more detail.
+            </p>
+            <a href="#workbench" class="text-link">Back to the editor ↑</a>
+          </aside>
+          <article id="language-reference" class="prose panel"><!-- LANGUAGE_REFERENCE --></article>
+        </div>
+      </section>
+
+      <section id="agent-kit" class="agent-section" aria-labelledby="agent-title">
+        <div class="section-heading">
+          <h2 id="agent-title">Bring a coding partner</h2>
+          <span class="section-meta">HUMANS &amp; AGENTS WELCOME</span>
+        </div>
+        <div class="agent-grid">
+          <div>
+            <p class="eyebrow">REFERENCE / 02</p>
+            <h3>Give your agent<br />the field notes.</h3>
+            <p>
+              The brief describes the language and the browser API. Copy it into your coding
+              assistant, then bring the robot source back here to test it.
+            </p>
+            <div class="agent-buttons">
+              <button id="copy-brief-button" class="button secondary">Copy agent brief</button
+              ><a id="download-brief-link" class="text-link" href="./docs/agent-brief.txt" download
+                >Download .txt ↓</a
+              >
+            </div>
+            <p id="brief-status" class="small-status" role="status" aria-live="polite"></p>
+          </div>
+          <div class="agent-document panel">
+            <div class="agent-document-heading">
+              <span class="file-dot" aria-hidden="true"></span> agent-brief.txt
+              <span>PLAIN TEXT</span>
+            </div>
+            <pre id="agent-brief" tabindex="0"><!-- AGENT_BRIEF --></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer shell">
+      <span class="footer-brand">RW / LAB</span>
+      <p>
+        Built for curious programmers. Robot Warriors was created by Steven Miller and Dean Ouchida
+        in 1991.
+      </p>
+      <a href="#workbench">Back to the workbench ↑</a>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+      <span id="toast-message"></span><button id="toast-action" hidden>Undo</button
+      ><button id="toast-dismiss" aria-label="Dismiss notification">×</button>
+    </div>
+  </body>
 </html>

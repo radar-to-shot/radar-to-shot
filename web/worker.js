@@ -5,12 +5,12 @@ let callEngine;
 const boot = (async () => {
   const { default: createRobotWarModule } = await import('./wasm/robotwar.js');
   const module = await createRobotWarModule({
-    locateFile: file => new URL(`./wasm/${file}`, import.meta.url).href,
+    locateFile: (file) => new URL(`./wasm/${file}`, import.meta.url).href,
   });
   callEngine = module.cwrap('robotwar_request', 'string', ['string']);
   postMessage({ type: 'ready' });
 })();
-boot.catch(error => postMessage({ type: 'error', message: error?.message || String(error) }));
+boot.catch((error) => postMessage({ type: 'error', message: error?.message || String(error) }));
 self.onmessage = async ({ data }) => {
   const { id, request } = data || {};
   try {
