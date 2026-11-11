@@ -217,6 +217,11 @@ WASM validation and browser screenshots are retained as workflow artifacts.
 
 ## Tournaments
 
+For weekly ratings across the entire `robots/` tree, including 3-, 4- and 5-way
+battles and Discord publication, see [the weekly league](WEEKLY_LEAGUE.md).
+It recomputes Bradley–Terry ratings on an Elo scale from the current scripts;
+the tournament below instead ranks head-to-head results using exact points.
+
 The **Robot tournament** GitHub Actions workflow runs all robot source files in
 a selected subdirectory of `robots/`. In **Actions → Robot tournament → Run
 workflow**, set `robots_subdir` to, for example, `examples` or `my-team`. Paths

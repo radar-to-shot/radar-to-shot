@@ -1,0 +1,105 @@
+name: Weekly robot leaderboard
+
+on:
+  schedule:
+    # Monday 00:17 UTC (10:17 AEST / 11:17 AEDT). Avoid the busy hour boundary.
+    - cron: '17 0 * * 1'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Post the completed leaderboard to Discord (default branch only)
+        type: boolean
+        default: false
+      week:
+        description: ISO week for reproducible sampling; empty uses current UTC week
+        type: string
+        default: ''
+  push:
+    paths: ['robots/**', 'include/**', 'src/**', 'CMakeLists.txt', 'tools/battle_runner.py', 'tools/league_ratings.py', 'tools/weekly_league.py', 'tools/discord_leaderboard.py', 'scripts/run_weekly_league.py', 'tests/test_weekly_league.py', '.github/workflows/weekly-leaderboard.yml']
+  pull_request:
+    paths: ['robots/**', 'include/**', 'src/**', 'CMakeLists.txt', 'tools/battle_runner.py', 'tools/league_ratings.py', 'tools/weekly_league.py', 'tools/discord_leaderboard.py', 'scripts/run_weekly_league.py', 'tests/test_weekly_league.py', '.github/workflows/weekly-leaderboard.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-leaderboard-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  league:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      artifact_id: ${{ steps.reports.outputs.artifact-id }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build native engine
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --parallel 2
+      - name: Verify engine and weekly ranking rules
+        run: |
+          ctest --test-dir build --output-on-failure
+          python tests/test_weekly_league.py --binary build/robotwar
+      - name: Rank all robot scripts
+        env:
+          LEAGUE_WEEK: ${{ inputs.week }}
+        run: |
+          args=()
+          if [[ -n "$LEAGUE_WEEK" ]]; then args+=(--week "$LEAGUE_WEEK"); fi
+          python scripts/run_weekly_league.py --robots-dir robots \
+            --binary build/robotwar --workers 2 --output-dir build/weekly "${args[@]}"
+      - name: Validate Discord message without sending
+        run: |
+          python tools/discord_leaderboard.py --dry-run \
+            --report-dir build/weekly \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            > build/weekly/discord-preview.json
+      - name: Show standings
+        if: always()
+        run: |
+          if [[ -f build/weekly/leaderboard.md ]]; then
+            cat build/weekly/leaderboard.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'League did not complete; no leaderboard will be posted.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Save results and replay evidence
+        id: reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-leaderboard-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/weekly/
+          if-no-files-found: warn
+          retention-days: 90
+
+  discord:
+    needs: league
+    if: >-
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch) &&
+      (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.publish))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ needs.league.outputs.artifact_id }}
+          merge-multiple: true
+          path: build/weekly
+      - name: Post weekly leaderboard
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          python tools/discord_leaderboard.py --report-dir build/weekly \
+            --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
