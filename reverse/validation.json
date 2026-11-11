@@ -5,13 +5,13 @@
   "source_revision": "3cd67f6bdbd61a6c519c5ba4a7382599d7f8b9f6",
   "application_resource_fork_sha256": "d486bc719b82a5ca5bcf3e406f40d6d06fc9d15e3bbf1009dc8d152b4293a0ae",
   "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
-  "implementation_manifest_sha256": "a37834aeabb29f3e7780d1cb18f57fa0bd9b7943ebd0c1dd5679c0e3d1a6a5e5",
+  "implementation_manifest_sha256": "4c3d5ae54ae80eeaa53e47dd3d76b9c6ec6c8144f195e9b33db36584eb196ff5",
   "native": {
     "language": "C++20",
     "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
     "golden_comparison": {
       "by_kind": {
-        "battle": 54,
+        "battle": 66,
         "compile": 1001,
         "parse": 78,
         "vm": 1530,
@@ -27,11 +27,11 @@
         "world_trig": 1447
       },
       "failed": 0,
-      "passed": 7002,
-      "vectors": 7002
+      "passed": 7014,
+      "vectors": 7014
     },
-    "release_ctest": "2/2 passed",
-    "address_and_undefined_sanitizer_ctest": "2/2 passed",
+    "release_ctest": "3/3 passed",
+    "address_and_undefined_sanitizer_ctest": "3/3 passed",
     "sanitized_battle": "Seeker + Circle Shooter, seed 1, 1000 ticks: completed without sanitizer errors"
   },
   "oracle": {
@@ -40,13 +40,23 @@
       "corpora": 13,
       "vectors": 7002,
       "inputs_and_expected_outputs_identical": true,
-      "clean_isolated_emulator_build": "passed"
+      "clean_isolated_emulator_build": "passed",
+      "scope": "Original 13 corpora / 7,002 fixtures, unchanged bytes verified after adding the battle-runner corpus"
     },
     "emulator_source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
     "emulator_patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
     "independent_remainder_isa_checks": 598,
     "independent_status_isa_checks": 139,
-    "extraction_integrity_checks": 3
+    "extraction_integrity_checks": 3,
+    "battle_runner_recapture": {
+      "vectors": 12,
+      "captures": 2,
+      "byte_identical": true,
+      "sha256": "150ef2b83b8198e4d7c7fb02238a269c23fe6fdd3b1be57f4f1c3bb67d2eb13f",
+      "original_instructions": 11026369,
+      "backend": "Clean isolated patched emulator target",
+      "host_toolbox_shims": []
+    }
   },
   "decompilation": {
     "tool": "Ghidra 11.3.2",
@@ -66,6 +76,13 @@
       "file": "tests/golden/battle.json",
       "sha256": "9fff5d0246c724b6c60b3338f115a4334f74f0dcd3221c0c168edf7797ec520d",
       "vectors": 54,
+      "emulator": "machine68k 0.5.1 / Musashi, 68030",
+      "rom_executed": true
+    },
+    {
+      "file": "tests/golden/battle_runner.json",
+      "sha256": "150ef2b83b8198e4d7c7fb02238a269c23fe6fdd3b1be57f4f1c3bb67d2eb13f",
+      "vectors": 12,
       "emulator": "machine68k 0.5.1 / Musashi, 68030",
       "rom_executed": true
     },
@@ -161,14 +178,15 @@
     "ROM numerical path permits extended precision with disabled FP exception traps; unsupported precision and host-transcendental paths fail closed.",
     "Signaling-NaN and single/double precision CPU audit limitations are documented; complete 68881 certification is not claimed.",
     "Accesses outside modeled classic-Mac records and indefinitely rejecting placement sources raise explicit host errors.",
-    "PenSize drawing is ignored; GUI, sound, menus and editor are not implemented."
+    "PenSize drawing is ignored; GUI, sound, menus and editor are not implemented.",
+    "File runners use explicit tick-limit and survivor termination; GUI victory countdown and damage-free timeout are omitted."
   ],
   "implementation_manifest": {
     "encoding": "UTF-8 records sorted by file path, each <file>:<sha256> followed by a newline",
     "files": [
       {
         "file": "CMakeLists.txt",
-        "sha256": "d326df70ffab8814f2656bf906d87cf1cc7d381110c3561284755e2c2472e1f4"
+        "sha256": "cb2f1d8ebb5c7acf60d47c44bd4421c7c73032c926d76f9fbef6b62bf5bfab35"
       },
       {
         "file": "include/robotwar/bytecode.hpp",
@@ -188,7 +206,7 @@
       },
       {
         "file": "include/robotwar/simulation.hpp",
-        "sha256": "d01ee35758602e4f35ef6602b92ffd40fae43f6f357a6e3808991194c09b5d95"
+        "sha256": "9b8806b12939ed52813379b6805a39192127c1a8315e242ee3339a8448c99758"
       },
       {
         "file": "include/robotwar/vm.hpp",
@@ -212,11 +230,11 @@
       },
       {
         "file": "src/main.cpp",
-        "sha256": "2ad41bdf06394948c26178342db7599264b1a867d6f4406f73a6c86be99cf302"
+        "sha256": "6a1d07f50bac8e53ed266c3414d0c1861a02d13ff77e0dac7b9c2591bff49087"
       },
       {
         "file": "src/simulation.cpp",
-        "sha256": "136c485aa9b358f09257b4388cd93349c8ced3afce875098486b13b525898072"
+        "sha256": "60320f7bb4d85280109da3af57486d0d803668ce0a21a27d0ff712375ad8dbd5"
       },
       {
         "file": "src/sine_table.inc",
@@ -232,7 +250,7 @@
       },
       {
         "file": "src/world.cpp",
-        "sha256": "a4833e89cc64d237eb251b3cab47b9e0929895dfc3fc5bbd9b4997fce8532841"
+        "sha256": "55141d6005c725618d041cb17a08c400fdf6cf364aea48ed83bb80fb48cd6fed"
       },
       {
         "file": "src/world_json.hpp",
@@ -251,5 +269,67 @@
     "missing_configuration_rejected": true,
     "sine_table_regeneration": "formatted source and original golden outputs unchanged",
     "ci_workflow": ".github/workflows/cpp-format.yml"
+  },
+  "battle_runners": {
+    "test_methods_passed": 15,
+    "automated_complete_json_comparisons": 10,
+    "engine_label_excluded_from_comparison": true,
+    "additional_long_battles": [
+      {
+        "robots": [
+          "Seeker",
+          "Chicken",
+          "Run Away"
+        ],
+        "seed": 42,
+        "tick_limit": 1000,
+        "tick": 926,
+        "termination": "last_survivor",
+        "winner": 1,
+        "complete_json_match": true
+      },
+      {
+        "robots": [
+          "Seeker",
+          "Chicken",
+          "Run Away",
+          "Wall Crawler",
+          "Circle Shooter"
+        ],
+        "seed": 42,
+        "tick_limit": 1000,
+        "tick": 1000,
+        "termination": "tick_limit",
+        "winner": null,
+        "complete_json_match": true
+      }
+    ],
+    "ci_workflow": ".github/workflows/headless.yml",
+    "files": [
+      {
+        "file": "scripts/run_68k_battle.py",
+        "sha256": "2d465794b93f45005bf024b3fef0d009c06c44fe51a68a4e4720042028e52f4d"
+      },
+      {
+        "file": "scripts/run_headless_battle.py",
+        "sha256": "9b9c7b85de8cd060b2ecc2a24ea8660178cb74a65d0627162845d004a39eb778"
+      },
+      {
+        "file": "tools/battle_runner.py",
+        "sha256": "5bfc7d1fb0a486b502ed99d4fed3747d510269c6053f79174b5168611e06bdd1"
+      },
+      {
+        "file": "tools/battle_68k.py",
+        "sha256": "9007206b2391d9b6d0dc3e12ffc2e646ddbb9a2565a3fa76ef3ace033f24e9ca"
+      },
+      {
+        "file": "tools/generate_battle_runner_vectors.py",
+        "sha256": "b4fadf2774bbbe6b4879521f7ead195efe5600d37dffca10d6e7ce875df412cd"
+      },
+      {
+        "file": "tests/test_battle_runners.py",
+        "sha256": "8b1540db35cbf1ca7e6cdd6d95fa00429e231dd1df3cdaa3a8fda8aefdc0ae0f"
+      }
+    ]
   }
 }

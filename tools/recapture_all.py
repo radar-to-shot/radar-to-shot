@@ -15,6 +15,7 @@ GENERATORS = [
     'generate_vm_vectors.py', 'generate_world_vectors.py',
     'generate_movement_vectors.py', 'generate_world_io_vectors.py',
     'generate_shell_vectors.py', 'generate_battle_vectors.py',
+    'generate_battle_runner_vectors.py',
     'generate_rom_vectors.py', 'generate_rng_vectors.py', 'generate_sine_table.py',
     'generate_placement_vectors.py',
 ]

@@ -26,4 +26,7 @@ if(BUILD_TESTING)
   add_executable(robotwar_integration tests/integration.cpp)
   target_link_libraries(robotwar_integration PRIVATE robotwar)
   add_test(NAME simulation_integration COMMAND robotwar_integration)
+  add_test(NAME battle_runners
+    COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_battle_runners.py"
+            --binary "$<TARGET_FILE:robotwar_cli>")
 endif()

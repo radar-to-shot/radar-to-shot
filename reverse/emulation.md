@@ -120,3 +120,20 @@ an explicit fixture input. It covers interrupts, register aliases, coordinate
 conversion, radar, resets, repeated shots, moving targets, and multiple CPUs over
 successive ticks; it does not
 silently replace these actions with native-engine output.
+
+`tools/battle_68k.py` composes these routines into the public text-file battle
+runner, adding original seeded placement and the original outer-loop survival
+and victory accounting blocks at `CODE3:4b9c..4c10` and `CODE3:4c64..4cce`.
+`tools/generate_battle_runner_vectors.py` captures its regression cases separately
+in `tests/golden/battle_runner.json`. These cover the shared placement/CPU random
+stream, full battles, deaths, and win accounting. Each capture records original
+CODE and ROM integrity and executed entry points. The native file runner passes
+the same normalized source bytes, seed and stopping policy to the C++ JSON API.
+
+Both file runners stop after a complete tick leaves at most one survivor; the
+GUI's 50-tick victory presentation countdown is omitted. For a useful time-zero
+snapshot, the original backend makes a zero-budget CPU call to refresh
+`NUM_ROBOTS`, without virtual instruction execution, RNG draws or elapsed ticks.
+This is an explicit harness boundary rather than a claim to boot the original UI.
+The GUI's separate 300-tick damage-free termination block (`CODE3:4c50..4c62`)
+is also outside the runner policy: `--ticks` provides its explicit time limit.

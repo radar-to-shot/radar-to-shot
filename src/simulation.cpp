@@ -102,6 +102,15 @@ void Simulation::step() {
     world_.end_cpu_slice(i);
   }
   world_.update_physics();
+  // The original outer battle loop awards a win after the complete death/shell
+  // pass, once when at most one robot remains. One-robot runs are the supported
+  // routine-level execution mode, rather than a competitive battle.
+  if (!win_awarded_ && robots_.size() > 1 && alive() <= 1) {
+    for (std::size_t i = 0; i < robots_.size(); ++i)
+      if (world_.state(i).active)
+        ++world_.state(i).score;
+    win_awarded_ = true;
+  }
   for (std::size_t i = 0; i < robots_.size(); ++i) {
     auto &cpu = robots_[i].cpu;
     const auto &physical = world_.state(i);

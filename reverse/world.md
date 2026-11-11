@@ -45,6 +45,7 @@ The offsets below are relative to the complete allocation:
 | `229e`, `22a0` | last visible shell Y/X |
 | `22a4` | QuickDraw rectangle, top/left/bottom/right |
 | `22b4`, `22b6` | one-based battle slot and collision flag |
+| `22b8`, `22ba`, `22bc` | elimination-order counters and battle wins (JSON `score`) |
 | `22c0`, `22c8`, `22cc`, `22d0` | damage to others, self damage, collision damage, exhausted count |
 | `22d8` | already reported fuel exhaustion |
 
@@ -59,6 +60,13 @@ order. The placement routine executes the recovered five-region policy below.
 `update_physics` updates the world after all CPU slices. A tick is one tenth of a
 battlefield second. `Simulation` supplies this ordering. `World::tick` also permits
 physical simulation without a CPU, with commands queued through register writes.
+
+For competitive battles with two or more robots, `Simulation` awards one win to
+the last survivor after the complete movement and shell/destruction pass. The
+original `22bc` counter records wins, not points for each opponent eliminated.
+Two deaths in one tick can leave no winner. The file runners stop at this point;
+the lower-level fixed-tick API can keep advancing, but awards the win only once.
+Single-robot routine fixtures do not constitute a competitive win.
 
 The model has no renderer, window handles, clock dependency, or GUI event loop.
 `WorldSnapshot` returns value copies and `WorldEvent` callbacks report firing,
@@ -144,6 +152,7 @@ by the C++ implementation:
 | `tests/golden/rom_angles.json` | 226 | actual IIci ROM integer radar bearing, including thresholds |
 | `tests/golden/rom_random.json` | 12 | actual IIci ROM QuickDraw Random sequences, 192 observed words |
 | `tests/golden/placement.json` | 57 | original distinct-region selection and complete placement routine |
+| `tests/golden/battle_runner.json` | 12 | seeded complete battles, CPU random reads, deaths, one-time wins and ties |
 
 Generation scripts are `tools/generate_world_vectors.py`,
 `tools/generate_movement_vectors.py`, `tools/generate_world_io_vectors.py`, and

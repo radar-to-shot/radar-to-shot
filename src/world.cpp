@@ -502,9 +502,6 @@ void World::destroy_robots() {
     if (robots_[i].active && robots_[i].registers[4] >= 100) {
       robots_[i].registers[4] = 100;
       robots_[i].active = false;
-      for (auto &q : robots_)
-        if (q.active)
-          ++q.score;
       emit(WorldEvent::Kind::Destroyed, i, i);
     }
 }
@@ -515,9 +512,6 @@ void World::update_shells() {
     if (r.active && r.registers[4] >= 100) {
       r.registers[4] = 100;
       r.active = false;
-      for (auto &q : robots_)
-        if (q.active)
-          ++q.score;
       emit(WorldEvent::Kind::Destroyed, i, i);
       continue;
     }

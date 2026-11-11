@@ -43,6 +43,30 @@ json compile_json(const json &input) {
           {"code_hex", encoded}};
 }
 
+std::string robot_source(const json &item) {
+  if (item.contains("source") == item.contains("source_hex"))
+    throw std::invalid_argument("Supply exactly one of source and source_hex for each robot");
+  if (item.contains("source"))
+    return item.at("source").get<std::string>();
+  const auto hex = item.at("source_hex").get<std::string>();
+  if (hex.size() % 2)
+    throw std::invalid_argument("source_hex must contain an even number of hexadecimal digits");
+  auto digit = [](char c) {
+    if (c >= '0' && c <= '9')
+      return c - '0';
+    if (c >= 'a' && c <= 'f')
+      return c - 'a' + 10;
+    if (c >= 'A' && c <= 'F')
+      return c - 'A' + 10;
+    throw std::invalid_argument("source_hex contains a non-hexadecimal character");
+  };
+  std::string source;
+  source.reserve(hex.size() / 2);
+  for (std::size_t i = 0; i < hex.size(); i += 2)
+    source.push_back(static_cast<char>((digit(hex[i]) << 4) | digit(hex[i + 1])));
+  return source;
+}
+
 json battle_json(const json &input) {
   // Deliberately injectable host service: placement and random seed are inputs,
   // independent of wall-clock time and of a presentation toolkit.
@@ -63,7 +87,7 @@ json battle_json(const json &input) {
     placements = robotwar::World::random_placements(items.size(), [&] { return random(); });
   std::size_t index = 0;
   for (const auto &item : input.at("robots")) {
-    auto compiled = robotwar::compile(item.at("source").get<std::string>());
+    auto compiled = robotwar::compile(robot_source(item));
     if (!compiled)
       throw std::invalid_argument(item.value("name", std::string("robot")) + ": " +
                                   compiled.error->message);
@@ -89,7 +113,15 @@ json battle_json(const json &input) {
   auto ticks = input.value("ticks", 1000u);
   if (ticks > 1000000)
     throw std::invalid_argument("CLI tick limit is 1000000");
-  simulation.run(ticks);
+  if (input.value("stop_when_finished", false)) {
+    for (unsigned tick = 0; tick < ticks; ++tick) {
+      simulation.step();
+      if (simulation.alive() <= 1)
+        break;
+    }
+  } else {
+    simulation.run(ticks);
+  }
   auto snapshot = simulation.snapshot();
   json robots = json::array();
   for (const auto &robot : snapshot.robots) {
@@ -108,10 +140,13 @@ json battle_json(const json &input) {
                       {"raw_damage", p.raw_damage},
                       {"shell_active", p.shell.active}});
   }
-  return {{"tick", snapshot.tick},
-          {"alive", simulation.alive()},
-          {"robots", robots},
-          {"events", events}};
+  json result = {{"tick", snapshot.tick},
+                 {"alive", simulation.alive()},
+                 {"robots", robots},
+                 {"events", events}};
+  if (input.value("include_rng_seed", false))
+    result["rng_seed"] = random.seed();
+  return result;
 }
 
 json dispatch(const json &input) {
@@ -162,6 +197,10 @@ int main(int argc, char **argv) {
           request[option.substr(2)] = std::stoul(argv[++arg]);
           continue;
         }
+        if (option == "--stop-when-finished" || option == "--rng-seed") {
+          request[option == "--rng-seed" ? "include_rng_seed" : "stop_when_finished"] = true;
+          continue;
+        }
         if (index == 5)
           throw std::invalid_argument("At most five robots can battle");
         request["robots"].push_back({{"name", option}, {"source", read_file(option)}});
@@ -172,7 +211,8 @@ int main(int argc, char **argv) {
     }
     std::cout << "Robot Warriors headless compatibility core\n"
                  "Usage:\n  robotwar compile SOURCE [--debug]\n"
-                 "  robotwar battle SOURCE... [--ticks N] [--seed N]\n"
+                 "  robotwar battle SOURCE... [--ticks N] [--seed N] "
+                 "[--stop-when-finished] [--rng-seed]\n"
                  "  robotwar jsonl  # one JSON request and response per line\n";
     return command == "help" || command == "--help" ? 0 : 2;
   } catch (const std::exception &error) {

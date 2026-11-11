@@ -45,5 +45,6 @@ private:
   std::vector<Robot> robots_;
   RandomWordSource random_;
   TraceSink trace_;
+  bool win_awarded_{};
 };
 } // namespace robotwar
