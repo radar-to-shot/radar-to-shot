@@ -106,6 +106,115 @@ Native script tests also run through CTest. CI runs them in both optimized and
 sanitizer builds, and separately builds the patched emulator to compare results
 from both engines, including seeded random reads and battles ending in deaths.
 
+## Browser workbench and GitHub Pages
+
+[Robot Warriors Lab](https://radar-to-shot.github.io/radar-to-shot/) compiles and
+runs the same C++20 parser, compiler, CPU and world model in WebAssembly. Upload
+UTF-8 or Mac Roman robot text files, choose any of the five standard samples,
+edit source, and select 2–5 participants. Compiler diagnostics point back into
+the editor. Workspace edits are saved in this browser's local storage; source
+and battle requests are never uploaded to a server. Download source to keep an
+independent copy.
+
+**Watch battle** enables an original-style monochrome view of the live world,
+including robots, gun/direction markers, shells, explosions, damage indicators
+and destroyed robots. Its 1×/4×/16× settings change presentation pacing, not
+physics. The worker advances the engine in bounded batches, so the page stays
+responsive and Cancel can terminate a run. Disable Watch battle for fast tests.
+Rendering uses new SVG presentation code; original Mac drawing routines are not
+emulated. Watched results include `done` and a `view` payload in addition to the
+same state returned by fast battles.
+
+The complete [language reference](../web/docs/language.md) is rendered into the
+page's HTML, including syntax, all 19 registers, the six-point hardware budget,
+interrupts, memory, timing, world behavior, executable quirks, and a verified
+starter. The [agent brief](../web/docs/agent-brief.txt) is both inline and available
+as a plain text download. Agents can read these without executing JavaScript.
+The page also provides the original manual PDF.
+
+For browser automation or console-based experiments:
+
+```javascript
+await window.robotwar.ready();
+const source = 'loop\ngoto loop\n';
+const compiled = await window.robotwar.compile(source);
+if (compiled.error) throw new Error(compiled.error);
+const result = await window.robotwar.battle({
+  robots: [{name: 'First', source}, {name: 'Second', source}],
+  seed: 1,
+  ticks: 1000
+});
+console.log(result.tick, result.alive, result.robots);
+```
+
+`compile()` and `battle()` normalize text and return the native JSON result;
+compiler diagnostics remain `{error, error_position, ...}`, while protocol or
+execution failures reject the promise. The public `battle()` always uses fast
+execution. `cancel()` cancels pending work and starts a fresh worker; await
+`ready()` before continuing. `request(object)` exposes the shared native JSON
+protocol, including `source_hex` for exact Mac Roman bytes. A worker owns at most
+one incremental session: `battle_start` uses ordinary battle parameters;
+`battle_step` advances 1–100 ticks; `battle_stop` releases it. Start/step return
+`done` plus `view` with robot/shell coordinates and current-batch events. Failed
+starts clear any previous session. These session operations also work through
+the native JSONL CLI, making browser presentation independently testable.
+
+### Build and test the site
+
+Use Emscripten **4.0.15**, CMake 3.20+, Python 3.12+, and Node 22+. The Emscripten
+SDK bundles a suitable Node runtime. Install development dependencies in a local
+environment; generated artifacts stay in ignored build directories.
+
+```sh
+git clone --depth 1 --branch 4.0.15 https://github.com/emscripten-core/emsdk.git work/emsdk
+work/emsdk/emsdk install 4.0.15
+work/emsdk/emsdk activate 4.0.15
+. work/emsdk/emsdk_env.sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r tools/requirements-web.txt
+emcmake cmake -S . -B build-wasm -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
+cmake --build build-wasm --parallel
+python tools/build_site.py --wasm-dir build-wasm --output build/site
+node tests/validate_wasm.mjs --module build/site/wasm/robotwar.js
+python -m playwright install chromium
+python tests/test_browser.py --site-dir build/site
+python -m http.server 8000 --directory build/site
+```
+
+Open `http://localhost:8000/`; module workers require HTTP(S), not `file://`.
+On Linux, Playwright may also need its documented browser system dependencies
+(`python -m playwright install --with-deps chromium`). To use an existing local
+Chromium installation, pass `--browser /path/to/chromium` to the browser tests.
+The site uses relative asset paths and works at a repository Pages URL without
+custom response headers, remote JavaScript dependencies, or a backend service.
+
+The WASM test replays all 7,014 original-code golden vectors, tests recoverable
+errors and incremental session behavior, and can additionally compare full
+native battles with `--native build/robotwar`. Browser tests run at a repository
+URL prefix and exercise uploads, sample selection, compilation, fast/live parity,
+cancellation, exports, mobile layout and static documentation. Screenshots are
+written under `build/browser/`. The generated `build-manifest.json` records
+revision, toolchain version and static asset hashes. WASM memory is capped at
+256 MiB and browser requests at 512 KiB; rendering needs no SharedArrayBuffer or
+cross-origin isolation.
+
+### Publishing
+
+`.github/workflows/pages.yml` builds and tests the site for relevant pushes and
+pull requests. PRs get a downloadable `web-preview` artifact and never deploy.
+Successful pushes to the default branch publish through GitHub Pages. A manual
+**WebAssembly site** run can publish its selected ref only when **deploy** is
+explicitly checked; this supports intentional publication of a tested ref.
+The workflow must first exist on the default branch for GitHub to accept manual
+dispatches; initial publication of this new workflow follows its merge.
+Deployment uses the `github-pages` environment and remains subject to its branch
+and approval policies. Only the deployment job receives Pages/OIDC permissions.
+
+The repository's Pages source must be configured as **GitHub Actions**. Once
+configured, no hosting credentials or external service are required. Build logs,
+WASM validation and browser screenshots are retained as workflow artifacts.
+
 ## Tournaments
 
 The **Robot tournament** GitHub Actions workflow runs all robot source files in
@@ -385,5 +494,6 @@ claim of exhaustive 68881 hardware equivalence. System 7 replacement packages an
 GUI startup behavior are outside that claim. The supplied QuickDraw random
 generator and region-placement policy are independently validated against
 original code, including zero and signed-word boundary behavior.
-The Mac UI, text editor, menus, sound and file dialogs are not reimplemented.
-Presentation hooks are retained for a later GUI.
+The original Mac UI, text editor, menus, sound and file dialogs are not
+reimplemented. The browser workbench uses the presentation hooks to provide
+its own editor and live battlefield view.
