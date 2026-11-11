@@ -12,11 +12,19 @@ std::int16_t point_to_angle(std::int16_t x, std::int16_t y);
 // Pass this callable to Simulation's RandomWordSource for deterministic runs.
 class QuickDrawRandom {
 public:
-    explicit QuickDrawRandom(std::uint32_t seed=1) noexcept : seed_(seed) {}
-    std::int16_t operator()() noexcept;
-    std::uint32_t seed() const noexcept { return seed_; }
-    void reseed(std::uint32_t value) noexcept { seed_=value; }
+  explicit QuickDrawRandom(std::uint32_t seed = 1) noexcept : seed_(seed) {}
+
+  std::int16_t operator()() noexcept;
+
+  std::uint32_t seed() const noexcept {
+    return seed_;
+  }
+
+  void reseed(std::uint32_t value) noexcept {
+    seed_ = value;
+  }
+
 private:
-    std::uint32_t seed_;
+  std::uint32_t seed_;
 };
-}
+} // namespace robotwar::mac

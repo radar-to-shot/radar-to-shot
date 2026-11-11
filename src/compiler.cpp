@@ -12,6 +12,7 @@ struct Token {
   SourceSpan source;
   bool number{};
 };
+
 constexpr const char *eol_error =
     "End of line was not expected here.  Something is missing on this line";
 const std::map<std::string, int> registers{{"X", 0},
@@ -33,32 +34,37 @@ const std::map<std::string, int> registers{{"X", 0},
                                            {"RADAR", 16},
                                            {"RANDOM", 17},
                                            {"STACK", 18}};
-const std::map<std::string, int> constants{
-    {"XMAX", 381}, {"YMAX", 313}, {"SHOT_SPEED", 18}};
+const std::map<std::string, int> constants{{"XMAX", 381}, {"YMAX", 313}, {"SHOT_SPEED", 18}};
 const std::map<std::string, int> attributes{
-    {"CPU_SPEED", 0},   {"FIRE_RATE", 1},     {"ENGINE_SIZE", 2},
-    {"RADAR_RANGE", 3}, {"FUEL_CAPACITY", 4}, {"CLOAKING", 5},
-    {"ARMOR", 6}};
-const std::map<std::string, int> operators{{"+", 2},  {"-", 3},   {"*", 4},
-                                           {"/", 5},  {"MOD", 6}, {"AND", 7},
-                                           {"OR", 8}, {"XOR", 9}};
-const std::map<std::string, int> comparisons{
-    {"=", 10}, {">", 11}, {"<", 12}, {">=", 13}, {"<=", 14}, {"<>", 15}};
+    {"CPU_SPEED", 0},     {"FIRE_RATE", 1}, {"ENGINE_SIZE", 2}, {"RADAR_RANGE", 3},
+    {"FUEL_CAPACITY", 4}, {"CLOAKING", 5},  {"ARMOR", 6}};
+const std::map<std::string, int> operators{{"+", 2},   {"-", 3},   {"*", 4},  {"/", 5},
+                                           {"MOD", 6}, {"AND", 7}, {"OR", 8}, {"XOR", 9}};
+const std::map<std::string, int> comparisons{{"=", 10},  {">", 11},  {"<", 12},
+                                             {">=", 13}, {"<=", 14}, {"<>", 15}};
 const std::map<std::string, int> simple{
     {"RETURN", 19}, {"ENDINT", 20}, {"TRACE", 21}, {"RESET", 22}};
-bool alpha(char c) { return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'); }
-bool digit(char c) { return c >= '0' && c <= '9'; }
-bool reserved(const std::string &s) {
-  return registers.contains(s) || constants.contains(s) ||
-         attributes.contains(s) || operators.contains(s) ||
-         comparisons.contains(s) || simple.contains(s) || s == "ALLOCATE" ||
-         s == "DEFINE" || s == "IF" || s == "THEN" || s == "ELSE" ||
-         s == "END" || s == "WHILE" || s == "DO" || s == "REPEAT" ||
-         s == "UNTIL" || s == "GOTO" || s == "GOSUB" || s == "TO";
+
+bool alpha(char c) {
+  return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
 }
+
+bool digit(char c) {
+  return c >= '0' && c <= '9';
+}
+
+bool reserved(const std::string &s) {
+  return registers.contains(s) || constants.contains(s) || attributes.contains(s) ||
+         operators.contains(s) || comparisons.contains(s) || simple.contains(s) ||
+         s == "ALLOCATE" || s == "DEFINE" || s == "IF" || s == "THEN" || s == "ELSE" ||
+         s == "END" || s == "WHILE" || s == "DO" || s == "REPEAT" || s == "UNTIL" || s == "GOTO" ||
+         s == "GOSUB" || s == "TO";
+}
+
 struct Failure {
   Diagnostic diagnostic;
 };
+
 struct Symbol {
   std::uint8_t mode{3};
   std::int16_t value{};
@@ -66,16 +72,20 @@ struct Symbol {
   SourceSpan source;
   std::int16_t index{};
 };
+
 struct Fixup {
   std::size_t instruction;
   std::string symbol;
   bool indirect{};
   bool address{};
 };
+
 struct Block {
   enum Kind { If, Else, While, Repeat } kind;
+
   std::size_t branch{}, start{};
 };
+
 class Compiler {
   std::string_view source_;
   bool debug_;
@@ -88,32 +98,42 @@ class Compiler {
   std::vector<Fixup> fixups_;
   std::vector<Block> blocks_;
   Token last_;
+
   [[noreturn]] void fail(std::string message, const Token &token) {
     throw Failure{{std::move(message), token.source}};
   }
+
   [[noreturn]] void fail(std::string message) {
     fail(std::move(message), peek());
   }
+
   const Token &peek() const {
     return tokens_[std::min(pos_, tokens_.size() - 1)];
   }
+
   Token take() {
     last_ = peek();
     if (pos_ + 1 < tokens_.size())
       ++pos_;
     return last_;
   }
+
   bool accept(std::string_view s) {
     if (peek().text != s)
       return false;
     take();
     return true;
   }
-  bool end() const { return peek().text == "\n" || peek().text.empty(); }
+
+  bool end() const {
+    return peek().text == "\n" || peek().text.empty();
+  }
+
   void expect(std::string_view s) {
     if (!accept(s))
       fail(end() ? eol_error : "Expected " + std::string(s));
   }
+
   void bad_token(const Token &t) {
     if (t.text == "TO")
       fail("The TO statement is not allowed here.  Only allowed in assignment "
@@ -140,10 +160,12 @@ class Compiler {
       fail("This looks like a label which isn't allowed here", t);
     fail(end() ? eol_error : "Unexpected token: " + t.text, t);
   }
+
   void line_end() {
     if (!end())
       bad_token(peek());
   }
+
   void lex() {
     std::size_t i = 0, line = 0;
     while (i < source_.size()) {
@@ -165,11 +187,9 @@ class Compiler {
       std::string value(1, c);
       bool num = digit(c);
       if (alpha(c)) {
-        while (i < source_.size() &&
-               (alpha(source_[i]) || digit(source_[i]) || source_[i] == '_'))
+        while (i < source_.size() && (alpha(source_[i]) || digit(source_[i]) || source_[i] == '_'))
           ++i;
-        value = std::string(
-            source_.substr(start, std::min<std::size_t>(15, i - start)));
+        value = std::string(source_.substr(start, std::min<std::size_t>(15, i - start)));
         for (char &ch : value)
           if (ch >= 'a' && ch <= 'z')
             ch -= 32;
@@ -191,34 +211,32 @@ class Compiler {
     }
     tokens_.push_back({"", {source_.size(), 0, line}, false});
   }
+
   std::size_t emit(int op, int mode, int value, const Token &t) {
     auto index = program_.code.size();
     if (index >= 2000)
       fail("Sorry,  your code is too long.   Remember,  bigger isn't always "
            "better",
            t);
-    program_.code.push_back({static_cast<std::uint8_t>(op),
-                             static_cast<std::uint8_t>(mode),
+    program_.code.push_back({static_cast<std::uint8_t>(op), static_cast<std::uint8_t>(mode),
                              static_cast<std::int16_t>(value)});
     program_.source_map.push_back(t.source);
     return index;
   }
+
   void patch(std::size_t index, std::size_t target) {
     program_.code[index].mode = 2;
     program_.code[index].operand = static_cast<std::int16_t>(target);
   }
+
   int number(bool sign = true) {
     int factor = 1;
     Token sign_token = peek();
     if (sign && (accept("-") || accept("+"))) {
       factor = last_.text == "-" ? -1 : 1;
-      if (!peek().number ||
-          peek().source.offset != sign_token.source.offset + 1)
-        fail("Constant expected.  Expecting:  " + sign_token.text +
-                 "<constant>",
-             Token{"",
-                   {sign_token.source.offset + 1, 1, sign_token.source.line},
-                   false});
+      if (!peek().number || peek().source.offset != sign_token.source.offset + 1)
+        fail("Constant expected.  Expecting:  " + sign_token.text + "<constant>",
+             Token{"", {sign_token.source.offset + 1, 1, sign_token.source.line}, false});
     }
     auto t = take();
     if (constants.contains(t.text))
@@ -233,20 +251,20 @@ class Compiler {
     }
     return factor * n;
   }
+
   Symbol &symbol(const Token &t) {
     auto [it, added] = symbols_.try_emplace(
-        t.text, Symbol{3, 0, false, t.source,
-                       static_cast<std::int16_t>(symbols_.size())});
+        t.text, Symbol{3, 0, false, t.source, static_cast<std::int16_t>(symbols_.size())});
     if (added)
       last_symbol_ = t.text;
     if (added && symbols_.size() >= 200)
       fail("Symbol table overflow", t);
     return it->second;
   }
+
   void declaration(bool allocate) {
     auto name = take();
-    if (name.text.empty() || name.text == "\n" || !alpha(name.text[0]) ||
-        reserved(name.text))
+    if (name.text.empty() || name.text == "\n" || !alpha(name.text[0]) || reserved(name.text))
       bad_token(name);
     symbol(name);
     // CODE5:1296 updates count-1, even when the declaration names an earlier
@@ -261,8 +279,7 @@ class Compiler {
       s.value = static_cast<std::int16_t>(program_.allocated_memory);
       if (static_cast<int>(program_.allocated_memory) + count > 200)
         fail("Too many memory locations allocated", last_);
-      program_.allocated_memory =
-          static_cast<std::int16_t>(program_.allocated_memory + count);
+      program_.allocated_memory = static_cast<std::int16_t>(program_.allocated_memory + count);
     } else {
       s.mode = 2;
       if (registers.contains(peek().text)) {
@@ -273,8 +290,8 @@ class Compiler {
     }
     line_end();
   }
-  void operand(int op, bool unary = true, bool destination = false,
-               bool literal_allowed = true) {
+
+  void operand(int op, bool unary = true, bool destination = false, bool literal_allowed = true) {
     bool address = accept("&");
     auto t = peek();
     if (t.number || (unary && (t.text == "-" || t.text == "+"))) {
@@ -312,13 +329,13 @@ class Compiler {
     if (accept("^")) {
       if (address)
         fail("pointer de-reference not allowed here", last_);
-      if (fixups_.empty() ||
-          fixups_.back().instruction != program_.code.size() - 1)
+      if (fixups_.empty() || fixups_.back().instruction != program_.code.size() - 1)
         fail("pointer de-reference not allowed here", last_);
       fixups_.back().indirect = true;
       program_.code.back().mode = 5;
     }
   }
+
   void expression() {
     operand(1, true);
     while (operators.contains(peek().text)) {
@@ -327,11 +344,13 @@ class Compiler {
       operand(op, false);
     }
   }
+
   void push(Block b, const Token &t) {
     if (blocks_.size() >= 15)
       fail("Error.  Nesting of conditionals is too deep.", t);
     blocks_.push_back(b);
   }
+
   void condition() {
     expression();
     auto it = comparisons.find(peek().text);
@@ -341,6 +360,7 @@ class Compiler {
     take();
     operand(op, true);
   }
+
   void assignment() {
     expression();
     if (!accept("TO")) {
@@ -353,6 +373,7 @@ class Compiler {
     } while (accept("TO"));
     line_end();
   }
+
   void statement(bool inline_if = false) {
     Token t = peek();
     if (unmatched_until_) {
@@ -402,9 +423,8 @@ class Compiler {
         push({Block::If, branch, 0}, peek());
         return;
       }
-      bool single = peek().text == "GOTO" || peek().text == "GOSUB" ||
-                    peek().text == "RETURN" || peek().text == "ENDINT" ||
-                    peek().text == "RESET";
+      bool single = peek().text == "GOTO" || peek().text == "GOSUB" || peek().text == "RETURN" ||
+                    peek().text == "ENDINT" || peek().text == "RESET";
       if (single || peek().text == "TRACE") {
         statement(true);
         return;
@@ -483,15 +503,11 @@ class Compiler {
       if (inline_if)
         fail("END statement not allowed here", t);
       if (blocks_.empty())
-        fail(
-            "END statement not allowed here.  Missing IF, WHILE, or ELSE above",
-            t);
+        fail("END statement not allowed here.  Missing IF, WHILE, or ELSE above", t);
       auto b = blocks_.back();
       blocks_.pop_back();
       if (b.kind == Block::Repeat)
-        fail(
-            "END statement not allowed here.  Missing IF, WHILE, or ELSE above",
-            t);
+        fail("END statement not allowed here.  Missing IF, WHILE, or ELSE above", t);
       if (b.kind == Block::While)
         emit(18, 2, b.start, t);
       patch(b.branch, program_.code.size());
@@ -512,12 +528,10 @@ class Compiler {
       return;
     }
     // A bare unknown identifier declares a label, including forward references.
-    if (!t.text.empty() && alpha(t.text[0]) && !reserved(t.text) &&
-        pos_ + 1 < tokens_.size() &&
+    if (!t.text.empty() && alpha(t.text[0]) && !reserved(t.text) && pos_ + 1 < tokens_.size() &&
         (tokens_[pos_ + 1].text == "\n" ||
          (tokens_[pos_ + 1].text.empty() &&
-          source_.substr(t.source.offset + t.source.length).find(';') !=
-              std::string_view::npos))) {
+          source_.substr(t.source.offset + t.source.length).find(';') != std::string_view::npos))) {
       take();
       auto &s = symbol(t);
       if (s.defined)
@@ -532,8 +546,8 @@ class Compiler {
   }
 
 public:
-  Compiler(std::string_view source, bool debug)
-      : source_(source), debug_(debug) {}
+  Compiler(std::string_view source, bool debug) : source_(source), debug_(debug) {}
+
   CompileResult run() {
     try {
       lex();
@@ -565,36 +579,34 @@ public:
         auto &s = symbols_.at(f.symbol);
         auto &inst = program_.code[f.instruction];
         if (!s.defined)
-          fail("Undefined Symbol: " + f.symbol,
-               Token{f.symbol, s.source, false});
+          fail("Undefined Symbol: " + f.symbol, Token{f.symbol, s.source, false});
         if (f.indirect && s.mode == 3)
           fail("A program label cannot be dereferenced ", peek());
         inst.mode = f.indirect ? 5 : s.mode;
         inst.operand = s.value;
         if (inst.opcode == 16 && (s.mode == 2 || s.mode == 3))
-          fail("At machine instruction " + std::to_string(f.instruction) +
-                   " out of " + std::to_string(program_.code.size()) +
-                   ", the symbol " + f.symbol +
+          fail("At machine instruction " + std::to_string(f.instruction) + " out of " +
+                   std::to_string(program_.code.size()) + ", the symbol " + f.symbol +
                    " is used as a register or memory location.",
                Token{f.symbol, s.source, false});
       }
-      return {std::move(program_),
-              static_cast<std::uint16_t>(source_.size() - 1), std::nullopt};
+      return {std::move(program_), static_cast<std::uint16_t>(source_.size() - 1), std::nullopt};
     } catch (const Failure &f) {
       return {std::move(program_),
               static_cast<std::uint16_t>(
                   source_.empty() ? 65535
-                                  : std::min(source_.size() - 1,
-                                             f.diagnostic.source.offset +
-                                                 f.diagnostic.source.length)),
+                                  : std::min(source_.size() - 1, f.diagnostic.source.offset +
+                                                                     f.diagnostic.source.length)),
               f.diagnostic};
     }
   }
 };
 } // namespace
+
 CompileResult compile(std::string_view source, bool debug) {
   return Compiler(source, debug).run();
 }
+
 std::vector<std::uint8_t> encode_bytecode(const Program &program) {
   std::vector<std::uint8_t> bytes;
   bytes.reserve(program.code.size() * 4);
@@ -610,16 +622,11 @@ std::vector<std::uint8_t> encode_bytecode(const Program &program) {
 } // namespace robotwar
 
 namespace robotwar {
-ScanResult scan_token(std::string_view source, std::uint16_t offset,
-                      bool has_operand) {
+ScanResult scan_token(std::string_view source, std::uint16_t offset, bool has_operand) {
   ScanResult r;
   std::size_t p = offset;
-  auto get = [&](std::size_t at) -> char {
-    return at < source.size() ? source[at] : '\0';
-  };
-  auto upper = [](char ch) -> char {
-    return ch >= 'a' && ch <= 'z' ? ch - 32 : ch;
-  };
+  auto get = [&](std::size_t at) -> char { return at < source.size() ? source[at] : '\0'; };
+  auto upper = [](char ch) -> char { return ch >= 'a' && ch <= 'z' ? ch - 32 : ch; };
   char first = upper(get(p++));
   auto numeric = [&](char ch) {
     if (!digit(ch))
@@ -638,8 +645,7 @@ ScanResult scan_token(std::string_view source, std::uint16_t offset,
   };
   if (alpha(first)) {
     r.symbol += first;
-    while (p < source.size() &&
-           (alpha(get(p)) || digit(get(p)) || get(p) == '_')) {
+    while (p < source.size() && (alpha(get(p)) || digit(get(p)) || get(p) == '_')) {
       if (r.symbol.size() < 15)
         r.symbol += upper(get(p));
       ++p;
@@ -658,11 +664,10 @@ ScanResult scan_token(std::string_view source, std::uint16_t offset,
       r.operation = i->second;
     } else {
       static const std::map<std::string, int> keywords{
-          {"IF", 4},    {"THEN", 5},    {"ELSE", 6},      {"WHILE", 7},
-          {"DO", 8},    {"REPEAT", 9},  {"UNTIL", 10},    {"END", 11},
-          {"GOTO", 12}, {"GOSUB", 13},  {"RETURN", 14},   {"ENDINT", 15},
-          {"TO", 16},   {"DEFINE", 19}, {"ALLOCATE", 22}, {"TRACE", 25},
-          {"RESET", 26}};
+          {"IF", 4},      {"THEN", 5},    {"ELSE", 6}, {"WHILE", 7},   {"DO", 8},
+          {"REPEAT", 9},  {"UNTIL", 10},  {"END", 11}, {"GOTO", 12},   {"GOSUB", 13},
+          {"RETURN", 14}, {"ENDINT", 15}, {"TO", 16},  {"DEFINE", 19}, {"ALLOCATE", 22},
+          {"TRACE", 25},  {"RESET", 26}};
       auto k = keywords.find(r.symbol);
       r.kind = k == keywords.end() ? 20 : k->second;
     }
@@ -676,8 +681,7 @@ ScanResult scan_token(std::string_view source, std::uint16_t offset,
       r.error = eol_error;
       --p;
     } else if (!numeric(upper(get(p++))))
-      r.error = std::string("Constant expected.  Expecting:  ") + first +
-                "<constant>";
+      r.error = std::string("Constant expected.  Expecting:  ") + first + "<constant>";
     else if (first == '-')
       r.value = static_cast<std::int16_t>(-r.value);
   } else if (first == '+' || first == '-' || first == '*' || first == '/') {

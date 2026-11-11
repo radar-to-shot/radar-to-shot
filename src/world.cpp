@@ -9,14 +9,24 @@
 namespace robotwar {
 namespace {
 using Word = std::int16_t;
+
 Word w(std::int64_t x) {
   auto u = static_cast<std::uint16_t>(x);
-  return u < 32768 ? static_cast<Word>(u)
-                   : static_cast<Word>(static_cast<int>(u) - 65536);
+  return u < 32768 ? static_cast<Word>(u) : static_cast<Word>(static_cast<int>(u) - 65536);
 }
-Word absw(Word x) { return x < 0 ? w(-static_cast<int>(x)) : x; }
-int sign(int x) { return (x > 0) - (x < 0); }
-int rounded(double x) { return static_cast<int>(std::round(x)); }
+
+Word absw(Word x) {
+  return x < 0 ? w(-static_cast<int>(x)) : x;
+}
+
+int sign(int x) {
+  return (x > 0) - (x < 0);
+}
+
+int rounded(double x) {
+  return static_cast<int>(std::round(x));
+}
+
 int conversion_bearing(int x, int y) {
   if (!x)
     return y > 0 ? 180 : 0;
@@ -28,49 +38,50 @@ int conversion_bearing(int x, int y) {
   return x > 0 ? rounded(std::atan(-double(x) / y) * 57.29578)
                : 270 + rounded(std::atan(double(y) / x) * 57.29578);
 }
+
 struct Rect {
   int top, left, bottom, right;
 };
+
 Rect rect(const WorldRobot &r, int dx = 0, int dy = 0) {
-  return {r.registers[1] - 5 + dy, r.registers[0] - 5 + dx,
-          r.registers[1] + 6 + dy, r.registers[0] + 6 + dx};
+  return {r.registers[1] - 5 + dy, r.registers[0] - 5 + dx, r.registers[1] + 6 + dy,
+          r.registers[0] + 6 + dx};
 }
+
 bool intersects(Rect a, Rect b) {
-  return a.left < b.right && b.left < a.right && a.top < b.bottom &&
-         b.top < a.bottom;
+  return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
 }
+
 void stop(WorldRobot &r) {
   r.registers[5] = 0;
   r.velocity_x = r.velocity_y = r.target_x = r.target_y = 0;
 }
 } // namespace
+
 World::World(Word width, Word height) : width_(width), height_(height) {
   if (width < 12 || height < 12)
     throw std::invalid_argument("battlefield is too small");
 }
-std::vector<WorldPlacement>
-World::random_placements(std::size_t count,
-                         const std::function<Word()> &random_word) {
+
+std::vector<WorldPlacement> World::random_placements(std::size_t count,
+                                                     const std::function<Word()> &random_word) {
   if (count > 5)
     throw std::length_error("original supports at most five robots");
   if (!random_word)
     throw std::invalid_argument("placement requires a random word source");
-  constexpr int origins[5][2] = {
-      {7, 7}, {7, 160}, {136, 7}, {260, 7}, {260, 160}};
+  constexpr int origins[5][2] = {{7, 7}, {7, 160}, {136, 7}, {260, 7}, {260, 160}};
   std::array<bool, 5> used{};
   std::vector<WorldPlacement> result;
   while (result.size() < count) {
     int region = 0;
     for (std::size_t attempts = 0;; ++attempts) {
       if (attempts == 65536)
-        throw std::runtime_error(
-            "random source did not select an unused region");
+        throw std::runtime_error("random source did not select an unused region");
       // QuickDraw Random maps -32768 to zero before returning it. Reject an
       // injected source outside that contract instead of indexing before used.
       Word draw = random_word();
       if (draw == -32768)
-        throw std::invalid_argument(
-            "placement source must follow QuickDraw Random word range");
+        throw std::invalid_argument("placement source must follow QuickDraw Random word range");
       region = std::abs(int(draw)) % 5;
       if (!used[region])
         break;
@@ -79,17 +90,16 @@ World::random_placements(std::size_t count,
     auto magnitude = [&] {
       Word draw = random_word();
       if (draw == -32768)
-        throw std::invalid_argument(
-            "placement source must follow QuickDraw Random word range");
+        throw std::invalid_argument("placement source must follow QuickDraw Random word range");
       return std::abs(int(draw));
     };
     const Word x = w(origins[region][0] + magnitude() % 108);
-    const Word y =
-        w(origins[region][1] + magnitude() % (region == 2 ? 280 : 130));
+    const Word y = w(origins[region][1] + magnitude() % (region == 2 ? 280 : 130));
     result.push_back({x, y, w(region + 1)});
   }
   return result;
 }
+
 std::size_t World::add_robot(const std::array<Word, 7> &a, Word x, Word y) {
   if (robots_.size() == 5)
     throw std::length_error("original supports at most five robots");
@@ -103,8 +113,7 @@ std::size_t World::add_robot(const std::array<Word, 7> &a, Word x, Word y) {
   r.attributes = a;
   r.registers[0] = x;
   r.registers[1] = y;
-  constexpr int fuel[] = {1850, 2500, 3200},
-                armor[] = {100, 115, 130, 145, 165, 200},
+  constexpr int fuel[] = {1850, 2500, 3200}, armor[] = {100, 115, 130, 145, 165, 200},
                 radar[] = {200, 310, 500};
   r.registers[7] = fuel[a[4]];
   r.registers[16] = 0;
@@ -115,18 +124,32 @@ std::size_t World::add_robot(const std::array<Word, 7> &a, Word x, Word y) {
     q.registers[9] = static_cast<Word>(robots_.size() - 1);
   return robots_.size() - 1;
 }
-WorldRobot &World::state(std::size_t i) { return robots_.at(i); }
-const WorldRobot &World::state(std::size_t i) const { return robots_.at(i); }
-WorldSnapshot World::snapshot() const { return {ticks_, robots_}; }
-void World::set_event_sink(EventSink sink) { sink_ = std::move(sink); }
+
+WorldRobot &World::state(std::size_t i) {
+  return robots_.at(i);
+}
+
+const WorldRobot &World::state(std::size_t i) const {
+  return robots_.at(i);
+}
+
+WorldSnapshot World::snapshot() const {
+  return {ticks_, robots_};
+}
+
+void World::set_event_sink(EventSink sink) {
+  sink_ = std::move(sink);
+}
+
 void World::emit(WorldEvent::Kind k, std::size_t i, std::size_t j, Word v) {
   if (sink_)
-    sink_(
-        {k, ticks_, i, j, robots_[i].registers[0], robots_[i].registers[1], v});
+    sink_({k, ticks_, i, j, robots_[i].registers[0], robots_[i].registers[1], v});
 }
+
 Word World::normalize_angle(Word x) {
   return x < 0 ? w(360 - std::abs(int(x) % 360)) : w(x % 360);
 }
+
 Word World::sine(Word x) {
   // Captured from the original CODE2 initialization executing IIci ROM SANE.
   static constexpr std::array<Word, 181> table = {
@@ -135,7 +158,11 @@ Word World::sine(Word x) {
   int angle = normalize_angle(x);
   return angle >= 180 ? w(-table[angle - 180]) : table[angle];
 }
-Word World::cosine(Word x) { return sine(w(x + 90)); }
+
+Word World::cosine(Word x) {
+  return sine(w(x + 90));
+}
+
 Word World::approximate_distance(Word x, Word y) {
   x = absw(x);
   y = absw(y);
@@ -183,6 +210,7 @@ Word World::approximate_distance(Word x, Word y) {
   }
   return w(w(sum * numerator + round) / denominator);
 }
+
 void World::add_damage(WorldRobot &r, Word n) {
   r.raw_damage = w(r.raw_damage + n);
   if (!r.armor)
@@ -190,10 +218,10 @@ void World::add_damage(WorldRobot &r, Word n) {
   r.registers[4] = w(w(r.raw_damage * 100) / r.armor);
   r.damage_flash = w(r.damage_flash + w(n + 1) / 2);
 }
+
 void World::accelerate_and_burn(WorldRobot &r) {
   r.collided = false;
-  int maximum = r.attributes[2] ? 4000 : 2000,
-      acceleration = r.attributes[2] ? 400 : 200;
+  int maximum = r.attributes[2] ? 4000 : 2000, acceleration = r.attributes[2] ? 400 : 200;
   auto advance = [&](Word current, Word target) {
     Word difference = w(target - current);
     if (difference < 0 && current > -maximum)
@@ -218,11 +246,13 @@ void World::accelerate_and_burn(WorldRobot &r) {
   }
   r.registers[7] = fuel;
 }
+
 Word World::read_register(std::size_t i, Word reg) const {
   if (reg < 0 || reg >= 19)
     return 0;
   return reg == 16 ? state(i).radar_result : state(i).registers[reg];
 }
+
 int World::write_register(std::size_t i, Word reg, Word value) {
   auto &r = state(i);
   auto &a = r.registers;
@@ -285,6 +315,7 @@ int World::write_register(std::size_t i, Word reg, Word value) {
     return 0;
   }
 }
+
 void World::begin_tick() {
   int count = 0;
   for (auto &r : robots_)
@@ -299,16 +330,17 @@ void World::begin_tick() {
       }
     }
 }
+
 void World::end_cpu_slice(std::size_t i) {
   auto &r = state(i);
-  if (r.registers[5] != r.previous_speed ||
-      r.registers[6] != r.previous_direction) {
+  if (r.registers[5] != r.previous_speed || r.registers[6] != r.previous_direction) {
     r.target_x = w(w((sine(r.registers[6]) / 4) * r.registers[5]) / 4);
     r.target_y = w(w((cosine(r.registers[6]) / 4) * r.registers[5]) / -4);
   }
   r.previous_speed = r.registers[5];
   r.previous_direction = r.registers[6];
 }
+
 Word World::scan(std::size_t i, Word angle) const {
   const auto &r = state(i);
   int best = 1000;
@@ -317,8 +349,7 @@ Word World::scan(std::size_t i, Word angle) const {
     const auto &q = robots_[j];
     if (i == j || !q.active || q.registers[8])
       continue;
-    int dx = q.registers[0] - r.registers[0],
-        dy = q.registers[1] - r.registers[1];
+    int dx = q.registers[0] - r.registers[0], dy = q.registers[1] - r.registers[1];
     int delta = std::abs(int(angle) - mac::point_to_angle(w(dx), w(dy)));
     if (delta > 180)
       delta = 360 - delta;
@@ -327,17 +358,16 @@ Word World::scan(std::size_t i, Word angle) const {
     int distance = approximate_distance(w(dx), w(dy));
     if (!distance)
       distance = 1;
-    if (delta <= 310 / distance + 1 && distance < best &&
-        distance < r.radar_range) {
+    if (delta <= 310 / distance + 1 && distance < best && distance < r.radar_range) {
       best = distance;
       selected = &q;
     }
   }
-  return selected ? w(rounded(std::hypot(
-                        double(selected->registers[0] - r.registers[0]),
-                        double(selected->registers[1] - r.registers[1]))))
+  return selected ? w(rounded(std::hypot(double(selected->registers[0] - r.registers[0]),
+                                         double(selected->registers[1] - r.registers[1]))))
                   : -1;
 }
+
 void World::move_robots() {
   for (std::size_t i = 0; i < robots_.size(); ++i)
     if (robots_[i].active) {
@@ -357,8 +387,7 @@ void World::move_robots() {
       auto &r = robots_[i];
       if (!r.active || r.collided)
         continue;
-      int sx = w(r.remainder_x + r.velocity_x),
-          sy = w(r.remainder_y + r.velocity_y);
+      int sx = w(r.remainder_x + r.velocity_x), sy = w(r.remainder_y + r.velocity_y);
       int dx = sx / 1000, dy = sy / 1000;
       r.remainder_x = w(sx - dx * 1000);
       r.remainder_y = w(sy - dy * 1000);
@@ -376,25 +405,19 @@ void World::move_robots() {
         }
       };
       if (proposed.top < 0 && dy)
-        choose(w(std::abs(std::abs(dy) - std::abs(proposed.top)) * 1000) /
-                   std::abs(dy),
+        choose(w(std::abs(std::abs(dy) - std::abs(proposed.top)) * 1000) / std::abs(dy),
                robots_.size(), 0, 0);
       else if (proposed.bottom > height_ + 1 && dy)
-        choose(
-            w(std::abs(std::abs(dy) - std::abs(proposed.bottom - height_ - 1)) *
-              1000) /
-                std::abs(dy),
-            robots_.size(), 0, 0);
+        choose(w(std::abs(std::abs(dy) - std::abs(proposed.bottom - height_ - 1)) * 1000) /
+                   std::abs(dy),
+               robots_.size(), 0, 0);
       if (proposed.left < 0 && dx)
-        choose(w(std::abs(std::abs(dx) - std::abs(proposed.left)) * 1000) /
-                   std::abs(dx),
+        choose(w(std::abs(std::abs(dx) - std::abs(proposed.left)) * 1000) / std::abs(dx),
                robots_.size(), 0, 0);
       else if (proposed.right > width_ + 1 && dx)
-        choose(
-            w(std::abs(std::abs(dx) - std::abs(proposed.right - width_ - 1)) *
-              1000) /
-                std::abs(dx),
-            robots_.size(), 0, 0);
+        choose(w(std::abs(std::abs(dx) - std::abs(proposed.right - width_ - 1)) * 1000) /
+                   std::abs(dx),
+               robots_.size(), 0, 0);
       for (std::size_t j = 0; j < robots_.size(); ++j) {
         const auto &q = robots_[j];
         if (i == j || !q.active)
@@ -407,20 +430,15 @@ void World::move_robots() {
                              (ry <= 0 && py <= -11) || (ry >= 0 && py >= 11));
         bool collision =
             (intersects(proposed, rect(q)) && (approaching || q.collided)) ||
-            (!q.collided && j < i &&
-             intersects(proposed, rect(q, moves[j][0], moves[j][1])));
+            (!q.collided && j < i && intersects(proposed, rect(q, moves[j][0], moves[j][1])));
         if (!collision)
           continue;
         if (q.collided) {
           rx = dx;
           ry = dy;
         }
-        int tx = (std::abs(px) < 11 || !rx)
-                     ? 0
-                     : w((std::abs(px) - 11) * 1000) / std::abs(rx);
-        int ty = (std::abs(py) < 11 || !ry)
-                     ? 0
-                     : w((std::abs(py) - 11) * 1000) / std::abs(ry);
+        int tx = (std::abs(px) < 11 || !rx) ? 0 : w((std::abs(px) - 11) * 1000) / std::abs(rx);
+        int ty = (std::abs(py) < 11 || !ry) ? 0 : w((std::abs(py) - 11) * 1000) / std::abs(ry);
         choose(std::max(tx, ty), j, ox, oy);
       }
     }
@@ -435,27 +453,18 @@ void World::move_robots() {
       break;
     }
     auto &r = robots_[first];
-    r.registers[0] = w(r.registers[0] +
-                       w(first_dx * earliest + sign(first_dx) * 550) / 1000);
-    r.registers[1] = w(r.registers[1] +
-                       w(first_dy * earliest + sign(first_dy) * 550) / 1000);
+    r.registers[0] = w(r.registers[0] + w(first_dx * earliest + sign(first_dx) * 550) / 1000);
+    r.registers[1] = w(r.registers[1] + w(first_dy * earliest + sign(first_dy) * 550) / 1000);
     r.collided = true;
-    Word damage = w(
-        approximate_distance(w(r.velocity_x / 100), w(r.velocity_y / 100)) / 6);
+    Word damage = w(approximate_distance(w(r.velocity_x / 100), w(r.velocity_y / 100)) / 6);
     if (second < robots_.size()) {
       auto &q = robots_[second];
       if (!q.collided) {
-        q.registers[0] =
-            w(q.registers[0] +
-              w(second_dx * earliest + sign(second_dx) * 499) / 1000);
-        q.registers[1] =
-            w(q.registers[1] +
-              w(second_dy * earliest + sign(second_dy) * 499) / 1000);
+        q.registers[0] = w(q.registers[0] + w(second_dx * earliest + sign(second_dx) * 499) / 1000);
+        q.registers[1] = w(q.registers[1] + w(second_dy * earliest + sign(second_dy) * 499) / 1000);
       }
       q.collided = true;
-      damage = w(damage + approximate_distance(w(q.velocity_x / 100),
-                                               w(q.velocity_y / 100)) /
-                              6);
+      damage = w(damage + approximate_distance(w(q.velocity_x / 100), w(q.velocity_y / 100)) / 6);
       add_damage(q, damage);
       q.collision_damage += damage;
       stop(q);
@@ -466,12 +475,12 @@ void World::move_robots() {
     emit(WorldEvent::Kind::Collision, first, second, damage);
   }
 }
+
 void World::explode(std::size_t owner, Word x, Word y) {
   auto &source = robots_[owner];
   for (auto &q : robots_)
     if (q.active) {
-      int dx = std::abs(int(q.registers[0]) - x),
-          dy = std::abs(int(q.registers[1]) - y);
+      int dx = std::abs(int(q.registers[0]) - x), dy = std::abs(int(q.registers[1]) - y);
       if (dx + dy >= 24)
         continue;
       int d = rounded(std::sqrt(double(dx * dx + dy * dy)));
@@ -487,6 +496,7 @@ void World::explode(std::size_t owner, Word x, Word y) {
   if (sink_)
     sink_({WorldEvent::Kind::Explosion, ticks_, owner, owner, x, y, 0});
 }
+
 void World::destroy_robots() {
   for (std::size_t i = 0; i < robots_.size(); ++i)
     if (robots_[i].active && robots_[i].registers[4] >= 100) {
@@ -498,6 +508,7 @@ void World::destroy_robots() {
       emit(WorldEvent::Kind::Destroyed, i, i);
     }
 }
+
 void World::update_shells() {
   for (std::size_t i = 0; i < robots_.size(); ++i) {
     auto &r = robots_[i];
@@ -559,11 +570,13 @@ void World::update_shells() {
     }
   }
 }
+
 void World::update_physics() {
   move_robots();
   update_shells();
   ++ticks_;
 }
+
 void World::tick() {
   begin_tick();
   for (std::size_t i = 0; i < robots_.size(); ++i)

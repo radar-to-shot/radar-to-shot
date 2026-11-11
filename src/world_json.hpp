@@ -15,20 +15,19 @@ inline nlohmann::json world_json(const nlohmann::json &in) {
     return quickdraw_random_json(in);
   if (kind == "world_placement") {
     mac::QuickDrawRandom random(in.value("seed", 1u));
-    const auto placements = World::random_placements(
-        in.at("count").get<std::size_t>(), [&] { return random(); });
+    const auto placements =
+        World::random_placements(in.at("count").get<std::size_t>(), [&] { return random(); });
     json robots = json::array();
     for (const auto &p : placements)
       robots.push_back({{"x", p.x}, {"y", p.y}, {"region", p.region}});
     return {{"robots", robots}, {"seed", random.seed()}};
   }
   if (kind == "world_angle")
-    return {{"angle", mac::point_to_angle(in.at("x").get<std::int16_t>(),
-                                          in.at("y").get<std::int16_t>())}};
+    return {{"angle",
+             mac::point_to_angle(in.at("x").get<std::int16_t>(), in.at("y").get<std::int16_t>())}};
   if (kind == "world_distance")
-    return {{"distance",
-             World::approximate_distance(in.at("x").get<std::int16_t>(),
-                                         in.at("y").get<std::int16_t>())}};
+    return {{"distance", World::approximate_distance(in.at("x").get<std::int16_t>(),
+                                                     in.at("y").get<std::int16_t>())}};
   if (kind == "world_damage") {
     WorldRobot r;
     r.armor = in.value("armor", 100);
@@ -52,17 +51,14 @@ inline nlohmann::json world_json(const nlohmann::json &in) {
     r.exhausted = in.value("exhausted", false);
     r.out_of_fuel = in.value("out_of_fuel", 0);
     World::accelerate_and_burn(r);
-    return {{"vx", r.velocity_x},          {"vy", r.velocity_y},
-            {"target_x", r.target_x},      {"target_y", r.target_y},
-            {"fuel", r.registers[7]},      {"speed", r.registers[5]},
-            {"cloak", r.registers[8]},     {"exhausted", r.exhausted},
-            {"out_of_fuel", r.out_of_fuel}};
+    return {{"vx", r.velocity_x},      {"vy", r.velocity_y},       {"target_x", r.target_x},
+            {"target_y", r.target_y},  {"fuel", r.registers[7]},   {"speed", r.registers[5]},
+            {"cloak", r.registers[8]}, {"exhausted", r.exhausted}, {"out_of_fuel", r.out_of_fuel}};
   }
   if (kind == "world_trig")
-    return {
-        {"angle", World::normalize_angle(in.at("angle").get<std::int16_t>())},
-        {"sin", World::sine(in.at("angle").get<std::int16_t>())},
-        {"cos", World::cosine(in.at("angle").get<std::int16_t>())}};
+    return {{"angle", World::normalize_angle(in.at("angle").get<std::int16_t>())},
+            {"sin", World::sine(in.at("angle").get<std::int16_t>())},
+            {"cos", World::cosine(in.at("angle").get<std::int16_t>())}};
   if (kind == "world_movement") {
     World world;
     for (const auto &j : in.at("robots")) {
@@ -123,8 +119,8 @@ inline nlohmann::json world_json(const nlohmann::json &in) {
     }
     json costs = json::array();
     for (auto &entry : in.at("writes"))
-      costs.push_back(world.write_register(0, entry[0].get<std::int16_t>(),
-                                           entry[1].get<std::int16_t>()));
+      costs.push_back(
+          world.write_register(0, entry[0].get<std::int16_t>(), entry[1].get<std::int16_t>()));
     const auto &r = world.state(0);
     const auto &shell = r.shell;
     return {{"registers", r.registers},
@@ -152,8 +148,7 @@ inline nlohmann::json world_json(const nlohmann::json &in) {
       world.state(id).registers[8] = j.value("cloak", 0);
     }
     for (auto &entry : in.at("writes"))
-      world.write_register(0, entry[0].get<std::int16_t>(),
-                           entry[1].get<std::int16_t>());
+      world.write_register(0, entry[0].get<std::int16_t>(), entry[1].get<std::int16_t>());
     for (int t = 0; t < in.value("ticks", 1); ++t)
       world.update_physics();
     json out = json::array();

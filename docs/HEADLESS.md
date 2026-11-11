@@ -54,6 +54,26 @@ portability extension. The low-level scanner exposes original byte-oriented
 behavior. Original source uses Mac Roman; the fixture corpus uses ASCII source
 except where byte-character handling is explicitly tested.
 
+## C++ formatting
+
+Project C++ follows LLVM style with two-space indentation and a 100-column
+limit, configured in `.clang-format`. Use the pinned clang-format 20.1.8 so local
+formatting and CI produce the same result:
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r tools/requirements-format.txt
+python tools/format_cpp.py --check
+python tools/format_cpp.py --write
+```
+
+The check covers tracked and new unignored C/C++ sources, headers, and `.inc`
+files, including the generated sine table. Its generator uses the same formatter.
+Hash-attested decompiler output under `reverse/decompiled/` and the upstream
+`third_party/` dependency retain their original formatting. The C++ formatting
+workflow runs the check on every push and pull request and fails on drift.
+
 ## Library and GUI extension points
 
 - `compile()` produces `Program`, bytecode, source locations and diagnostics.

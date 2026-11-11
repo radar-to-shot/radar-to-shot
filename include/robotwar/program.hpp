@@ -11,6 +11,7 @@ struct SourceSpan {
   std::size_t length{};
   std::size_t line{}; // zero based; original debugger also numbers from zero
 };
+
 struct Program {
   std::vector<Instruction> code;
   // CPU_SPEED, FIRE_RATE, ENGINE_SIZE, RADAR_RANGE, FUEL_CAPACITY, CLOAKING,

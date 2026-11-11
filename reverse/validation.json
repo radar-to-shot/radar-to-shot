@@ -5,7 +5,7 @@
   "source_revision": "3cd67f6bdbd61a6c519c5ba4a7382599d7f8b9f6",
   "application_resource_fork_sha256": "d486bc719b82a5ca5bcf3e406f40d6d06fc9d15e3bbf1009dc8d152b4293a0ae",
   "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
-  "implementation_manifest_sha256": "67945f1cdee3290d0d0dc297130ed0424a33b2c19d2bf59be4b02194f4a2221f",
+  "implementation_manifest_sha256": "a37834aeabb29f3e7780d1cb18f57fa0bd9b7943ebd0c1dd5679c0e3d1a6a5e5",
   "native": {
     "language": "C++20",
     "compiler": "g++ (Debian 14.2.0-19) 14.2.0",
@@ -162,5 +162,94 @@
     "Signaling-NaN and single/double precision CPU audit limitations are documented; complete 68881 certification is not claimed.",
     "Accesses outside modeled classic-Mac records and indefinitely rejecting placement sources raise explicit host errors.",
     "PenSize drawing is ignored; GUI, sound, menus and editor are not implemented."
-  ]
+  ],
+  "implementation_manifest": {
+    "encoding": "UTF-8 records sorted by file path, each <file>:<sha256> followed by a newline",
+    "files": [
+      {
+        "file": "CMakeLists.txt",
+        "sha256": "d326df70ffab8814f2656bf906d87cf1cc7d381110c3561284755e2c2472e1f4"
+      },
+      {
+        "file": "include/robotwar/bytecode.hpp",
+        "sha256": "a136015fc25bcbe840b8b06151b584f0ab1dbde37d57747ba2b5eeeae556714d"
+      },
+      {
+        "file": "include/robotwar/compiler.hpp",
+        "sha256": "07fcafe3a96c3c4badb512f0435fdf2eb45dc5ed2ee60831866d4601e90ff60a"
+      },
+      {
+        "file": "include/robotwar/mac_math.hpp",
+        "sha256": "603803b956301f655ca034803d3bd7df24ecb2499c73cfb641902262389503b3"
+      },
+      {
+        "file": "include/robotwar/program.hpp",
+        "sha256": "64ec33fac4853620c1103a5d90d2fdacd24605c3c2b1db75179895c449bda3f7"
+      },
+      {
+        "file": "include/robotwar/simulation.hpp",
+        "sha256": "d01ee35758602e4f35ef6602b92ffd40fae43f6f357a6e3808991194c09b5d95"
+      },
+      {
+        "file": "include/robotwar/vm.hpp",
+        "sha256": "137c7ae8a4332fcdd03010ee3216deca32d7634504fd6ef924f4e5e23b351b56"
+      },
+      {
+        "file": "include/robotwar/world.hpp",
+        "sha256": "25316fde7898c46de1a533c7d9c144dfcfc3fa53b6f8a41a60b57e0687e1b050"
+      },
+      {
+        "file": "src/compiler.cpp",
+        "sha256": "39b3bf2b7c6ebcdb1ef769e483314407e07965404adf9a0c2b2ae6d624d5b220"
+      },
+      {
+        "file": "src/mac_math.cpp",
+        "sha256": "db746796c895198773134ccf28260b21c6ed6066c2e525d909f63702d234e0be"
+      },
+      {
+        "file": "src/mac_math_json.hpp",
+        "sha256": "a5268afed119b13b9db05603b3e23832afff14c7b1a3a652d1b08659ad5d1373"
+      },
+      {
+        "file": "src/main.cpp",
+        "sha256": "2ad41bdf06394948c26178342db7599264b1a867d6f4406f73a6c86be99cf302"
+      },
+      {
+        "file": "src/simulation.cpp",
+        "sha256": "136c485aa9b358f09257b4388cd93349c8ced3afce875098486b13b525898072"
+      },
+      {
+        "file": "src/sine_table.inc",
+        "sha256": "dc671feb0f8884c6d96820a2afc4314604ed49cb42822384c2185ed97d44bda8"
+      },
+      {
+        "file": "src/vm.cpp",
+        "sha256": "e2c9d9ca3d2fc65dd625d2f282f4cc195eb0d98d8a77f56fe07df1cfc908f22e"
+      },
+      {
+        "file": "src/vm_json.hpp",
+        "sha256": "71af64d27e83aadefd1c587915bcf21446d21de9a40c0bae020d606dabca04f9"
+      },
+      {
+        "file": "src/world.cpp",
+        "sha256": "a4833e89cc64d237eb251b3cab47b9e0929895dfc3fc5bbd9b4997fce8532841"
+      },
+      {
+        "file": "src/world_json.hpp",
+        "sha256": "a0c891b6cded131b36b606a7ead700dd4eec39a7f34c115e52f4d922d1f1ab0b"
+      }
+    ]
+  },
+  "formatting": {
+    "tool": "clang-format 20.1.8",
+    "style": "LLVM, C++20, 2-space indentation, 100-column limit",
+    "config_sha256": "2bd4779a48993b5708966dd58f05954d58715e827e97b5b347e321d4085bc2d0",
+    "files_checked": 18,
+    "check": "passed",
+    "idempotence": "passed",
+    "unformatted_new_file_rejected": true,
+    "missing_configuration_rejected": true,
+    "sine_table_regeneration": "formatted source and original golden outputs unchanged",
+    "ci_workflow": ".github/workflows/cpp-format.yml"
+  }
 }
