@@ -14,6 +14,9 @@ original application under 68k emulation.
 The [tournament workflow](docs/HEADLESS.md#tournaments) ranks all robots in a
 selected subdirectory using balanced head-to-head matches and publishes JSON
 results plus standings.
+The [weekly league](docs/WEEKLY_LEAGUE.md) computes fresh Elo-style ratings for
+every robot in 2-, 3-, 4-, and 5-way battles, with an overall leaderboard and
+scheduled Discord delivery through a repository webhook secret.
 See [browser development and publishing](docs/HEADLESS.md#browser-workbench-and-github-pages)
 for the WASM build, browser API, tests, and deployment workflow.
 

@@ -478,5 +478,61 @@
         "sha256": "296bc6c012b0e40b1cadc21c826732116789a1852932f79147bbd06bd739eea4"
       }
     ]
+  },
+  "weekly_league": {
+    "validation_date": "2026-11-12",
+    "test_methods_passed": 18,
+    "rating_model": "Fresh regularized Bradley-Terry survival placements on a 1500/400 Elo scale; sparse Newton-CG fit",
+    "schedule": "Exhaustive through 128 groups; otherwise four balanced circular rounds with every cyclic seat rotation",
+    "current_field": {
+      "revision": "1155fa49bed1052b9571f66c189891c7f01328f0",
+      "week": "2026-W46",
+      "robots": 13,
+      "battles": 1560,
+      "all_four_formats": true,
+      "battle_replay_checks": 4
+    },
+    "large_field": {
+      "robots": 512,
+      "battles": 57344,
+      "schedule_balance_verified": true,
+      "all_four_extremely_separated_synthetic_rating_fits_converged": true
+    },
+    "workflow_lint": "actionlint 1.7.10 passed",
+    "discord": {
+      "preview": "passed",
+      "mocked_rate_limit_and_delivery_tests": "passed",
+      "live_delivery": "not attempted; channel webhook must be configured as a repository secret"
+    },
+    "files": [
+      {
+        "file": ".github/workflows/weekly-leaderboard.yml",
+        "sha256": "dc219a08f63122f5ef904cfd8da96a373eb346c05620706c114269fb103e301c"
+      },
+      {
+        "file": "docs/WEEKLY_LEAGUE.md",
+        "sha256": "16a128df1653c7a36562515c7de92737a0064689479f04841cfe1316df0775c9"
+      },
+      {
+        "file": "scripts/run_weekly_league.py",
+        "sha256": "b493007494c4e57a859a46fe9757f078b8edd8bf3d5a5b375050b5323ad7dbce"
+      },
+      {
+        "file": "tests/test_weekly_league.py",
+        "sha256": "aa0877a10223311d21f58e90af929bcdb209c242f00ba8d1ee8fd8289a9c54e4"
+      },
+      {
+        "file": "tools/discord_leaderboard.py",
+        "sha256": "b3fd0c1299fc7d6f639d5d7f530c7dde20c77605816173dc44a74c696d0f7265"
+      },
+      {
+        "file": "tools/league_ratings.py",
+        "sha256": "20ca33af904b66a7df23a5742ceab31e261fe512af1036e7afc6b72f4745bbc9"
+      },
+      {
+        "file": "tools/weekly_league.py",
+        "sha256": "10e244ebf2eac1e3f015c3ed120ba08a606441c79716722e765b5ab51d394369"
+      }
+    ]
   }
 }
