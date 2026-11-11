@@ -1,0 +1,147 @@
+name: Robot tournament
+
+on:
+  workflow_dispatch:
+    inputs:
+      robots_subdir:
+        description: Subdirectory below robots/ containing robot source files
+        type: string
+        default: examples
+        required: true
+      seed:
+        description: Tournament seed (decimal or hexadecimal)
+        type: string
+        default: '1'
+        required: true
+      ticks:
+        description: Maximum ticks per battle
+        type: string
+        default: '2000'
+        required: true
+      rounds:
+        description: Swiss rounds (0 selects the automatic count)
+        type: string
+        default: '0'
+        required: true
+      seeds_per_pair:
+        description: Independent seeds per pairing, each played in both robot orders
+        type: string
+        default: '3'
+        required: true
+      workers:
+        description: Parallel battle workers
+        type: string
+        default: '2'
+        required: true
+      format:
+        description: Tournament pairing format
+        type: choice
+        options: [auto, round-robin, swiss]
+        default: auto
+        required: true
+      encoding:
+        description: Encoding of robot source files
+        type: choice
+        options: [utf-8, mac-roman]
+        default: utf-8
+        required: true
+  push:
+    paths:
+      - 'include/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'robots/examples/**'
+      - 'CMakeLists.txt'
+      - '.github/workflows/tournament.yml'
+  pull_request:
+    paths:
+      - 'include/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'robots/examples/**'
+      - 'CMakeLists.txt'
+      - '.github/workflows/tournament.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  tournament:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    env:
+      ROBOTS_SUBDIR: ${{ github.event.inputs.robots_subdir || 'examples' }}
+      SEED: ${{ github.event.inputs.seed || '1' }}
+      TICKS: ${{ github.event.inputs.ticks || '2000' }}
+      ROUNDS: ${{ github.event.inputs.rounds || '0' }}
+      SEEDS: ${{ github.event.inputs.seeds_per_pair || '3' }}
+      WORKERS: ${{ github.event.inputs.workers || '2' }}
+      FORMAT: ${{ github.event.inputs.format || 'auto' }}
+      ENCODING: ${{ github.event.inputs.encoding || 'utf-8' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare reports
+        run: mkdir -p build/tournament
+      - name: Validate robot directory
+        run: |
+          python - <<'PY' 2>&1 | tee build/tournament/input-validation.log
+          import os
+          from pathlib import Path
+
+          root = Path("robots").resolve()
+          selected = Path(os.environ["ROBOTS_SUBDIR"])
+          directory = (root / selected).resolve()
+          if selected.is_absolute() or directory == root or not directory.is_relative_to(root):
+              raise SystemExit("robots_subdir must select a subdirectory below robots/")
+          if not directory.is_dir():
+              raise SystemExit(f"Robot directory does not exist: {directory}")
+          print(f"Robot directory: {directory.relative_to(root)}")
+          PY
+      - name: Configure Release build
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release 2>&1 | tee build/tournament/configure.log
+      - name: Build native engine
+        run: cmake --build build --parallel 2 2>&1 | tee build/tournament/build.log
+      - name: Test native engine and runners
+        run: ctest --test-dir build --output-on-failure 2>&1 | tee build/tournament/tests.log
+      - name: Run tournament
+        run: |
+          python scripts/run_tournament.py \
+            --robots-dir "robots/$ROBOTS_SUBDIR" \
+            --seed "$SEED" \
+            --ticks "$TICKS" \
+            --rounds "$ROUNDS" \
+            --seeds-per-pair "$SEEDS" \
+            --workers "$WORKERS" \
+            --format "$FORMAT" \
+            --encoding "$ENCODING" \
+            --output build/tournament/results.json \
+            --summary build/tournament/summary.md \
+            2>&1 | tee build/tournament/tournament.log
+      - name: Show tournament summary
+        if: always()
+        run: |
+          if [[ -f build/tournament/summary.md ]]; then
+            cat build/tournament/summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf '%s\n' 'The tournament did not produce a summary. See the job logs and tournament diagnostics artifact.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload results and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tournament-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            build/tournament/
+            build/Testing/Temporary/
+          if-no-files-found: warn
+          retention-days: 30

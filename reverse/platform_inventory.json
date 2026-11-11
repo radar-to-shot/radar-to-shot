@@ -1,0 +1,66 @@
+{
+  "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
+  "rom_bytes": 524288,
+  "rom_packages": {
+    "4": {
+      "offset": "0x70ac0",
+      "bytes": 4352,
+      "sha256": "b3aae2599ad5e8fd8dbab83eff1f6488aa7c057c625055978e0b5a8e84c1b333"
+    },
+    "5": {
+      "offset": "0x71be0",
+      "bytes": 4304,
+      "sha256": "77cb1a412dc970385654f5fcf7e516a078fafc9825062533d36f9643e1c090fb"
+    },
+    "7": {
+      "offset": "0x79de0",
+      "bytes": 1392,
+      "sha256": "ce9093aff2754a732922fc58b84bf16e226995d783871f350c9e22a8124cf2b3"
+    }
+  },
+  "rom_toolbox_entries": {
+    "PtToAngle": {
+      "trap": "0xa8c3",
+      "offset": "0x3cf90"
+    },
+    "FixRatio": {
+      "trap": "0xa869",
+      "offset": "0x1c490"
+    },
+    "FixMul": {
+      "trap": "0xa868",
+      "offset": "0x1c312"
+    },
+    "AngleFromSlope": {
+      "trap": "0xa8c4",
+      "offset": "0x3ce20"
+    }
+  },
+  "system_path": "System Folder/System",
+  "system_resource_sha256": "72e7f35521b2c8443bec1d358a4831e2f578c5879f0eefc0c2b583007f78a3f2",
+  "system_packages": [
+    {
+      "id": 4,
+      "compressed_bytes": 11321,
+      "unpacked_bytes": 15414,
+      "compressed_sha256": "a86145d8d1ad3615904f0b5b3ccd3bcc51190f2db8d2f5868c75b5eb01febdb3",
+      "unpacked_sha256": "4736c59bf624e3734b46215555a88df88ac525d09742aab557f8c2e55c42fb09",
+      "entry_offset": 0,
+      "fpu_required": true
+    },
+    {
+      "id": 5,
+      "compressed_bytes": 3967,
+      "unpacked_bytes": 5024,
+      "compressed_sha256": "e60b38885a6fe64b36cd11859b9d63b5b0323211f2991e5be3b4d4af675be742",
+      "unpacked_sha256": "161dc26441fe04bd9974d3a32f9e878103c193b266a81eba343270955c9cb2a6",
+      "entry_offset": 0,
+      "fpu_required": true
+    }
+  ],
+  "observations": [
+    "System PACK4 and PACK5 require FPU instructions; neither entry provides a pure68000 path.",
+    "System PACK4 dynamically replaces suitable caller instruction sequences for acceleration.",
+    "ROM package entrypoints avoid that System self-patching path; the numerical oracle explicitly selects this ROM baseline."
+  ]
+}

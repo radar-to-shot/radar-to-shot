@@ -1,0 +1,1622 @@
+{
+  "provenance": {
+    "engine": "machine68k 0.5.1 / Musashi, 68030",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {
+      "Mac_IIci.ROM": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2"
+    },
+    "extra_code_instructions": {
+      "Mac_IIci.ROM": 19484
+    },
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 317365,
+    "segment_instructions": {
+      "1": 101,
+      "3": 297626
+    },
+    "macintosh_traps": [
+      "a861@CODE3:0e60",
+      "a861@CODE3:0e7a",
+      "a861@CODE3:0e90",
+      "a861@CODE3:39a2",
+      "a9eb@CODE1:0218",
+      "a9eb@CODE1:0224",
+      "a9eb@CODE1:0248",
+      "a9eb@CODE1:0264",
+      "a9eb@CODE1:0272",
+      "a9eb@CODE1:0284",
+      "a9eb@Mac_IIci.ROM:071c3a",
+      "a9eb@Mac_IIci.ROM:071c64",
+      "a9eb@Mac_IIci.ROM:071d0c",
+      "a9eb@Mac_IIci.ROM:071d16",
+      "a9eb@Mac_IIci.ROM:071d38",
+      "a9eb@Mac_IIci.ROM:071fa2",
+      "a9eb@Mac_IIci.ROM:0725ac",
+      "a9eb@Mac_IIci.ROM:0725d8",
+      "a9eb@Mac_IIci.ROM:0725ec",
+      "a9eb@Mac_IIci.ROM:0725f6",
+      "a9eb@Mac_IIci.ROM:072600",
+      "a9eb@Mac_IIci.ROM:07260e",
+      "a9eb@Mac_IIci.ROM:072624",
+      "a9eb@Mac_IIci.ROM:072640",
+      "a9eb@Mac_IIci.ROM:072652",
+      "a9eb@Mac_IIci.ROM:07265e",
+      "a9eb@Mac_IIci.ROM:072698",
+      "a9eb@Mac_IIci.ROM:0726ae",
+      "a9eb@Mac_IIci.ROM:0726b8",
+      "a9eb@Mac_IIci.ROM:0726c0",
+      "a9eb@Mac_IIci.ROM:0726c8",
+      "a9eb@Mac_IIci.ROM:0726d6",
+      "a9eb@Mac_IIci.ROM:0727f8",
+      "a9eb@Mac_IIci.ROM:07282e",
+      "a9eb@Mac_IIci.ROM:07285c",
+      "a9eb@Mac_IIci.ROM:072872",
+      "a9eb@Mac_IIci.ROM:07287c",
+      "a9eb@Mac_IIci.ROM:072888",
+      "a9eb@Mac_IIci.ROM:072894",
+      "a9eb@Mac_IIci.ROM:0728aa",
+      "a9eb@Mac_IIci.ROM:0728b6",
+      "a9eb@Mac_IIci.ROM:0728c8",
+      "a9eb@Mac_IIci.ROM:0728d2",
+      "a9eb@Mac_IIci.ROM:0728dc",
+      "a9eb@Mac_IIci.ROM:0728f0"
+    ],
+    "toolbox_shims": {},
+    "host_service_calls": {},
+    "platform": {
+      "toolbox": "original supplied Mac IIci ROM numerical and integer QuickDraw routines",
+      "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
+      "rom_base": "0x700000",
+      "original_rom_packages": {
+        "4": {
+          "offset": "0x70ac0",
+          "size": 4352,
+          "sha256": "b3aae2599ad5e8fd8dbab83eff1f6488aa7c057c625055978e0b5a8e84c1b333"
+        },
+        "5": {
+          "offset": "0x71be0",
+          "size": 4304,
+          "sha256": "77cb1a412dc970385654f5fcf7e516a078fafc9825062533d36f9643e1c090fb"
+        },
+        "7": {
+          "offset": "0x79de0",
+          "size": 1392,
+          "sha256": "ce9093aff2754a732922fc58b84bf16e226995d783871f350c9e22a8124cf2b3"
+        }
+      },
+      "original_rom_traps": {
+        "PtToAngle": "0x3cf90",
+        "OffsetRect": "0x2c670",
+        "SectRect": "0x2c6b0",
+        "EqualRect": "0x2c630",
+        "PtInRect": "0x2c7d0"
+      },
+      "host_integer_geometry": [],
+      "host_binary64_math": [],
+      "rendering_noop": [
+        "PenSize"
+      ],
+      "fpu": "Musashi extended80 SoftFloat; requires documented quotient and exception corrections",
+      "emulator_source_archive_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "emulator_patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "emulator_binary_sha256": "74335ecaae776932e95d8516d3ddf6488689bf83434d1c6bfa4b31b8303fe166",
+      "executed_fpu_operations": {
+        "FPU_class_5": 228,
+        "FPU_class_4": 206,
+        "ALU_00": 60,
+        "FPU_class_7": 35,
+        "ALU_25": 2,
+        "ALU_23": 31,
+        "ALU_22": 28,
+        "FPU_class_3": 10,
+        "ALU_20": 6,
+        "ALU_38": 3,
+        "ALU_28": 5
+      },
+      "observed_fpcr_writes": [
+        "0x0",
+        "0x10"
+      ],
+      "fpcr_guard": "rejects nonextended precision and enabled exception traps",
+      "host_transcendental_fpu_instructions": "rejected by instruction hook; original ROM polynomial algorithms execute",
+      "scope": "IIci ROM baseline; System 7 replacement packages and boot path are not used",
+      "calls": {
+        "a9eb": 68,
+        "a861": 550
+      }
+    },
+    "selection": "Original CODE3:39a0..39c0 checkpoint inside GUI caller; used-region bytes persist",
+    "initialization": "Original complete CODE3:0e08, including original ROM QuickDraw Random",
+    "random_rom_offset": "0x2eb20",
+    "degenerate_seed": "Seed0 (or0x7fffffff) count>1 would loop forever in original, excluded from oracle"
+  },
+  "vectors": [
+    {
+      "id": "placement_00000000_0",
+      "kind": "world_placement",
+      "input": {
+        "seed": 0,
+        "count": 0
+      },
+      "expected": {
+        "robots": [],
+        "seed": 0
+      }
+    },
+    {
+      "id": "placement_00000000_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 0,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 7,
+            "y": 7,
+            "region": 1
+          }
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "id": "placement_7fffffff_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 2147483647,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 7,
+            "y": 7,
+            "region": 1
+          }
+        ],
+        "seed": 0
+      }
+    },
+    {
+      "id": "placement_00000001_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 1,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 213,
+            "y": 14,
+            "region": 3
+          }
+        ],
+        "seed": 1622650073
+      }
+    },
+    {
+      "id": "placement_00000001_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 1,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 213,
+            "y": 14,
+            "region": 3
+          },
+          {
+            "x": 350,
+            "y": 198,
+            "region": 5
+          }
+        ],
+        "seed": 470211272
+      }
+    },
+    {
+      "id": "placement_00000001_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 1,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 213,
+            "y": 14,
+            "region": 3
+          },
+          {
+            "x": 350,
+            "y": 198,
+            "region": 5
+          },
+          {
+            "x": 334,
+            "y": 16,
+            "region": 4
+          },
+          {
+            "x": 19,
+            "y": 265,
+            "region": 2
+          },
+          {
+            "x": 10,
+            "y": 62,
+            "region": 1
+          }
+        ],
+        "seed": 1441282327
+      }
+    },
+    {
+      "id": "placement_00000002_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 2,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 182,
+            "y": 10,
+            "region": 3
+          }
+        ],
+        "seed": 1097816499
+      }
+    },
+    {
+      "id": "placement_00000002_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 2,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 182,
+            "y": 10,
+            "region": 3
+          },
+          {
+            "x": 277,
+            "y": 83,
+            "region": 4
+          }
+        ],
+        "seed": 940422544
+      }
+    },
+    {
+      "id": "placement_00000002_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 2,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 182,
+            "y": 10,
+            "region": 3
+          },
+          {
+            "x": 277,
+            "y": 83,
+            "region": 4
+          },
+          {
+            "x": 48,
+            "y": 26,
+            "region": 1
+          },
+          {
+            "x": 108,
+            "y": 192,
+            "region": 2
+          },
+          {
+            "x": 285,
+            "y": 184,
+            "region": 5
+          }
+        ],
+        "seed": 1127227024
+      }
+    },
+    {
+      "id": "placement_00000003_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 3,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 80,
+            "y": 124,
+            "region": 1
+          }
+        ],
+        "seed": 572982925
+      }
+    },
+    {
+      "id": "placement_00000003_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 3,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 80,
+            "y": 124,
+            "region": 1
+          },
+          {
+            "x": 295,
+            "y": 121,
+            "region": 4
+          }
+        ],
+        "seed": 1410633816
+      }
+    },
+    {
+      "id": "placement_00000003_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 3,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 80,
+            "y": 124,
+            "region": 1
+          },
+          {
+            "x": 295,
+            "y": 121,
+            "region": 4
+          },
+          {
+            "x": 84,
+            "y": 215,
+            "region": 2
+          },
+          {
+            "x": 344,
+            "y": 236,
+            "region": 5
+          },
+          {
+            "x": 225,
+            "y": 172,
+            "region": 3
+          }
+        ],
+        "seed": 49595187
+      }
+    },
+    {
+      "id": "placement_00000004_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 4,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 240,
+            "y": 16,
+            "region": 3
+          }
+        ],
+        "seed": 48149351
+      }
+    },
+    {
+      "id": "placement_00000004_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 4,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 240,
+            "y": 16,
+            "region": 3
+          },
+          {
+            "x": 360,
+            "y": 280,
+            "region": 5
+          }
+        ],
+        "seed": 404110176
+      }
+    },
+    {
+      "id": "placement_00000004_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 4,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 240,
+            "y": 16,
+            "region": 3
+          },
+          {
+            "x": 360,
+            "y": 280,
+            "region": 5
+          },
+          {
+            "x": 347,
+            "y": 102,
+            "region": 4
+          },
+          {
+            "x": 47,
+            "y": 13,
+            "region": 1
+          },
+          {
+            "x": 55,
+            "y": 203,
+            "region": 2
+          }
+        ],
+        "seed": 1438693565
+      }
+    },
+    {
+      "id": "placement_00000005_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 5,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 341,
+            "y": 230,
+            "region": 5
+          }
+        ],
+        "seed": 1670799424
+      }
+    },
+    {
+      "id": "placement_00000005_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 5,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 341,
+            "y": 230,
+            "region": 5
+          },
+          {
+            "x": 172,
+            "y": 264,
+            "region": 3
+          }
+        ],
+        "seed": 203572713
+      }
+    },
+    {
+      "id": "placement_00000005_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 5,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 341,
+            "y": 230,
+            "region": 5
+          },
+          {
+            "x": 172,
+            "y": 264,
+            "region": 3
+          },
+          {
+            "x": 309,
+            "y": 105,
+            "region": 4
+          },
+          {
+            "x": 99,
+            "y": 226,
+            "region": 2
+          },
+          {
+            "x": 72,
+            "y": 102,
+            "region": 1
+          }
+        ],
+        "seed": 578950449
+      }
+    },
+    {
+      "id": "placement_00000006_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 6,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 57,
+            "y": 111,
+            "region": 1
+          }
+        ],
+        "seed": 1145965850
+      }
+    },
+    {
+      "id": "placement_00000006_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 6,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 57,
+            "y": 111,
+            "region": 1
+          },
+          {
+            "x": 78,
+            "y": 209,
+            "region": 2
+          }
+        ],
+        "seed": 673783985
+      }
+    },
+    {
+      "id": "placement_00000006_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 6,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 57,
+            "y": 111,
+            "region": 1
+          },
+          {
+            "x": 78,
+            "y": 209,
+            "region": 2
+          },
+          {
+            "x": 178,
+            "y": 178,
+            "region": 3
+          },
+          {
+            "x": 289,
+            "y": 29,
+            "region": 4
+          },
+          {
+            "x": 301,
+            "y": 218,
+            "region": 5
+          }
+        ],
+        "seed": 57759374
+      }
+    },
+    {
+      "id": "placement_00000007_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 7,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 329,
+            "y": 129,
+            "region": 4
+          }
+        ],
+        "seed": 621132276
+      }
+    },
+    {
+      "id": "placement_00000007_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 7,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 329,
+            "y": 129,
+            "region": 4
+          },
+          {
+            "x": 96,
+            "y": 279,
+            "region": 2
+          }
+        ],
+        "seed": 1143995257
+      }
+    },
+    {
+      "id": "placement_00000007_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 7,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 329,
+            "y": 129,
+            "region": 4
+          },
+          {
+            "x": 96,
+            "y": 279,
+            "region": 2
+          },
+          {
+            "x": 52,
+            "y": 50,
+            "region": 1
+          },
+          {
+            "x": 263,
+            "y": 194,
+            "region": 5
+          },
+          {
+            "x": 171,
+            "y": 200,
+            "region": 3
+          }
+        ],
+        "seed": 115722103
+      }
+    },
+    {
+      "id": "placement_00000008_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 8,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 359,
+            "y": 218,
+            "region": 5
+          }
+        ],
+        "seed": 96298702
+      }
+    },
+    {
+      "id": "placement_00000008_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 8,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 359,
+            "y": 218,
+            "region": 5
+          },
+          {
+            "x": 7,
+            "y": 34,
+            "region": 1
+          }
+        ],
+        "seed": 1614206529
+      }
+    },
+    {
+      "id": "placement_00000008_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 8,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 359,
+            "y": 218,
+            "region": 5
+          },
+          {
+            "x": 7,
+            "y": 34,
+            "region": 1
+          },
+          {
+            "x": 74,
+            "y": 245,
+            "region": 2
+          },
+          {
+            "x": 266,
+            "y": 119,
+            "region": 4
+          },
+          {
+            "x": 160,
+            "y": 90,
+            "region": 3
+          }
+        ],
+        "seed": 144579779
+      }
+    },
+    {
+      "id": "placement_00000009_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 9,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 93,
+            "y": 251,
+            "region": 2
+          }
+        ],
+        "seed": 1718948775
+      }
+    },
+    {
+      "id": "placement_00000009_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 9,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 93,
+            "y": 251,
+            "region": 2
+          },
+          {
+            "x": 113,
+            "y": 72,
+            "region": 1
+          }
+        ],
+        "seed": 2084417801
+      }
+    },
+    {
+      "id": "placement_00000009_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 9,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 93,
+            "y": 251,
+            "region": 2
+          },
+          {
+            "x": 113,
+            "y": 72,
+            "region": 1
+          },
+          {
+            "x": 160,
+            "y": 62,
+            "region": 3
+          },
+          {
+            "x": 313,
+            "y": 207,
+            "region": 5
+          },
+          {
+            "x": 355,
+            "y": 76,
+            "region": 4
+          }
+        ],
+        "seed": 1647767939
+      }
+    },
+    {
+      "id": "placement_0000000a_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 10,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 315,
+            "y": 12,
+            "region": 4
+          }
+        ],
+        "seed": 1194115201
+      }
+    },
+    {
+      "id": "placement_0000000a_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 10,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 315,
+            "y": 12,
+            "region": 4
+          },
+          {
+            "x": 277,
+            "y": 262,
+            "region": 5
+          }
+        ],
+        "seed": 407145426
+      }
+    },
+    {
+      "id": "placement_0000000a_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 10,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 315,
+            "y": 12,
+            "region": 4
+          },
+          {
+            "x": 277,
+            "y": 262,
+            "region": 5
+          },
+          {
+            "x": 105,
+            "y": 226,
+            "region": 2
+          },
+          {
+            "x": 211,
+            "y": 251,
+            "region": 3
+          },
+          {
+            "x": 39,
+            "y": 105,
+            "region": 1
+          }
+        ],
+        "seed": 375508442
+      }
+    },
+    {
+      "id": "placement_0000002a_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 42,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 153,
+            "y": 248,
+            "region": 3
+          }
+        ],
+        "seed": 1579310009
+      }
+    },
+    {
+      "id": "placement_0000002a_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 42,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 153,
+            "y": 248,
+            "region": 3
+          },
+          {
+            "x": 113,
+            "y": 68,
+            "region": 1
+          }
+        ],
+        "seed": 421520601
+      }
+    },
+    {
+      "id": "placement_0000002a_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 42,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 153,
+            "y": 248,
+            "region": 3
+          },
+          {
+            "x": 113,
+            "y": 68,
+            "region": 1
+          },
+          {
+            "x": 324,
+            "y": 272,
+            "region": 5
+          },
+          {
+            "x": 11,
+            "y": 274,
+            "region": 2
+          },
+          {
+            "x": 310,
+            "y": 22,
+            "region": 4
+          }
+        ],
+        "seed": 1147638727
+      }
+    },
+    {
+      "id": "placement_00003039_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 12345,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 99,
+            "y": 162,
+            "region": 2
+          }
+        ],
+        "seed": 2035175616
+      }
+    },
+    {
+      "id": "placement_00003039_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 12345,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 99,
+            "y": 162,
+            "region": 2
+          },
+          {
+            "x": 114,
+            "y": 30,
+            "region": 1
+          }
+        ],
+        "seed": 109854999
+      }
+    },
+    {
+      "id": "placement_00003039_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 12345,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 99,
+            "y": 162,
+            "region": 2
+          },
+          {
+            "x": 114,
+            "y": 30,
+            "region": 1
+          },
+          {
+            "x": 194,
+            "y": 283,
+            "region": 3
+          },
+          {
+            "x": 314,
+            "y": 45,
+            "region": 4
+          },
+          {
+            "x": 336,
+            "y": 219,
+            "region": 5
+          }
+        ],
+        "seed": 449112039
+      }
+    },
+    {
+      "id": "placement_00010000_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 65536,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 95,
+            "y": 34,
+            "region": 1
+          }
+        ],
+        "seed": 752468335
+      }
+    },
+    {
+      "id": "placement_00010000_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 65536,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 95,
+            "y": 34,
+            "region": 1
+          },
+          {
+            "x": 317,
+            "y": 56,
+            "region": 4
+          }
+        ],
+        "seed": 1523070989
+      }
+    },
+    {
+      "id": "placement_00010000_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 65536,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 95,
+            "y": 34,
+            "region": 1
+          },
+          {
+            "x": 317,
+            "y": 56,
+            "region": 4
+          },
+          {
+            "x": 73,
+            "y": 280,
+            "region": 2
+          },
+          {
+            "x": 196,
+            "y": 231,
+            "region": 3
+          },
+          {
+            "x": 298,
+            "y": 224,
+            "region": 5
+          }
+        ],
+        "seed": 1727366884
+      }
+    },
+    {
+      "id": "placement_000007c7_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 1991,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 340,
+            "y": 239,
+            "region": 5
+          }
+        ],
+        "seed": 880890255
+      }
+    },
+    {
+      "id": "placement_000007c7_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 1991,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 340,
+            "y": 239,
+            "region": 5
+          },
+          {
+            "x": 282,
+            "y": 16,
+            "region": 4
+          }
+        ],
+        "seed": 2035256107
+      }
+    },
+    {
+      "id": "placement_000007c7_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 1991,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 340,
+            "y": 239,
+            "region": 5
+          },
+          {
+            "x": 282,
+            "y": 16,
+            "region": 4
+          },
+          {
+            "x": 98,
+            "y": 14,
+            "region": 1
+          },
+          {
+            "x": 214,
+            "y": 146,
+            "region": 3
+          },
+          {
+            "x": 22,
+            "y": 240,
+            "region": 2
+          }
+        ],
+        "seed": 1542492412
+      }
+    },
+    {
+      "id": "placement_000109a0_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 68000,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 320,
+            "y": 183,
+            "region": 5
+          }
+        ],
+        "seed": 347697493
+      }
+    },
+    {
+      "id": "placement_000109a0_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 68000,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 320,
+            "y": 183,
+            "region": 5
+          },
+          {
+            "x": 243,
+            "y": 216,
+            "region": 3
+          }
+        ],
+        "seed": 72805247
+      }
+    },
+    {
+      "id": "placement_000109a0_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 68000,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 320,
+            "y": 183,
+            "region": 5
+          },
+          {
+            "x": 243,
+            "y": 216,
+            "region": 3
+          },
+          {
+            "x": 304,
+            "y": 128,
+            "region": 4
+          },
+          {
+            "x": 55,
+            "y": 70,
+            "region": 1
+          },
+          {
+            "x": 106,
+            "y": 283,
+            "region": 2
+          }
+        ],
+        "seed": 336888343
+      }
+    },
+    {
+      "id": "placement_392453e7_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 958682087,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 7,
+            "y": 125,
+            "region": 1
+          }
+        ],
+        "seed": 494440662
+      }
+    },
+    {
+      "id": "placement_392453e7_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 958682087,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 7,
+            "y": 125,
+            "region": 1
+          },
+          {
+            "x": 277,
+            "y": 197,
+            "region": 5
+          }
+        ],
+        "seed": 1539392561
+      }
+    },
+    {
+      "id": "placement_392453e7_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 958682087,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 7,
+            "y": 125,
+            "region": 1
+          },
+          {
+            "x": 277,
+            "y": 197,
+            "region": 5
+          },
+          {
+            "x": 112,
+            "y": 269,
+            "region": 2
+          },
+          {
+            "x": 273,
+            "y": 99,
+            "region": 4
+          },
+          {
+            "x": 211,
+            "y": 143,
+            "region": 3
+          }
+        ],
+        "seed": 478926312
+      }
+    },
+    {
+      "id": "placement_7ffffffe_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 2147483646,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 338,
+            "y": 103,
+            "region": 4
+          }
+        ],
+        "seed": 524833574
+      }
+    },
+    {
+      "id": "placement_7ffffffe_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 2147483646,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 338,
+            "y": 103,
+            "region": 4
+          },
+          {
+            "x": 96,
+            "y": 44,
+            "region": 1
+          }
+        ],
+        "seed": 1677272375
+      }
+    },
+    {
+      "id": "placement_7ffffffe_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 2147483646,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 338,
+            "y": 103,
+            "region": 4
+          },
+          {
+            "x": 96,
+            "y": 44,
+            "region": 1
+          },
+          {
+            "x": 211,
+            "y": 67,
+            "region": 3
+          },
+          {
+            "x": 9,
+            "y": 229,
+            "region": 2
+          },
+          {
+            "x": 264,
+            "y": 216,
+            "region": 5
+          }
+        ],
+        "seed": 706201320
+      }
+    },
+    {
+      "id": "placement_ffffffff_1",
+      "kind": "world_placement",
+      "input": {
+        "seed": 4294967295,
+        "count": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 213,
+            "y": 14,
+            "region": 3
+          }
+        ],
+        "seed": 1622650073
+      }
+    },
+    {
+      "id": "placement_ffffffff_2",
+      "kind": "world_placement",
+      "input": {
+        "seed": 4294967295,
+        "count": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 213,
+            "y": 14,
+            "region": 3
+          },
+          {
+            "x": 350,
+            "y": 198,
+            "region": 5
+          }
+        ],
+        "seed": 470211272
+      }
+    },
+    {
+      "id": "placement_ffffffff_5",
+      "kind": "world_placement",
+      "input": {
+        "seed": 4294967295,
+        "count": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 213,
+            "y": 14,
+            "region": 3
+          },
+          {
+            "x": 350,
+            "y": 198,
+            "region": 5
+          },
+          {
+            "x": 334,
+            "y": 16,
+            "region": 4
+          },
+          {
+            "x": 19,
+            "y": 265,
+            "region": 2
+          },
+          {
+            "x": 10,
+            "y": 62,
+            "region": 1
+          }
+        ],
+        "seed": 1441282327
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language_definitions>
+  <language processor="68000" endian="big" size="32" variant="RobotWarriors" version="1.0" slafile="robotwar.sla" processorspec="68000.pspec" id="68000:BE:32:RobotWarriors">
+    <description>Motorola 68020 with opaque classic Mac A-line Toolbox traps</description>
+    <compiler name="default" spec="robotwar.cspec" id="default"/>
+  </language>
+</language_definitions>

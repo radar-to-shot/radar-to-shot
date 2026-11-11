@@ -1,0 +1,25 @@
+{
+  "tool": "Ghidra 11.3.2",
+  "language": "68000:BE:32:RobotWarriors (MC68020 plus opaque classic Mac A-line)",
+  "address_convention": "CODE n at n*0x10000; A5=0x100000; offsets include 4-byte segment header",
+  "candidate_functions": 244,
+  "emitted_functions": 244,
+  "fatal_decompile_failures": 0,
+  "warning": "Successful emission does not establish correct or complete decompilation. Read README.md and warnings retained in C pseudocode.",
+  "inputs": {
+    "CODE_0.bin": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+    "CODE_1.bin": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+    "CODE_2.bin": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+    "CODE_3.bin": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+    "CODE_4.bin": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+    "CODE_5.bin": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+  },
+  "outputs": {
+    "CODE_1.c": "48d85f392f3de4255700a2cb4f7623d91d1089abb5035daa01c0486a57bd5547",
+    "CODE_2.c": "515b5e8c1b1769d25b3f1809d7a43ca7ef0d44a3db9c2fa58013b8fa17d4bad6",
+    "CODE_3.c": "3fa333f9ef6e946466e456166ce9595d64f64d4535b965bc05de62c29b71a31a",
+    "CODE_4.c": "815bd0752dae5070ca263a8ad90bf6788e39ef8f12ae898dab0cf999c789d0ae",
+    "CODE_5.c": "94f6dd323bc382a4e9f13090545e72883ebfa50d9fbbfd7b884859a1b8e26f49"
+  },
+  "abi_annotations": 168
+}

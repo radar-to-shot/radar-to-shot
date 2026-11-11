@@ -1,0 +1,1752 @@
+{
+  "provenance": {
+    "engine": "machine68k 0.5.1 / Musashi, 68000",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {},
+    "extra_code_instructions": {},
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 56414,
+    "segment_instructions": {
+      "5": 26082,
+      "1": 29290
+    },
+    "macintosh_traps": [],
+    "toolbox_shims": {},
+    "host_service_calls": {}
+  },
+  "vectors": [
+    {
+      "id": "parser-000",
+      "kind": "parse",
+      "input": {
+        "source": "angle_conv\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 14,
+        "symbol": "ANGLE_CONV",
+        "attribute": 0,
+        "next_offset": 10,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-001",
+      "kind": "parse",
+      "input": {
+        "source": "TIME_int_XFER\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 11,
+        "symbol": "TIME_INT_XFER",
+        "attribute": 0,
+        "next_offset": 13,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-002",
+      "kind": "parse",
+      "input": {
+        "source": "a12345678901234567890\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 20,
+        "operation": 0,
+        "value": 0,
+        "symbol": "A12345678901234",
+        "attribute": 0,
+        "next_offset": 21,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-003",
+      "kind": "parse",
+      "input": {
+        "source": "123\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": 123,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 3,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-004",
+      "kind": "parse",
+      "input": {
+        "source": "123",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": 12,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-005",
+      "kind": "parse",
+      "input": {
+        "source": "-123\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": -123,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-006",
+      "kind": "parse",
+      "input": {
+        "source": "+123\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": 123,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-007",
+      "kind": "parse",
+      "input": {
+        "source": "-123",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": -12,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 3,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-008",
+      "kind": "parse",
+      "input": {
+        "source": "-a\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 0,
+        "operation": 0,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": "Constant expected.  Expecting:  -<constant>"
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-009",
+      "kind": "parse",
+      "input": {
+        "source": "- 2\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 0,
+        "operation": 0,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": "Constant expected.  Expecting:  -<constant>"
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-010",
+      "kind": "parse",
+      "input": {
+        "source": "-2\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 3,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-011",
+      "kind": "parse",
+      "input": {
+        "source": "32768\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": -32768,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": "Constant too large.  32767 is the largest constant allowed"
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-012",
+      "kind": "parse",
+      "input": {
+        "source": "0\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-013",
+      "kind": "parse",
+      "input": {
+        "source": "\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 0,
+        "operation": 0,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-014",
+      "kind": "parse",
+      "input": {
+        "source": "; comment",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 17,
+        "operation": 0,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-015",
+      "kind": "parse",
+      "input": {
+        "source": "a\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 20,
+        "operation": 0,
+        "value": 0,
+        "symbol": "A",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-016",
+      "kind": "parse",
+      "input": {
+        "source": "xmax\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": 381,
+        "symbol": "XMAX",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-017",
+      "kind": "parse",
+      "input": {
+        "source": "shot_speed\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 18,
+        "operation": 0,
+        "value": 18,
+        "symbol": "SHOT_SPEED",
+        "attribute": 0,
+        "next_offset": 10,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-018",
+      "kind": "parse",
+      "input": {
+        "source": "  aim\r",
+        "offset": 2,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 2,
+        "symbol": "AIM",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-019",
+      "kind": "parse",
+      "input": {
+        "source": "X\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 0,
+        "symbol": "X",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-020",
+      "kind": "parse",
+      "input": {
+        "source": "Y\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 1,
+        "symbol": "Y",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-021",
+      "kind": "parse",
+      "input": {
+        "source": "AIM\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 2,
+        "symbol": "AIM",
+        "attribute": 0,
+        "next_offset": 3,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-022",
+      "kind": "parse",
+      "input": {
+        "source": "SHOT\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 3,
+        "symbol": "SHOT",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-023",
+      "kind": "parse",
+      "input": {
+        "source": "DAMAGE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 4,
+        "symbol": "DAMAGE",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-024",
+      "kind": "parse",
+      "input": {
+        "source": "SPEED\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 5,
+        "symbol": "SPEED",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-025",
+      "kind": "parse",
+      "input": {
+        "source": "DIRECTION\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 6,
+        "symbol": "DIRECTION",
+        "attribute": 0,
+        "next_offset": 9,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-026",
+      "kind": "parse",
+      "input": {
+        "source": "FUEL\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 7,
+        "symbol": "FUEL",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-027",
+      "kind": "parse",
+      "input": {
+        "source": "CLOAK\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 8,
+        "symbol": "CLOAK",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-028",
+      "kind": "parse",
+      "input": {
+        "source": "NUM_ROBOTS\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 9,
+        "symbol": "NUM_ROBOTS",
+        "attribute": 0,
+        "next_offset": 10,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-029",
+      "kind": "parse",
+      "input": {
+        "source": "TIME_INT_MASK\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 10,
+        "symbol": "TIME_INT_MASK",
+        "attribute": 0,
+        "next_offset": 13,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-030",
+      "kind": "parse",
+      "input": {
+        "source": "TIME_INT_XFER\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 11,
+        "symbol": "TIME_INT_XFER",
+        "attribute": 0,
+        "next_offset": 13,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-031",
+      "kind": "parse",
+      "input": {
+        "source": "X_CONV\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 12,
+        "symbol": "X_CONV",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-032",
+      "kind": "parse",
+      "input": {
+        "source": "Y_CONV\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 13,
+        "symbol": "Y_CONV",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-033",
+      "kind": "parse",
+      "input": {
+        "source": "ANGLE_CONV\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 14,
+        "symbol": "ANGLE_CONV",
+        "attribute": 0,
+        "next_offset": 10,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-034",
+      "kind": "parse",
+      "input": {
+        "source": "DIST_CONV\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 15,
+        "symbol": "DIST_CONV",
+        "attribute": 0,
+        "next_offset": 9,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-035",
+      "kind": "parse",
+      "input": {
+        "source": "RADAR\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 16,
+        "symbol": "RADAR",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-036",
+      "kind": "parse",
+      "input": {
+        "source": "RANDOM\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 17,
+        "symbol": "RANDOM",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-037",
+      "kind": "parse",
+      "input": {
+        "source": "STACK\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 1,
+        "operation": 0,
+        "value": 18,
+        "symbol": "STACK",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-038",
+      "kind": "parse",
+      "input": {
+        "source": "CPU_SPEED\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 21,
+        "operation": 0,
+        "value": 0,
+        "symbol": "CPU_SPEED",
+        "attribute": 0,
+        "next_offset": 9,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-039",
+      "kind": "parse",
+      "input": {
+        "source": "FIRE_RATE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 21,
+        "operation": 0,
+        "value": 0,
+        "symbol": "FIRE_RATE",
+        "attribute": 1,
+        "next_offset": 9,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-040",
+      "kind": "parse",
+      "input": {
+        "source": "ENGINE_SIZE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 21,
+        "operation": 0,
+        "value": 0,
+        "symbol": "ENGINE_SIZE",
+        "attribute": 2,
+        "next_offset": 11,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-041",
+      "kind": "parse",
+      "input": {
+        "source": "RADAR_RANGE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 21,
+        "operation": 0,
+        "value": 0,
+        "symbol": "RADAR_RANGE",
+        "attribute": 3,
+        "next_offset": 11,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-042",
+      "kind": "parse",
+      "input": {
+        "source": "FUEL_CAPACITY\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 21,
+        "operation": 0,
+        "value": 0,
+        "symbol": "FUEL_CAPACITY",
+        "attribute": 4,
+        "next_offset": 13,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-043",
+      "kind": "parse",
+      "input": {
+        "source": "CLOAKING\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 21,
+        "operation": 0,
+        "value": 0,
+        "symbol": "CLOAKING",
+        "attribute": 5,
+        "next_offset": 8,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-044",
+      "kind": "parse",
+      "input": {
+        "source": "ARMOR\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 21,
+        "operation": 0,
+        "value": 0,
+        "symbol": "ARMOR",
+        "attribute": 6,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-045",
+      "kind": "parse",
+      "input": {
+        "source": "IF\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 4,
+        "operation": 0,
+        "value": 0,
+        "symbol": "IF",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-046",
+      "kind": "parse",
+      "input": {
+        "source": "THEN\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 5,
+        "operation": 0,
+        "value": 0,
+        "symbol": "THEN",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-047",
+      "kind": "parse",
+      "input": {
+        "source": "ELSE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 6,
+        "operation": 0,
+        "value": 0,
+        "symbol": "ELSE",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-048",
+      "kind": "parse",
+      "input": {
+        "source": "WHILE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 7,
+        "operation": 0,
+        "value": 0,
+        "symbol": "WHILE",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-049",
+      "kind": "parse",
+      "input": {
+        "source": "DO\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 8,
+        "operation": 0,
+        "value": 0,
+        "symbol": "DO",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-050",
+      "kind": "parse",
+      "input": {
+        "source": "REPEAT\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 9,
+        "operation": 0,
+        "value": 0,
+        "symbol": "REPEAT",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-051",
+      "kind": "parse",
+      "input": {
+        "source": "UNTIL\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 10,
+        "operation": 0,
+        "value": 0,
+        "symbol": "UNTIL",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-052",
+      "kind": "parse",
+      "input": {
+        "source": "END\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 11,
+        "operation": 0,
+        "value": 0,
+        "symbol": "END",
+        "attribute": 0,
+        "next_offset": 3,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-053",
+      "kind": "parse",
+      "input": {
+        "source": "GOTO\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 12,
+        "operation": 0,
+        "value": 0,
+        "symbol": "GOTO",
+        "attribute": 0,
+        "next_offset": 4,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-054",
+      "kind": "parse",
+      "input": {
+        "source": "GOSUB\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 13,
+        "operation": 0,
+        "value": 0,
+        "symbol": "GOSUB",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-055",
+      "kind": "parse",
+      "input": {
+        "source": "RETURN\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 14,
+        "operation": 0,
+        "value": 0,
+        "symbol": "RETURN",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-056",
+      "kind": "parse",
+      "input": {
+        "source": "ENDINT\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 15,
+        "operation": 0,
+        "value": 0,
+        "symbol": "ENDINT",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-057",
+      "kind": "parse",
+      "input": {
+        "source": "TO\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 16,
+        "operation": 0,
+        "value": 0,
+        "symbol": "TO",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-058",
+      "kind": "parse",
+      "input": {
+        "source": "DEFINE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 19,
+        "operation": 0,
+        "value": 0,
+        "symbol": "DEFINE",
+        "attribute": 0,
+        "next_offset": 6,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-059",
+      "kind": "parse",
+      "input": {
+        "source": "ALLOCATE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 22,
+        "operation": 0,
+        "value": 0,
+        "symbol": "ALLOCATE",
+        "attribute": 0,
+        "next_offset": 8,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-060",
+      "kind": "parse",
+      "input": {
+        "source": "TRACE\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 25,
+        "operation": 0,
+        "value": 0,
+        "symbol": "TRACE",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-061",
+      "kind": "parse",
+      "input": {
+        "source": "RESET\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 26,
+        "operation": 0,
+        "value": 0,
+        "symbol": "RESET",
+        "attribute": 0,
+        "next_offset": 5,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-062",
+      "kind": "parse",
+      "input": {
+        "source": "AND\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 7,
+        "value": 0,
+        "symbol": "AND",
+        "attribute": 0,
+        "next_offset": 3,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-063",
+      "kind": "parse",
+      "input": {
+        "source": "OR\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 8,
+        "value": 0,
+        "symbol": "OR",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-064",
+      "kind": "parse",
+      "input": {
+        "source": "XOR\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 9,
+        "value": 0,
+        "symbol": "XOR",
+        "attribute": 0,
+        "next_offset": 3,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-065",
+      "kind": "parse",
+      "input": {
+        "source": "MOD\r",
+        "offset": 0,
+        "has_operand": false
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 6,
+        "value": 0,
+        "symbol": "MOD",
+        "attribute": 0,
+        "next_offset": 3,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-066",
+      "kind": "parse",
+      "input": {
+        "source": "+\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 2,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-067",
+      "kind": "parse",
+      "input": {
+        "source": "-\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 3,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-068",
+      "kind": "parse",
+      "input": {
+        "source": "*\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 4,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-069",
+      "kind": "parse",
+      "input": {
+        "source": "/\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 2,
+        "operation": 5,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-070",
+      "kind": "parse",
+      "input": {
+        "source": "<\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 3,
+        "operation": 12,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-071",
+      "kind": "parse",
+      "input": {
+        "source": ">\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 3,
+        "operation": 11,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-072",
+      "kind": "parse",
+      "input": {
+        "source": "<=\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 3,
+        "operation": 14,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-073",
+      "kind": "parse",
+      "input": {
+        "source": ">=\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 3,
+        "operation": 13,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-074",
+      "kind": "parse",
+      "input": {
+        "source": "<>\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 3,
+        "operation": 15,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 2,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-075",
+      "kind": "parse",
+      "input": {
+        "source": "=\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 3,
+        "operation": 10,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-076",
+      "kind": "parse",
+      "input": {
+        "source": "&\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 23,
+        "operation": 0,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    },
+    {
+      "id": "parser-077",
+      "kind": "parse",
+      "input": {
+        "source": "^\r",
+        "offset": 0,
+        "has_operand": true
+      },
+      "expected": {
+        "kind": 24,
+        "operation": 0,
+        "value": 0,
+        "symbol": "",
+        "attribute": 0,
+        "next_offset": 1,
+        "error": ""
+      },
+      "oracle": {
+        "segment": 5,
+        "offset": "1718"
+      }
+    }
+  ]
+}

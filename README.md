@@ -1,5 +1,15 @@
 # radar-to-shot
 
+The headless C++20 implementation, original-code extraction/decompilation, and
+compatibility tests are documented in [docs/HEADLESS.md](docs/HEADLESS.md).
+The [battle runners](docs/HEADLESS.md#battle-scripts-native-and-original-68k)
+accept 2–5 robot text files and produce JSON using either native C++ or the
+original application under 68k emulation.
+The [tournament workflow](docs/HEADLESS.md#tournaments) ranks all robots in a
+selected subdirectory using balanced head-to-head matches and publishes JSON
+results plus standings.
+
+
 This is a repository to help with developing robots for the 1991 Mac game "Robot Warriors", all in a browser window.
 
 It uses GitHub actions to generate a barebones System 7.0.1 disk image for use with [Infinite Mac](https://infinitemac.org/).

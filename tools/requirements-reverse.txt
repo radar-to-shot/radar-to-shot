@@ -1,0 +1,5 @@
+machfs==1.3
+macresources==1.2
+capstone==5.0.9
+machine68k==0.5.1
+-r requirements-format.txt

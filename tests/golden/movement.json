@@ -1,0 +1,7157 @@
+{
+  "provenance": {
+    "engine": "machine68k 0.5.1 / Musashi, 68030",
+    "emulator_build": {
+      "package": "machine68k==0.5.1",
+      "source_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "verification": [
+        "598 FREM/FMOD rational cases",
+        "139 FPU status/rounding cases"
+      ]
+    },
+    "extra_code_sha256": {
+      "Mac_IIci.ROM": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2"
+    },
+    "extra_code_instructions": {
+      "Mac_IIci.ROM": 86361
+    },
+    "mode": "routine-level original-code execution",
+    "guest_code_integrity": "CODE1..5 guest bytes equal extracted resource bytes",
+    "code_sha256": {
+      "0": "b574e98a7dea652d5092122c515fec8ef132f79cca0e52a2567cd631666b84bc",
+      "1": "e0169d3a5f157120bf93362b2f819fc3919f0af2d60e19129cdd5b470b9cfbf9",
+      "2": "244e0506960c3393e06b6209c250f14488a300225f1cb4181c83e4e41e3bb656",
+      "3": "203a730ea9691a32ca24dccd7952bd7e4eebe23a6b73c09866bb44127d2351c6",
+      "4": "5f2213d8b721df29d34a433f85885663a1f6005ed46c4f9b1cd642b364150271",
+      "5": "34139f16b6785d984b516506d48e4a2684c15920c10ec00e717708a63e3cbc73"
+    },
+    "instructions": 365681,
+    "segment_instructions": {
+      "1": 101,
+      "3": 278733
+    },
+    "macintosh_traps": [
+      "a8a6@CODE3:0702",
+      "a8a8@CODE3:0982",
+      "a8a8@CODE3:0b36",
+      "a8a8@CODE3:0c00",
+      "a8aa@CODE3:06ec",
+      "a8aa@CODE3:0a12",
+      "a8aa@CODE3:0a50",
+      "a9eb@CODE1:0218",
+      "a9eb@CODE1:0224",
+      "a9eb@CODE1:0248",
+      "a9eb@CODE1:0264",
+      "a9eb@CODE1:0272",
+      "a9eb@CODE1:0284",
+      "a9eb@Mac_IIci.ROM:071c3a",
+      "a9eb@Mac_IIci.ROM:071c64",
+      "a9eb@Mac_IIci.ROM:071d0c",
+      "a9eb@Mac_IIci.ROM:071d16",
+      "a9eb@Mac_IIci.ROM:071d38",
+      "a9eb@Mac_IIci.ROM:071fa2",
+      "a9eb@Mac_IIci.ROM:0725ac",
+      "a9eb@Mac_IIci.ROM:0725d8",
+      "a9eb@Mac_IIci.ROM:0725ec",
+      "a9eb@Mac_IIci.ROM:0725f6",
+      "a9eb@Mac_IIci.ROM:072600",
+      "a9eb@Mac_IIci.ROM:07260e",
+      "a9eb@Mac_IIci.ROM:072624",
+      "a9eb@Mac_IIci.ROM:072640",
+      "a9eb@Mac_IIci.ROM:072652",
+      "a9eb@Mac_IIci.ROM:07265e",
+      "a9eb@Mac_IIci.ROM:072698",
+      "a9eb@Mac_IIci.ROM:0726ae",
+      "a9eb@Mac_IIci.ROM:0726b8",
+      "a9eb@Mac_IIci.ROM:0726c0",
+      "a9eb@Mac_IIci.ROM:0726c8",
+      "a9eb@Mac_IIci.ROM:0726d6",
+      "a9eb@Mac_IIci.ROM:0727f8",
+      "a9eb@Mac_IIci.ROM:07282e",
+      "a9eb@Mac_IIci.ROM:07285c",
+      "a9eb@Mac_IIci.ROM:072872",
+      "a9eb@Mac_IIci.ROM:07287c",
+      "a9eb@Mac_IIci.ROM:072888",
+      "a9eb@Mac_IIci.ROM:072894",
+      "a9eb@Mac_IIci.ROM:0728aa",
+      "a9eb@Mac_IIci.ROM:0728b6",
+      "a9eb@Mac_IIci.ROM:0728c8",
+      "a9eb@Mac_IIci.ROM:0728d2",
+      "a9eb@Mac_IIci.ROM:0728dc",
+      "a9eb@Mac_IIci.ROM:0728f0"
+    ],
+    "toolbox_shims": {},
+    "host_service_calls": {},
+    "platform": {
+      "toolbox": "original supplied Mac IIci ROM numerical and integer QuickDraw routines",
+      "rom_sha256": "0419966cfd7445680c0dd6ca78e8b1f4bc212e75caf56f4a5f523afa576ad3f2",
+      "rom_base": "0x700000",
+      "original_rom_packages": {
+        "4": {
+          "offset": "0x70ac0",
+          "size": 4352,
+          "sha256": "b3aae2599ad5e8fd8dbab83eff1f6488aa7c057c625055978e0b5a8e84c1b333"
+        },
+        "5": {
+          "offset": "0x71be0",
+          "size": 4304,
+          "sha256": "77cb1a412dc970385654f5fcf7e516a078fafc9825062533d36f9643e1c090fb"
+        },
+        "7": {
+          "offset": "0x79de0",
+          "size": 1392,
+          "sha256": "ce9093aff2754a732922fc58b84bf16e226995d783871f350c9e22a8124cf2b3"
+        }
+      },
+      "original_rom_traps": {
+        "PtToAngle": "0x3cf90",
+        "OffsetRect": "0x2c670",
+        "SectRect": "0x2c6b0",
+        "EqualRect": "0x2c630",
+        "PtInRect": "0x2c7d0"
+      },
+      "host_integer_geometry": [],
+      "host_binary64_math": [],
+      "rendering_noop": [
+        "PenSize"
+      ],
+      "fpu": "Musashi extended80 SoftFloat; requires documented quotient and exception corrections",
+      "emulator_source_archive_sha256": "ab8292add8d169aa4f81173e018216269023c77d009a7e6bbf1e603e85ef0b32",
+      "emulator_patch_sha256": "18c51f609410086d4d22cc13665ee1f6e96baf7ce28eb99061c98f9df8eaa7cd",
+      "emulator_binary_sha256": "74335ecaae776932e95d8516d3ddf6488689bf83434d1c6bfa4b31b8303fe166",
+      "executed_fpu_operations": {
+        "FPU_class_5": 228,
+        "FPU_class_4": 206,
+        "ALU_00": 60,
+        "FPU_class_7": 35,
+        "ALU_25": 2,
+        "ALU_23": 31,
+        "ALU_22": 28,
+        "FPU_class_3": 10,
+        "ALU_20": 6,
+        "ALU_38": 3,
+        "ALU_28": 5
+      },
+      "observed_fpcr_writes": [
+        "0x0",
+        "0x10"
+      ],
+      "fpcr_guard": "rejects nonextended precision and enabled exception traps",
+      "host_transcendental_fpu_instructions": "rejected by instruction hook; original ROM polynomial algorithms execute",
+      "scope": "IIci ROM baseline; System 7 replacement packages and boot path are not used",
+      "calls": {
+        "a9eb": 68,
+        "a8a8": 617,
+        "a8aa": 1268,
+        "a8a6": 585
+      }
+    }
+  },
+  "vectors": [
+    {
+      "id": "movement_stationary",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {}
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1850,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_0_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 0,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 200,
+            "vy": -200,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 200,
+            "remainder_y": -200,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_0_2",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 0,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 400,
+            "vy": -400,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 600,
+            "remainder_y": -600,
+            "fuel": 1846,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_0_3",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 0,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 99,
+            "vx": 600,
+            "vy": -600,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 200,
+            "remainder_y": -200,
+            "fuel": 1844,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_0_5",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 0,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 103,
+            "y": 97,
+            "vx": 1000,
+            "vy": -1000,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1840,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_0_10",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 0,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 10
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 111,
+            "y": 92,
+            "vx": 2000,
+            "vy": -1000,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1830,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_0_25",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 0,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 25
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 141,
+            "y": 77,
+            "vx": 2000,
+            "vy": -1000,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1800,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_1_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 1,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 400,
+            "vy": -400,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 400,
+            "remainder_y": -400,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_1_2",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 1,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 99,
+            "vx": 800,
+            "vy": -800,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 200,
+            "remainder_y": -200,
+            "fuel": 1846,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_1_3",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 1,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 98,
+            "vx": 1200,
+            "vy": -1200,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 400,
+            "remainder_y": -400,
+            "fuel": 1844,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_1_5",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 1,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 106,
+            "y": 96,
+            "vx": 2000,
+            "vy": -1200,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 0,
+            "remainder_y": -400,
+            "fuel": 1840,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_1_10",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 1,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 10
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 116,
+            "y": 91,
+            "vx": 2000,
+            "vy": -800,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 0,
+            "remainder_y": -200,
+            "fuel": 1830,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_acceleration_1_25",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "engine": 1,
+            "target_x": 2000,
+            "target_y": -1000,
+            "speed": 20
+          }
+        ],
+        "ticks": 25
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 146,
+            "y": 76,
+            "vx": 2000,
+            "vy": -1200,
+            "target_x": 2000,
+            "target_y": -1000,
+            "remainder_x": 0,
+            "remainder_y": -400,
+            "fuel": 1800,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_5_100_-2000_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 5,
+            "y": 100,
+            "vx": -2000,
+            "vy": 0,
+            "target_x": -2000,
+            "target_y": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 5,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_376_100_2000_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 376,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 376,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_100_5_0_-2000",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 5,
+            "vx": 0,
+            "vy": -2000,
+            "target_x": 0,
+            "target_y": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 5,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_100_308_0_2000",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 308,
+            "vx": 0,
+            "vy": 2000,
+            "target_x": 0,
+            "target_y": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 308,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_5_5_-2000_-2000",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 5,
+            "y": 5,
+            "vx": -2000,
+            "vy": -2000,
+            "target_x": -2000,
+            "target_y": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 5,
+            "y": 5,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 4,
+            "damage_percent": 4,
+            "damage_flash": 2,
+            "collision_damage": 4,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_376_308_2000_2000",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 376,
+            "y": 308,
+            "vx": 2000,
+            "vy": 2000,
+            "target_x": 2000,
+            "target_y": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 376,
+            "y": 308,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 4,
+            "damage_percent": 4,
+            "damage_flash": 2,
+            "collision_damage": 4,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_6_100_-2000_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 6,
+            "y": 100,
+            "vx": -2000,
+            "vy": 0,
+            "target_x": -2000,
+            "target_y": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 5,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_375_100_2000_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 375,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 376,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_100_6_0_-2000",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 6,
+            "vx": 0,
+            "vy": -2000,
+            "target_x": 0,
+            "target_y": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 5,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_wall_100_307_0_2000",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 307,
+            "vx": 0,
+            "vy": 2000,
+            "target_x": 0,
+            "target_y": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 308,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_10_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 110,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 110,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_10_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 110,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 110,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_10_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 110,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 110,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_11_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 111,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 111,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_11_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 111,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 111,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_11_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 111,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 113,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_12_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_12_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_12_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 114,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_13_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 113,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_13_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 113,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 113,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_13_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 113,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 115,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_14_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 114,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 3,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_14_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 114,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 114,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_14_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 114,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 116,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_15_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 115,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 113,
+            "y": 100,
+            "vx": -2000,
+            "vy": 0,
+            "target_x": -2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_15_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 115,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 115,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_15_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 115,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 117,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_16_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 116,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 114,
+            "y": 100,
+            "vx": -2000,
+            "vy": 0,
+            "target_x": -2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_16_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 116,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 116,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_16_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 116,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 118,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_20_-1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 120,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 118,
+            "y": 100,
+            "vx": -2000,
+            "vy": 0,
+            "target_x": -2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_20_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 120,
+            "y": 100,
+            "vx": 0,
+            "target_x": 0,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 120,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_pair_20_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 120,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 102,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 122,
+            "y": 100,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_three_robot_collision",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 100,
+            "y": 100,
+            "vx": 2000,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 112,
+            "y": 100
+          },
+          {
+            "x": 124,
+            "y": 100,
+            "vx": -2000,
+            "target_x": -2000,
+            "speed": 20
+          }
+        ]
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 112,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1850,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 6,
+            "damage_percent": 6,
+            "damage_flash": 4,
+            "collision_damage": 6,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 123,
+            "y": 100,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1848,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": true,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_five_robots",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 25,
+            "y": 150,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 95,
+            "y": 150,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 165,
+            "y": 150,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 235,
+            "y": 150,
+            "target_x": 2000,
+            "speed": 20
+          },
+          {
+            "x": 305,
+            "y": 150,
+            "target_x": 2000,
+            "speed": 20
+          }
+        ],
+        "ticks": 20
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 56,
+            "y": 150,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1810,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 126,
+            "y": 150,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1810,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 196,
+            "y": 150,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1810,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 266,
+            "y": 150,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1810,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          },
+          {
+            "x": 336,
+            "y": 150,
+            "vx": 2000,
+            "vy": 0,
+            "target_x": 2000,
+            "target_y": 0,
+            "remainder_x": 0,
+            "remainder_y": 0,
+            "fuel": 1810,
+            "speed": 20,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_0",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 364,
+            "y": 78,
+            "engine": 1,
+            "vx": 1209,
+            "vy": -3367,
+            "target_x": -3327,
+            "target_y": -1947,
+            "remainder_x": 175,
+            "remainder_y": 91,
+            "speed": 36,
+            "fuel": 9,
+            "cloak": 0
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 365,
+            "y": 68,
+            "vx": 9,
+            "vy": -1367,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 20,
+            "remainder_y": -744,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_1",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 308,
+            "y": 15,
+            "engine": 0,
+            "vx": 3874,
+            "vy": -745,
+            "target_x": 3353,
+            "target_y": 1762,
+            "remainder_x": 562,
+            "remainder_y": -440,
+            "speed": 39,
+            "fuel": 19,
+            "cloak": 0
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 325,
+            "y": 14,
+            "vx": 3274,
+            "vy": 255,
+            "target_x": 3353,
+            "target_y": 1762,
+            "remainder_x": 532,
+            "remainder_y": -165,
+            "fuel": 4,
+            "speed": 39,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_2",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 14,
+            "y": 308,
+            "engine": 0,
+            "vx": -1417,
+            "vy": 1610,
+            "target_x": 1197,
+            "target_y": 214,
+            "remainder_x": 651,
+            "remainder_y": -32,
+            "speed": 30,
+            "fuel": 4,
+            "cloak": 0
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 14,
+            "y": 308,
+            "vx": 0,
+            "vy": 0,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -566,
+            "remainder_y": 378,
+            "fuel": 1,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 3,
+            "damage_percent": 3,
+            "damage_flash": 2,
+            "collision_damage": 3,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_3",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 321,
+            "y": 167,
+            "engine": 0,
+            "vx": -165,
+            "vy": 1321,
+            "target_x": -706,
+            "target_y": -3384,
+            "remainder_x": -100,
+            "remainder_y": 802,
+            "speed": 22,
+            "fuel": 4,
+            "cloak": 0
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 320,
+            "y": 170,
+            "vx": -365,
+            "vy": 721,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -395,
+            "remainder_y": 565,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_4",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 277,
+            "y": 176,
+            "engine": 0,
+            "vx": 3462,
+            "vy": -2900,
+            "target_x": 1299,
+            "target_y": -3312,
+            "remainder_x": 867,
+            "remainder_y": 598,
+            "speed": 10,
+            "fuel": 17,
+            "cloak": 0
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 294,
+            "y": 160,
+            "vx": 2262,
+            "vy": -2900,
+            "target_x": 1299,
+            "target_y": -3312,
+            "remainder_x": 439,
+            "remainder_y": -802,
+            "fuel": 11,
+            "speed": 10,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_5",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 260,
+            "y": 156,
+            "engine": 0,
+            "vx": -2972,
+            "vy": 615,
+            "target_x": 1648,
+            "target_y": -1034,
+            "remainder_x": 248,
+            "remainder_y": 506,
+            "speed": 37,
+            "fuel": 14,
+            "cloak": 0
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 251,
+            "y": 157,
+            "vx": -2172,
+            "vy": -185,
+            "target_x": 1648,
+            "target_y": -1034,
+            "remainder_x": -640,
+            "remainder_y": -34,
+            "fuel": 2,
+            "speed": 37,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_6",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 48,
+            "y": 202,
+            "engine": 1,
+            "vx": -1759,
+            "vy": 3393,
+            "target_x": 3805,
+            "target_y": -2892,
+            "remainder_x": -659,
+            "remainder_y": 623,
+            "speed": 2,
+            "fuel": 11,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 45,
+            "y": 214,
+            "vx": -159,
+            "vy": 993,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -613,
+            "remainder_y": 581,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_7",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 269,
+            "y": 199,
+            "engine": 0,
+            "vx": 2654,
+            "vy": 3502,
+            "target_x": -2839,
+            "target_y": 842,
+            "remainder_x": 785,
+            "remainder_y": 852,
+            "speed": 33,
+            "fuel": 2,
+            "cloak": 1
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 272,
+            "y": 203,
+            "vx": 2454,
+            "vy": 3302,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 239,
+            "remainder_y": 154,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_8",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 242,
+            "y": 197,
+            "engine": 1,
+            "vx": 875,
+            "vy": 156,
+            "target_x": -2391,
+            "target_y": -3656,
+            "remainder_x": 268,
+            "remainder_y": -189,
+            "speed": 27,
+            "fuel": 7,
+            "cloak": 0
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 242,
+            "y": 194,
+            "vx": -725,
+            "vy": -1444,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -232,
+            "remainder_y": -565,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_9",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 323,
+            "y": 123,
+            "engine": 1,
+            "vx": -3888,
+            "vy": -1426,
+            "target_x": 191,
+            "target_y": -3677,
+            "remainder_x": 40,
+            "remainder_y": 906,
+            "speed": 3,
+            "fuel": 9,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 310,
+            "y": 116,
+            "vx": -1888,
+            "vy": -1026,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -400,
+            "remainder_y": -424,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_10",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 370,
+            "y": 101,
+            "engine": 0,
+            "vx": 1360,
+            "vy": -220,
+            "target_x": -1065,
+            "target_y": 3487,
+            "remainder_x": 144,
+            "remainder_y": -750,
+            "speed": 31,
+            "fuel": 19,
+            "cloak": 0
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 373,
+            "y": 101,
+            "vx": 560,
+            "vy": 580,
+            "target_x": -1065,
+            "target_y": 3487,
+            "remainder_x": 584,
+            "remainder_y": 370,
+            "fuel": 7,
+            "speed": 31,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_11",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 239,
+            "y": 182,
+            "engine": 1,
+            "vx": 2200,
+            "vy": 2381,
+            "target_x": -740,
+            "target_y": -289,
+            "remainder_x": -214,
+            "remainder_y": -659,
+            "speed": 33,
+            "fuel": 0,
+            "cloak": 1
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 242,
+            "y": 186,
+            "vx": 1000,
+            "vy": 1181,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 986,
+            "remainder_y": 84,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_12",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 51,
+            "y": 272,
+            "engine": 1,
+            "vx": -2535,
+            "vy": -3474,
+            "target_x": 3531,
+            "target_y": -3763,
+            "remainder_x": 1,
+            "remainder_y": 586,
+            "speed": 21,
+            "fuel": 3,
+            "cloak": 0
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 45,
+            "y": 256,
+            "vx": -135,
+            "vy": -1874,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -809,
+            "remainder_y": -658,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_13",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 9,
+            "engine": 0,
+            "vx": 2201,
+            "vy": -2071,
+            "target_x": 436,
+            "target_y": 2871,
+            "remainder_x": 942,
+            "remainder_y": -439,
+            "speed": 6,
+            "fuel": 11,
+            "cloak": 0
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 103,
+            "y": 7,
+            "vx": 2001,
+            "vy": -1871,
+            "target_x": 436,
+            "target_y": 2871,
+            "remainder_x": 943,
+            "remainder_y": -310,
+            "fuel": 11,
+            "speed": 6,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_14",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 15,
+            "y": 22,
+            "engine": 0,
+            "vx": 1267,
+            "vy": 211,
+            "target_x": -2301,
+            "target_y": -2841,
+            "remainder_x": -984,
+            "remainder_y": -861,
+            "speed": 18,
+            "fuel": 16,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 17,
+            "y": 21,
+            "vx": 267,
+            "vy": 11,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 351,
+            "remainder_y": -206,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_15",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 188,
+            "y": 69,
+            "engine": 0,
+            "vx": -859,
+            "vy": 3687,
+            "target_x": 2555,
+            "target_y": -3788,
+            "remainder_x": 60,
+            "remainder_y": -603,
+            "speed": 11,
+            "fuel": 7,
+            "cloak": 0
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 187,
+            "y": 88,
+            "vx": 541,
+            "vy": 2287,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 647,
+            "remainder_y": 606,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_16",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 145,
+            "y": 192,
+            "engine": 0,
+            "vx": -3077,
+            "vy": 564,
+            "target_x": 3640,
+            "target_y": 1159,
+            "remainder_x": -994,
+            "remainder_y": -962,
+            "speed": 25,
+            "fuel": 7,
+            "cloak": 1
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 136,
+            "y": 192,
+            "vx": -2477,
+            "vy": 364,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -25,
+            "remainder_y": 730,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_17",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 215,
+            "y": 218,
+            "engine": 0,
+            "vx": -3838,
+            "vy": 1958,
+            "target_x": -3970,
+            "target_y": -1159,
+            "remainder_x": 507,
+            "remainder_y": -946,
+            "speed": 4,
+            "fuel": 7,
+            "cloak": 0
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 193,
+            "y": 224,
+            "vx": -3838,
+            "vy": 758,
+            "target_x": -3970,
+            "target_y": -1159,
+            "remainder_x": -521,
+            "remainder_y": 602,
+            "fuel": 7,
+            "speed": 4,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_18",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 298,
+            "y": 12,
+            "engine": 0,
+            "vx": 2227,
+            "vy": -2940,
+            "target_x": -3169,
+            "target_y": 3546,
+            "remainder_x": -435,
+            "remainder_y": 280,
+            "speed": 28,
+            "fuel": 10,
+            "cloak": 0
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 299,
+            "y": 10,
+            "vx": 2027,
+            "vy": -2740,
+            "target_x": -3169,
+            "target_y": 3546,
+            "remainder_x": 592,
+            "remainder_y": -460,
+            "fuel": 8,
+            "speed": 28,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_19",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 316,
+            "y": 296,
+            "engine": 0,
+            "vx": 718,
+            "vy": -3176,
+            "target_x": -2101,
+            "target_y": 3757,
+            "remainder_x": 763,
+            "remainder_y": -303,
+            "speed": 7,
+            "fuel": 3,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 317,
+            "y": 281,
+            "vx": -82,
+            "vy": -1976,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 671,
+            "remainder_y": -159,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_20",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 137,
+            "y": 9,
+            "engine": 0,
+            "vx": 2536,
+            "vy": -1541,
+            "target_x": -774,
+            "target_y": 3102,
+            "remainder_x": -776,
+            "remainder_y": 510,
+            "speed": 4,
+            "fuel": 10,
+            "cloak": 0
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 138,
+            "y": 9,
+            "vx": 2336,
+            "vy": -1341,
+            "target_x": -774,
+            "target_y": 3102,
+            "remainder_x": 560,
+            "remainder_y": -831,
+            "fuel": 10,
+            "speed": 4,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_21",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 30,
+            "y": 278,
+            "engine": 0,
+            "vx": -3253,
+            "vy": -1675,
+            "target_x": -2437,
+            "target_y": 359,
+            "remainder_x": -910,
+            "remainder_y": 623,
+            "speed": 32,
+            "fuel": 5,
+            "cloak": 0
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 16,
+            "y": 274,
+            "vx": -2253,
+            "vy": -675,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -175,
+            "remainder_y": -752,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_22",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 288,
+            "y": 40,
+            "engine": 1,
+            "vx": 457,
+            "vy": 550,
+            "target_x": 1588,
+            "target_y": 853,
+            "remainder_x": 743,
+            "remainder_y": 672,
+            "speed": 3,
+            "fuel": 16,
+            "cloak": 1
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 292,
+            "y": 42,
+            "vx": 457,
+            "vy": -250,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 171,
+            "remainder_y": 72,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_23",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 354,
+            "y": 29,
+            "engine": 1,
+            "vx": -1655,
+            "vy": -2230,
+            "target_x": -2933,
+            "target_y": -1909,
+            "remainder_x": 242,
+            "remainder_y": 794,
+            "speed": 35,
+            "fuel": 5,
+            "cloak": 1
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 350,
+            "y": 26,
+            "vx": -1255,
+            "vy": -1030,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -723,
+            "remainder_y": -496,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_24",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 232,
+            "y": 74,
+            "engine": 0,
+            "vx": -744,
+            "vy": 1786,
+            "target_x": -3571,
+            "target_y": 1657,
+            "remainder_x": 630,
+            "remainder_y": 463,
+            "speed": 39,
+            "fuel": 17,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 228,
+            "y": 82,
+            "vx": -344,
+            "vy": 986,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -34,
+            "remainder_y": 979,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_25",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 106,
+            "y": 249,
+            "engine": 1,
+            "vx": -1344,
+            "vy": 1583,
+            "target_x": -3834,
+            "target_y": 1386,
+            "remainder_x": -135,
+            "remainder_y": 774,
+            "speed": 23,
+            "fuel": 0,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 103,
+            "y": 251,
+            "vx": -1344,
+            "vy": 783,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -223,
+            "remainder_y": 740,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_26",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 12,
+            "y": 97,
+            "engine": 0,
+            "vx": 2908,
+            "vy": -1600,
+            "target_x": 1594,
+            "target_y": -295,
+            "remainder_x": -930,
+            "remainder_y": -5,
+            "speed": 6,
+            "fuel": 13,
+            "cloak": 1
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 18,
+            "y": 94,
+            "vx": 2308,
+            "vy": -1000,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 594,
+            "remainder_y": -605,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_27",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 260,
+            "y": 177,
+            "engine": 0,
+            "vx": -1625,
+            "vy": 834,
+            "target_x": 3065,
+            "target_y": 115,
+            "remainder_x": 319,
+            "remainder_y": -418,
+            "speed": 36,
+            "fuel": 5,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 258,
+            "y": 177,
+            "vx": -1225,
+            "vy": 434,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -331,
+            "remainder_y": 650,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_28",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 162,
+            "y": 294,
+            "engine": 0,
+            "vx": -3490,
+            "vy": -2154,
+            "target_x": -567,
+            "target_y": 3662,
+            "remainder_x": -505,
+            "remainder_y": 134,
+            "speed": 12,
+            "fuel": 6,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 145,
+            "y": 286,
+            "vx": -2290,
+            "vy": -954,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -245,
+            "remainder_y": -590,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_29",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 114,
+            "y": 241,
+            "engine": 0,
+            "vx": 3343,
+            "vy": -3182,
+            "target_x": -3032,
+            "target_y": 1920,
+            "remainder_x": 573,
+            "remainder_y": 311,
+            "speed": 19,
+            "fuel": 15,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 130,
+            "y": 227,
+            "vx": 2143,
+            "vy": -1982,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 431,
+            "remainder_y": -581,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_30",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 110,
+            "y": 306,
+            "engine": 0,
+            "vx": 2908,
+            "vy": -3091,
+            "target_x": -898,
+            "target_y": -3867,
+            "remainder_x": 785,
+            "remainder_y": 195,
+            "speed": 3,
+            "fuel": 1,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 116,
+            "y": 301,
+            "vx": 2508,
+            "vy": -2891,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 1,
+            "remainder_y": -787,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_31",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 136,
+            "y": 41,
+            "engine": 1,
+            "vx": 2354,
+            "vy": 919,
+            "target_x": -3897,
+            "target_y": -3380,
+            "remainder_x": -237,
+            "remainder_y": 459,
+            "speed": 33,
+            "fuel": 6,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 141,
+            "y": 42,
+            "vx": 354,
+            "vy": -281,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 533,
+            "remainder_y": -346,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_32",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 313,
+            "y": 230,
+            "engine": 1,
+            "vx": 1628,
+            "vy": 2039,
+            "target_x": -50,
+            "target_y": 3537,
+            "remainder_x": -944,
+            "remainder_y": -919,
+            "speed": 30,
+            "fuel": 11,
+            "cloak": 1
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 314,
+            "y": 236,
+            "vx": 28,
+            "vy": 1239,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 568,
+            "remainder_y": 437,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_33",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 356,
+            "y": 224,
+            "engine": 0,
+            "vx": -304,
+            "vy": -3658,
+            "target_x": 2138,
+            "target_y": -1433,
+            "remainder_x": 358,
+            "remainder_y": 140,
+            "speed": 4,
+            "fuel": 0,
+            "cloak": 0
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 356,
+            "y": 205,
+            "vx": -104,
+            "vy": -2258,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 230,
+            "remainder_y": -866,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_34",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 316,
+            "y": 127,
+            "engine": 1,
+            "vx": 359,
+            "vy": -3432,
+            "target_x": 2736,
+            "target_y": 2415,
+            "remainder_x": 485,
+            "remainder_y": 475,
+            "speed": 9,
+            "fuel": 16,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 319,
+            "y": 117,
+            "vx": -41,
+            "vy": -1432,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 480,
+            "remainder_y": -685,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_35",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 278,
+            "y": 14,
+            "engine": 0,
+            "vx": 2063,
+            "vy": -3682,
+            "target_x": 1138,
+            "target_y": -2162,
+            "remainder_x": 814,
+            "remainder_y": -756,
+            "speed": 24,
+            "fuel": 9,
+            "cloak": 1
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 280,
+            "y": 10,
+            "vx": 1863,
+            "vy": -3482,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 677,
+            "remainder_y": -238,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_36",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 261,
+            "y": 155,
+            "engine": 0,
+            "vx": 1007,
+            "vy": -2516,
+            "target_x": -93,
+            "target_y": 1315,
+            "remainder_x": -107,
+            "remainder_y": -36,
+            "speed": 20,
+            "fuel": 8,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 262,
+            "y": 146,
+            "vx": 7,
+            "vy": -1516,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 928,
+            "remainder_y": -616,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_37",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 68,
+            "y": 26,
+            "engine": 0,
+            "vx": 1884,
+            "vy": -2257,
+            "target_x": -1809,
+            "target_y": 2600,
+            "remainder_x": 105,
+            "remainder_y": -766,
+            "speed": 25,
+            "fuel": 10,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 71,
+            "y": 22,
+            "vx": 1484,
+            "vy": -1857,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 273,
+            "remainder_y": -680,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_38",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 101,
+            "y": 68,
+            "engine": 1,
+            "vx": -2707,
+            "vy": -1489,
+            "target_x": -3312,
+            "target_y": 3230,
+            "remainder_x": 764,
+            "remainder_y": 798,
+            "speed": 11,
+            "fuel": 8,
+            "cloak": 1
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 99,
+            "y": 68,
+            "vx": -3107,
+            "vy": -1089,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -343,
+            "remainder_y": -291,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_39",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 279,
+            "y": 278,
+            "engine": 0,
+            "vx": 2275,
+            "vy": -2422,
+            "target_x": -1722,
+            "target_y": 1531,
+            "remainder_x": 638,
+            "remainder_y": 516,
+            "speed": 4,
+            "fuel": 18,
+            "cloak": 0
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 285,
+            "y": 273,
+            "vx": 1675,
+            "vy": -1822,
+            "target_x": -1722,
+            "target_y": 1531,
+            "remainder_x": 263,
+            "remainder_y": -550,
+            "fuel": 18,
+            "speed": 4,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_40",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 126,
+            "y": 78,
+            "engine": 0,
+            "vx": -1108,
+            "vy": 2289,
+            "target_x": 1239,
+            "target_y": -3873,
+            "remainder_x": 58,
+            "remainder_y": 501,
+            "speed": 28,
+            "fuel": 7,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 124,
+            "y": 88,
+            "vx": -108,
+            "vy": 889,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -498,
+            "remainder_y": 924,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_41",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 319,
+            "y": 43,
+            "engine": 1,
+            "vx": -3686,
+            "vy": -3476,
+            "target_x": -2442,
+            "target_y": 3159,
+            "remainder_x": 362,
+            "remainder_y": -902,
+            "speed": 20,
+            "fuel": 0,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 305,
+            "y": 29,
+            "vx": -886,
+            "vy": -676,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -240,
+            "remainder_y": -34,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_42",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 298,
+            "y": 133,
+            "engine": 1,
+            "vx": 3006,
+            "vy": -3052,
+            "target_x": 358,
+            "target_y": 379,
+            "remainder_x": 306,
+            "remainder_y": 728,
+            "speed": 2,
+            "fuel": 8,
+            "cloak": 0
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 300,
+            "y": 132,
+            "vx": 2606,
+            "vy": -2652,
+            "target_x": 358,
+            "target_y": 379,
+            "remainder_x": 912,
+            "remainder_y": -924,
+            "fuel": 8,
+            "speed": 2,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_43",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 195,
+            "y": 33,
+            "engine": 1,
+            "vx": 1748,
+            "vy": -743,
+            "target_x": -149,
+            "target_y": 2600,
+            "remainder_x": -937,
+            "remainder_y": 852,
+            "speed": 18,
+            "fuel": 4,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 197,
+            "y": 33,
+            "vx": 148,
+            "vy": 57,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -49,
+            "remainder_y": -6,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_44",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 309,
+            "y": 50,
+            "engine": 1,
+            "vx": 728,
+            "vy": -1348,
+            "target_x": -2218,
+            "target_y": -3820,
+            "remainder_x": 722,
+            "remainder_y": 780,
+            "speed": 18,
+            "fuel": 19,
+            "cloak": 0
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 309,
+            "y": 42,
+            "vx": -872,
+            "vy": -2948,
+            "target_x": -2218,
+            "target_y": -3820,
+            "remainder_x": -366,
+            "remainder_y": -612,
+            "fuel": 15,
+            "speed": 18,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_45",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 201,
+            "y": 76,
+            "engine": 0,
+            "vx": 1384,
+            "vy": -3647,
+            "target_x": 1760,
+            "target_y": -3536,
+            "remainder_x": 760,
+            "remainder_y": -340,
+            "speed": 16,
+            "fuel": 18,
+            "cloak": 0
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 211,
+            "y": 55,
+            "vx": 1784,
+            "vy": -3447,
+            "target_x": 1760,
+            "target_y": -3536,
+            "remainder_x": 864,
+            "remainder_y": -22,
+            "fuel": 12,
+            "speed": 16,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_46",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 370,
+            "y": 292,
+            "engine": 0,
+            "vx": -2866,
+            "vy": -2010,
+            "target_x": 2028,
+            "target_y": 1443,
+            "remainder_x": -672,
+            "remainder_y": -709,
+            "speed": 40,
+            "fuel": 3,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 355,
+            "y": 283,
+            "vx": -1466,
+            "vy": -610,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -134,
+            "remainder_y": -179,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_47",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 45,
+            "y": 89,
+            "engine": 1,
+            "vx": -3496,
+            "vy": -3485,
+            "target_x": 403,
+            "target_y": -2766,
+            "remainder_x": -327,
+            "remainder_y": 813,
+            "speed": 6,
+            "fuel": 7,
+            "cloak": 1
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 42,
+            "y": 87,
+            "vx": -3096,
+            "vy": -3085,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -423,
+            "remainder_y": -272,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_48",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 228,
+            "y": 132,
+            "engine": 1,
+            "vx": -3851,
+            "vy": -2746,
+            "target_x": 139,
+            "target_y": 1094,
+            "remainder_x": -462,
+            "remainder_y": -777,
+            "speed": 16,
+            "fuel": 18,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 212,
+            "y": 124,
+            "vx": -1051,
+            "vy": 54,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -219,
+            "remainder_y": -799,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_49",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 264,
+            "y": 21,
+            "engine": 1,
+            "vx": -3927,
+            "vy": 3725,
+            "target_x": 3387,
+            "target_y": -2622,
+            "remainder_x": -98,
+            "remainder_y": -444,
+            "speed": 18,
+            "fuel": 8,
+            "cloak": 0
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 253,
+            "y": 31,
+            "vx": -2327,
+            "vy": 2125,
+            "target_x": 3387,
+            "target_y": -2622,
+            "remainder_x": -806,
+            "remainder_y": 456,
+            "fuel": 4,
+            "speed": 18,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_50",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 277,
+            "y": 119,
+            "engine": 1,
+            "vx": 2735,
+            "vy": 2715,
+            "target_x": 3038,
+            "target_y": -2361,
+            "remainder_x": 217,
+            "remainder_y": -674,
+            "speed": 7,
+            "fuel": 0,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 283,
+            "y": 122,
+            "vx": 2735,
+            "vy": 1915,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 87,
+            "remainder_y": 556,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_51",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 134,
+            "y": 275,
+            "engine": 0,
+            "vx": 3467,
+            "vy": 2617,
+            "target_x": -3735,
+            "target_y": -3655,
+            "remainder_x": -990,
+            "remainder_y": -946,
+            "speed": 13,
+            "fuel": 10,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 147,
+            "y": 284,
+            "vx": 2467,
+            "vy": 1617,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 345,
+            "remainder_y": 139,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_52",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 356,
+            "y": 263,
+            "engine": 0,
+            "vx": 1676,
+            "vy": 2606,
+            "target_x": -1658,
+            "target_y": 287,
+            "remainder_x": 840,
+            "remainder_y": -143,
+            "speed": 16,
+            "fuel": 18,
+            "cloak": 0
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 362,
+            "y": 274,
+            "vx": 476,
+            "vy": 1406,
+            "target_x": -1658,
+            "target_y": 287,
+            "remainder_x": 696,
+            "remainder_y": 293,
+            "fuel": 12,
+            "speed": 16,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_53",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 15,
+            "y": 68,
+            "engine": 0,
+            "vx": -3495,
+            "vy": -1218,
+            "target_x": -934,
+            "target_y": -142,
+            "remainder_x": -641,
+            "remainder_y": -100,
+            "speed": 32,
+            "fuel": 12,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 8,
+            "y": 67,
+            "vx": -3095,
+            "vy": -818,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -31,
+            "remainder_y": -936,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_54",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 46,
+            "y": 37,
+            "engine": 0,
+            "vx": -3559,
+            "vy": 2470,
+            "target_x": -2596,
+            "target_y": -714,
+            "remainder_x": -74,
+            "remainder_y": -535,
+            "speed": 38,
+            "fuel": 12,
+            "cloak": 0
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 40,
+            "y": 40,
+            "vx": -3159,
+            "vy": 2070,
+            "target_x": -2596,
+            "target_y": -714,
+            "remainder_x": -592,
+            "remainder_y": 805,
+            "fuel": 6,
+            "speed": 38,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_55",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 91,
+            "y": 192,
+            "engine": 1,
+            "vx": 759,
+            "vy": -1482,
+            "target_x": 376,
+            "target_y": -590,
+            "remainder_x": -68,
+            "remainder_y": -108,
+            "speed": 9,
+            "fuel": 2,
+            "cloak": 0
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 93,
+            "y": 189,
+            "vx": 359,
+            "vy": -282,
+            "target_x": 376,
+            "target_y": -590,
+            "remainder_x": 527,
+            "remainder_y": -118,
+            "fuel": 2,
+            "speed": 9,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_56",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 171,
+            "y": 135,
+            "engine": 1,
+            "vx": -1474,
+            "vy": -1201,
+            "target_x": -1938,
+            "target_y": -988,
+            "remainder_x": -762,
+            "remainder_y": 882,
+            "speed": 21,
+            "fuel": 4,
+            "cloak": 0
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 163,
+            "y": 133,
+            "vx": -1474,
+            "vy": -401,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -258,
+            "remainder_y": -322,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_57",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 165,
+            "y": 299,
+            "engine": 0,
+            "vx": -3295,
+            "vy": 2436,
+            "target_x": -3190,
+            "target_y": 3519,
+            "remainder_x": 828,
+            "remainder_y": -778,
+            "speed": 39,
+            "fuel": 13,
+            "cloak": 1
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 157,
+            "y": 305,
+            "vx": -2895,
+            "vy": 2236,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -257,
+            "remainder_y": 330,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_58",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 226,
+            "y": 248,
+            "engine": 0,
+            "vx": 2119,
+            "vy": 3851,
+            "target_x": 896,
+            "target_y": -388,
+            "remainder_x": 279,
+            "remainder_y": 917,
+            "speed": 29,
+            "fuel": 2,
+            "cloak": 0
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 231,
+            "y": 259,
+            "vx": 1519,
+            "vy": 3251,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 436,
+            "remainder_y": 270,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_59",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 200,
+            "y": 115,
+            "engine": 0,
+            "vx": 3219,
+            "vy": -818,
+            "target_x": -1344,
+            "target_y": -3211,
+            "remainder_x": 664,
+            "remainder_y": -875,
+            "speed": 17,
+            "fuel": 10,
+            "cloak": 0
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 215,
+            "y": 106,
+            "vx": 2019,
+            "vy": -2000,
+            "target_x": -1344,
+            "target_y": -3211,
+            "remainder_x": 778,
+            "remainder_y": -965,
+            "fuel": 4,
+            "speed": 17,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_60",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 356,
+            "y": 50,
+            "engine": 0,
+            "vx": -3654,
+            "vy": -1603,
+            "target_x": -1475,
+            "target_y": -608,
+            "remainder_x": -694,
+            "remainder_y": -897,
+            "speed": 10,
+            "fuel": 4,
+            "cloak": 1
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 352,
+            "y": 48,
+            "vx": -3454,
+            "vy": -1403,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -148,
+            "remainder_y": -300,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_61",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 304,
+            "y": 117,
+            "engine": 0,
+            "vx": 1231,
+            "vy": 3046,
+            "target_x": -3133,
+            "target_y": 1843,
+            "remainder_x": 630,
+            "remainder_y": 112,
+            "speed": 5,
+            "fuel": 19,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 307,
+            "y": 131,
+            "vx": 31,
+            "vy": 1846,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 816,
+            "remainder_y": 188,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_62",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 46,
+            "y": 169,
+            "engine": 1,
+            "vx": 819,
+            "vy": 67,
+            "target_x": 1153,
+            "target_y": -3034,
+            "remainder_x": -167,
+            "remainder_y": 475,
+            "speed": 9,
+            "fuel": 2,
+            "cloak": 0
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 51,
+            "y": 164,
+            "vx": 1219,
+            "vy": -1933,
+            "target_x": 1153,
+            "target_y": -3034,
+            "remainder_x": 128,
+            "remainder_y": -190,
+            "fuel": 2,
+            "speed": 9,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_63",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 312,
+            "y": 93,
+            "engine": 1,
+            "vx": -2844,
+            "vy": 2565,
+            "target_x": -3535,
+            "target_y": -17,
+            "remainder_x": 781,
+            "remainder_y": 7,
+            "speed": 22,
+            "fuel": 18,
+            "cloak": 0
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 310,
+            "y": 95,
+            "vx": -3244,
+            "vy": 2165,
+            "target_x": -3535,
+            "target_y": -17,
+            "remainder_x": -463,
+            "remainder_y": 172,
+            "fuel": 16,
+            "speed": 22,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_64",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 11,
+            "y": 50,
+            "engine": 1,
+            "vx": 3174,
+            "vy": -3030,
+            "target_x": -987,
+            "target_y": -685,
+            "remainder_x": -358,
+            "remainder_y": 421,
+            "speed": 2,
+            "fuel": 13,
+            "cloak": 1
+          }
+        ],
+        "ticks": 6
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 21,
+            "y": 41,
+            "vx": 774,
+            "vy": -630,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 286,
+            "remainder_y": -359,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_65",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 213,
+            "y": 286,
+            "engine": 1,
+            "vx": -852,
+            "vy": -3404,
+            "target_x": -3819,
+            "target_y": -2619,
+            "remainder_x": -802,
+            "remainder_y": -459,
+            "speed": 32,
+            "fuel": 6,
+            "cloak": 0
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 209,
+            "y": 278,
+            "vx": -1252,
+            "vy": -2204,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -958,
+            "remainder_y": -271,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_66",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 105,
+            "y": 143,
+            "engine": 1,
+            "vx": -1457,
+            "vy": 3163,
+            "target_x": 1562,
+            "target_y": 875,
+            "remainder_x": -7,
+            "remainder_y": 46,
+            "speed": 28,
+            "fuel": 7,
+            "cloak": 1
+          }
+        ],
+        "ticks": 4
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 104,
+            "y": 151,
+            "vx": 143,
+            "vy": 1563,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -835,
+            "remainder_y": 698,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_67",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 197,
+            "y": 169,
+            "engine": 1,
+            "vx": -2255,
+            "vy": 1948,
+            "target_x": -337,
+            "target_y": 3447,
+            "remainder_x": 918,
+            "remainder_y": -368,
+            "speed": 10,
+            "fuel": 6,
+            "cloak": 0
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 192,
+            "y": 190,
+            "vx": -255,
+            "vy": 3148,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -267,
+            "remainder_y": 268,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_68",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 30,
+            "y": 237,
+            "engine": 0,
+            "vx": 563,
+            "vy": -3915,
+            "target_x": 1197,
+            "target_y": -3558,
+            "remainder_x": 383,
+            "remainder_y": 326,
+            "speed": 1,
+            "fuel": 18,
+            "cloak": 0
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 31,
+            "y": 234,
+            "vx": 763,
+            "vy": -3715,
+            "target_x": 1197,
+            "target_y": -3558,
+            "remainder_x": 146,
+            "remainder_y": -389,
+            "fuel": 18,
+            "speed": 1,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_69",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 292,
+            "y": 63,
+            "engine": 1,
+            "vx": -2654,
+            "vy": -538,
+            "target_x": -725,
+            "target_y": -3754,
+            "remainder_x": 277,
+            "remainder_y": 436,
+            "speed": 9,
+            "fuel": 7,
+            "cloak": 0
+          }
+        ],
+        "ticks": 1
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 291,
+            "y": 63,
+            "vx": -2254,
+            "vy": -938,
+            "target_x": -725,
+            "target_y": -3754,
+            "remainder_x": -977,
+            "remainder_y": -502,
+            "fuel": 7,
+            "speed": 9,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_70",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 259,
+            "y": 166,
+            "engine": 1,
+            "vx": -1801,
+            "vy": 3803,
+            "target_x": 1926,
+            "target_y": -775,
+            "remainder_x": -353,
+            "remainder_y": 6,
+            "speed": 31,
+            "fuel": 12,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 256,
+            "y": 181,
+            "vx": 199,
+            "vy": 1003,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -360,
+            "remainder_y": 427,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_71",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 286,
+            "y": 148,
+            "engine": 1,
+            "vx": -2376,
+            "vy": -2083,
+            "target_x": -1464,
+            "target_y": -3194,
+            "remainder_x": 946,
+            "remainder_y": -16,
+            "speed": 37,
+            "fuel": 19,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 282,
+            "y": 137,
+            "vx": -376,
+            "vy": -1683,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -934,
+            "remainder_y": -631,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_72",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 237,
+            "y": 77,
+            "engine": 0,
+            "vx": 791,
+            "vy": -3819,
+            "target_x": 2898,
+            "target_y": -2223,
+            "remainder_x": 498,
+            "remainder_y": -474,
+            "speed": 20,
+            "fuel": 3,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 239,
+            "y": 70,
+            "vx": 791,
+            "vy": -3419,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 280,
+            "remainder_y": -512,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_73",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 116,
+            "y": 114,
+            "engine": 0,
+            "vx": 2613,
+            "vy": -160,
+            "target_x": -2512,
+            "target_y": 985,
+            "remainder_x": -865,
+            "remainder_y": 361,
+            "speed": 18,
+            "fuel": 1,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 127,
+            "y": 114,
+            "vx": 1213,
+            "vy": 40,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 826,
+            "remainder_y": 41,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_74",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 42,
+            "y": 47,
+            "engine": 0,
+            "vx": 3853,
+            "vy": -1050,
+            "target_x": 978,
+            "target_y": 91,
+            "remainder_x": 133,
+            "remainder_y": 777,
+            "speed": 7,
+            "fuel": 17,
+            "cloak": 0
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 49,
+            "y": 47,
+            "vx": 3453,
+            "vy": -650,
+            "target_x": 978,
+            "target_y": 91,
+            "remainder_x": 239,
+            "remainder_y": -723,
+            "fuel": 17,
+            "speed": 7,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_75",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 133,
+            "y": 159,
+            "engine": 0,
+            "vx": -1549,
+            "vy": 108,
+            "target_x": 2353,
+            "target_y": 3135,
+            "remainder_x": 287,
+            "remainder_y": -688,
+            "speed": 6,
+            "fuel": 11,
+            "cloak": 1
+          }
+        ],
+        "ticks": 5
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 129,
+            "y": 159,
+            "vx": -549,
+            "vy": -92,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": -458,
+            "remainder_y": 452,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_76",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 59,
+            "y": 65,
+            "engine": 0,
+            "vx": 2837,
+            "vy": -1988,
+            "target_x": 941,
+            "target_y": 1257,
+            "remainder_x": -307,
+            "remainder_y": -534,
+            "speed": 11,
+            "fuel": 13,
+            "cloak": 1
+          }
+        ],
+        "ticks": 2
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 63,
+            "y": 62,
+            "vx": 2437,
+            "vy": -1588,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 767,
+            "remainder_y": -910,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_77",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 109,
+            "y": 32,
+            "engine": 1,
+            "vx": -3862,
+            "vy": 291,
+            "target_x": -1264,
+            "target_y": -3064,
+            "remainder_x": -957,
+            "remainder_y": 895,
+            "speed": 31,
+            "fuel": 17,
+            "cloak": 0
+          }
+        ],
+        "ticks": 3
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 99,
+            "y": 32,
+            "vx": -2662,
+            "vy": -909,
+            "target_x": -1264,
+            "target_y": -3064,
+            "remainder_x": -143,
+            "remainder_y": -632,
+            "fuel": 8,
+            "speed": 31,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": false,
+            "out_of_fuel": 0
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_78",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 56,
+            "y": 75,
+            "engine": 0,
+            "vx": 1109,
+            "vy": -1098,
+            "target_x": 270,
+            "target_y": -2254,
+            "remainder_x": -281,
+            "remainder_y": -166,
+            "speed": 24,
+            "fuel": 10,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 58,
+            "y": 70,
+            "vx": 109,
+            "vy": -98,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 282,
+            "remainder_y": -52,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    },
+    {
+      "id": "movement_seeded_79",
+      "kind": "world_movement",
+      "input": {
+        "robots": [
+          {
+            "x": 211,
+            "y": 190,
+            "engine": 1,
+            "vx": 1642,
+            "vy": -264,
+            "target_x": 2985,
+            "target_y": 3113,
+            "remainder_x": 485,
+            "remainder_y": -263,
+            "speed": 32,
+            "fuel": 5,
+            "cloak": 1
+          }
+        ],
+        "ticks": 7
+      },
+      "expected": {
+        "robots": [
+          {
+            "x": 217,
+            "y": 190,
+            "vx": -358,
+            "vy": 136,
+            "target_x": 0,
+            "target_y": 0,
+            "remainder_x": 379,
+            "remainder_y": -511,
+            "fuel": 0,
+            "speed": 0,
+            "cloak": 0,
+            "raw_damage": 0,
+            "damage_percent": 0,
+            "damage_flash": 0,
+            "collision_damage": 0,
+            "collided": false,
+            "exhausted": true,
+            "out_of_fuel": 1
+          }
+        ]
+      },
+      "oracle": {
+        "segment": 3,
+        "offset": "0x0880"
+      }
+    }
+  ]
+}
