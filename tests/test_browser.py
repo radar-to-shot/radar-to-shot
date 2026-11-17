@@ -264,6 +264,8 @@ class BrowserTests(unittest.TestCase):
         expect(self.page.locator("#run-button")).to_be_enabled()
 
     def test_mac_roman_upload_mobile_layout_and_literal_filename(self):
+        self.page.set_viewport_size({"width": 390, "height": 844})
+        self.page.screenshot(path=str(ARTIFACTS / "mobile-initial.png"))
         self.page.locator(".upload-options summary").click()
         self.page.locator("#upload-encoding").select_option("macintosh")
         self.page.locator("#upload-input").set_input_files({
@@ -280,6 +282,55 @@ class BrowserTests(unittest.TestCase):
         self.page.screenshot(path=str(ARTIFACTS / "mobile-workbench.png"))
         self.page.locator("#language").scroll_into_view_if_needed()
         self.assertLessEqual(self.page.evaluate("document.documentElement.scrollWidth"), 391)
+
+    def test_keyboard_navigation_focus_and_compile_shortcut(self):
+        self.page.screenshot(path=str(ARTIFACTS / "desktop-initial.png"))
+        self.page.keyboard.press("Tab")
+        expect(self.page.locator(".skip-link")).to_be_focused()
+        self.assertGreaterEqual(self.page.locator(".skip-link").bounding_box()["y"], 0)
+        self.page.keyboard.press("Enter")
+        for _ in range(40):
+            self.page.keyboard.press("Tab")
+            if self.page.locator("#source-editor").evaluate("e => e === document.activeElement"):
+                break
+        expect(self.page.locator("#source-editor")).to_be_focused()
+        focus = self.page.locator("#source-editor").evaluate("""element => {
+          const style = getComputedStyle(element);
+          return {visible: element.matches(':focus-visible'),
+                  outline: style.outlineStyle, width: parseFloat(style.outlineWidth)};
+        }""")
+        self.assertTrue(focus["visible"])
+        self.assertNotEqual(focus["outline"], "none")
+        self.assertGreaterEqual(focus["width"], 2)
+        self.page.keyboard.press("Control+A")
+        self.page.keyboard.insert_text(IDLE)
+        self.page.keyboard.press("Control+Enter")
+        expect(self.page.locator("#compile-status")).to_contain_text("instructions")
+        self.page.keyboard.press("Tab")
+        expect(self.page.locator("#source-editor")).not_to_be_focused()
+
+    def test_narrow_layout_keeps_controls_and_results_usable(self):
+        self.upload([("LongRobotName_" * 4 + ".robot", IDLE)])
+        self.page.locator("#watch-battle").uncheck()
+        self.page.locator("#ticks-input").fill("2")
+        self.page.locator("#run-button").click()
+        expect(self.page.locator("#download-result-button")).to_be_enabled()
+        for width in (320, 640):
+            with self.subTest(width=width):
+                self.page.set_viewport_size({"width": width, "height": 900})
+                for target in ("#workbench", "#results", "#language", "#agent-kit"):
+                    self.page.locator(target).scroll_into_view_if_needed()
+                    self.assertLessEqual(self.page.evaluate("document.documentElement.scrollWidth"), width + 1)
+                for target in ("#new-robot-button", "#upload-button", "#compile-button", "#run-button"):
+                    button = self.page.locator(target)
+                    button.scroll_into_view_if_needed()
+                    box = button.bounding_box()
+                    self.assertGreaterEqual(box["height"], 40)
+                    self.assertGreaterEqual(box["x"], 0)
+                    self.assertLessEqual(box["x"] + box["width"], width + 1)
+        self.page.set_viewport_size({"width": 320, "height": 900})
+        self.page.locator("#results").scroll_into_view_if_needed()
+        self.page.screenshot(path=str(ARTIFACTS / "narrow-results.png"))
 
 
 def main():

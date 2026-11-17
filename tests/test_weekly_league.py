@@ -12,7 +12,9 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 from urllib.error import HTTPError, URLError
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,7 +23,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 from battle_runner import run_native
 from discord_leaderboard import payload, send, webhook_url
 from league_ratings import fit_ratings, schedule, seed_for
-from weekly_league import compact, discover, game_record, run_league, summary, week_value
+from weekly_league import compact, discover, game_record, run_league, statistics, summary, week_value
+import weekly_league
 
 IDLE = "loop\ngoto loop\n"
 SELF_SHOOTER = "FIRE_RATE 4\nloop\n0 to shot\ngoto loop\n"
@@ -228,6 +231,46 @@ class LeagueTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             discover(self.directory, "utf-8")
 
+    def test_metadata_names_authors_versions_and_duplicate_active_identity(self):
+        header = "; @author: Ada\n; @author-id: ada\n; @name: Scout\n; @robot-id: scout\n; @version: 1.2.0\n"
+        (self.directory / "a").write_text(header + IDLE)
+        report = run_league(directory=self.directory, binary=BINARY, week="2026-W47", ticks=1)
+        robot = next(row for row in report["overall"] if row["id"].endswith("/a"))
+        self.assertEqual((robot["robot_name"], robot["author"], robot["version"]), ("Scout", "Ada", "1.2.0"))
+        self.assertEqual(report["authors"][0]["author_id"], "ada")
+        self.assertEqual(robot["win_rate"], 0)
+        self.assertEqual(robot["survival_rate"], 1)
+        self.assertGreater(robot["average_place"], 1)  # Tied survivors use midrank.
+        (self.directory / "b").write_text(header.replace("1.2.0", "1.3.0") + IDLE)
+        report = run_league(directory=self.directory, binary=BINARY, week="2026-W47", ticks=1)
+        self.assertEqual(len(report["overall"]), 3)
+        self.assertEqual(sum("Multiple active files" in entry.get("error", "") for entry in report["participants"]), 2)
+        self.assertEqual(report["authors"], [])
+
+    def test_ambiguous_author_display_names_are_unranked(self):
+        for name, author in (("a", "Ada"), ("b", "Someone Else")):
+            (self.directory / name).write_text(
+                f"; @author: {author}\n; @author-id: ada\n; @name: {name}\n; @version: 1\n" + IDLE)
+        report = run_league(directory=self.directory, binary=BINARY, week="2026-W47", ticks=1)
+        self.assertEqual(len(report["overall"]), 3)
+        self.assertEqual(sum("Conflicting author" in entry.get("error", "") for entry in report["participants"]), 2)
+
+    def test_pooled_stats_count_survival_and_midrank_without_inventing_wins(self):
+        games = [{"order": ["a", "b", "c"], "ranks": [1, 1, 3], "tick": 10,
+                  "winner": None, "death_ticks": [None, None, 3],
+                  "final_damage": [25, 50, 100], "cpu_resets": [0, 2, 1]},
+                 {"order": ["a", "c"], "ranks": [1, 2], "tick": 20,
+                  "winner": "a", "death_ticks": [None, 19],
+                  "final_damage": [40, 100], "cpu_resets": [1, 0]}]
+        rows = statistics(["a", "b", "c"], games)
+        self.assertEqual(rows["a"]["wins"], 1)
+        self.assertEqual(rows["a"]["draws"], 1)
+        self.assertEqual(rows["a"]["average_place"], 1.25)
+        self.assertEqual(rows["a"]["average_final_damage"], 32.5)
+        self.assertEqual(rows["a"]["win_rate"], 0.5)
+        self.assertEqual(rows["c"]["survival_rate"], 0)
+        self.assertEqual(rows["c"]["average_survival_ticks"], 12)
+
     def test_failed_rerun_clears_previous_success_and_refuses_robot_output(self):
         with tempfile.TemporaryDirectory() as output:
             for name in ("results.json", "leaderboard.json", "leaderboard.md"):
@@ -249,6 +292,23 @@ class LeagueTests(unittest.TestCase):
             raise RuntimeError("engine unavailable")
         with self.assertRaisesRegex(RuntimeError, "engine unavailable"):
             run_league(directory=self.directory, binary=BINARY, executor=failed)
+
+    def test_media_failure_does_not_leave_completed_gif_or_images(self):
+        def showcase(report, output, binary):
+            (output / "showcase.gif").write_bytes(b"partial GIF")
+            (output / "showcase.json").write_text("{}")
+            return {"status": "completed"}
+        def tables(report, output):
+            (output / "leaderboard-current.png").write_bytes(b"partial PNG")
+            raise RuntimeError("table rendering failed")
+        with tempfile.TemporaryDirectory() as output, patch.object(weekly_league, "run_league", return_value={
+                "status": "completed", "week": "2026-W47"}), patch.dict(sys.modules, {
+                    "league_showcase": SimpleNamespace(generate_showcase=showcase),
+                    "league_tables": SimpleNamespace(render_tables=tables)}):
+            self.assertEqual(weekly_league.main(["--output-dir", output, "--media"]), 2)
+            for name in ("showcase.gif", "showcase.json", "leaderboard-current.png", "history-week.json"):
+                self.assertFalse((Path(output) / name).exists())
+            self.assertEqual(json.loads((Path(output) / "leaderboard.json").read_text())["status"], "failed")
 
 
 class FakeOpener:

@@ -15,6 +15,7 @@ import sys
 
 from battle_runner import ROOT, read_robot, run_native, write_result
 from league_ratings import fit_ratings, ranked, schedule, seed_for
+from robot_metadata import extract_metadata
 
 MAX_ROBOTS = 512
 MAX_BATTLES = 100_000
@@ -57,7 +58,10 @@ def discover(directory: Path, encoding: str) -> list[dict]:
     for path in sorted(paths):
         entry = {"id": path.relative_to(root).as_posix(),
                  "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+        entry.update(extract_metadata("", entry["id"]))
         try:
+            source = path.read_bytes().decode("utf-8-sig" if encoding == "utf-8" else "mac_roman")
+            entry.update(extract_metadata(source, entry["id"]))
             entry["robot"] = {**read_robot(path, encoding), "name": entry["id"]}
             entry["normalized_source_sha256"] = hashlib.sha256(
                 bytes.fromhex(entry["robot"]["source_hex"])).hexdigest()
@@ -65,6 +69,24 @@ def discover(directory: Path, encoding: str) -> list[dict]:
             entry["error"] = str(error)
         entrants.append(entry)
     return entrants
+
+
+def validate_identities(entrants):
+    """Exclude ambiguous identities rather than arbitrarily choosing a version."""
+    robots, authors = {}, {}
+    for entry in entrants:
+        if "error" not in entry:
+            robots.setdefault(entry["robot_id"], []).append(entry)
+            if entry["author_id"] is not None:
+                authors.setdefault(entry["author_id"], []).append(entry)
+    for identity, entries in robots.items():
+        if len(entries) > 1:
+            for entry in entries:
+                entry["error"] = f"Multiple active files for robot identity {identity}; keep one version"
+    for identity, entries in authors.items():
+        if len({entry["author"] for entry in entries}) > 1:
+            for entry in entries:
+                entry["error"] = f"Conflicting author names for {identity}; use one display name this week"
 
 
 def game_record(state: dict, order: list[str], seed: int, ticks: int) -> dict:
@@ -91,9 +113,46 @@ def game_record(state: dict, order: list[str], seed: int, ticks: int) -> dict:
     winner = next((robot["name"] for robot in robots if robot["active"]), None) if alive == 1 else None
     return {"order": order, "seed": seed, "tick": state["tick"], "ranks": ranks,
             "death_ticks": [deaths.get(i) for i in range(len(order))], "winner": winner,
+            "survived": [robot["active"] for robot in robots],
+            "final_damage": [robot.get("registers", [None] * 19)[4] for robot in robots],
+            "cpu_resets": [robot.get("error_resets", 0) for robot in robots],
             "termination": "last_survivor" if winner else "tick_limit" if alive else "mutual_destruction",
             "rng_seed": state["rng_seed"],
             "state_sha256": hashlib.sha256(json.dumps(state, sort_keys=True, separators=(",", ":")).encode()).hexdigest()}
+
+
+def statistics(ids, games):
+    """Whole-battle counts and actual survival/placement statistics, per robot."""
+    stats = {name: {"games": 0, "wins": 0, "draws": 0, "losses": 0, "survivals": 0,
+                    "place_sum": 0.0, "survival_ticks": 0, "damage_sum": 0,
+                    "damage_samples": 0, "cpu_resets": 0} for name in ids}
+    for game in games:
+        for index, name in enumerate(game["order"]):
+            row = stats[name]
+            row["games"] += 1
+            row["wins"] += game["winner"] == name
+            row["draws"] += game["winner"] is None
+            row["losses"] += game["winner"] is not None and game["winner"] != name
+            alive = game["death_ticks"][index] is None
+            row["survivals"] += alive
+            rank = game["ranks"][index]
+            row["place_sum"] += rank + (game["ranks"].count(rank) - 1) / 2
+            row["survival_ticks"] += game["tick"] if alive else game["death_ticks"][index] + 1
+            damage = game["final_damage"][index]
+            if damage is not None:
+                row["damage_sum"] += damage
+                row["damage_samples"] += 1
+            row["cpu_resets"] += game["cpu_resets"][index]
+    for name, row in stats.items():
+        games = row["games"]
+        stats[name] = {key: row[key] for key in ("games", "wins", "draws", "losses", "cpu_resets")}
+        stats[name].update({"win_rate": round(row["wins"] / games, 4),
+                            "survival_rate": round(row["survivals"] / games, 4),
+                            "average_place": round(row["place_sum"] / games, 2),
+                            "average_survival_ticks": round(row["survival_ticks"] / games, 1),
+                            "average_final_damage": round(row["damage_sum"] / row["damage_samples"], 1)
+                            if row["damage_samples"] else None})
+    return stats
 
 
 def play_group(group, plan, week, robots, binary, ticks, executor, phase=0):
@@ -111,7 +170,7 @@ def play_group(group, plan, week, robots, binary, ticks, executor, phase=0):
 
 def run_league(*, directory=ROOT / "robots", binary=ROOT / "build/robotwar", week=None,
                ticks=2000, rounds=4, seeds=2, workers=2, encoding="utf-8",
-               executor=None, progress=None) -> dict:
+               executor=None, progress=None, history_dir=None) -> dict:
     week = week_value(week or datetime.now(timezone.utc).strftime("%G-W%V"))
     for value, name, upper in ((ticks, "ticks", 1_000_000), (rounds, "rounds", 32),
                                (seeds, "seeds", 20), (workers, "workers", 32)):
@@ -124,6 +183,7 @@ def run_league(*, directory=ROOT / "robots", binary=ROOT / "build/robotwar", wee
         raise ValueError("Unsupported source encoding")
     executor = executor or (lambda request, path: run_native(request, path, timeout=30))
     entrants = discover(directory, encoding)
+    validate_identities(entrants)
     robots = {}
     for entry in entrants:
         if "error" not in entry:
@@ -143,7 +203,7 @@ def run_league(*, directory=ROOT / "robots", binary=ROOT / "build/robotwar", wee
     if projected > MAX_BATTLES or projected * ticks > MAX_TICKS_TOTAL:
         raise ValueError(f"Projected {projected} battles / {projected * ticks} ticks exceed the "
                          f"{MAX_BATTLES}-battle / {MAX_TICKS_TOTAL}-tick budget")
-    report = {"schema_version": 1, "status": "completed", "week": week,
+    report = {"schema_version": 2, "status": "completed", "week": week,
               "config": {"ticks": ticks, "rounds": rounds, "seeds": seeds, "encoding": encoding,
                          "robots_dir": str(Path(directory).resolve().relative_to(ROOT)),
                          "minimum_games": 32, "exhaustive_group_limit": 128,
@@ -154,6 +214,16 @@ def run_league(*, directory=ROOT / "robots", binary=ROOT / "build/robotwar", wee
                                for entry in entrants],
               "battle_count": projected, "modes": {}, "overall": [],
               "unavailable_modes": [size for size in range(2, 6) if size > len(robots)]}
+    if history_dir is not None and (Path(history_dir) / ".history-source.json").is_file():
+        source = json.loads((Path(history_dir) / ".history-source.json").read_text())
+        if source.get("branch") != "league-history" or (source.get("revision") is not None
+                and not re.fullmatch(r"[a-f0-9]{40,64}", source["revision"])):
+            raise ValueError("Invalid history source marker")
+        report["history_base_revision"] = source["revision"]
+    metadata = {entry["id"]: {key: entry[key] for key in
+                ("robot_name", "robot_id", "author", "author_id", "version", "metadata_source")}
+                for entry in entrants if entry["id"] in robots}
+    all_games = []
     with ThreadPoolExecutor(max_workers=workers) as pool:
         for plan in plans:
             if progress:
@@ -169,6 +239,11 @@ def run_league(*, directory=ROOT / "robots", binary=ROOT / "build/robotwar", wee
                     future.cancel()
                 raise
             rows = fit_ratings(list(robots), games)
+            extra = statistics(robots, games)
+            for row in rows:
+                row.update(metadata[row["id"]])
+                row.update(extra[row["id"]])
+            all_games.extend(games)
             report["modes"][str(plan["size"])] = {**plan, "standings": rows, "games": games}
     by_robot = {name: [] for name in robots}
     for mode in report["modes"].values():
@@ -179,6 +254,12 @@ def run_league(*, directory=ROOT / "robots", binary=ROOT / "build/robotwar", wee
          "games": sum(row["games"] for row in rows),
          "provisional": any(row["provisional"] for row in rows), "modes": len(rows)}
         for name, rows in by_robot.items()])
+    extra = statistics(robots, all_games)
+    for row in report["overall"]:
+        row.update(metadata[row["id"]])
+        row.update(extra[row["id"]])
+    from league_history import enrich_history
+    enrich_history(report, history_dir)
     return report
 
 
@@ -199,12 +280,42 @@ def summary(report: dict) -> str:
     tables = [("Overall", report["overall"])] + [
         (f"{size}-robot battles", mode["standings"]) for size, mode in report["modes"].items()]
     for title, rows in tables:
-        lines += [f"## {title}", "", "| Rank | Robot | Rating | Games | Provisional |",
-                  "| ---: | --- | ---: | ---: | --- |"]
+        lines += [f"## {title}", "", "| Rank | Robot | Author | Version | Rating | Δ rank | Games | W–D–L | Win % | Survive % | Avg place | Provisional |",
+                  "| ---: | --- | --- | --- | ---: | ---: | ---: | --- | ---: | ---: | ---: | --- |"]
         for row in rows:
-            lines.append(f"| {row['rank']} | {cell(row['id'])} | {row['rating']:.1f} | "
-                         f"{row['games']} | {'yes' if row['provisional'] else ''} |")
+            change = row.get("rank_change")
+            lines.append(f"| {row['rank']} | {cell(row.get('robot_name', row['id']))} | "
+                         f"{cell(row.get('author', 'Unattributed'))} | {cell(row.get('version', 'unversioned'))} | "
+                         f"{row['rating']:.1f} | {change if change is not None else '—'} | {row['games']} | "
+                         f"{row['wins']}–{row['draws']}–{row['losses']} | {100 * row['win_rate']:.1f} | "
+                         f"{100 * row['survival_rate']:.1f} | {row['average_place']:.2f} | "
+                         f"{'yes' if row['provisional'] else ''} |")
         lines.append("")
+    lines += ["## Leading authors this week", "", "Author rating is their best robot's overall rating; "
+              "submitting more robots does not add ratings together.", "",
+              "| Rank | Author | Rating | Robots | Games | Wins |", "| ---: | --- | ---: | ---: | ---: | ---: |"]
+    for row in report.get("authors", []):
+        lines.append(f"| {row['rank']} | {cell(row['author'])} | {row['rating']:.1f} | "
+                     f"{row['robots']} | {row['games']} | {row['wins']} |")
+    if not report.get("authors"):
+        lines.append("No attributed authors in this field.")
+    for kind, label, name in (("authors", "Authors", "author"), ("robots", "Robots", "robot_name")):
+        lines += ["", f"## Historical leaders — {label}", "",
+                  "| Rank | Name | League points | Weeks | Weekly leads | Best rank | Last seen |",
+                  "| ---: | --- | ---: | ---: | ---: | ---: | --- |"]
+        for row in report.get("history", {}).get(kind, []):
+            lines.append(f"| {row['rank']} | {cell(row[name])} | {row['points']:.1f} | {row['weeks']} | "
+                         f"{row['weekly_wins']} | {row['best_rank']} | {cell(row['last_seen'])} |")
+    lines += ["", "Historical points sum each week's midrank percentile (0–100). "
+              "Repeated runs replace that week. Ratings remain fresh; points reward sustained participation.", ""]
+    showcase = report.get("showcase", {})
+    if showcase.get("status") == "completed":
+        lines += ["## Top-five showcase", "", "A separate exhibition of the five-way top five; "
+                  "its outcome does not change league ratings.", "",
+                  f"Seed: {showcase['seed']}. Final tick: {showcase['tick']}. "
+                  f"GIF: `{showcase['gif_file']}`. Replay: `{showcase['replay_file']}`.", ""]
+    elif showcase:
+        lines += ["Showcase skipped: " + cell(showcase.get("reason", "Insufficient entrants")), ""]
     if report["unavailable_modes"]:
         lines += ["Unavailable (not enough valid robots): " +
                   ", ".join(f"{size}-way" for size in report["unavailable_modes"]), ""]
@@ -238,6 +349,8 @@ def main(argv=None) -> int:
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--encoding", choices=("utf-8", "mac-roman"), default="utf-8")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "build/weekly")
+    parser.add_argument("--history-dir", type=Path, help="Archived weeks from the league-history branch")
+    parser.add_argument("--media", action="store_true", help="Render Discord table PNGs and the top-five GIF")
     args = parser.parse_args(argv)
     output = args.output_dir.resolve()
     try:
@@ -245,14 +358,26 @@ def main(argv=None) -> int:
             raise ValueError("Reports must not overwrite source directories")
         output.mkdir(parents=True, exist_ok=True)
         # Invalidate stale success before preflight/execution, including interruption.
-        for name in ("results.json", "leaderboard.json", "leaderboard.md"):
+        for name in ("results.json", "leaderboard.json", "leaderboard.md", "history-week.json",
+                     "showcase.gif", "showcase.json", "leaderboard-current.png",
+                     "leaderboard-formats.png", "leaderboard-history.png", "discord-preview.json"):
             (output / name).unlink(missing_ok=True)
         try:
             report = run_league(directory=args.robots_dir, binary=args.binary, week=args.week,
                                 ticks=args.ticks, rounds=args.rounds, seeds=args.seeds,
-                                workers=args.workers, encoding=args.encoding,
+                                workers=args.workers, encoding=args.encoding, history_dir=args.history_dir,
                                 progress=lambda message: print(message, file=sys.stderr))
+            if args.media:
+                from league_showcase import generate_showcase
+                from league_tables import render_tables
+                report["showcase"] = generate_showcase(report, output, args.binary)
+                report["table_images"] = render_tables(report, output)
+            from league_history import write_snapshot
+            write_snapshot(report, output / "history-week.json")
         except Exception as error:
+            for name in ("history-week.json", "showcase.gif", "showcase.json", "leaderboard-current.png",
+                         "leaderboard-formats.png", "leaderboard-history.png", "discord-preview.json"):
+                (output / name).unlink(missing_ok=True)
             report = {"schema_version": 1, "status": "failed", "week": args.week,
                       "error": str(error), "overall": [], "modes": {}}
         write_result(report, output / "results.json")

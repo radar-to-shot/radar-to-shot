@@ -3,7 +3,6 @@ const STORAGE_KEY = 'robot-warriors-lab.workspace.v1';
 const MAX_SOURCE_BYTES = 32767;
 const MAX_REQUEST_BYTES = 512 * 1024;
 const MAX_ROBOTS = 20;
-const COLORS = ['#126658', '#c36143', '#5874a0', '#917249', '#8b6899'];
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const textEncoder = new TextEncoder();
 
@@ -882,7 +881,7 @@ function renderArena(result, live = false) {
     const title = svgElement('title');
     title.textContent = `${index + 1}. ${robot.name}: ${robot.active ? 'surviving' : 'destroyed'}, position ${rawX}, ${rawY}, damage ${robot.damage}%.`;
     g.append(title);
-    const ink = '#161c16';
+    const ink = '#111111';
     if (robot.active) {
       // Original-Mac-inspired monochrome outlines. Positions and headings come
       // directly from native snapshots; no fabricated/interpolated simulation.
@@ -950,7 +949,7 @@ function renderArena(result, live = false) {
         svgElement('path', {
           d: `M${x - 3},${y - 3}l6,6m0,-6l-6,6`,
           fill: 'none',
-          stroke: '#737973',
+          stroke: '#777777',
           'stroke-width': 1,
         }),
       );
@@ -998,7 +997,7 @@ function renderArena(result, live = false) {
         cy: event.y,
         r: 8,
         fill: 'none',
-        stroke: '#151a15',
+        stroke: '#111111',
         'stroke-width': 1,
         'stroke-dasharray': '2 2',
       }),
@@ -1009,7 +1008,7 @@ function renderArena(result, live = false) {
         cy: event.y,
         r: 4,
         fill: 'none',
-        stroke: '#151a15',
+        stroke: '#111111',
         'stroke-width': 0.8,
       }),
     );
@@ -1047,7 +1046,6 @@ function renderResult(result, seed, elapsed, requestedTicks) {
     const name = document.createElement('td');
     const key = document.createElement('span');
     key.className = 'robot-key';
-    key.style.setProperty('--robot-color', COLORS[index % COLORS.length]);
     key.textContent = index + 1;
     name.append(key, document.createTextNode(robot.name));
     row.append(name);

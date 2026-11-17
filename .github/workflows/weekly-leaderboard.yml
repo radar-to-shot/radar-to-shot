@@ -15,15 +15,16 @@ on:
         type: string
         default: ''
   push:
-    paths: ['robots/**', 'include/**', 'src/**', 'CMakeLists.txt', 'tools/battle_runner.py', 'tools/league_ratings.py', 'tools/weekly_league.py', 'tools/discord_leaderboard.py', 'scripts/run_weekly_league.py', 'tests/test_weekly_league.py', '.github/workflows/weekly-leaderboard.yml']
+    paths: ['robots/**', 'templates/**', 'include/**', 'src/**', 'CMakeLists.txt', 'tools/battle_runner.py', 'tools/league_*.py', 'tools/robot_metadata.py', 'tools/weekly_league.py', 'tools/discord_leaderboard.py', 'tools/requirements-league.txt', 'scripts/run_weekly_league.py', 'tests/test_*league*.py', 'tests/test_robot_metadata.py', 'tests/test_discord_presentation.py', '.github/workflows/weekly-leaderboard.yml']
   pull_request:
-    paths: ['robots/**', 'include/**', 'src/**', 'CMakeLists.txt', 'tools/battle_runner.py', 'tools/league_ratings.py', 'tools/weekly_league.py', 'tools/discord_leaderboard.py', 'scripts/run_weekly_league.py', 'tests/test_weekly_league.py', '.github/workflows/weekly-leaderboard.yml']
+    paths: ['robots/**', 'templates/**', 'include/**', 'src/**', 'CMakeLists.txt', 'tools/battle_runner.py', 'tools/league_*.py', 'tools/robot_metadata.py', 'tools/weekly_league.py', 'tools/discord_leaderboard.py', 'tools/requirements-league.txt', 'scripts/run_weekly_league.py', 'tests/test_*league*.py', 'tests/test_robot_metadata.py', 'tests/test_discord_presentation.py', '.github/workflows/weekly-leaderboard.yml']
 
 permissions:
   contents: read
 
 concurrency:
-  group: weekly-leaderboard-${{ github.event_name }}-${{ github.ref }}
+  # Serialize default-branch schedules and manual publications against one archive.
+  group: weekly-leaderboard-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -40,6 +41,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install presentation dependencies
+        run: python -m pip install -r tools/requirements-league.txt
       - name: Build native engine
         run: |
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -48,6 +51,14 @@ jobs:
         run: |
           ctest --test-dir build --output-on-failure
           python tests/test_weekly_league.py --binary build/robotwar
+          python tests/test_robot_metadata.py
+          python tests/test_league_history.py
+          python tests/test_league_history_store.py
+          python tests/test_league_tables.py
+          python tests/test_league_showcase.py
+          python tests/test_discord_presentation.py
+      - name: Load published weekly history
+        run: python tools/league_history_store.py load --directory build/league-history
       - name: Rank all robot scripts
         env:
           LEAGUE_WEEK: ${{ inputs.week }}
@@ -55,7 +66,8 @@ jobs:
           args=()
           if [[ -n "$LEAGUE_WEEK" ]]; then args+=(--week "$LEAGUE_WEEK"); fi
           python scripts/run_weekly_league.py --robots-dir robots \
-            --binary build/robotwar --workers 2 --output-dir build/weekly "${args[@]}"
+            --binary build/robotwar --workers 2 --output-dir build/weekly \
+            --history-dir build/league-history --media "${args[@]}"
       - name: Validate Discord message without sending
         run: |
           python tools/discord_leaderboard.py --dry-run \
@@ -80,8 +92,30 @@ jobs:
           if-no-files-found: warn
           retention-days: 90
 
-  discord:
+  history:
     needs: league
+    if: >-
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch) &&
+      (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.publish))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ needs.league.outputs.artifact_id }}
+          merge-multiple: true
+          path: build/weekly
+      - name: Persist the completed week on the history data branch
+        run: python tools/league_history_store.py publish --directory build/weekly
+
+  discord:
+    needs: [league, history]
     if: >-
       github.ref == format('refs/heads/{0}', github.event.repository.default_branch) &&
       (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.publish))

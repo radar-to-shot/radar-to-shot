@@ -46,7 +46,8 @@ permissions:
 jobs:
   build:
     name: Build and test site
-    runs-on: ubuntu-latest
+    # Match the supported host for the pinned Playwright browser dependencies.
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     concurrency:
       group: wasm-site-${{ github.event_name }}-${{ github.ref }}

@@ -15,8 +15,12 @@ The [tournament workflow](docs/HEADLESS.md#tournaments) ranks all robots in a
 selected subdirectory using balanced head-to-head matches and publishes JSON
 results plus standings.
 The [weekly league](docs/WEEKLY_LEAGUE.md) computes fresh Elo-style ratings for
-every robot in 2-, 3-, 4-, and 5-way battles, with an overall leaderboard and
-scheduled Discord delivery through a repository webhook secret.
+every robot in 2-, 3-, 4-, and 5-way battles. Discord receives readable robot and
+author tables, historical leaders, more battle statistics, and a GIF of the
+five-way top five in a separate showcase. Stable submission IDs keep authors and
+robots connected across weekly observations and version updates.
+Start a submission with [templates/robot.bot](templates/robot.bot) and the
+[author, name and version guide](docs/SUBMISSIONS.md).
 See [browser development and publishing](docs/HEADLESS.md#browser-workbench-and-github-pages)
 for the WASM build, browser API, tests, and deployment workflow.
 
@@ -38,7 +42,7 @@ You'll need a GitHub account for this.
 * Create a new repository using this one as a template (select `Use this template` -> `Create a new repository` from the right-hand side of the title bar). You can make the new repository private if you want to keep your robots away from prying eyes until they're ready for competition.
 * Navigate to your version of the repository (e.g. `github.com/<yourname>/radar-to-shot`) and then press the `.` key to open the online code editor.
 * Create a new directory inside the `robots` directory to put your robots in, e.g. `robots/<yourname>`.
-* Copy one of the example robots from `robots/examples` to get started.
+* Copy [the submission template](templates/robot.bot) into that directory, or adapt one of the examples from `robots/examples`. Set its author, robot name, version and stable IDs using [the submission guide](docs/SUBMISSIONS.md).
 
 ### Building a disk image containing your robots
 
@@ -68,6 +72,12 @@ The original Robot Warriors manual (as PDF) can be found [here](docs). Also, hav
 
 ## Contributing
 
-Once you're ready for competition (refer to dates and rules on the Discord server), just make a public clone of this repository ([https://github.com/radar-to-shot/radar-to-shot/]), commit your robots to a branch and then submit a pull request to the competition branch.
+Use [templates/robot.bot](templates/robot.bot) for new robot submissions. Fill in
+the author, robot name and version; preserve stable author/robot IDs across
+updates. Keep one active file per robot identity so the league can track it
+unambiguously. See [docs/SUBMISSIONS.md](docs/SUBMISSIONS.md) for the complete
+format, compatibility rules and test instructions.
+
+Once you're ready for competition (refer to dates and rules on the Discord server), make a public clone of this repository ([https://github.com/radar-to-shot/radar-to-shot/]), commit your robots to a branch and submit a pull request to the competition branch.
 
 Also, PRs for improvements to documentation, workflow and so on are welcome.
