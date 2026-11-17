@@ -427,7 +427,7 @@
     "files": [
       {
         "file": ".github/workflows/pages.yml",
-        "sha256": "760e2ed166850c38b6a09f0a75cb853c3fa3f20bdcc4fa6ac8e0702e535941a9"
+        "sha256": "b737b31c80e19315eff6c6909e07fb57f3eafe55cc98b5d4d582af3cf8e0880f"
       },
       {
         "file": "tests/test_browser.py",
