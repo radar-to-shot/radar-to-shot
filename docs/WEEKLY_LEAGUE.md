@@ -93,7 +93,9 @@ the original sample files remain unchanged and unattributed.
 
 Discord does not render Markdown pipe tables as native grids. The post instead
 embeds three PNGs with actual table layouts, alongside a short text summary and
-complete `leaderboard.json` and `leaderboard.md` attachments:
+complete `leaderboard.json` and `leaderboard.md` attachments. Their monochrome
+window frames, striped title bars and crisp rules echo the original Macintosh
+game, with larger type for legibility in Discord:
 
 | Attachment | Contents |
 | --- | --- |

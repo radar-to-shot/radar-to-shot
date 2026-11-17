@@ -71,7 +71,7 @@ def text_tables(report: dict) -> list[dict]:
                          f"{rate_text:>4} {display_name(robot_label(row), 48)}"
                          + (" *" if row.get("provisional") else ""))
         embeds.append({"title": title, "description": "```text\n" + "\n".join(lines) + "\n```",
-                       "color": 0x18594E})
+                       "color": 0x333333})
     return embeds
 
 
@@ -107,7 +107,7 @@ def payload(report: dict, run_url: str) -> dict:
                 raise ValueError("Leaderboard image titles and descriptions must be text")
             attachments.append({"id": len(attachments), "filename": image["filename"],
                                 "description": display_name(description, 512)})
-            embeds.append({"title": title, "description": description, "color": 0x18594E,
+            embeds.append({"title": title, "description": description, "color": 0x333333,
                            "image": {"url": "attachment://" + image["filename"]}})
         if "showcase" not in report:
             raise ValueError("The weekly report must declare its showcase result before posting")
@@ -135,7 +135,7 @@ def payload(report: dict, run_url: str) -> dict:
                            "accelerated playback")
             attachments.append({"id": len(attachments), "filename": "showcase.gif",
                                 "description": "Animated five-way exhibition featuring this week's top five robots."})
-            embeds.append({"title": "Top-five showdown", "description": description, "color": 0xB27739,
+            embeds.append({"title": "Top-five showdown", "description": description, "color": 0x555555,
                            "image": {"url": "attachment://showcase.gif"}})
         elif not isinstance(showcase.get("reason"), str) or not showcase["reason"].strip():
             raise ValueError("A skipped showcase must explain why it could not run")

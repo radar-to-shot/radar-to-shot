@@ -405,7 +405,7 @@
     "protocol_checks_passed": 22,
     "incremental_session_checks_passed": 33,
     "full_native_battle_comparisons_passed": 4,
-    "browser_tests_passed": 9,
+    "browser_tests_passed": 11,
     "browser": "Chromium via Playwright 1.56.0, local executable /usr/bin/chromium",
     "deployment_prefix_tested": "/radar-to-shot/",
     "javascript_disabled_documentation": "passed",
@@ -431,7 +431,7 @@
       },
       {
         "file": "tests/test_browser.py",
-        "sha256": "d1a4f65d08685633f825590c712486c17edd8f32e0aeca3372d114e97bce0354"
+        "sha256": "583fce90556300301d12d927007d5b49431988e0bc3b3c8bf9ef1f5b5c643089"
       },
       {
         "file": "tests/validate_wasm.mjs",
@@ -451,7 +451,7 @@
       },
       {
         "file": "web/app.js",
-        "sha256": "f22b6041c366f2fa16d0b5f04b2edd102e500e4e4ddebc1c0cb35d0bc287435a"
+        "sha256": "22b3e00e3d31441573e93f905f24b0e44e2aa347808a2232d57faf3706aa94a0"
       },
       {
         "file": "web/docs/agent-brief.txt",
@@ -463,21 +463,31 @@
       },
       {
         "file": "web/index.html",
-        "sha256": "b969bd1c692c08e26052a9eabc96682e91eef1889dc612b2dbdd7e804f533def"
+        "sha256": "aad249693ada2f6369d8c7b0a689af75f2c231d8b69e22c98a89d4ed1287e7d7"
       },
       {
         "file": "web/mark.svg",
-        "sha256": "8c247e779c727941610f8c663cd0d965fe24ae4a9fff10b3366ed916aad7a904"
+        "sha256": "d941b967f702d4bee4af2ebcbf4efa44624b87feef68e2a0152fe209a6a0eba5"
       },
       {
         "file": "web/styles.css",
-        "sha256": "c407015296e97908e7ac34960426a768419c8fbc744598a83a802d62c57dd32d"
+        "sha256": "98a8b61d9645c0b5b3f74b53743d2ce3e6186a8bf0af2b93719beade99c3410a"
       },
       {
         "file": "web/worker.js",
         "sha256": "296bc6c012b0e40b1cadc21c826732116789a1852932f79147bbd06bd739eea4"
       }
-    ]
+    ],
+    "interface_style": "Original Macintosh-inspired monochrome windows, striped titlebars, numbered robots and neutral SVG controls",
+    "presentation_validation_date": "2026-11-17",
+    "responsive_widths_checked": [
+      320,
+      390,
+      640,
+      1440
+    ],
+    "keyboard_navigation": "Visible focus, skip link, editor Tab navigation and Ctrl+Enter compilation passed",
+    "presentation_screenshots": "Desktop and mobile initial workbench, editor, live-battle result, 320px results and language reference inspected"
   },
   "weekly_league": {
     "validation_date": "2026-11-17",
@@ -504,7 +514,9 @@
     "discord": {
       "preview": "Passed with three PNG table embeds, one GIF embed, JSON and Markdown attachments",
       "mocked_rate_limit_and_delivery_tests": "passed",
-      "live_delivery": "New media delivery not attempted; published default-branch workflow retains the existing webhook secret"
+      "live_delivery": "New media delivery not attempted; published default-branch workflow retains the existing webhook secret",
+      "table_style": "Classic monochrome Macintosh window frames, striped titlebars, neutral embed accents",
+      "table_png_bytes": 597139
     },
     "files": [
       {
@@ -517,7 +529,7 @@
       },
       {
         "file": "docs/WEEKLY_LEAGUE.md",
-        "sha256": "11a3e8ee383d518ffe805835fa43f8f83137e8c70373597e262a0ebc9d4d0503"
+        "sha256": "dec5910d41f87cd5b8cce7d76c00e6a2b62aacb21ae7d5f886f9379287710390"
       },
       {
         "file": "robots/model_bench_20261111/fable52.bot",
@@ -577,7 +589,7 @@
       },
       {
         "file": "tests/test_league_tables.py",
-        "sha256": "d80e88353a21821537756ff4c906e58d0abce45f658d6b0376c18586b9762dc0"
+        "sha256": "a7d53e3a1aca5e2edea47ecab39c1c39e411e56227591dab5f11c00d1dbf5ed4"
       },
       {
         "file": "tests/test_robot_metadata.py",
@@ -589,7 +601,7 @@
       },
       {
         "file": "tools/discord_leaderboard.py",
-        "sha256": "76ad2b6dca356ca3dfd21c4d93d4fac141847a93f44b49d9446baa68708e1b71"
+        "sha256": "af844b7f2ae01dfdaecf9ba3d0495f7752d8ff9ed439b713b126ee296f3876c6"
       },
       {
         "file": "tools/league_history.py",
@@ -609,7 +621,7 @@
       },
       {
         "file": "tools/league_tables.py",
-        "sha256": "31bfd291828879dc665ec78bc2b6a3e3c7866fbe72bf4a11495027c0761cc2cb"
+        "sha256": "6d9f58cceb872be2ffebe972cf035a302c657cf5ad7009a8af21c950d923629d"
       },
       {
         "file": "tools/requirements-league.txt",

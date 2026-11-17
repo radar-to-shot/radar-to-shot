@@ -116,6 +116,12 @@ the editor. Workspace edits are saved in this browser's local storage; source
 and battle requests are never uploaded to a server. Download source to keep an
 independent copy.
 
+The workbench takes its visual cues from the original Macintosh game: monochrome
+windows, striped title bars, numbered robots and crisp controls. Responsive
+layouts, visible keyboard focus, readable type and touch-friendly buttons keep
+it practical on modern screens. Tab navigates the editor's controls;
+Ctrl/Cmd+Enter compiles the selected source.
+
 **Watch battle** enables an original-style monochrome view of the live world,
 including robots, gun/direction markers, shells, explosions, damage indicators
 and destroyed robots. Its 1×/4×/16× settings change presentation pacing, not
@@ -193,7 +199,8 @@ The WASM test replays all 7,014 original-code golden vectors, tests recoverable
 errors and incremental session behavior, and can additionally compare full
 native battles with `--native build/robotwar`. Browser tests run at a repository
 URL prefix and exercise uploads, sample selection, compilation, fast/live parity,
-cancellation, exports, mobile layout and static documentation. Screenshots are
+cancellation, exports, keyboard focus and compilation shortcuts, narrow layouts
+down to 320 CSS pixels, and static documentation. Screenshots are
 written under `build/browser/`. The generated `build-manifest.json` records
 revision, toolchain version and static asset hashes. WASM memory is capped at
 256 MiB and browser requests at 512 KiB; rendering needs no SharedArrayBuffer or

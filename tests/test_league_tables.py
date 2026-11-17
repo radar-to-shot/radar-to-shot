@@ -81,6 +81,9 @@ class TableTests(unittest.TestCase):
                     self.assertLess(image.height, 2000)
                     flat = Image.new("RGB", image.size, image.getpixel((0, 0)))
                     self.assertIsNotNone(ImageChops.difference(image.convert("RGB"), flat).getbbox())
+                    red, green, blue = image.convert("RGB").split()
+                    self.assertIsNone(ImageChops.difference(red, green).getbbox(), "Classic tables must remain monochrome")
+                    self.assertIsNone(ImageChops.difference(green, blue).getbbox(), "Classic tables must remain monochrome")
             self.assertLessEqual(total, MAX_PNG_BYTES)
             self.assertEqual(report, before, "Rendering must not mutate the league report")
 

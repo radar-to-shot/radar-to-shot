@@ -21,15 +21,14 @@ WIDTH = 1440
 MARGIN = 48
 MAX_ROWS = 10
 MAX_PNG_BYTES = 2 * 1024 * 1024
-BACKGROUND = "#f5f2e9"
-PAPER = "#fffffc"
-INK = "#183d35"
-TEAL = "#176454"
-MUTED = "#68756d"
-GRID = "#cbd3c6"
-ALTERNATE = "#f0f3ec"
-HIGHLIGHT = "#e3efe5"
-WARM = "#ba603d"
+BACKGROUND = "#e5e5e5"
+PAPER = "#ffffff"
+INK = "#000000"
+MUTED = "#4b4b4b"
+GRID = "#aaaaaa"
+ALTERNATE = "#f3f3f3"
+HIGHLIGHT = "#e5e5e5"
+HEADER = "#dddddd"
 
 PANELS = (
     ("leaderboard-current.png", "This week's leading robots and authors",
@@ -59,8 +58,8 @@ def _font(size: int, *, bold=False, mono=False):
 
 
 FONTS = {
-    "title": _font(43, bold=True),
-    "heading": _font(29, bold=True),
+    "title": _font(28, bold=True),
+    "heading": _font(23, bold=True),
     "body": _font(23),
     "strong": _font(23, bold=True),
     "small": _font(18),
@@ -169,25 +168,52 @@ def _put(draw, box, value, *, font="body", color=INK, align="left"):
     draw.text((x, top + height / 2), label, fill=color, font=selected, anchor="lm")
 
 
+def _window_bar(draw, x, y, width, height, title, *, font="heading"):
+    """Classic monochrome Macintosh title bar with a square close box."""
+    draw.rectangle((x, y, x + width, y + height), fill=PAPER, outline=INK, width=2)
+    for stripe_y in range(y + 10, y + height - 8, 5):
+        draw.line((x + 8, stripe_y, x + width - 8, stripe_y), fill=INK, width=1)
+    close_size = 15
+    close_x, close_y = x + 18, y + (height - close_size) // 2
+    draw.rectangle((close_x - 5, close_y - 5, close_x + close_size + 5, close_y + close_size + 5), fill=PAPER)
+    draw.rectangle((close_x, close_y, close_x + close_size, close_y + close_size), fill=PAPER, outline=INK, width=2)
+    selected = FONTS[font]
+    title = _fit(draw, title, selected, width - 110)
+    plate_width = math.ceil(draw.textlength(title, font=selected)) + 24
+    plate_x = x + (width - plate_width) // 2
+    draw.rectangle((plate_x, y + 3, plate_x + plate_width, y + height - 3), fill=PAPER)
+    _put(draw, (plate_x + 12, y, plate_width - 24, height), title, font=font, align="center")
+
+
+def _stipple(draw, box):
+    left, top, right, bottom = box
+    draw.rectangle(box, fill=PAPER)
+    for y in range(top, bottom + 1, 2):
+        for x in range(left + (y % 4), right + 1, 4):
+            draw.point((x, y), fill=INK)
+
+
 def _canvas(height, title, subtitle, week):
     image = Image.new("RGB", (WIDTH, height), BACKGROUND)
     draw = ImageDraw.Draw(image)
-    draw.rectangle((0, 0, WIDTH, 9), fill=TEAL)
-    # A small angular robot mark echoes the original monochrome arena symbols.
-    draw.polygon(((MARGIN, 44), (MARGIN + 12, 32), (MARGIN + 24, 44), (MARGIN + 12, 56)),
-                 outline=INK, width=2)
-    draw.line((MARGIN + 12, 32, MARGIN + 12, 22), fill=INK, width=2)
-    _put(draw, (MARGIN + 37, 22, 700, 38), "ROBOT WARRIORS / WEEKLY LEAGUE", font="header")
-    _put(draw, (WIDTH - MARGIN - 250, 22, 250, 38), week or "Weekly standings", font="header", align="right")
-    _put(draw, (MARGIN, 68, WIDTH - 2 * MARGIN, 54), title, font="title")
+    draw.rectangle((20, 20, WIDTH - 20, height - 20), fill=PAPER, outline=INK, width=2)
+    _window_bar(draw, 20, 20, WIDTH - 40, 48, "Robot Warriors — Weekly League")
+    # Original robots use numbered square outlines, with a gun/radar direction
+    # line. Keep the mark functional and angular like the manual's battlefield.
+    draw.rectangle((MARGIN, 87, MARGIN + 27, 114), fill=PAPER, outline=INK, width=2)
+    draw.line((MARGIN + 14, 87, MARGIN + 14, 77), fill=INK, width=2)
+    _put(draw, (MARGIN + 4, 88, 20, 24), "1", font="small", align="center")
+    _put(draw, (MARGIN + 42, 78, WIDTH - 2 * MARGIN - 300, 42), title, font="title")
+    _put(draw, (WIDTH - MARGIN - 250, 78, 250, 42), week or "Weekly standings", font="header", align="right")
     _put(draw, (MARGIN, 126, WIDTH - 2 * MARGIN, 30), subtitle, font="compact", color=MUTED)
+    _stipple(draw, (MARGIN, 168, WIDTH - MARGIN, 172))
     return image, draw
 
 
 def _footer(draw, height, first, second):
-    draw.line((MARGIN, height - 77, WIDTH - MARGIN, height - 77), fill=GRID, width=1)
-    _put(draw, (MARGIN, height - 68, WIDTH - 2 * MARGIN, 24), first, font="small", color=MUTED)
-    _put(draw, (MARGIN, height - 42, WIDTH - 2 * MARGIN, 24), second, font="small", color=MUTED)
+    _stipple(draw, (MARGIN, height - 79, WIDTH - MARGIN, height - 75))
+    _put(draw, (MARGIN, height - 73, WIDTH - 2 * MARGIN, 24), first, font="small", color=MUTED)
+    _put(draw, (MARGIN, height - 47, WIDTH - 2 * MARGIN, 24), second, font="small", color=MUTED)
 
 
 def _table_height(rows, row_height=66):
@@ -198,10 +224,11 @@ def _table(draw, x, y, width, title, rows, columns, *, identity="robot", row_hei
            compact=False, empty="No eligible entries this week."):
     rows = rows[:MAX_ROWS]
     height = _table_height(rows, row_height)
-    draw.rounded_rectangle((x, y, x + width, y + height), radius=12, fill=PAPER, outline=GRID, width=1)
-    _put(draw, (x + 20, y + 8, width - 40, 40), title, font="heading")
+    draw.rectangle((x, y, x + width, y + height), fill=PAPER, outline=INK, width=2)
+    _window_bar(draw, x, y, width, 50, title)
     header_y = y + 50
-    draw.rectangle((x + 1, header_y, x + width - 1, header_y + 40), fill=TEAL)
+    draw.rectangle((x + 1, header_y, x + width - 1, header_y + 40), fill=HEADER)
+    draw.line((x, header_y + 40, x + width, header_y + 40), fill=INK, width=1)
     scale = width / sum(column.width for column in columns)
     bounds, offset = [], 0
     for column in columns:
@@ -209,7 +236,7 @@ def _table(draw, x, y, width, title, rows, columns, *, identity="robot", row_hei
         left = round(offset)
         bounds.append((x + left, right - left, column))
         _put(draw, (x + left + 12, header_y, right - left - 24, 40), column.heading,
-             font="header", color=PAPER, align=column.align)
+             font="header", color=INK, align=column.align)
         offset += column.width * scale
     if not rows:
         _put(draw, (x + 24, header_y + 40, width - 48, row_height), empty,
@@ -247,10 +274,7 @@ def _table(draw, x, y, width, title, rows, columns, *, identity="robot", row_hei
                 font = "small" if compact else "compact_number"
             elif key == "rank_change":
                 value = _movement(row.get(key))
-                try:
-                    color = TEAL if float(row.get(key, 0)) > 0 else WARM if float(row.get(key, 0)) < 0 else MUTED
-                except (TypeError, ValueError):
-                    color = MUTED
+                color = MUTED if value in ("new", "—") else INK
             elif key == "last_seen":
                 value, font = row.get(key) or "—", "small"
             else:
@@ -258,6 +282,9 @@ def _table(draw, x, y, width, title, rows, columns, *, identity="robot", row_hei
             _put(draw, box, value, font=font, color=color, align=column.align)
         for left, _, _ in bounds[1:]:
             draw.line((left, top, left, top + row_height), fill=GRID)
+    draw.rectangle((x, y, x + width, y + height), outline=INK, width=2)
+    draw.line((x, header_y, x + width, header_y), fill=INK, width=1)
+    draw.line((x, header_y + 40, x + width, header_y + 40), fill=INK, width=1)
     return height
 
 
@@ -267,19 +294,19 @@ def _current(report):
     height = 185 + robot_height + 30 + author_height + 100
     subtitle = (f"{len(robots)} ranked robots · {len(authors)} attributed authors · "
                 f"{_number(report.get('battle_count'))} battles · fresh ratings every week")
-    image, draw = _canvas(height, "The weekly field", subtitle, report.get("week"))
+    image, draw = _canvas(height, "Weekly League Results", subtitle, report.get("week"))
     columns = [Column("#", 65, "rank"), Column("Robot / author · version", 399, "identity", "left"),
                Column("Rating", 110, "rating"), Column("Δ rank", 88, "rank_change"),
                Column("Games", 90, "games"), Column("Win %", 90, "win_rate"),
                Column("Alive %", 90, "survival_rate"), Column("Avg place", 120, "average_place"),
                Column("W–D–L", 152, "record")]
-    _table(draw, MARGIN, 185, WIDTH - 2 * MARGIN, "Leading robots · overall", robots, columns)
+    _table(draw, MARGIN, 185, WIDTH - 2 * MARGIN, "Robot Standings — Overall", robots, columns)
     columns = [Column("#", 70, "rank"), Column("Author", 460, "identity", "left"),
                Column("Best rating", 150, "rating"), Column("Δ rank", 120, "rank_change"),
                Column("Robots", 110, "robots"), Column("Games", 130, "games"),
                Column("Wins", 110, "wins"), Column("Win %", 144, "win_rate")]
     _table(draw, MARGIN, 185 + robot_height + 30, WIDTH - 2 * MARGIN,
-           "Leading authors · this week", authors, columns, identity="author", row_height=56,
+           "Author Standings — This Week", authors, columns, identity="author", row_height=56,
            empty="No attributed authors yet. Add the submission metadata header to your robot.")
     _footer(draw, height, "Overall weights formats equally. Author rating = their strongest robot. ↑ / ↓ compares the previous recorded week.",
             "W–D–L = wins, draws, losses. Alive % = survives the final tick. k = thousand. * Provisional. Full standings attached.")
@@ -291,7 +318,7 @@ def _formats(report):
     rows = [modes.get(str(size), {}).get("standings", []) for size in range(2, 6)]
     heights = [max(_table_height(rows[start], 64), _table_height(rows[start + 1], 64)) for start in (0, 2)]
     height = 185 + sum(heights) + 28 + 100
-    image, draw = _canvas(height, "Four ways to compete", "Compare head-to-head strength with multiplayer survival.", report.get("week"))
+    image, draw = _canvas(height, "Battle Results by Format", "Compare head-to-head strength with multiplayer survival.", report.get("week"))
     gap = 28
     width = (WIDTH - 2 * MARGIN - gap) // 2
     # Individual mode tables prioritize an identifiable robot, rating and actual
@@ -302,7 +329,7 @@ def _formats(report):
     for index, size in enumerate(range(2, 6)):
         x = MARGIN + (index % 2) * (width + gap)
         y = 185 + (heights[0] + gap if index >= 2 else 0)
-        title = "2 robots · head-to-head" if size == 2 else f"{size} robots · free-for-all"
+        title = "2 Robots — Head-to-Head" if size == 2 else f"{size} Robots — Free-for-All"
         _table(draw, x, y, width, title, rows[index], columns, row_height=64, compact=True,
                empty="Not enough eligible robots for this format.")
     _footer(draw, height, "Each robot gets equal game counts within a format; every group rotates through all execution slots.",
@@ -318,16 +345,16 @@ def _history(report):
     weeks = history.get("weeks", 0)
     subtitle = (f"{_number(weeks)} recorded {'week' if weeks == 1 else 'weeks'} · one weekly result per stable author and robot identity"
                 if weeks else "Weekly history begins with the first saved league result.")
-    image, draw = _canvas(height, "The long game", subtitle, report.get("week"))
+    image, draw = _canvas(height, "League History", subtitle, report.get("week"))
     columns = [Column("#", 70, "rank"), Column("Author", 450, "identity", "left"),
                Column("Points", 150, "points"), Column("Weeks", 120, "weeks"),
                Column("#1 weeks", 140, "weekly_wins"), Column("Best rank", 140, "best_rank"),
                Column("Last seen", 174, "last_seen")]
-    _table(draw, MARGIN, 185, WIDTH - 2 * MARGIN, "Leading authors · history", authors, columns,
+    _table(draw, MARGIN, 185, WIDTH - 2 * MARGIN, "Authors — All Recorded Weeks", authors, columns,
            identity="author", row_height=56, empty="No author history yet. Attribution keeps results connected across weeks.")
     columns[1] = Column("Robot / author · latest version", 450, "identity", "left")
     _table(draw, MARGIN, 185 + author_height + 30, WIDTH - 2 * MARGIN,
-           "Leading robots · history", robots, columns,
+           "Robots — All Recorded Weeks", robots, columns,
            empty="No robot history yet. Stable robot IDs connect future versions to the same record.")
     _footer(draw, height, "Historical points follow the league's weekly scoring rules. #1 weeks includes shared first places.",
             "Fresh weekly ratings still reset each week. Historical identity follows stable IDs, not filenames or version strings.")
