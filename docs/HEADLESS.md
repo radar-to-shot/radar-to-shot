@@ -221,6 +221,11 @@ For weekly ratings across the entire `robots/` tree, including 3-, 4- and 5-way
 battles and Discord publication, see [the weekly league](WEEKLY_LEAGUE.md).
 It recomputes Bradley–Terry ratings on an Elo scale from the current scripts;
 the tournament below instead ranks head-to-head results using exact points.
+The weekly league reads [submission metadata](SUBMISSIONS.md) for author, robot
+name, version and stable IDs, persists weekly author/robot observations on a
+separate history branch, and posts rendered tables with richer statistics.
+Its top five in the five-way standings also run a separate native exhibition
+recorded as an original-style GIF; that battle does not alter ratings.
 
 The **Robot tournament** GitHub Actions workflow runs all robot source files in
 a selected subdirectory of `robots/`. In **Actions → Robot tournament → Run

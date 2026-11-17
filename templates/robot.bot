@@ -1,0 +1,40 @@
+; @author: Your Name
+; @author-id: your-name
+; @name: Compass Scout
+; @robot-id: compass-scout
+; @version: 1.0.0
+;
+; Replace the identity above, then save under robots/<author-id>/<robot-id>.bot.
+; Keep both IDs stable when renaming the file, changing display names, or updating
+; the robot. Increase the version when you change its strategy or hardware.
+; This is a readable baseline, not a claim of competitive strength.
+
+CPU_SPEED 1
+ENGINE_SIZE 1
+FIRE_RATE 2
+RADAR_RANGE 1
+ARMOR 1
+
+ALLOCATE target
+
+90 TO DIRECTION
+40 TO SPEED
+
+patrol
+    IF X < 20 THEN 90 TO DIRECTION
+    IF X > 360 THEN 270 TO DIRECTION
+    IF Y < 20 THEN 180 TO DIRECTION
+    IF Y > 290 THEN 0 TO DIRECTION
+
+    IF SPEED = 0 THEN
+        DIRECTION + 90 TO DIRECTION
+        40 TO SPEED
+    END
+
+    AIM + 2 TO AIM
+    AIM TO RADAR
+    RADAR TO target
+    IF target > 20 THEN
+        IF SHOT = 0 THEN target TO SHOT
+    END
+GOTO patrol

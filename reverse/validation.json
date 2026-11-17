@@ -480,14 +480,16 @@
     ]
   },
   "weekly_league": {
-    "validation_date": "2026-11-12",
-    "test_methods_passed": 18,
+    "validation_date": "2026-11-17",
+    "test_methods_passed": 86,
     "rating_model": "Fresh regularized Bradley-Terry survival placements on a 1500/400 Elo scale; sparse Newton-CG fit",
     "schedule": "Exhaustive through 128 groups; otherwise four balanced circular rounds with every cyclic seat rotation",
     "current_field": {
-      "revision": "1155fa49bed1052b9571f66c189891c7f01328f0",
-      "week": "2026-W46",
+      "base_revision": "c5fd71d625cb01ec16be622e3edf14ee4afd241d",
+      "source_identity": "Working tree files identified by the file hashes below and per-robot source hashes in the generated report",
+      "week": "2026-W47",
       "robots": 13,
+      "authors": 8,
       "battles": 1560,
       "all_four_formats": true,
       "battle_replay_checks": 4
@@ -500,39 +502,163 @@
     },
     "workflow_lint": "actionlint 1.7.10 passed",
     "discord": {
-      "preview": "passed",
+      "preview": "Passed with three PNG table embeds, one GIF embed, JSON and Markdown attachments",
       "mocked_rate_limit_and_delivery_tests": "passed",
-      "live_delivery": "not attempted; channel webhook must be configured as a repository secret"
+      "live_delivery": "New media delivery not attempted; published default-branch workflow retains the existing webhook secret"
     },
     "files": [
       {
         "file": ".github/workflows/weekly-leaderboard.yml",
-        "sha256": "dc219a08f63122f5ef904cfd8da96a373eb346c05620706c114269fb103e301c"
+        "sha256": "f42ff679fe78e9d13ff2df73029ae4979377606d4d1db06097856e4bbfe76095"
+      },
+      {
+        "file": "docs/SUBMISSIONS.md",
+        "sha256": "3dae3120257431e35a5a12df495f7a4da6fcea7d33e0f2087fdeaa7ec17d597d"
       },
       {
         "file": "docs/WEEKLY_LEAGUE.md",
-        "sha256": "16a128df1653c7a36562515c7de92737a0064689479f04841cfe1316df0775c9"
+        "sha256": "11a3e8ee383d518ffe805835fa43f8f83137e8c70373597e262a0ebc9d4d0503"
+      },
+      {
+        "file": "robots/model_bench_20261111/fable52.bot",
+        "sha256": "4d21a07743717cc711325a2bb6e2e701d59aaf50e21cd926666e71850c37382c"
+      },
+      {
+        "file": "robots/model_bench_20261111/gpt61sol.bot",
+        "sha256": "823bd1a1207ae017f85b6780ff334f55b8d5b51e0a67fac8c2585e64ff535f84"
+      },
+      {
+        "file": "robots/model_bench_20261111/gpt61terra.bot",
+        "sha256": "f383f3fd43d938a69e4e8e2474709497bc85cae278fb1d61cc7d597409c16b61"
+      },
+      {
+        "file": "robots/model_bench_20261111/gpt6astra.bot",
+        "sha256": "9961d9e9d01a0b11e5905e07962108939b63b1bebbbefc269e999981a336710b"
+      },
+      {
+        "file": "robots/model_bench_20261111/gpt6luna.bot",
+        "sha256": "e7e033cf38abea98e21ad14580636aca8d1b6fa2069e2dc5b0d5d9c1a284f411"
+      },
+      {
+        "file": "robots/model_bench_20261111/haiku55.bot",
+        "sha256": "560e05578a05d12722128811e618dd2e81bcaa88bdc546d622c3be03bac4df9d"
+      },
+      {
+        "file": "robots/model_bench_20261111/opus55.bot",
+        "sha256": "b93dffe44f9c6afdf2f4b36b795abd9ec447a207d2a570336cc130713779c79c"
+      },
+      {
+        "file": "robots/model_bench_20261111/sonnet55.bot",
+        "sha256": "9e85993c428aff95e40111f2ca5445d9e594722a9c8cb5d2e75e6f0a52d1d37a"
       },
       {
         "file": "scripts/run_weekly_league.py",
         "sha256": "b493007494c4e57a859a46fe9757f078b8edd8bf3d5a5b375050b5323ad7dbce"
       },
       {
+        "file": "templates/robot.bot",
+        "sha256": "c392e1e68005d78b941cf866456fe291c0764f7193bae88517b0f3258829290d"
+      },
+      {
+        "file": "tests/test_discord_presentation.py",
+        "sha256": "432589f962d33694251b9c29a6a8dbc9664dcda3cdfdb94b39e58e22f8744aab"
+      },
+      {
+        "file": "tests/test_league_history.py",
+        "sha256": "734879cb555f4ce09c2390a7ad16d6983f94be3cad636fd78b5a9eddebb3dff3"
+      },
+      {
+        "file": "tests/test_league_history_store.py",
+        "sha256": "89363d9c5bf34f12de7603f59734343c6913837885fe0ff913f6f32231cd39b4"
+      },
+      {
+        "file": "tests/test_league_showcase.py",
+        "sha256": "6189ca5991d780d74c90e80542146dca7fe824f4c94ff25dc4feda392cf616ac"
+      },
+      {
+        "file": "tests/test_league_tables.py",
+        "sha256": "d80e88353a21821537756ff4c906e58d0abce45f658d6b0376c18586b9762dc0"
+      },
+      {
+        "file": "tests/test_robot_metadata.py",
+        "sha256": "b461a10a531cb6f1777d11010a83ac692f31a0d96c69b975514e346575f4ffd0"
+      },
+      {
         "file": "tests/test_weekly_league.py",
-        "sha256": "aa0877a10223311d21f58e90af929bcdb209c242f00ba8d1ee8fd8289a9c54e4"
+        "sha256": "1d61034cfdf9e0c078843b0b3b1db049cd6409ad45fb70fbd577fedfeefcaa9a"
       },
       {
         "file": "tools/discord_leaderboard.py",
-        "sha256": "b3fd0c1299fc7d6f639d5d7f530c7dde20c77605816173dc44a74c696d0f7265"
+        "sha256": "76ad2b6dca356ca3dfd21c4d93d4fac141847a93f44b49d9446baa68708e1b71"
+      },
+      {
+        "file": "tools/league_history.py",
+        "sha256": "feb7926b622b9444e732d2902725d0f598b2a37b7067ee37a4302e73f29f5024"
+      },
+      {
+        "file": "tools/league_history_store.py",
+        "sha256": "31d5f5a2ea11e478bcd5fc6540d8e78c9d28004129a6b32970c00d5a94ce857f"
       },
       {
         "file": "tools/league_ratings.py",
         "sha256": "20ca33af904b66a7df23a5742ceab31e261fe512af1036e7afc6b72f4745bbc9"
       },
       {
+        "file": "tools/league_showcase.py",
+        "sha256": "03e7dd976da5e01fb51e655fb339dc59bc206cc2a45b395b9d30161a6af9dae4"
+      },
+      {
+        "file": "tools/league_tables.py",
+        "sha256": "31bfd291828879dc665ec78bc2b6a3e3c7866fbe72bf4a11495027c0761cc2cb"
+      },
+      {
+        "file": "tools/requirements-league.txt",
+        "sha256": "570c9387510a35edf1e287600993944ebc8ee5af602c809cf00cd57e2b723779"
+      },
+      {
+        "file": "tools/robot_metadata.py",
+        "sha256": "df7e911c8b3f0a7a6479fbbfe5d0c0f140a121a8a8c4252581630b6a7c85edb1"
+      },
+      {
         "file": "tools/weekly_league.py",
-        "sha256": "10e244ebf2eac1e3f015c3ed120ba08a606441c79716722e765b5ab51d394369"
+        "sha256": "98f41a4e94040338a4eac7c4830d7d926429c107f98964447e0441cb69f3e485"
       }
-    ]
+    ],
+    "test_suites": {
+      "weekly_league": 22,
+      "robot_metadata": 11,
+      "league_history": 13,
+      "league_history_store": 14,
+      "league_tables": 6,
+      "league_showcase": 8,
+      "discord_presentation": 12
+    },
+    "metadata": {
+      "template_compiles": true,
+      "model_headers_preserve_bytecode": 8,
+      "stable_author_and_robot_ids": true,
+      "ambiguous_active_identities_are_unranked": true
+    },
+    "history": {
+      "storage": "Isolated league-history Git branch with one snapshot per ISO week",
+      "weekly_ratings_reset": true,
+      "author_rating": "Best robot overall rating",
+      "historical_points": "Sum of weekly tied-midrank percentiles",
+      "bare_remote_publication_tests": "Passed: isolated data branch, unchanged user index, repeat-week replacement, identical artifact retry after lost acknowledgement, stale-base and push-race rejection",
+      "failed_fetch_preserves_cache": true,
+      "live_history_publication": "Deferred until the new default-branch workflow publishes its first week"
+    },
+    "showcase": {
+      "seed": 1516813747,
+      "tick": 521,
+      "frame_count": 59,
+      "gif_bytes": 237934,
+      "gif_sha256": "8e658c104236c5b48bf2e1dff33454741b1fb9115f9003c113c2528900b40b41",
+      "final_state_sha256": "7f4e6becb96557bcf19640c24d11070c5c9e5863699816362f841aa1f163cd6d",
+      "selection": "Top five in final five-way standings",
+      "additional_exhibition_only": true,
+      "complete_final_state_matches_one_shot_replay": true,
+      "visual_inspection": "Three actual table PNGs and representative original-style GIF frames inspected"
+    }
   }
 }
