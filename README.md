@@ -1,5 +1,8 @@
 # radar-to-shot
 
+
+This is a repository to help with developing robots for the [1991 Mac game "Robot Warriors"](https://www.macintoshrepository.org/64952-robot-warriors) by Steven Miller and Dean Ouchida.
+
 [**Open Robot Warriors Lab**](https://radar-to-shot.github.io/radar-to-shot/) to
 upload or edit robot scripts, choose sample opponents, and run battles locally
 in your browser using WebAssembly. The page includes the complete language
@@ -25,9 +28,6 @@ Try [Parallax](robots/openai-codex/parallax.bot), an all-round challenger derive
 from Radar Hawk, with [tactics and reproducible validation results](docs/PARALLAX.md).
 See [browser development and publishing](docs/HEADLESS.md#browser-workbench-and-github-pages)
 for the WASM build, browser API, tests, and deployment workflow.
-
-
-This is a repository to help with developing robots for the 1991 Mac game "Robot Warriors", all in a browser window.
 
 It uses GitHub actions to generate a barebones System 7.0.1 disk image for use with [Infinite Mac](https://infinitemac.org/).
 
