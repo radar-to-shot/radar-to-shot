@@ -1,0 +1,583 @@
+; @author: OpenAI Codex GPT 6.2 Astra
+; @author-id: openai-codex-gpt-6.2-astra
+; @name: Nightjar
+; @robot-id: nightjar
+; @version: 1.0.0
+;
+; Robot Warriors 1.0.1. Six hardware points.
+; Adapted from Sonnet 5.5's Radar Hawk in radar-to-shot/radar-to-shot,
+; robots/model_bench_20261111/sonnet55.bot at revision 1b96441.
+; Radar Hawk supplied the cone-edge search, position history and waypoint patrol.
+; Nightjar adds a four-probe search, bounded acceleration in two estimates of
+; flight time, a low-speed corner orbit for crowded arenas, and fuel reserves.
+; All decisions use game registers and observed motion.
+
+CPU_SPEED 2
+RADAR_RANGE 0
+FIRE_RATE 1
+CLOAKING 1
+FUEL_CAPACITY 2
+ENGINE_SIZE 0
+ARMOR 0
+DEFINE orbitRadius 32
+DEFINE cloakRange 160
+DEFINE outerSpeed 19
+DEFINE innerSpeed 19
+DEFINE cloakSpeed 9
+DEFINE cloakTicks 18
+DEFINE minBaseline 3
+DEFINE maxBaseline 10
+DEFINE patrolDelay 90
+
+ALLOCATE accelX16
+ALLOCATE accelY16
+ALLOCATE priorVX16
+ALLOCATE priorVY16
+ALLOCATE priorVelTick
+ALLOCATE velocityAge
+ALLOCATE predweight
+ALLOCATE nextmove
+ALLOCATE clock
+ALLOCATE course
+ALLOCATE orbitSign
+ALLOCATE turnTicks
+ALLOCATE cruiseSpeed
+ALLOCATE cloakuntil
+ALLOCATE lastdmg
+ALLOCATE havetrack
+ALLOCATE fixes
+ALLOCATE misses
+ALLOCATE contactTick
+ALLOCATE targetX16
+ALLOCATE targetY16
+ALLOCATE velX16
+ALLOCATE velY16
+ALLOCATE baseX16
+ALLOCATE baseY16
+ALLOCATE baseTick
+ALLOCATE lastX16
+ALLOCATE lastY16
+ALLOCATE lastFixTick
+ALLOCATE scanBearing
+ALLOCATE otherBearing
+ALLOCATE scanRange
+ALLOCATE otherRange
+ALLOCATE edgeRange
+ALLOCATE fixBearing
+ALLOCATE halfWidth
+ALLOCATE lowEdge
+ALLOCATE highEdge
+ALLOCATE edgeMid
+ALLOCATE sensorX
+ALLOCATE sensorY
+ALLOCATE fclock
+ALLOCATE fixX16
+ALLOCATE fixY16
+ALLOCATE dt
+ALLOCATE baseAge
+ALLOCATE predX16
+ALLOCATE predY16
+ALLOCATE predBearing
+ALLOCATE predRange
+ALLOCATE leadTicks
+ALLOCATE counter
+ALLOCATE rangeGap
+ALLOCATE bearingGap
+ALLOCATE contactDX
+ALLOCATE contactDY
+ALLOCATE unitX64
+ALLOCATE unitY64
+ALLOCATE steerX
+ALLOCATE steerY
+ALLOCATE radialError
+ALLOCATE scratch
+ALLOCATE shotsTaken
+ALLOCATE lastPopulation
+ALLOCATE fixesTaken
+ALLOCATE waypointIndex
+ALLOCATE waypointX
+ALLOCATE waypointY
+ALLOCATE lasttrack
+ALLOCATE waypointTick
+ALLOCATE quietTicks
+ALLOCATE patrolling
+
+ALLOCATE cornerX
+ALLOCATE cornerY
+ALLOCATE cornerTurn
+ALLOCATE cornerDistance
+ALLOCATE guardCorner
+ALLOCATE startPopulation
+
+    NUM_ROBOTS TO startPopulation
+    IF X < 190 THEN 38 TO cornerX
+    IF X >= 190 THEN 343 TO cornerX
+    IF Y < 156 THEN 38 TO cornerY
+    IF Y >= 156 THEN 275 TO cornerY
+    tick_isr TO TIME_INT_XFER
+    NUM_ROBOTS TO lastPopulation
+    1 TO orbitSign
+    19 TO cruiseSpeed
+    cruiseSpeed TO SPEED
+    1 TO TIME_INT_MASK
+main
+    IF havetrack = 0 THEN
+        GOSUB search
+    ELSE
+        GOSUB track
+    END
+GOTO main
+
+; Steering is slow. Update it periodically and sweep four bearings per search pass.
+search
+    IF clock >= nextmove THEN
+        clock + 20 TO nextmove
+        GOSUB seekcenter
+    END
+    scanBearing + 5 MOD 360 TO scanBearing TO RADAR
+    IF RADAR > 0 THEN GOTO gotlock
+    scanBearing + 5 MOD 360 TO scanBearing TO RADAR
+    IF RADAR > 0 THEN GOTO gotlock
+    scanBearing + 5 MOD 360 TO scanBearing TO RADAR
+    IF RADAR > 0 THEN GOTO gotlock
+    scanBearing + 5 MOD 360 TO scanBearing TO RADAR
+    IF RADAR > 0 THEN GOTO gotlock
+    RETURN
+gotlock
+    RADAR TO scanRange
+    GOSUB newtrack
+    RETURN
+
+; Cover the center briefly, then visit each quadrant when contact stays cold.
+seekcenter
+    IF guardCorner > 0 THEN GOTO perch
+    clock - lasttrack TO quietTicks
+    190 TO waypointX
+    156 TO waypointY
+    IF quietTicks >= patrolDelay THEN
+        IF patrolling = 0 THEN GOSUB pickwp
+        GOSUB waypoint
+    END
+    waypointX - X TO X_CONV
+    waypointY - Y TO Y_CONV
+    ANGLE_CONV TO course
+    19 TO cruiseSpeed
+    IF DIST_CONV < 40 THEN 9 TO cruiseSpeed
+    IF quietTicks >= patrolDelay THEN
+        IF DIST_CONV < 35 THEN GOSUB nextwp
+        IF clock - waypointTick > 160 THEN GOSUB nextwp
+    END
+RETURN
+
+pickwp
+    IF X < 190 THEN
+        IF Y < 156 THEN
+            0 TO waypointIndex
+        ELSE
+            3 TO waypointIndex
+        END
+    ELSE
+        IF Y < 156 THEN
+            1 TO waypointIndex
+        ELSE
+            2 TO waypointIndex
+        END
+    END
+    clock TO waypointTick
+    1 TO patrolling
+RETURN
+
+waypoint
+    IF waypointIndex = 0 THEN
+        65 TO waypointX
+        65 TO waypointY
+    END
+    IF waypointIndex = 1 THEN
+        316 TO waypointX
+        65 TO waypointY
+    END
+    IF waypointIndex = 2 THEN
+        316 TO waypointX
+        248 TO waypointY
+    END
+    IF waypointIndex = 3 THEN
+        65 TO waypointX
+        248 TO waypointY
+    END
+RETURN
+
+nextwp
+    waypointIndex + 1 MOD 4 TO waypointIndex
+    clock TO waypointTick
+RETURN
+
+newtrack
+    X TO sensorX
+    Y TO sensorY
+    clock TO fclock
+    IF scanRange > 0 THEN
+        GOSUB refine
+        GOSUB fixpos
+        0 TO fixes
+        GOSUB update
+        0 TO misses
+        fixBearing TO predBearing
+        scanRange TO predRange
+        1 TO havetrack
+    END
+RETURN
+
+waittick
+    clock TO counter
+    WHILE clock = counter DO
+        counter TO scratch
+    END
+    X TO sensorX
+    Y TO sensorY
+    clock TO fclock
+RETURN
+
+; Resolve the bearing from the edge of a radar return.
+refine
+    310 / scanRange + 1 TO halfWidth
+    IF halfWidth > 32 THEN 32 TO halfWidth
+    0 - halfWidth - halfWidth + scanBearing - 1 TO lowEdge
+    scanBearing TO highEdge
+    WHILE highEdge - lowEdge > 1 DO
+        highEdge + lowEdge / 2 TO edgeMid
+        edgeMid TO RADAR
+        RADAR TO edgeRange
+        IF edgeRange > 0 THEN
+            edgeMid TO highEdge
+        ELSE
+            edgeMid TO lowEdge
+        END
+    END
+    highEdge + halfWidth + 360 MOD 360 TO fixBearing
+RETURN
+
+; Store observed target positions in sixteenths of an arena unit.
+fixpos
+    fixBearing TO ANGLE_CONV
+    scanRange TO DIST_CONV
+    X_CONV + sensorX * 16 TO fixX16
+    Y_CONV + sensorY * 16 TO fixY16
+    fixesTaken + 1 TO fixesTaken
+RETURN
+
+; Measure velocity on a rolling baseline. Bounded changes in velocity correct
+; for turns without letting noise dominate the short flight prediction.
+update
+    IF fixes = 0 THEN
+        fixX16 TO baseX16
+        fixY16 TO baseY16
+        fclock TO baseTick
+        0 TO velX16 TO velY16 TO accelX16 TO accelY16 TO priorVelTick
+    ELSE
+        fclock - baseTick TO baseAge
+        IF baseAge >= minBaseline THEN
+            fixX16 - baseX16 / baseAge TO velX16
+            fixY16 - baseY16 / baseAge TO velY16
+            IF velX16 > 70 THEN 70 TO velX16
+            IF velX16 < -70 THEN -70 TO velX16
+            IF velY16 > 70 THEN 70 TO velY16
+            IF velY16 < -70 THEN -70 TO velY16
+        END
+        IF baseAge >= minBaseline THEN
+            fclock - priorVelTick TO velocityAge
+            IF velocityAge > 3 THEN
+                IF velocityAge < 15 THEN
+                    velX16 - priorVX16 * 2 / velocityAge TO accelX16
+                    velY16 - priorVY16 * 2 / velocityAge TO accelY16
+                    IF accelX16 > 12 THEN 12 TO accelX16
+                    IF accelX16 < -12 THEN -12 TO accelX16
+                    IF accelY16 > 12 THEN 12 TO accelY16
+                    IF accelY16 < -12 THEN -12 TO accelY16
+                END
+            END
+        END
+        IF baseAge >= maxBaseline THEN
+            velX16 TO priorVX16
+            velY16 TO priorVY16
+            fclock TO priorVelTick
+            lastX16 TO baseX16
+            lastY16 TO baseY16
+            lastFixTick TO baseTick
+        END
+    END
+    fixX16 TO lastX16
+    fixY16 TO lastY16
+    fclock TO lastFixTick
+    fixX16 TO targetX16
+    fixY16 TO targetY16
+    fclock TO contactTick
+    IF fixes < 30 THEN fixes + 1 TO fixes
+RETURN
+
+track
+    clock TO lasttrack
+    0 TO patrolling
+    clock - contactTick TO dt
+    IF dt > 25 THEN
+        0 TO havetrack
+        RETURN
+    END
+    IF dt < 2 THEN
+        GOSUB fire_ctl
+        IF NUM_ROBOTS > 1 THEN GOSUB bgscan
+        RETURN
+    END
+    dt + 1 TO leadTicks
+    velX16 * leadTicks + targetX16 TO predX16
+    velY16 * leadTicks + targetY16 TO predY16
+    GOSUB clampp
+    predX16 / 16 - X TO contactDX
+    predY16 / 16 - Y TO contactDY
+    contactDX TO X_CONV
+    contactDY TO Y_CONV
+    ANGLE_CONV TO predBearing
+    DIST_CONV TO predRange
+    GOSUB waittick
+    GOSUB seek
+    IF scanRange > 0 THEN
+        GOSUB refine
+        GOSUB fixpos
+        GOSUB update
+        0 TO misses
+        IF scanRange < cloakRange THEN clock + cloakTicks TO cloakuntil
+    ELSE
+        misses + 1 TO misses
+        GOSUB wide
+        IF scanRange > 0 THEN
+            GOSUB refine
+            GOSUB fixpos
+            GOSUB update
+            0 TO misses
+            IF scanRange < cloakRange THEN clock + cloakTicks TO cloakuntil
+        END
+    END
+    GOSUB fire_ctl
+    IF misses > 2 THEN GOSUB bgscan
+    GOSUB steer
+RETURN
+
+seek
+    predBearing TO scanBearing
+    scanBearing TO RADAR
+    RADAR TO scanRange
+    GOSUB gate
+    IF scanRange > 0 THEN RETURN
+    4 TO counter
+    WHILE counter < 13 DO
+        predBearing + counter MOD 360 TO scanBearing
+        scanBearing TO RADAR
+        RADAR TO scanRange
+        GOSUB gate
+        IF scanRange > 0 THEN RETURN
+        predBearing + 360 - counter MOD 360 TO scanBearing
+        scanBearing TO RADAR
+        RADAR TO scanRange
+        GOSUB gate
+        IF scanRange > 0 THEN RETURN
+        counter + 4 TO counter
+    END
+RETURN
+
+wide
+    IF misses < 2 THEN
+        -1 TO scanRange
+        RETURN
+    END
+    16 TO counter
+    WHILE counter < 49 DO
+        predBearing + counter MOD 360 TO scanBearing
+        scanBearing TO RADAR
+        RADAR TO scanRange
+        GOSUB gate
+        IF scanRange > 0 THEN RETURN
+        predBearing + 360 - counter MOD 360 TO scanBearing
+        scanBearing TO RADAR
+        RADAR TO scanRange
+        GOSUB gate
+        IF scanRange > 0 THEN RETURN
+        counter + 6 TO counter
+    END
+RETURN
+
+gate
+    IF scanRange > 0 THEN
+        scanRange - predRange TO rangeGap
+        IF rangeGap < 0 THEN 0 - rangeGap TO rangeGap
+        IF rangeGap > 50 THEN -1 TO scanRange
+    END
+RETURN
+
+clampp
+    IF predX16 < 80 THEN 80 TO predX16
+    IF predX16 > 6016 THEN 6016 TO predX16
+    IF predY16 < 80 THEN 80 TO predY16
+    IF predY16 > 4928 THEN 4928 TO predY16
+RETURN
+
+; Orbit the active contact and push the path back inside the arena.
+steer
+    IF guardCorner > 0 THEN GOTO perch
+    IF predRange < 1 THEN 1 TO predRange
+    contactDX * 64 / predRange TO unitX64
+    contactDY * 64 / predRange TO unitY64
+    predRange - orbitRadius TO radialError
+    IF radialError > 64 THEN 64 TO radialError
+    IF radialError < -64 THEN -64 TO radialError
+    outerSpeed TO cruiseSpeed
+    IF radialError < 30 THEN
+        IF radialError > -30 THEN innerSpeed TO cruiseSpeed
+    END
+    unitX64 * radialError / 64 TO steerX
+    unitY64 * radialError / 64 TO steerY
+    0 - unitY64 * orbitSign * 64 / 64 + steerX TO steerX
+    unitX64 * orbitSign * 64 / 64 + steerY TO steerY
+    IF X < 70 THEN 70 - X * 2 + steerX TO steerX
+    IF X > 311 THEN
+        X - 311 * 2 TO scratch
+        steerX - scratch TO steerX
+    END
+    IF Y < 70 THEN 70 - Y * 2 + steerY TO steerY
+    IF Y > 243 THEN
+        Y - 243 * 2 TO scratch
+        steerY - scratch TO steerY
+    END
+    steerX TO X_CONV
+    steerY TO Y_CONV
+    ANGLE_CONV TO course
+RETURN
+
+; Orbit a point inside the starting corner. A radial correction draws the
+; robot back to a 14-unit circle. Speed 9 has no movement fuel cost.
+perch
+    X - cornerX TO X_CONV
+    Y - cornerY TO Y_CONV
+    DIST_CONV TO cornerDistance
+    cornerDistance - 14 * 4 TO cornerTurn
+    IF cornerTurn > 86 THEN 86 TO cornerTurn
+    IF cornerTurn < -80 THEN -80 TO cornerTurn
+    ANGLE_CONV + 90 + cornerTurn TO course
+    9 TO cruiseSpeed
+    IF cornerDistance > 28 THEN 19 TO cruiseSpeed
+    RETURN
+
+; Probe for other contacts while tracking. Switch when a distinct contact is
+; substantially closer or repeated misses make the current track unreliable.
+bgscan
+    0 TO counter
+    WHILE counter < 3 DO
+        otherBearing + 5 MOD 360 TO otherBearing
+        otherBearing TO RADAR
+        RADAR TO otherRange
+        IF otherRange > 0 THEN GOSUB contact
+        counter + 1 TO counter
+    END
+RETURN
+
+contact
+    IF misses > 2 THEN
+        otherBearing TO scanBearing
+        otherRange TO scanRange
+        GOSUB newtrack
+        RETURN
+    END
+    otherBearing - predBearing + 540 MOD 360 - 180 TO bearingGap
+    IF bearingGap < 0 THEN 0 - bearingGap TO bearingGap
+    IF bearingGap < 15 THEN RETURN
+    IF otherRange + 25 < predRange THEN
+        otherBearing TO scanBearing
+        otherRange TO scanRange
+        GOSUB newtrack
+    END
+RETURN
+
+; Take a near opening shot, then lead using two flight-time estimates.
+fire_ctl
+    IF SHOT > 0 THEN RETURN
+    IF fixes < 2 THEN
+        IF predRange > 125 THEN RETURN
+        IF predRange < 18 THEN RETURN
+        predBearing TO AIM
+        predRange TO SHOT
+        RETURN
+    END
+    IF misses > 11 THEN RETURN
+    clock - contactTick TO dt
+    predRange / 18 + 1 + dt TO leadTicks
+    velX16 * leadTicks + targetX16 TO predX16
+    velY16 * leadTicks + targetY16 TO predY16
+    IF leadTicks <= 20 THEN
+        leadTicks + baseAge * leadTicks / 7 TO predweight
+        accelX16 * predweight + predX16 TO predX16
+        accelY16 * predweight + predY16 TO predY16
+    END
+    GOSUB clampp
+    predX16 / 16 - X TO X_CONV
+    predY16 / 16 - Y TO Y_CONV
+    DIST_CONV / 18 + 1 + dt TO leadTicks
+    velX16 * leadTicks + targetX16 TO predX16
+    velY16 * leadTicks + targetY16 TO predY16
+    IF leadTicks <= 20 THEN
+        leadTicks + baseAge * leadTicks / 7 TO predweight
+        accelX16 * predweight + predX16 TO predX16
+        accelY16 * predweight + predY16 TO predY16
+    END
+    GOSUB clampp
+    predX16 / 16 - X TO X_CONV
+    predY16 / 16 - Y TO Y_CONV
+    IF DIST_CONV < 22 THEN RETURN
+    ANGLE_CONV TO AIM
+    DIST_CONV TO SHOT
+    shotsTaken + 1 TO shotsTaken
+RETURN
+
+; The clock interrupt owns cloak, speed and heading writes.
+tick_isr
+    clock + 1 TO clock
+    turnTicks - 1 TO turnTicks
+    IF turnTicks <= 0 THEN
+        0 - orbitSign TO orbitSign
+        20 TO RANDOM
+        RANDOM + 10 TO turnTicks
+    END
+    IF DAMAGE <> lastdmg THEN
+        DAMAGE TO lastdmg
+        clock + cloakTicks TO cloakuntil
+    END
+    IF NUM_ROBOTS <> lastPopulation THEN
+        NUM_ROBOTS TO lastPopulation
+        0 TO havetrack
+    END
+    ; Hold the corner in battles that began with at least four robots.
+    ; Release it in the duel or when a long quiet spell calls for a patrol.
+    0 TO guardCorner
+    IF NUM_ROBOTS >= 2 THEN
+        IF startPopulation >= 3 THEN
+            IF clock - lasttrack < 500 THEN 1 TO guardCorner
+        END
+    END
+    IF guardCorner = 0 THEN
+        IF clock < 90 THEN clock + 1 TO cloakuntil
+    ELSE
+        IF clock < 28 THEN clock + 1 TO cloakuntil
+    END
+    IF havetrack > 0 THEN
+        IF predRange < 160 THEN clock + 4 TO cloakuntil
+    END
+
+    ; Save a small reserve to keep moving after the cloak budget is spent.
+    IF clock <= cloakuntil THEN
+        1 TO CLOAK
+        cloakSpeed TO SPEED
+    ELSE
+        0 TO CLOAK
+        cruiseSpeed TO SPEED
+    END
+    IF FUEL < 45 THEN 0 TO CLOAK
+    IF FUEL < 40 THEN 9 TO SPEED
+    course TO DIRECTION
+ENDINT
