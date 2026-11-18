@@ -63,4 +63,7 @@ if(BUILD_TESTING AND NOT EMSCRIPTEN)
   add_test(NAME tournament
     COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_tournament.py"
             --binary "$<TARGET_FILE:robotwar_cli>")
+  add_test(NAME robot_benchmark
+    COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_robot_benchmark.py"
+            --binary "$<TARGET_FILE:robotwar_cli>")
 endif()

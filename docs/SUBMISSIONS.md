@@ -108,3 +108,36 @@ The [language reference](../web/docs/language.md) and [agent brief](../web/docs/
 describe attributes, instructions, registers, timing, sensors, weapons, and
 compatibility quirks. The source path is still recorded in league JSON for
 replay even when the public leaderboard shows the friendly name and author.
+
+## Benchmark against the field
+
+Use the candidate benchmark to measure both duels and crowded battles:
+
+```sh
+python tools/robot_benchmark.py \
+  --candidate robots/ada-example/compass-scout.bot \
+  --opponents-dir robots --seed-list 1,7,23 \
+  --sizes 2,3,4,5 --groups-per-size 16 --ticks 2000 \
+  --workers 2 --output build/compass-benchmark.json
+```
+
+The candidate's file is excluded from the opponent directory. Every opponent
+is tested in a duel. Larger battles use distinct, reproducibly sampled opponent
+groups for each seed, or all combinations when the field is small enough. Each
+group plays every cyclic rotation of its starting seats. This controls starting
+position and execution-order effects without requiring every permutation of a
+large field. `--seed-list` also accepts a JSON array or a file containing one.
+
+The JSON records per-size and per-opponent results, source and engine hashes,
+the full schedule, final-state hashes, CPU resets, survival, average placement,
+and the fraction of opponents outlived. A win requires being the **sole
+survivor**; surviving the time limit alongside another robot is a draw. All
+survivors tie, as do robots eliminated in the same tick. Failed runs exit with
+an error and replace an existing output report with `status: "failed"`.
+
+For a fair comparison between revisions, freeze one opponent directory and
+keep both candidate files outside it. Use the same seeds and settings, then
+check that `schedule_sha256` and opponent source hashes match. Reserve fresh
+seeds for validation after choosing a candidate: repeatedly optimizing against
+the same matches measures training performance, not generalization. Test longer
+battles too when a strategy depends on fuel or survival at the time limit.

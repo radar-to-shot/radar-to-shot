@@ -1,0 +1,859 @@
+{
+  "schema_version": 1,
+  "candidate_sha256": "6f8fcb37ddd0ca4bd8664bd9d7805a4cb6a7c65611bbdf2b8ea8e2c55ac19523",
+  "schedule_sha256": "5aa6bfebc5572ebfeb36100c7fc8f84a8af84453c7f7374d53ab3ad91454372b",
+  "validation_games_per_candidate": 13120,
+  "full_field": {
+    "parallax": {
+      "2": {
+        "games": 832,
+        "wins": 807,
+        "draws": 2,
+        "losses": 23,
+        "cpu_resets": 0,
+        "win_rate": 0.97,
+        "survival_rate": 0.9724,
+        "average_place": 1.03,
+        "average_survival_ticks": 233.3,
+        "average_final_damage": 18.6,
+        "pairwise_survival_score": 0.971154,
+        "survivals": 809
+      },
+      "3": {
+        "games": 3072,
+        "wins": 2905,
+        "draws": 7,
+        "losses": 160,
+        "cpu_resets": 0,
+        "win_rate": 0.9456,
+        "survival_rate": 0.9476,
+        "average_place": 1.06,
+        "average_survival_ticks": 388.0,
+        "average_final_damage": 37.0,
+        "pairwise_survival_score": 0.971354,
+        "survivals": 2911
+      },
+      "4": {
+        "games": 4096,
+        "wins": 3607,
+        "draws": 8,
+        "losses": 481,
+        "cpu_resets": 0,
+        "win_rate": 0.8806,
+        "survival_rate": 0.8813,
+        "average_place": 1.15,
+        "average_survival_ticks": 485.7,
+        "average_final_damage": 49.2,
+        "pairwise_survival_score": 0.950806,
+        "survivals": 3610
+      },
+      "5": {
+        "games": 5120,
+        "wins": 3841,
+        "draws": 16,
+        "losses": 1263,
+        "cpu_resets": 0,
+        "win_rate": 0.7502,
+        "survival_rate": 0.751,
+        "average_place": 1.36,
+        "average_survival_ticks": 537.3,
+        "average_final_damage": 61.8,
+        "pairwise_survival_score": 0.910791,
+        "survivals": 3845
+      }
+    },
+    "radar-hawk": {
+      "2": {
+        "games": 832,
+        "wins": 719,
+        "draws": 2,
+        "losses": 111,
+        "cpu_resets": 0,
+        "win_rate": 0.8642,
+        "survival_rate": 0.8666,
+        "average_place": 1.13,
+        "average_survival_ticks": 227.2,
+        "average_final_damage": 34.1,
+        "pairwise_survival_score": 0.865385,
+        "survivals": 721
+      },
+      "3": {
+        "games": 3072,
+        "wins": 2605,
+        "draws": 7,
+        "losses": 460,
+        "cpu_resets": 0,
+        "win_rate": 0.848,
+        "survival_rate": 0.8496,
+        "average_place": 1.19,
+        "average_survival_ticks": 359.3,
+        "average_final_damage": 52.9,
+        "pairwise_survival_score": 0.904297,
+        "survivals": 2610
+      },
+      "4": {
+        "games": 4096,
+        "wins": 3145,
+        "draws": 8,
+        "losses": 943,
+        "cpu_resets": 0,
+        "win_rate": 0.7678,
+        "survival_rate": 0.7688,
+        "average_place": 1.36,
+        "average_survival_ticks": 443.8,
+        "average_final_damage": 63.2,
+        "pairwise_survival_score": 0.880778,
+        "survivals": 3149
+      },
+      "5": {
+        "games": 5120,
+        "wins": 3448,
+        "draws": 20,
+        "losses": 1652,
+        "cpu_resets": 0,
+        "win_rate": 0.6734,
+        "survival_rate": 0.6736,
+        "average_place": 1.59,
+        "average_survival_ticks": 485.4,
+        "average_final_damage": 72.6,
+        "pairwise_survival_score": 0.853662,
+        "survivals": 3449
+      }
+    },
+    "serpent": {
+      "2": {
+        "games": 832,
+        "wins": 785,
+        "draws": 10,
+        "losses": 37,
+        "cpu_resets": 0,
+        "win_rate": 0.9435,
+        "survival_rate": 0.9555,
+        "average_place": 1.05,
+        "average_survival_ticks": 264.9,
+        "average_final_damage": 19.0,
+        "pairwise_survival_score": 0.949519,
+        "survivals": 795
+      },
+      "3": {
+        "games": 3072,
+        "wins": 2201,
+        "draws": 18,
+        "losses": 853,
+        "cpu_resets": 0,
+        "win_rate": 0.7165,
+        "survival_rate": 0.721,
+        "average_place": 1.39,
+        "average_survival_ticks": 379.0,
+        "average_final_damage": 51.2,
+        "pairwise_survival_score": 0.802816,
+        "survivals": 2215
+      },
+      "4": {
+        "games": 4096,
+        "wins": 2535,
+        "draws": 21,
+        "losses": 1540,
+        "cpu_resets": 0,
+        "win_rate": 0.6189,
+        "survival_rate": 0.6228,
+        "average_place": 1.72,
+        "average_survival_ticks": 452.8,
+        "average_final_damage": 64.5,
+        "pairwise_survival_score": 0.76062,
+        "survivals": 2551
+      },
+      "5": {
+        "games": 5120,
+        "wins": 2615,
+        "draws": 30,
+        "losses": 2475,
+        "cpu_resets": 0,
+        "win_rate": 0.5107,
+        "survival_rate": 0.5145,
+        "average_place": 2.15,
+        "average_survival_ticks": 467.9,
+        "average_final_damage": 75.5,
+        "pairwise_survival_score": 0.712842,
+        "survivals": 2634
+      }
+    }
+  },
+  "duels": {
+    "opponent:examples/Chicken": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 165.0,
+      "average_final_damage": 4.5,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:examples/Circle Shooter": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 181.9,
+      "average_final_damage": 4.0,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:examples/Run Away": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 178.7,
+      "average_final_damage": 6.0,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:examples/Seeker": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 183.1,
+      "average_final_damage": 15.4,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:examples/Wall Crawler": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 380.7,
+      "average_final_damage": 11.3,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:model_bench_20261111/fable52.bot": {
+      "games": 64,
+      "wins": 62,
+      "draws": 0,
+      "losses": 2,
+      "cpu_resets": 0,
+      "win_rate": 0.9688,
+      "survival_rate": 0.9688,
+      "average_place": 1.03,
+      "average_survival_ticks": 263.7,
+      "average_final_damage": 37.7,
+      "pairwise_survival_score": 0.96875,
+      "survivals": 62
+    },
+    "opponent:model_bench_20261111/gpt61sol.bot": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 258.4,
+      "average_final_damage": 3.6,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:model_bench_20261111/gpt61terra.bot": {
+      "games": 64,
+      "wins": 51,
+      "draws": 0,
+      "losses": 13,
+      "cpu_resets": 0,
+      "win_rate": 0.7969,
+      "survival_rate": 0.7969,
+      "average_place": 1.2,
+      "average_survival_ticks": 199.2,
+      "average_final_damage": 41.1,
+      "pairwise_survival_score": 0.796875,
+      "survivals": 51
+    },
+    "opponent:model_bench_20261111/gpt6astra.bot": {
+      "games": 64,
+      "wins": 62,
+      "draws": 2,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 0.9688,
+      "survival_rate": 1.0,
+      "average_place": 1.02,
+      "average_survival_ticks": 255.7,
+      "average_final_damage": 16.8,
+      "pairwise_survival_score": 0.984375,
+      "survivals": 64
+    },
+    "opponent:model_bench_20261111/gpt6luna.bot": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 323.0,
+      "average_final_damage": 2.3,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:model_bench_20261111/haiku55.bot": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 162.5,
+      "average_final_damage": 16.7,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:model_bench_20261111/opus55.bot": {
+      "games": 64,
+      "wins": 64,
+      "draws": 0,
+      "losses": 0,
+      "cpu_resets": 0,
+      "win_rate": 1.0,
+      "survival_rate": 1.0,
+      "average_place": 1.0,
+      "average_survival_ticks": 164.7,
+      "average_final_damage": 20.3,
+      "pairwise_survival_score": 1.0,
+      "survivals": 64
+    },
+    "opponent:model_bench_20261111/sonnet55.bot": {
+      "games": 64,
+      "wins": 56,
+      "draws": 0,
+      "losses": 8,
+      "cpu_resets": 0,
+      "win_rate": 0.875,
+      "survival_rate": 0.875,
+      "average_place": 1.12,
+      "average_survival_ticks": 315.7,
+      "average_final_damage": 62.3,
+      "pairwise_survival_score": 0.875,
+      "survivals": 56
+    }
+  },
+  "long_battle_check": {
+    "2": {
+      "games": 208,
+      "wins": 202,
+      "draws": 0,
+      "losses": 6,
+      "cpu_resets": 0,
+      "win_rate": 0.9712,
+      "survival_rate": 0.9712,
+      "average_place": 1.03,
+      "average_survival_ticks": 237.4,
+      "average_final_damage": 20.7,
+      "pairwise_survival_score": 0.971154,
+      "survivals": 202
+    },
+    "3": {
+      "games": 384,
+      "wins": 356,
+      "draws": 1,
+      "losses": 27,
+      "cpu_resets": 0,
+      "win_rate": 0.9271,
+      "survival_rate": 0.9297,
+      "average_place": 1.07,
+      "average_survival_ticks": 395.1,
+      "average_final_damage": 35.9,
+      "pairwise_survival_score": 0.964193,
+      "survivals": 357
+    },
+    "4": {
+      "games": 512,
+      "wins": 457,
+      "draws": 0,
+      "losses": 55,
+      "cpu_resets": 0,
+      "win_rate": 0.8926,
+      "survival_rate": 0.8926,
+      "average_place": 1.13,
+      "average_survival_ticks": 484.8,
+      "average_final_damage": 48.1,
+      "pairwise_survival_score": 0.957682,
+      "survivals": 457
+    },
+    "5": {
+      "games": 640,
+      "wins": 468,
+      "draws": 1,
+      "losses": 171,
+      "cpu_resets": 0,
+      "win_rate": 0.7312,
+      "survival_rate": 0.7328,
+      "average_place": 1.37,
+      "average_survival_ticks": 549.0,
+      "average_final_damage": 61.5,
+      "pairwise_survival_score": 0.906641,
+      "survivals": 469
+    }
+  },
+  "mirror_free_comparisons": {
+    "radar-hawk": {
+      "2": {
+        "games_each": 768,
+        "parallax": {
+          "games": 768,
+          "wins": 751,
+          "draws": 2,
+          "losses": 15,
+          "cpu_resets": 0,
+          "win_rate": 0.9779,
+          "survival_rate": 0.9805,
+          "average_place": 1.02,
+          "average_survival_ticks": 226.4,
+          "average_final_damage": 15.0,
+          "pairwise_survival_score": 0.979167,
+          "survivals": 753
+        },
+        "baseline": {
+          "games": 768,
+          "wins": 687,
+          "draws": 2,
+          "losses": 79,
+          "cpu_resets": 0,
+          "win_rate": 0.8945,
+          "survival_rate": 0.8971,
+          "average_place": 1.1,
+          "average_survival_ticks": 225.0,
+          "average_final_damage": 30.0,
+          "pairwise_survival_score": 0.895833,
+          "survivals": 689
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          0.070312,
+          0.096354
+        ]
+      },
+      "3": {
+        "games_each": 2550,
+        "parallax": {
+          "games": 2550,
+          "wins": 2479,
+          "draws": 7,
+          "losses": 64,
+          "cpu_resets": 0,
+          "win_rate": 0.9722,
+          "survival_rate": 0.9745,
+          "average_place": 1.03,
+          "average_survival_ticks": 389.6,
+          "average_final_damage": 31.8,
+          "pairwise_survival_score": 0.986078,
+          "survivals": 2485
+        },
+        "baseline": {
+          "games": 2550,
+          "wins": 2344,
+          "draws": 7,
+          "losses": 199,
+          "cpu_resets": 0,
+          "win_rate": 0.9192,
+          "survival_rate": 0.9212,
+          "average_place": 1.1,
+          "average_survival_ticks": 366.9,
+          "average_final_damage": 46.8,
+          "pairwise_survival_score": 0.952157,
+          "survivals": 2349
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          0.042309,
+          0.064103
+        ]
+      },
+      "4": {
+        "games_each": 3232,
+        "parallax": {
+          "games": 3232,
+          "wins": 2962,
+          "draws": 7,
+          "losses": 263,
+          "cpu_resets": 0,
+          "win_rate": 0.9165,
+          "survival_rate": 0.9174,
+          "average_place": 1.1,
+          "average_survival_ticks": 497.9,
+          "average_final_damage": 44.5,
+          "pairwise_survival_score": 0.965243,
+          "survivals": 2965
+        },
+        "baseline": {
+          "games": 3232,
+          "wins": 2743,
+          "draws": 7,
+          "losses": 482,
+          "cpu_resets": 0,
+          "win_rate": 0.8487,
+          "survival_rate": 0.8499,
+          "average_place": 1.21,
+          "average_survival_ticks": 463.8,
+          "average_final_damage": 57.4,
+          "pairwise_survival_score": 0.928785,
+          "survivals": 2747
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          0.048223,
+          0.086597
+        ]
+      },
+      "5": {
+        "games_each": 3650,
+        "parallax": {
+          "games": 3650,
+          "wins": 2875,
+          "draws": 15,
+          "losses": 760,
+          "cpu_resets": 0,
+          "win_rate": 0.7877,
+          "survival_rate": 0.7888,
+          "average_place": 1.31,
+          "average_survival_ticks": 556.6,
+          "average_final_damage": 58.4,
+          "pairwise_survival_score": 0.923288,
+          "survivals": 2879
+        },
+        "baseline": {
+          "games": 3650,
+          "wins": 2828,
+          "draws": 17,
+          "losses": 805,
+          "cpu_resets": 0,
+          "win_rate": 0.7748,
+          "survival_rate": 0.7751,
+          "average_place": 1.37,
+          "average_survival_ticks": 515.7,
+          "average_final_damage": 67.3,
+          "pairwise_survival_score": 0.9075,
+          "survivals": 2829
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          -0.006233,
+          0.032143
+        ]
+      }
+    },
+    "serpent": {
+      "2": {
+        "games_each": 768,
+        "parallax": {
+          "games": 768,
+          "wins": 745,
+          "draws": 2,
+          "losses": 21,
+          "cpu_resets": 0,
+          "win_rate": 0.9701,
+          "survival_rate": 0.9727,
+          "average_place": 1.03,
+          "average_survival_ticks": 230.7,
+          "average_final_damage": 17.0,
+          "pairwise_survival_score": 0.971354,
+          "survivals": 747
+        },
+        "baseline": {
+          "games": 768,
+          "wins": 753,
+          "draws": 10,
+          "losses": 5,
+          "cpu_resets": 0,
+          "win_rate": 0.9805,
+          "survival_rate": 0.9935,
+          "average_place": 1.01,
+          "average_survival_ticks": 260.8,
+          "average_final_damage": 13.2,
+          "pairwise_survival_score": 0.986979,
+          "survivals": 763
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          -0.027344,
+          0.00651
+        ]
+      },
+      "3": {
+        "games_each": 2625,
+        "parallax": {
+          "games": 2625,
+          "wins": 2475,
+          "draws": 7,
+          "losses": 143,
+          "cpu_resets": 0,
+          "win_rate": 0.9429,
+          "survival_rate": 0.9451,
+          "average_place": 1.06,
+          "average_survival_ticks": 395.2,
+          "average_final_damage": 36.5,
+          "pairwise_survival_score": 0.969905,
+          "survivals": 2481
+        },
+        "baseline": {
+          "games": 2625,
+          "wins": 2015,
+          "draws": 4,
+          "losses": 606,
+          "cpu_resets": 0,
+          "win_rate": 0.7676,
+          "survival_rate": 0.7676,
+          "average_place": 1.32,
+          "average_survival_ticks": 386.5,
+          "average_final_damage": 46.1,
+          "pairwise_survival_score": 0.840095,
+          "survivals": 2015
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          0.157542,
+          0.192941
+        ]
+      },
+      "4": {
+        "games_each": 3244,
+        "parallax": {
+          "games": 3244,
+          "wins": 2839,
+          "draws": 7,
+          "losses": 398,
+          "cpu_resets": 0,
+          "win_rate": 0.8752,
+          "survival_rate": 0.8758,
+          "average_place": 1.15,
+          "average_survival_ticks": 500.3,
+          "average_final_damage": 49.3,
+          "pairwise_survival_score": 0.94852,
+          "survivals": 2841
+        },
+        "baseline": {
+          "games": 3244,
+          "wins": 2178,
+          "draws": 3,
+          "losses": 1063,
+          "cpu_resets": 0,
+          "win_rate": 0.6714,
+          "survival_rate": 0.6714,
+          "average_place": 1.62,
+          "average_survival_ticks": 470.7,
+          "average_final_damage": 59.6,
+          "pairwise_survival_score": 0.79367,
+          "survivals": 2178
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          0.183458,
+          0.224439
+        ]
+      },
+      "5": {
+        "games_each": 3605,
+        "parallax": {
+          "games": 3605,
+          "wins": 2624,
+          "draws": 15,
+          "losses": 966,
+          "cpu_resets": 0,
+          "win_rate": 0.7279,
+          "survival_rate": 0.729,
+          "average_place": 1.4,
+          "average_survival_ticks": 554.6,
+          "average_final_damage": 63.0,
+          "pairwise_survival_score": 0.900139,
+          "survivals": 2628
+        },
+        "baseline": {
+          "games": 3605,
+          "wins": 2052,
+          "draws": 6,
+          "losses": 1547,
+          "cpu_resets": 0,
+          "win_rate": 0.5692,
+          "survival_rate": 0.5692,
+          "average_place": 2.0,
+          "average_survival_ticks": 495.8,
+          "average_final_damage": 71.2,
+          "pairwise_survival_score": 0.750069,
+          "survivals": 2052
+        },
+        "paired_win_rate_difference_95_percent_seed_bootstrap": [
+          0.134859,
+          0.183425
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Baseline copies are run against the identical13-robot field, including their incumbent source. The mirror-free comparisons remove every game containing that baseline from BOTH reports.",
+    "Rates are outright sole-survivor wins. Draws are not wins. The long-battle check uses a smaller group schedule; the paired subsection selects exactly those games from the main report before comparing tick caps.",
+    "Cyclic rotations of a seed are correlated. Paired confidence intervals resample whole seed blocks, not individual games."
+  ],
+  "archives": {
+    "long.json.gz": "531fef3a5b6efc0d5958dcdab436b0661c3c98ce1ddb8349451a925ba3ebf780",
+    "parallax.json.gz": "e1cee430e229a2c64dfe0093929ee0cd6277590b4c680b399b375121e2a59e44",
+    "radar-hawk.json.gz": "ab01eec5079c48b456b71f683c8561108ff6240e0254cb6f246efdcb8a6e8bf8",
+    "serpent.json.gz": "0a6b38419b7bede0a18a38eaea5f0de127e5da435b493614f4246cb72f0bba0b"
+  },
+  "long_battle_paired_check": {
+    "2": {
+      "games": 208,
+      "at_2000_ticks": {
+        "games": 208,
+        "wins": 202,
+        "draws": 0,
+        "losses": 6,
+        "cpu_resets": 0,
+        "win_rate": 0.9712,
+        "survival_rate": 0.9712,
+        "average_place": 1.03,
+        "average_survival_ticks": 237.4,
+        "average_final_damage": 20.7,
+        "pairwise_survival_score": 0.971154,
+        "survivals": 202
+      },
+      "at_5000_ticks": {
+        "games": 208,
+        "wins": 202,
+        "draws": 0,
+        "losses": 6,
+        "cpu_resets": 0,
+        "win_rate": 0.9712,
+        "survival_rate": 0.9712,
+        "average_place": 1.03,
+        "average_survival_ticks": 237.4,
+        "average_final_damage": 20.7,
+        "pairwise_survival_score": 0.971154,
+        "survivals": 202
+      },
+      "changed_winners": 0
+    },
+    "3": {
+      "games": 384,
+      "at_2000_ticks": {
+        "games": 384,
+        "wins": 356,
+        "draws": 1,
+        "losses": 27,
+        "cpu_resets": 0,
+        "win_rate": 0.9271,
+        "survival_rate": 0.9297,
+        "average_place": 1.07,
+        "average_survival_ticks": 387.3,
+        "average_final_damage": 35.9,
+        "pairwise_survival_score": 0.964193,
+        "survivals": 357
+      },
+      "at_5000_ticks": {
+        "games": 384,
+        "wins": 356,
+        "draws": 1,
+        "losses": 27,
+        "cpu_resets": 0,
+        "win_rate": 0.9271,
+        "survival_rate": 0.9297,
+        "average_place": 1.07,
+        "average_survival_ticks": 395.1,
+        "average_final_damage": 35.9,
+        "pairwise_survival_score": 0.964193,
+        "survivals": 357
+      },
+      "changed_winners": 0
+    },
+    "4": {
+      "games": 512,
+      "at_2000_ticks": {
+        "games": 512,
+        "wins": 457,
+        "draws": 0,
+        "losses": 55,
+        "cpu_resets": 0,
+        "win_rate": 0.8926,
+        "survival_rate": 0.8926,
+        "average_place": 1.13,
+        "average_survival_ticks": 484.8,
+        "average_final_damage": 48.1,
+        "pairwise_survival_score": 0.957682,
+        "survivals": 457
+      },
+      "at_5000_ticks": {
+        "games": 512,
+        "wins": 457,
+        "draws": 0,
+        "losses": 55,
+        "cpu_resets": 0,
+        "win_rate": 0.8926,
+        "survival_rate": 0.8926,
+        "average_place": 1.13,
+        "average_survival_ticks": 484.8,
+        "average_final_damage": 48.1,
+        "pairwise_survival_score": 0.957682,
+        "survivals": 457
+      },
+      "changed_winners": 0
+    },
+    "5": {
+      "games": 640,
+      "at_2000_ticks": {
+        "games": 640,
+        "wins": 468,
+        "draws": 1,
+        "losses": 171,
+        "cpu_resets": 0,
+        "win_rate": 0.7312,
+        "survival_rate": 0.7328,
+        "average_place": 1.37,
+        "average_survival_ticks": 544.3,
+        "average_final_damage": 61.5,
+        "pairwise_survival_score": 0.906641,
+        "survivals": 469
+      },
+      "at_5000_ticks": {
+        "games": 640,
+        "wins": 468,
+        "draws": 1,
+        "losses": 171,
+        "cpu_resets": 0,
+        "win_rate": 0.7312,
+        "survival_rate": 0.7328,
+        "average_place": 1.37,
+        "average_survival_ticks": 549.0,
+        "average_final_damage": 61.5,
+        "pairwise_survival_score": 0.906641,
+        "survivals": 469
+      },
+      "changed_winners": 0
+    }
+  },
+  "bootstrap_method": {
+    "replicates": 10000,
+    "rng": "Python random.Random, reinitialized for each comparison and battle size",
+    "rng_seed": 20261118,
+    "python_version": "3.12.14",
+    "sampling": "For each replicate, random.choices selects 32 seed-block triples (Parallax wins, baseline wins, game count) with replacement. Divide the sum of paired win differences by the summed game counts.",
+    "interval": "Sort 10,000 replicate differences; take zero-based elements 249 and 9749; round to 6 decimal places."
+  }
+}

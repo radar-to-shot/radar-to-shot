@@ -1,0 +1,106 @@
+{
+  "candidate_sha256": "6f8fcb37ddd0ca4bd8664bd9d7805a4cb6a7c65611bbdf2b8ea8e2c55ac19523",
+  "cases": [
+    {
+      "case": "duel",
+      "seed": 1,
+      "tick_limit": 2000,
+      "completed_ticks": 268,
+      "winner": 0,
+      "full_runner_state_sha256": "8f7b4ea04c73b48c5997156f342510d793b9dbb07bcb0aff19fb00877bcf4562",
+      "original_68k_matches_native": true,
+      "participants": [
+        {
+          "path": "robots/openai-codex/parallax.bot",
+          "source_sha256": "6f8fcb37ddd0ca4bd8664bd9d7805a4cb6a7c65611bbdf2b8ea8e2c55ac19523"
+        },
+        {
+          "path": "robots/model_bench_20261111/fable52.bot",
+          "source_sha256": "4d21a07743717cc711325a2bb6e2e701d59aaf50e21cd926666e71850c37382c"
+        }
+      ],
+      "native_command": [
+        "python",
+        "scripts/run_headless_battle.py",
+        "robots/openai-codex/parallax.bot",
+        "robots/model_bench_20261111/fable52.bot",
+        "--seed",
+        "1",
+        "--ticks",
+        "2000"
+      ],
+      "original_command": [
+        "python",
+        "scripts/run_68k_battle.py",
+        "robots/openai-codex/parallax.bot",
+        "robots/model_bench_20261111/fable52.bot",
+        "--seed",
+        "1",
+        "--ticks",
+        "2000"
+      ]
+    },
+    {
+      "case": "five",
+      "seed": 42,
+      "tick_limit": 2000,
+      "completed_ticks": 442,
+      "winner": 4,
+      "full_runner_state_sha256": "da06c215866ee112115f2c5ad495e0332f60a1feb3689da5935fc83342dc4d28",
+      "original_68k_matches_native": true,
+      "participants": [
+        {
+          "path": "robots/openai-codex/parallax.bot",
+          "source_sha256": "6f8fcb37ddd0ca4bd8664bd9d7805a4cb6a7c65611bbdf2b8ea8e2c55ac19523"
+        },
+        {
+          "path": "robots/model_bench_20261111/fable52.bot",
+          "source_sha256": "4d21a07743717cc711325a2bb6e2e701d59aaf50e21cd926666e71850c37382c"
+        },
+        {
+          "path": "robots/model_bench_20261111/sonnet55.bot",
+          "source_sha256": "9e85993c428aff95e40111f2ca5445d9e594722a9c8cb5d2e75e6f0a52d1d37a"
+        },
+        {
+          "path": "robots/model_bench_20261111/opus55.bot",
+          "source_sha256": "b93dffe44f9c6afdf2f4b36b795abd9ec447a207d2a570336cc130713779c79c"
+        },
+        {
+          "path": "robots/model_bench_20261111/gpt61terra.bot",
+          "source_sha256": "f383f3fd43d938a69e4e8e2474709497bc85cae278fb1d61cc7d597409c16b61"
+        }
+      ],
+      "native_command": [
+        "python",
+        "scripts/run_headless_battle.py",
+        "robots/openai-codex/parallax.bot",
+        "robots/model_bench_20261111/fable52.bot",
+        "robots/model_bench_20261111/sonnet55.bot",
+        "robots/model_bench_20261111/opus55.bot",
+        "robots/model_bench_20261111/gpt61terra.bot",
+        "--seed",
+        "42",
+        "--ticks",
+        "2000"
+      ],
+      "original_command": [
+        "python",
+        "scripts/run_68k_battle.py",
+        "robots/openai-codex/parallax.bot",
+        "robots/model_bench_20261111/fable52.bot",
+        "robots/model_bench_20261111/sonnet55.bot",
+        "robots/model_bench_20261111/opus55.bot",
+        "robots/model_bench_20261111/gpt61terra.bot",
+        "--seed",
+        "42",
+        "--ticks",
+        "2000"
+      ]
+    }
+  ],
+  "five_way_wasm_matches_native": true,
+  "wasm_sha256": "6562e48cb4f8d4d60c82010c36093a1fe208164972f291f3abfb1824f01365c2",
+  "validation": "Full JSON states compared, including registers, memory, CPU debt, shell state and RNG state. Native/68k runner engine labels excluded.",
+  "original_setup": "Use the patched emulator and PYTHONPATH documented in docs/HEADLESS.md#battle-scripts-native-and-original-68k.",
+  "native_sha256": "958987371a7bf27e42d41ce8bb66ef9dc7130fec633cbae4592d372f34b503ab"
+}
