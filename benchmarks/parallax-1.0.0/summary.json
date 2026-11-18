@@ -847,5 +847,13 @@
       },
       "changed_winners": 0
     }
+  },
+  "bootstrap_method": {
+    "replicates": 10000,
+    "rng": "Python random.Random, reinitialized for each comparison and battle size",
+    "rng_seed": 20261118,
+    "python_version": "3.12.14",
+    "sampling": "For each replicate, random.choices selects 32 seed-block triples (Parallax wins, baseline wins, game count) with replacement. Divide the sum of paired win differences by the summed game counts.",
+    "interval": "Sort 10,000 replicate differences; take zero-based elements 249 and 9749; round to 6 decimal places."
   }
 }
