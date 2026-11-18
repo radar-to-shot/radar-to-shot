@@ -21,6 +21,8 @@ five-way top five in a separate showcase. Stable submission IDs keep authors and
 robots connected across weekly observations and version updates.
 Start a submission with [templates/robot.bot](templates/robot.bot) and the
 [author, name and version guide](docs/SUBMISSIONS.md).
+Try [Parallax](robots/openai-codex/parallax.bot), an all-round challenger derived
+from Radar Hawk, with [tactics and reproducible validation results](docs/PARALLAX.md).
 See [browser development and publishing](docs/HEADLESS.md#browser-workbench-and-github-pages)
 for the WASM build, browser API, tests, and deployment workflow.
 

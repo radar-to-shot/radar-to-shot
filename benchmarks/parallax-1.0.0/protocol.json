@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "candidate": "robots/openai-codex/parallax.bot",
+  "candidate_sha256": "6f8fcb37ddd0ca4bd8664bd9d7805a4cb6a7c65611bbdf2b8ea8e2c55ac19523",
+  "field_commit": "1b96441",
+  "development_seed_range": [
+    1,
+    64
+  ],
+  "validation_seed_rule": "First four SHA-256 bytes, big endian, of parallax-v1-validation:{i}, i=0..31",
+  "seeds": [
+    4213934762,
+    3551147775,
+    2052745306,
+    1980341628,
+    1327364174,
+    2181011980,
+    4107004322,
+    1754080894,
+    1328291454,
+    695067825,
+    3965306035,
+    2731664942,
+    1301519044,
+    3706205277,
+    2146061530,
+    205090953,
+    435720480,
+    2743799475,
+    1054671011,
+    3896282075,
+    3729099456,
+    693124778,
+    3724543679,
+    645818446,
+    4158671883,
+    996836029,
+    842617972,
+    2863122237,
+    2865368155,
+    1706010153,
+    1898983012,
+    2990869058
+  ],
+  "ticks": 2000,
+  "sizes": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "groups_per_size": 32,
+  "baseline_sources": [
+    "robots/model_bench_20261111/sonnet55.bot",
+    "robots/model_bench_20261111/fable52.bot"
+  ],
+  "long_battle_check": {
+    "ticks": 5000,
+    "seeds": [
+      4213934762,
+      3551147775,
+      2052745306,
+      1980341628,
+      1327364174,
+      2181011980,
+      4107004322,
+      1754080894
+    ],
+    "groups_per_size": 16
+  },
+  "freeze": "Source fixed before running these validation seeds. No tuning uses validation results."
+}

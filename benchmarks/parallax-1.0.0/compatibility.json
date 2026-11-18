@@ -1,0 +1,26 @@
+{
+  "candidate_sha256": "6f8fcb37ddd0ca4bd8664bd9d7805a4cb6a7c65611bbdf2b8ea8e2c55ac19523",
+  "cases": [
+    {
+      "case": "duel",
+      "seed": 1,
+      "tick_limit": 2000,
+      "completed_ticks": 268,
+      "winner": 0,
+      "full_runner_state_sha256": "8f7b4ea04c73b48c5997156f342510d793b9dbb07bcb0aff19fb00877bcf4562",
+      "original_68k_matches_native": true
+    },
+    {
+      "case": "five",
+      "seed": 42,
+      "tick_limit": 2000,
+      "completed_ticks": 442,
+      "winner": 4,
+      "full_runner_state_sha256": "da06c215866ee112115f2c5ad495e0332f60a1feb3689da5935fc83342dc4d28",
+      "original_68k_matches_native": true
+    }
+  ],
+  "five_way_wasm_matches_native": true,
+  "wasm_sha256": "6562e48cb4f8d4d60c82010c36093a1fe208164972f291f3abfb1824f01365c2",
+  "validation": "Full JSON states compared, including registers, memory, CPU debt, shell state and RNG state. Native/68k runner engine labels excluded."
+}
